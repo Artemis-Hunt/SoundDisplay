@@ -1,0 +1,238 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 17092
+License: Customer
+
+Current time: 	Fri Mar 20 17:46:06 SGT 2020
+Time zone: 	Singapore Time (Asia/Singapore)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 50 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	D:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Taylor
+User home directory: C:/Users/Taylor
+User working directory: C:/School/Y1S2/EE2026/SoundDisplay
+User country: 	SG
+User language: 	en
+User locale: 	en_SG
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2018.2
+RDI_DATADIR: D:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: D:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	D:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/School/Y1S2/EE2026/SoundDisplay/vivado.log
+Vivado journal file location: 	C:/School/Y1S2/EE2026/SoundDisplay/vivado.jou
+Engine tmp dir: 	C:/School/Y1S2/EE2026/SoundDisplay/.Xil/Vivado-17092-Battlestation
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2018.2
+XILINX_SDK: D:/Xilinx/SDK/2018.2
+XILINX_VIVADO: D:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	152 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 527 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr. Version: Vivado v2018.2 
+// bx (ck):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 94 MB (+96022kb) [00:00:08]
+// [Engine Memory]: 515 MB (+388147kb) [00:00:08]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 102 MB (+3904kb) [00:00:11]
+// [Engine Memory]: 541 MB (+317kb) [00:00:11]
+// [Engine Memory]: 570 MB (+2760kb) [00:00:12]
+// HMemoryUtils.trashcanNow. Engine heap size: 579 MB. GUI used memory: 48 MB. Current time: 3/20/20 5:46:09 PM SGT
+// Project name: SoundDisplay; location: C:/School/Y1S2/EE2026/SoundDisplay; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 732.777 ; gain = 56.930 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 37 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v)]", 2, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v)]", 2, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// [Engine Memory]: 600 MB (+1105kb) [00:00:52]
+selectCodeEditor("Top_Student.v", 291, 258); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 315, 265); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 384, 245); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 396, 254); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 407, 263); // ce (w, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), ledDriver : ledDriv (ledDriv.v)]", 11, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), ledDriver : ledDriv (ledDriv.v)]", 11, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ledDriv.v", 2, true, false); // k (j, ck) - Popup Trigger
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem (JidePopupMenu)
+// Elapsed time: 18 seconds
+selectCodeEditor("Top_Student.v", 239, 278); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("Top_Student.v", 560, 283); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 62 seconds
+selectCodeEditor("Top_Student.v", 143, 303); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 201, 270); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 227, 363); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 95, 382); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 12 seconds
+selectCodeEditor("Top_Student.v", 77, 278); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("Top_Student.v", 682, 469); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Top_Student.v", 675, 471); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 734, 465); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 772, 467); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("Top_Student.v", 343, 313); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 157, 142); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 228, 127); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 169, 127); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 159, 124); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 188, 112); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 10 seconds
+selectCodeEditor("Top_Student.v", 284, 362); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("Top_Student.v", 218, 382); // ce (w, ck)
+typeControlKey(null, null, 'z');
+selectCodeEditor("Top_Student.v", 206, 369); // ce (w, ck)
+typeControlKey(null, null, 'z');
+selectCodeEditor("Top_Student.v", 332, 480); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("Top_Student.v", 330, 541); // ce (w, ck)
+typeControlKey(null, null, 'z');
+selectCodeEditor("Top_Student.v", 276, 470); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 200, 282); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 166, 233); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 323, 634); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 135, 417); // ce (w, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 15); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys3_Master.xdc]", 17, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys3_Master.xdc]", 17, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("Basys3_Master.xdc", 406, 610); // ce (w, ck)
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Top_Student.v", 326, 681); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("Top_Student.v", 271, 657); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Top_Student.v", 319, 670); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 622 MB. GUI used memory: 51 MB. Current time: 3/20/20 5:50:43 PM SGT
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Top_Student.v", 272, 471); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 669, 675); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 290, 416); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 371, 569); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 14 seconds
+selectCodeEditor("Top_Student.v", 78, 300); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 20 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bx (ck)
+// TclEventType: RUN_LAUNCH
+// bx (ck):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Fri Mar 20 17:51:32 2020] Launched synth_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log [Fri Mar 20 17:51:32 2020] Launched impl_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (ck)
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 477ms to process. Increasing delay to 2000 ms.
+// [Engine Memory]: 635 MB (+5160kb) [00:06:14]
+// HMemoryUtils.trashcanNow. Engine heap size: 652 MB. GUI used memory: 50 MB. Current time: 3/20/20 5:52:13 PM SGT
+// Elapsed time: 44 seconds
+selectCodeEditor("Top_Student.v", 354, 381); // ce (w, ck)
+// TclEventType: RUN_STEP_COMPLETED
