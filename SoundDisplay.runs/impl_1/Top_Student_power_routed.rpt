@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Mar 28 18:44:31 2020
+| Date             : Sat Mar 28 18:51:04 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     2270 |       --- |             --- |
-|   LUT as Logic |     0.002 |      912 |     20800 |            4.38 |
+| Slice Logic    |     0.002 |     2273 |       --- |             --- |
+|   LUT as Logic |     0.001 |      912 |     20800 |            4.38 |
 |   CARRY4       |    <0.001 |      111 |      8150 |            1.36 |
-|   Register     |    <0.001 |      984 |     41600 |            2.37 |
+|   Register     |    <0.001 |      985 |     41600 |            2.37 |
 |   Others       |     0.000 |       63 |       --- |             --- |
 |   BUFG         |     0.000 |        5 |        32 |           15.63 |
 |   F7/F8 Muxes  |     0.000 |        4 |     32600 |            0.01 |
-| Signals        |     0.001 |     1606 |       --- |             --- |
+| Signals        |     0.001 |     1603 |       --- |             --- |
 | I/O            |     0.002 |       51 |       106 |           48.11 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.079 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.006 |      0.010 |
+| Vccint    |       1.000 |     0.015 |       0.005 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -149,7 +149,7 @@ Table of Contents
 |   clk361          |    <0.001 |
 |   clk4            |    <0.001 |
 |   clk625m         |    <0.001 |
-|   disp1           |     0.001 |
+|   disp1           |    <0.001 |
 |     border1       |     0.000 |
 |     coord         |    <0.001 |
 |     customHigh    |    <0.001 |

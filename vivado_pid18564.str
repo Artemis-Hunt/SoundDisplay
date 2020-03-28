@@ -610,3 +610,42 @@ selectCodeEditor("Top_Student.v", 68, 191); // ce (w, ck)
 selectCodeEditor("Top_Student.v", 81, 195); // ce (w, ck)
 selectCodeEditor("Top_Student.v", 70, 317); // ce (w, ck)
 selectCodeEditor("Top_Student.v", 80, 296); // ce (w, ck)
+// Elapsed time: 28 seconds
+selectCodeEditor("Top_Student.v", 1576, 75); // ce (w, ck)
+// [GUI Memory]: 116 MB (+550kb) [00:18:40]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bx (ck)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// bx (ck):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Mar 28 18:48:56 2020] Launched synth_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log [Sat Mar 28 18:48:56 2020] Launched impl_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (ck)
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 124 MB (+2522kb) [00:19:41]
+// Elapsed time: 56 seconds
+selectCodeEditor("Top_Student.v", 392, 770); // ce (w, ck)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 53 seconds
+selectCodeEditor("Top_Student.v", 216, 323); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 241, 333); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 250, 332); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 264, 332); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 269, 332); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 273, 332, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Top_Student.v", 288, 333); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 292, 332, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Top_Student.v", 250, 342); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 197, 333); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 191, 326); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 221, 328); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// ah (ck): Bitstream Generation Completed: addNotify
