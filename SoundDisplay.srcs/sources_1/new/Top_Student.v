@@ -42,17 +42,19 @@ module Top_Student (
     wire [11:0] mic_in;   //Microphone data
     wire [15:0] mic_out;   //Multiplexed output directly assigned to LEDs
     wire [3:0] bcd [1:0];   //Actual number to be displayed on 7-seg
-    wire [6:0] bcdseg [1:0];   //Segment data for 7-seg display
+    wire [7:0] bcdseg [1:0];   //Segment data for 7-seg display
     reg [15:0] ledBar;   // Data for volume bar, directly assigned to the LEDs
     reg [4:0] maxLED = 0;   //Index of the highest LED that should be lit
     reg [11:0] max = 0, mic_raw = 0;   //Peak volume in a given period |||| Raw mic data, updated at 4Hz
     reg [12:0] resetMax = 0;   //Counter for resetting max
     wire [7:0] char [3:0];
-    wire [6:0] charseg [3:0];
-    wire [6:0] segData [3:0];
+    wire [7:0] charseg [3:0];
+    wire [7:0] segData [3:0];
     wire [7:0] customSeg;
     wire [3:0] customAnode;
     wire customFlag;
+    wire [7:0] segY;
+    wire[3:0] anY;
     integer i, j;   //Loop variables
     
     //Text to be scrolled
@@ -99,18 +101,21 @@ module Top_Student (
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
-//    mux muxseg0(bcdseg[0], charseg[0], customSeg, customFlag, sw[1], segData[0]);
-//    mux muxseg1(bcdseg[1], charseg[1], customSeg, customFlag, sw[1], segData[1]);
-//    mux muxseg2(8'b11111111, charseg[2], customSeg, customFlag, sw[1], segData[2]);
-//    mux muxseg3(8'b11111111, charseg[3], customSeg, customFlag, sw[1], segData[3]);
-    mux muxseg0(bcdseg[0], customSeg, customFlag, segData[0]);
-    mux muxseg1(bcdseg[1], customSeg, customFlag, segData[1]);
-    mux muxseg2(8'b11111111, customSeg, customFlag, segData[2]);
-    mux muxseg3(8'b11111111, customSeg, customFlag, segData[3]);
+    mux muxseg0(bcdseg[0], charseg[0], sw[1], segData[0]);
+    mux muxseg1(bcdseg[1], charseg[1], sw[1], segData[1]);
+    mux muxseg2(8'b11111111, charseg[2], sw[1], segData[2]);
+    mux muxseg3(8'b11111111, charseg[3], sw[1], segData[3]);
+//    mux muxseg0(bcdseg[0], customSeg, customFlag, segData[0]);
+//    mux muxseg1(bcdseg[1], customSeg, customFlag, segData[1]);
+//    mux muxseg2(8'b11111111, customSeg, customFlag, segData[2]);
+//    mux muxseg3(8'b11111111, customSeg, customFlag, segData[3]);
     
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
-    ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], seg, an);
+    ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
+    
+    mux muxFinal(customSeg, segY, customFlag, seg);
+    mux muxFinal2(customAnode, anY, customFlag, an);
     
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
