@@ -24,7 +24,8 @@
 
 module coordinate_display(input clock, button_clock, text_clock, blink_clock, back_blink, input [3:0]mic_volume, 
                             input mid_sel, right_sel, left_sel, up_sel, down_sel, brd_sel, brd_onOff, bar_onOff, pause, text_onOff,
-                            output [3:0] an, output [7:0] seg, input [12:0] pixel_index, output reg [15:0]OLED_colour = 0, output reg customColour = 0);
+                            output [3:0] an, output [7:0] seg, input [12:0] pixel_index, output reg [15:0]OLED_colour = 0, 
+                            output reg customColour = 0, input watchMode);
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
@@ -70,7 +71,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     
     always @ (posedge button_clock) //Button Operations
     begin
-        if(custom_flag != 1)
+        if(custom_flag != 1 && watchMode != 1)
         begin
             if(left_sel == 1) //Scroll left to choose theme
             begin

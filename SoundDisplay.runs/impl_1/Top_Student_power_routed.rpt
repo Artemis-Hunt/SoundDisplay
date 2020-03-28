@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Mar 28 21:09:13 2020
-| Host             : Battlestation running 64-bit major release  (build 9200)
+| Date             : Sat Mar 28 22:52:46 2020
+| Host             : WIN8-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.080        |
+| Total On-Chip Power (W)  | 0.076        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.009        |
+| Dynamic (W)              | 0.005        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,17 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     1983 |       --- |             --- |
-|   LUT as Logic |     0.002 |      945 |     20800 |            4.54 |
-|   CARRY4       |    <0.001 |      111 |      8150 |            1.36 |
-|   Register     |    <0.001 |      685 |     41600 |            1.65 |
-|   F7/F8 Muxes  |    <0.001 |       14 |     32600 |            0.04 |
-|   Others       |     0.000 |       63 |       --- |             --- |
-|   BUFG         |     0.000 |        5 |        32 |           15.63 |
-| Signals        |     0.002 |     1446 |       --- |             --- |
-| I/O            |     0.002 |       51 |       106 |           48.11 |
+| Slice Logic    |    <0.001 |     1373 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      620 |     20800 |            2.98 |
+|   CARRY4       |    <0.001 |       92 |      8150 |            1.13 |
+|   Register     |    <0.001 |      500 |     41600 |            1.20 |
+|   Others       |     0.000 |       55 |       --- |             --- |
+|   BUFG         |     0.000 |        3 |        32 |            9.38 |
+| Signals        |    <0.001 |      983 |       --- |             --- |
+| I/O            |    <0.001 |       50 |       106 |           47.17 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.080 |          |           |                 |
+| Total          |     0.076 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.007 |      0.010 |
+| Vccint    |       1.000 |     0.013 |       0.004 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,14 +141,13 @@ Table of Contents
 +-------------------+-----------+
 | Name              | Power (W) |
 +-------------------+-----------+
-| Top_Student       |     0.009 |
+| Top_Student       |     0.005 |
 |   clk1            |    <0.001 |
 |   clk20           |    <0.001 |
 |   clk20k          |    <0.001 |
-|   clk361          |    <0.001 |
 |   clk4            |    <0.001 |
 |   clk625m         |    <0.001 |
-|   disp1           |     0.002 |
+|   disp1           |    <0.001 |
 |     border1       |     0.000 |
 |     coord         |    <0.001 |
 |     customHigh    |    <0.001 |
@@ -161,8 +159,6 @@ Table of Contents
 |   down            |     0.000 |
 |     dff1          |     0.000 |
 |     dff2          |     0.000 |
-|   ledDriver       |    <0.001 |
-|     clk600        |    <0.001 |
 |   left            |     0.000 |
 |     dff1          |     0.000 |
 |     dff2          |     0.000 |
@@ -170,13 +166,10 @@ Table of Contents
 |   mid             |     0.000 |
 |     dff1          |     0.000 |
 |     dff2          |     0.000 |
-|   muxFinal        |    <0.001 |
-|   muxFinal2       |    <0.001 |
 |   oled            |    <0.001 |
 |   right           |     0.000 |
 |     dff1          |     0.000 |
 |     dff2          |     0.000 |
-|   strdriv         |    <0.001 |
 |   up              |     0.000 |
 |     dff1          |     0.000 |
 |     dff2          |     0.000 |

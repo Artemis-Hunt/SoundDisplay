@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux(input [15:0]sig1, sig2, input ctrl, output [15:0] opt);
+module mux(input [15:0]sig1, sig2, watchSeg, input ctrl, watchMode, output [15:0] opt);
 
-    assign opt = (ctrl) ? sig1 : sig2; //Ctrl on == sig1
+    assign opt = (watchMode) ? watchSeg : (ctrl) ? sig1 : sig2; //Ctrl on == sig1
     
 endmodule
