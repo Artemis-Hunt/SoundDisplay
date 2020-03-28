@@ -649,3 +649,900 @@ selectCodeEditor("Top_Student.v", 191, 326); // ce (w, ck)
 selectCodeEditor("Top_Student.v", 221, 328); // ce (w, ck)
 // TclEventType: RUN_COMPLETED
 // ah (ck): Bitstream Generation Completed: addNotify
+// Elapsed time: 100 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// bx (ck):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+dismissDialog("Open Hardware Manager"); // bx (ck)
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// bx (ck):  Auto Connect : addNotify
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.2   **** Build date : Jun 14 2018-20:42:52     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183756817A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bx (ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 23, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7a35t_0"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bB (ck): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bB)
+// bx (ck):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bB (ck)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // bx (ck)
+// Elapsed time: 45 seconds
+selectCodeEditor("Top_Student.v", 389, 546); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 377, 570); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 390, 572); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 417, 437); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 442, 397); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 457, 388); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 398, 311); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 349, 280); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 375, 294); // ce (w, ck)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (ay, ck)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw 
+// bx (ck):  CLose Hardware Manager : addNotify
+dismissDialog("CLose Hardware Manager"); // bx (ck)
+// [GUI Memory]: 131 MB (+3kb) [00:23:37]
+// Elapsed time: 27 seconds
+selectCodeEditor("Top_Student.v", 352, 242); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 358, 279); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 345, 260); // ce (w, ck)
+// Elapsed time: 18 seconds
+selectCodeEditor("Top_Student.v", 184, 526); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,319 MB. GUI used memory: 60 MB. Current time: 3/28/20 7:10:20 PM SGT
+// [GUI Memory]: 138 MB (+703kb) [01:03:29]
+// [GUI Memory]: 147 MB (+2008kb) [01:03:49]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,319 MB. GUI used memory: 55 MB. Current time: 3/28/20 7:40:20 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,319 MB. GUI used memory: 55 MB. Current time: 3/28/20 8:10:20 PM SGT
+// Elapsed time: 5492 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 2); // k (j, ck)
+// Elapsed time: 22 seconds
+selectCodeEditor("custom_border.v", 187, 333); // ce (w, ck)
+selectCodeEditor("custom_border.v", 237, 300); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("custom_border.v", 264, 414); // ce (w, ck)
+selectCodeEditor("custom_border.v", 117, 318); // ce (w, ck)
+selectCodeEditor("custom_border.v", 127, 314); // ce (w, ck)
+selectCodeEditor("custom_border.v", 149, 283); // ce (w, ck)
+selectCodeEditor("custom_border.v", 201, 302); // ce (w, ck)
+selectCodeEditor("custom_border.v", 93, 294); // ce (w, ck)
+selectCodeEditor("custom_border.v", 189, 302); // ce (w, ck)
+selectCodeEditor("custom_border.v", 193, 369); // ce (w, ck)
+selectCodeEditor("custom_border.v", 140, 335); // ce (w, ck)
+selectCodeEditor("custom_border.v", 212, 326); // ce (w, ck)
+selectCodeEditor("custom_border.v", 508, 319); // ce (w, ck)
+selectCodeEditor("custom_border.v", 502, 299); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("custom_border.v", 227, 373); // ce (w, ck)
+selectCodeEditor("custom_border.v", 152, 367); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("custom_border.v", 212, 469); // ce (w, ck)
+selectCodeEditor("custom_border.v", 236, 482); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("custom_border.v", 213, 468); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("custom_border.v", 111, 452); // ce (w, ck)
+selectCodeEditor("custom_border.v", 179, 458); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_border.v", 194, 441); // ce (w, ck)
+selectCodeEditor("custom_border.v", 182, 463); // ce (w, ck)
+selectCodeEditor("custom_border.v", 165, 440); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("custom_border.v", 248, 482); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("custom_border.v", 148, 451); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_border.v", 171, 418); // ce (w, ck)
+selectCodeEditor("custom_border.v", 134, 416); // ce (w, ck)
+selectCodeEditor("custom_border.v", 138, 283); // ce (w, ck)
+selectCodeEditor("custom_border.v", 144, 300); // ce (w, ck)
+selectCodeEditor("custom_border.v", 117, 316); // ce (w, ck)
+selectCodeEditor("custom_border.v", 109, 296); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_border.v", 242, 430); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 10 seconds
+selectCodeEditor("custom_border.v", 401, 402); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_border.v", 168, 430); // ce (w, ck)
+selectCodeEditor("custom_border.v", 152, 369); // ce (w, ck)
+selectCodeEditor("custom_border.v", 195, 385); // ce (w, ck)
+selectCodeEditor("custom_border.v", 224, 437); // ce (w, ck)
+selectCodeEditor("custom_border.v", 245, 450); // ce (w, ck)
+// Elapsed time: 32 seconds
+selectCodeEditor("custom_border.v", 379, 451); // ce (w, ck)
+selectCodeEditor("custom_border.v", 226, 431); // ce (w, ck)
+selectCodeEditor("custom_border.v", 166, 380); // ce (w, ck)
+selectCodeEditor("custom_border.v", 144, 385); // ce (w, ck)
+selectCodeEditor("custom_border.v", 240, 469); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("custom_border.v", 168, 469); // ce (w, ck)
+selectCodeEditor("custom_border.v", 151, 402); // ce (w, ck)
+selectCodeEditor("custom_border.v", 427, 383); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_border.v", 111, 399); // ce (w, ck)
+selectCodeEditor("custom_border.v", 134, 397); // ce (w, ck)
+selectCodeEditor("custom_border.v", 220, 438); // ce (w, ck)
+selectCodeEditor("custom_border.v", 575, 382); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 214, 436); // ce (w, ck)
+selectCodeEditor("custom_border.v", 624, 507); // ce (w, ck)
+selectCodeEditor("custom_border.v", 266, 474); // ce (w, ck)
+selectCodeEditor("custom_border.v", 235, 445); // ce (w, ck)
+selectCodeEditor("custom_border.v", 303, 449); // ce (w, ck)
+selectCodeEditor("custom_border.v", 147, 436); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 84, 470); // ce (w, ck)
+selectCodeEditor("custom_border.v", 84, 482); // ce (w, ck)
+selectCodeEditor("custom_border.v", 84, 502); // ce (w, ck)
+selectCodeEditor("custom_border.v", 196, 452); // ce (w, ck)
+selectCodeEditor("custom_border.v", 629, 501); // ce (w, ck)
+selectCodeEditor("custom_border.v", 284, 474); // ce (w, ck)
+selectCodeEditor("custom_border.v", 304, 450); // ce (w, ck)
+selectCodeEditor("custom_border.v", 427, 448); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("custom_border.v", 471, 453); // ce (w, ck)
+selectCodeEditor("custom_border.v", 546, 450); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("custom_border.v", 143, 723); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 48 seconds
+selectCodeEditor("custom_border.v", 355, 495); // ce (w, ck)
+selectCodeEditor("custom_border.v", 518, 486); // ce (w, ck)
+selectCodeEditor("custom_border.v", 508, 656); // ce (w, ck)
+selectCodeEditor("custom_border.v", 498, 630); // ce (w, ck)
+selectCodeEditor("custom_border.v", 494, 605); // ce (w, ck)
+selectCodeEditor("custom_border.v", 496, 573); // ce (w, ck)
+selectCodeEditor("custom_border.v", 513, 635); // ce (w, ck)
+// Elapsed time: 27 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 2); // k (j, ck)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 17 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "colourHex_disp"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 20 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v 
+// I (ck): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // JButton (A, H)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, colourHex_disp (colourHex_disp.v)]", 45, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, colourHex_disp (colourHex_disp.v)]", 45, false, false, false, false, false, true); // B (D, ck) - Double Click
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "colourHex_disp.v", 6); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 2); // k (j, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 3, true, false); // k (j, ck) - Popup Trigger
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem (JidePopupMenu)
+selectCodeEditor("colourHex_disp.v", 29, 417); // ce (w, ck)
+// Elapsed time: 32 seconds
+selectCodeEditor("colourHex_disp.v", 188, 379); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 203, 388); // ce (w, ck)
+// Elapsed time: 38 seconds
+selectCodeEditor("custom_border.v", 474, 674); // ce (w, ck)
+selectCodeEditor("custom_border.v", 155, 690); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 564, 402); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 555, 389); // ce (w, ck)
+// Elapsed time: 108 seconds
+selectCodeEditor("custom_border.v", 279, 376); // ce (w, ck)
+selectCodeEditor("custom_border.v", 217, 479); // ce (w, ck)
+selectCodeEditor("custom_border.v", 243, 482); // ce (w, ck)
+selectCodeEditor("custom_border.v", 270, 499); // ce (w, ck)
+selectCodeEditor("custom_border.v", 159, 420); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 128, 408); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 122, 403); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 83, 425); // ce (w, ck)
+typeControlKey((HResource) null, "colourHex_disp.v", 'v'); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 110, 430); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 80, 720); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 61, 454); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 436, 707); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 173, 443); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 139, 426); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 194, 451); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 193, 471); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("colourHex_disp.v", 335, 452); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 361, 650); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 333, 516); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 333, 535); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 335, 554); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 334, 572); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 336, 584); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 332, 602); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 341, 624); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 344, 641); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 340, 663); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 343, 656); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 341, 686); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 343, 702); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 328, 604); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 335, 383); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 487, 381); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 431, 533); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 275, 420); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 469, 334); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 260, 451); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 131, 423); // ce (w, ck)
+selectCodeEditor("colourHex_disp.v", 163, 430); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("custom_border.v", 141, 301); // ce (w, ck)
+selectCodeEditor("custom_border.v", 232, 314); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("custom_border.v", 178, 284); // ce (w, ck)
+selectCodeEditor("custom_border.v", 224, 293); // ce (w, ck)
+// Elapsed time: 20 seconds
+selectCodeEditor("custom_border.v", 127, 329); // ce (w, ck)
+selectCodeEditor("custom_border.v", 337, 336); // ce (w, ck)
+selectCodeEditor("custom_border.v", 341, 334); // ce (w, ck)
+selectCodeEditor("custom_border.v", 220, 285); // ce (w, ck)
+selectCodeEditor("custom_border.v", 223, 299); // ce (w, ck)
+selectCodeEditor("custom_border.v", 50, 297); // ce (w, ck)
+selectCodeEditor("custom_border.v", 178, 293); // ce (w, ck)
+selectCodeEditor("custom_border.v", 128, 249); // ce (w, ck)
+selectCodeEditor("custom_border.v", 122, 249); // ce (w, ck)
+selectCodeEditor("custom_border.v", 183, 303); // ce (w, ck)
+selectCodeEditor("custom_border.v", 193, 245); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("custom_border.v", 181, 278); // ce (w, ck)
+selectCodeEditor("custom_border.v", 53, 241); // ce (w, ck)
+selectCodeEditor("custom_border.v", 45, 245); // ce (w, ck)
+// Elapsed time: 21 seconds
+selectCodeEditor("custom_border.v", 557, 368); // ce (w, ck)
+selectCodeEditor("custom_border.v", 262, 340); // ce (w, ck)
+selectCodeEditor("custom_border.v", 138, 318); // ce (w, ck)
+selectCodeEditor("custom_border.v", 51, 299); // ce (w, ck)
+selectCodeEditor("custom_border.v", 47, 215); // ce (w, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("custom_border.v", 334, 340); // ce (w, ck)
+selectCodeEditor("custom_border.v", 362, 334); // ce (w, ck)
+selectCodeEditor("custom_border.v", 231, 217); // ce (w, ck)
+selectCodeEditor("custom_border.v", 232, 215); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("custom_border.v", 209, 248); // ce (w, ck)
+selectCodeEditor("custom_border.v", 168, 197); // ce (w, ck)
+selectCodeEditor("custom_border.v", 208, 199); // ce (w, ck)
+selectCodeEditor("custom_border.v", 235, 209); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,319 MB. GUI used memory: 58 MB. Current time: 3/28/20 8:40:21 PM SGT
+// Elapsed time: 12 seconds
+selectCodeEditor("custom_border.v", 288, 185); // ce (w, ck)
+selectCodeEditor("custom_border.v", 259, 176); // ce (w, ck)
+selectCodeEditor("custom_border.v", 135, 163); // ce (w, ck)
+selectCodeEditor("custom_border.v", 201, 167); // ce (w, ck)
+selectCodeEditor("custom_border.v", 100, 165); // ce (w, ck)
+selectCodeEditor("custom_border.v", 183, 166); // ce (w, ck)
+// Elapsed time: 22 seconds
+selectCodeEditor("custom_border.v", 489, 607); // ce (w, ck)
+selectCodeEditor("custom_border.v", 187, 358); // ce (w, ck)
+selectCodeEditor("custom_border.v", 178, 299); // ce (w, ck)
+selectCodeEditor("custom_border.v", 197, 331); // ce (w, ck)
+selectCodeEditor("custom_border.v", 260, 370); // ce (w, ck)
+selectCodeEditor("custom_border.v", 357, 364); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 360, 364); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 56, 387); // ce (w, ck)
+selectCodeEditor("custom_border.v", 355, 381); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 350, 386); // ce (w, ck)
+selectCodeEditor("custom_border.v", 328, 379); // ce (w, ck)
+selectCodeEditor("custom_border.v", 349, 389); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 350, 380); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 169, 400); // ce (w, ck)
+selectCodeEditor("custom_border.v", 226, 401); // ce (w, ck)
+selectCodeEditor("custom_border.v", 272, 402); // ce (w, ck)
+selectCodeEditor("custom_border.v", 327, 400); // ce (w, ck)
+selectCodeEditor("custom_border.v", 379, 394); // ce (w, ck)
+selectCodeEditor("custom_border.v", 355, 367); // ce (w, ck)
+selectCodeEditor("custom_border.v", 265, 337); // ce (w, ck)
+selectCodeEditor("custom_border.v", 230, 319); // ce (w, ck)
+selectCodeEditor("custom_border.v", 209, 303); // ce (w, ck)
+selectCodeEditor("custom_border.v", 106, 297); // ce (w, ck)
+selectCodeEditor("custom_border.v", 193, 296); // ce (w, ck)
+selectCodeEditor("custom_border.v", 107, 300); // ce (w, ck)
+selectCodeEditor("custom_border.v", 155, 347); // ce (w, ck)
+selectCodeEditor("custom_border.v", 110, 326); // ce (w, ck)
+selectCodeEditor("custom_border.v", 115, 326); // ce (w, ck)
+selectCodeEditor("custom_border.v", 208, 342); // ce (w, ck)
+selectCodeEditor("custom_border.v", 225, 311); // ce (w, ck)
+selectCodeEditor("custom_border.v", 242, 361); // ce (w, ck)
+// Elapsed time: 21 seconds
+selectCodeEditor("custom_border.v", 402, 489); // ce (w, ck)
+selectCodeEditor("custom_border.v", 499, 492); // ce (w, ck)
+selectCodeEditor("custom_border.v", 600, 512); // ce (w, ck)
+selectCodeEditor("custom_border.v", 408, 408); // ce (w, ck)
+selectCodeEditor("custom_border.v", 478, 793); // ce (w, ck)
+selectCodeEditor("custom_border.v", 473, 603); // ce (w, ck)
+selectCodeEditor("custom_border.v", 489, 703); // ce (w, ck)
+selectCodeEditor("custom_border.v", 476, 809); // ce (w, ck)
+selectCodeEditor("custom_border.v", 250, 535); // ce (w, ck)
+selectCodeEditor("custom_border.v", 229, 507); // ce (w, ck)
+selectCodeEditor("custom_border.v", 234, 493); // ce (w, ck)
+selectCodeEditor("custom_border.v", 245, 489); // ce (w, ck)
+selectCodeEditor("custom_border.v", 195, 543); // ce (w, ck)
+selectCodeEditor("custom_border.v", 216, 556); // ce (w, ck)
+selectCodeEditor("custom_border.v", 136, 560); // ce (w, ck)
+selectCodeEditor("custom_border.v", 102, 581); // ce (w, ck)
+selectCodeEditor("custom_border.v", 133, 589); // ce (w, ck)
+selectCodeEditor("custom_border.v", 238, 295); // ce (w, ck)
+selectCodeEditor("custom_border.v", 172, 383); // ce (w, ck)
+selectCodeEditor("custom_border.v", 125, 603); // ce (w, ck)
+selectCodeEditor("custom_border.v", 287, 615); // ce (w, ck)
+selectCodeEditor("custom_border.v", 181, 247); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_border.v", 137, 264); // ce (w, ck)
+selectCodeEditor("custom_border.v", 254, 634); // ce (w, ck)
+selectCodeEditor("custom_border.v", 273, 639); // ce (w, ck)
+selectCodeEditor("custom_border.v", 159, 366); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("custom_border.v", 121, 602); // ce (w, ck)
+selectCodeEditor("custom_border.v", 154, 587); // ce (w, ck)
+// Elapsed time: 107 seconds
+selectCodeEditor("custom_border.v", 215, 298); // ce (w, ck)
+// Elapsed time: 59 seconds
+selectCodeEditor("custom_border.v", 156, 392); // ce (w, ck)
+// Elapsed time: 56 seconds
+selectCodeEditor("custom_border.v", 233, 475); // ce (w, ck)
+selectCodeEditor("custom_border.v", 185, 469); // ce (w, ck)
+selectCodeEditor("custom_border.v", 132, 400); // ce (w, ck)
+// Elapsed time: 26 seconds
+selectCodeEditor("custom_border.v", 385, 635); // ce (w, ck)
+// Elapsed time: 315 seconds
+selectCodeEditor("custom_border.v", 301, 575); // ce (w, ck)
+selectCodeEditor("custom_border.v", 282, 623); // ce (w, ck)
+selectCodeEditor("custom_border.v", 259, 607); // ce (w, ck)
+selectCodeEditor("custom_border.v", 154, 532); // ce (w, ck)
+selectCodeEditor("custom_border.v", 157, 669); // ce (w, ck)
+selectCodeEditor("custom_border.v", 164, 537); // ce (w, ck)
+selectCodeEditor("custom_border.v", 159, 667); // ce (w, ck)
+selectCodeEditor("custom_border.v", 160, 540); // ce (w, ck)
+selectCodeEditor("custom_border.v", 162, 675); // ce (w, ck)
+selectCodeEditor("custom_border.v", 314, 647); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 24 seconds
+selectCodeEditor("custom_border.v", 298, 412); // ce (w, ck)
+selectCodeEditor("custom_border.v", 305, 402); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("custom_border.v", 210, 687); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 47 seconds
+selectCodeEditor("custom_border.v", 508, 601); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aj (ck): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (aj)
+// bx (ck):  Save Constraints : addNotify
+// bx (ck):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aj (ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_ANALYSIS_MSG_RESET
+dismissDialog("Resetting Runs"); // bx (ck)
+// bx (ck):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Mar 28 20:55:22 2020] Launched synth_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log [Sat Mar 28 20:55:22 2020] Launched impl_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah (ck): Bitstream Generation Completed: addNotify
+// Elapsed time: 158 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// bx (ck):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+dismissDialog("Open Hardware Manager"); // bx (ck)
+// bx (ck):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.2   **** Build date : Jun 14 2018-20:42:52     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+dismissDialog("Auto Connect"); // bx (ck)
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// bx (ck):  Auto Connect : addNotify
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183756817A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bx (ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 23, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7a35t_0"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bB (ck): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bB)
+// bx (ck):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bB (ck)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bx (ck)
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 1); // k (j, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("custom_border.v", 257, 534); // ce (w, ck)
+selectCodeEditor("custom_border.v", 176, 675); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("custom_border.v", 278, 624); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_border.v", 980, 668); // ce (w, ck)
+selectCodeEditor("custom_border.v", 225, 736); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 2); // k (j, ck)
+selectCodeEditor("custom_background.v", 472, 399); // ce (w, ck)
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 1); // k (j, ck)
+selectCodeEditor("custom_border.v", 197, 561); // ce (w, ck)
+selectCodeEditor("custom_border.v", 181, 549); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("custom_border.v", 237, 382); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 1); // k (j, ck)
+selectCodeEditor("custom_border.v", 289, 409); // ce (w, ck)
+selectCodeEditor("custom_border.v", 384, 503); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 2); // k (j, ck)
+selectCodeEditor("custom_background.v", 233, 396); // ce (w, ck)
+typeControlKey((HResource) null, "custom_background.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_background.v", 56, 405); // ce (w, ck)
+selectCodeEditor("custom_background.v", 387, 472); // ce (w, ck)
+selectCodeEditor("custom_background.v", 250, 302); // ce (w, ck)
+selectCodeEditor("custom_background.v", 45, 245); // ce (w, ck)
+selectCodeEditor("custom_background.v", 156, 285); // ce (w, ck)
+selectCodeEditor("custom_background.v", 172, 332); // ce (w, ck)
+selectCodeEditor("custom_background.v", 53, 284); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_background.v", 495, 710); // ce (w, ck)
+selectCodeEditor("custom_background.v", 149, 662); // ce (w, ck)
+selectCodeEditor("custom_background.v", 113, 367); // ce (w, ck)
+selectCodeEditor("custom_background.v", 227, 294); // ce (w, ck)
+selectCodeEditor("custom_background.v", 244, 251); // ce (w, ck)
+selectCodeEditor("custom_background.v", 320, 272); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("custom_background.v", 234, 213); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_background.v", 210, 250); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_background.v", 152, 499); // ce (w, ck)
+selectCodeEditor("custom_background.v", 152, 503); // ce (w, ck)
+selectCodeEditor("custom_background.v", 161, 632); // ce (w, ck)
+selectCodeEditor("custom_background.v", 153, 773); // ce (w, ck)
+selectCodeEditor("custom_background.v", 153, 669); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_background.v", 180, 291); // ce (w, ck)
+selectCodeEditor("custom_background.v", 176, 281); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 1); // k (j, ck)
+selectCodeEditor("custom_border.v", 367, 372); // ce (w, ck)
+selectCodeEditor("custom_border.v", 571, 432); // ce (w, ck)
+selectCodeEditor("custom_border.v", 346, 368); // ce (w, ck)
+selectCodeEditor("custom_border.v", 122, 456); // ce (w, ck)
+selectCodeEditor("custom_border.v", 101, 469); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 2); // k (j, ck)
+selectCodeEditor("custom_background.v", 96, 739); // ce (w, ck)
+selectCodeEditor("custom_background.v", 207, 181); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 1); // k (j, ck)
+selectCodeEditor("custom_border.v", 146, 448); // ce (w, ck)
+selectCodeEditor("custom_border.v", 107, 470); // ce (w, ck)
+selectCodeEditor("custom_border.v", 124, 452); // ce (w, ck)
+typeControlKey((HResource) null, "custom_border.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 2); // k (j, ck)
+selectCodeEditor("custom_background.v", 0, 175); // ce (w, ck)
+typeControlKey((HResource) null, "custom_background.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_background.v", 85, 435); // ce (w, ck)
+selectCodeEditor("custom_background.v", 55, 449); // ce (w, ck)
+selectCodeEditor("custom_background.v", 57, 468); // ce (w, ck)
+selectCodeEditor("custom_background.v", 55, 484); // ce (w, ck)
+selectCodeEditor("custom_background.v", 370, 530); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_background.v", 149, 640); // ce (w, ck)
+selectCodeEditor("custom_background.v", 100, 709); // ce (w, ck)
+selectCodeEditor("custom_background.v", 76, 723); // ce (w, ck)
+typeControlKey((HResource) null, "custom_background.v", 'c'); // ce (w, ck)
+selectCodeEditor("custom_background.v", 459, 522); // ce (w, ck)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (ay, ck)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw 
+// bx (ck):  CLose Hardware Manager : addNotify
+dismissDialog("CLose Hardware Manager"); // bx (ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v), customLow : custom_low (custom_low.v)]", 39, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v), customLow : custom_low (custom_low.v)]", 39, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v), customMed : custom_med (custom_med.v)]", 40, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v), customMed : custom_med (custom_med.v)]", 40, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v), customHigh : custom_high (custom_high.v)]", 41, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v), customHigh : custom_high (custom_high.v)]", 41, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectCodeEditor("custom_low.v", 87, 454); // ce (w, ck)
+typeControlKey((HResource) null, "custom_low.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_low.v", 71, 487); // ce (w, ck)
+selectCodeEditor("custom_low.v", 67, 466); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectCodeEditor("custom_low.v", 333, 228); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectCodeEditor("custom_background.v", 184, 248); // ce (w, ck)
+typeControlKey((HResource) null, "custom_background.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectCodeEditor("custom_low.v", 173, 350); // ce (w, ck)
+typeControlKey((HResource) null, "custom_low.v", 'v'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectCodeEditor("custom_background.v", 362, 332); // ce (w, ck)
+typeControlKey((HResource) null, "custom_background.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+typeControlKey((HResource) null, "custom_low.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_low.v", 41, 286); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectCodeEditor("custom_low.v", 237, 344); // ce (w, ck)
+selectCodeEditor("custom_low.v", 126, 604); // ce (w, ck)
+selectCodeEditor("custom_low.v", 243, 158); // ce (w, ck)
+selectCodeEditor("custom_low.v", 153, 415); // ce (w, ck)
+selectCodeEditor("custom_low.v", 155, 545); // ce (w, ck)
+selectCodeEditor("custom_low.v", 156, 689); // ce (w, ck)
+selectCodeEditor("custom_low.v", 154, 691); // ce (w, ck)
+selectCodeEditor("custom_low.v", 261, 562); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectCodeEditor("custom_background.v", 430, 52); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_med.v", 5); // k (j, ck)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_med.v", 5); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectCodeEditor("custom_background.v", 27, 811); // ce (w, ck)
+typeControlKey((HResource) null, "custom_background.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_med.v", 5); // k (j, ck)
+selectCodeEditor("custom_med.v", 42, 802); // ce (w, ck)
+typeControlKey((HResource) null, "custom_med.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_med.v", 222, 812); // ce (w, ck)
+selectCodeEditor("custom_med.v", 234, 476); // ce (w, ck)
+selectCodeEditor("custom_med.v", 176, 451); // ce (w, ck)
+selectCodeEditor("custom_med.v", 241, 482); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_high.v", 6); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("custom_high.v", 190, 538); // ce (w, ck)
+selectCodeEditor("custom_high.v", 27, 814); // ce (w, ck)
+typeControlKey((HResource) null, "custom_high.v", 'v'); // ce (w, ck)
+selectCodeEditor("custom_high.v", 204, 842); // ce (w, ck)
+selectCodeEditor("custom_high.v", 172, 450); // ce (w, ck)
+selectCodeEditor("custom_high.v", 173, 454); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_med.v", 5); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_low.v", 4); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 2); // k (j, ck)
+selectCodeEditor("custom_border.v", 574, 323); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectCodeEditor("custom_background.v", 419, 462); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_border.v", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "custom_background.v", 3); // k (j, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bx (ck)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// bx (ck):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Mar 28 21:07:11 2020] Launched synth_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log [Sat Mar 28 21:07:11 2020] Launched impl_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("custom_background.v", 578, 353); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 94 seconds
+selectCodeEditor("custom_background.v", 58, 810); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// ah (ck): Bitstream Generation Completed: addNotify
+// Elapsed time: 37 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// bx (ck):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+dismissDialog("Open Hardware Manager"); // bx (ck)
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// bx (ck):  Auto Connect : addNotify
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.2   **** Build date : Jun 14 2018-20:42:52     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183756817A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bx (ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 23, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7a35t_0"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bB (ck): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bB)
+// bx (ck):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bB (ck)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bx (ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,319 MB. GUI used memory: 68 MB. Current time: 3/28/20 9:10:21 PM SGT
