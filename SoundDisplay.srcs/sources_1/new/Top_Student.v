@@ -19,17 +19,17 @@ module Top_Student (
     input  J_MIC3_Pin3,   // Connect from this signal to Audio_Capture.v
     output J_MIC3_Pin1,   // Connect to this signal from Audio_Capture.v
     output J_MIC3_Pin4,    // Connect to this signal from Audio_Capture.v
-    input CLK100MHZ, sw0,
+    input CLK100MHZ,
     output [15:0]led,
     input btnC,
-    input [15:12] sw,
+    input [15:0] sw,
     output [6:0] seg,
     output [3:0] an,
     output [7:0] JC
     );
     
     parameter MIN_VOL = 2000, STEP = 131, MAX_LEN = 32;   //Ambient noise level |||| step size for each discrete volume level |||| Max string length
-    wire clk20ksig, clk6p25msig, clk20sig, clk10sig, clk4sig;   //Various clock signals
+    wire clk20ksig, clk6p25msig, clk20sig, clk10sig, clk4sig, clk1sig;   //Various clock signals
     wire colour_sel;   //Single pulse output from colour select button
     wire frame_begin, sending_pixels, sample_pixels;   // Unused output data
     wire [4:0] teststate;                              //  from OLED
@@ -43,11 +43,14 @@ module Top_Student (
     reg [4:0] maxLED = 0;   //Index of the highest LED that should be lit
     reg [11:0] max = 0, mic_raw = 0;   //Peak volume in a given period |||| Raw mic data, updated at 4Hz
     reg [12:0] resetMax = 0;   //Counter for resetting max
-    reg [32*8:1] string = "ABCDABCDABC";   //String to be shown on 7-seg
-    reg [5:0] length = 11;   //Length of string
     wire [7:0] char [3:0];
     wire [6:0] charseg [3:0];
+    wire [6:0] segData [3:0];
     integer i, j;   //Loop variables
+    
+    //Text to be scrolled
+    reg [32*8:1] string = "ABD DBA AAC CAD";   //String to be shown on 7-seg
+    reg [5:0] length = 15;   //Length of string
     
     //Clock dividers
     clk clk625m(CLK100MHZ, 7, clk6p25msig);
@@ -55,30 +58,42 @@ module Top_Student (
     clk clk20(CLK100MHZ, 2_499_999, clk20sig); 
     clk clk10(CLK100MHZ, 4_999_999, clk10sig);
     clk clk4(CLK100MHZ, 12_499_999, clk4sig);
+    clk clk1(CLK100MHZ, 49_999_999, clk1sig);
     
     //Single pulse debouncing for pushbuttons
     single_pulse(clk20sig, btnC, colour_sel);
     
     //Multiplexer between raw mic data and peak volume meter
-    mux(ledBar, mic_raw, sw0, mic_out);
+    mux mux0(mic_raw, ledBar, sw[0], mic_out);
     assign led = mic_out;
     
+    ///VOLUME LEVEL DISPLAY FOR 7SEG///
     //Convert 0-15 into BCD
     bcd bcd1(maxLED, bcd[1], bcd[0]);
-    
     //Convert 4-bit BCD into 7-seg data
     char_disp char1(bcd[1], bcdseg[1]);
     char_disp char0(bcd[0], bcdseg[0]);
+    ///VOLUME LEVEL DISPLAY FOR 7SEG///
     
-    //Converts string to characters to be displayed on each 7-seg
+    ///TEXT SCROLLING///
+    //Scrolls a string of <length> on the 7-seg. Outputs individual data for each anode
     string_driver strdriv(clk4sig, 0, string, length, char[0], char[1], char[2], char[3]);
     char_disp str_0(char[0], charseg[0]);
     char_disp str_1(char[1], charseg[1]);
     char_disp str_2(char[2], charseg[2]);
     char_disp str_3(char[3], charseg[3]);
+    ///TEXT SCROLLING///
+    
+    //mux for 7-seg
+    //sw1 off = second input; on = first input
+    mux muxseg0(bcdseg[0], charseg[0], sw[1], segData[0]);
+    mux muxseg1(bcdseg[1], charseg[1], sw[1], segData[1]);
+    mux muxseg2(7'b1111111, charseg[2], sw[1], segData[2]);
+    mux muxseg3(7'b1111111, charseg[3], sw[1], segData[3]);
+    
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
-    ledDriv ledDriver(CLK100MHZ, charseg[0], charseg[1], charseg[2], charseg[3], seg, an);
+    ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], seg, an);
     
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk20sig, maxLED, colour_sel, sw[15], sw[14], sw[13],

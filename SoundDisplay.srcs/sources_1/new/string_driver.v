@@ -21,29 +21,24 @@
 
 
 module string_driver(input slowclk, input reset, input [32*8:1] string, input [5:0] length, output reg [7:0]char0, char1, char2, char3);
-    reg counter = 0;
-    integer i = 1;
-   
+    reg [5:0] counter = 0;
+    reg [8:0] i;
+    
     
     always @ (posedge slowclk, posedge reset) begin
         if(reset) begin
             counter = 0;
-            i = 1;
+            i = length * 8;
         end
         else begin
+            if(counter == 0) i = length * 8;
             counter <= counter + 1;
-            if(length < 4) begin
-                char3 <= " ";
-                char2 <= (length >= 3) ? string[24:17] : " ";
-                char1 <= (length >= 2) ? string[16:9] : " ";
-                char0 <= string [8:1];
-            end
-            else if(i <= (length - 3)) begin
-                char3 <= string[(i+3*8) +: 8];
-                char2 <= string[(i+2*8) +: 8];
-                char1 <= string[(i+1*8) +: 8];
-                char0 <= string[(i+0*8) +: 8];
-                i <= (counter > 4) ? i + 1 : i;
+            char3 <= string[(i-0*8) -: 8];
+            char2 <= (length >= 2) ? string[(i-1*8) -: 8] : " ";
+            char1 <= (length >= 3) ? string[(i-2*8) -: 8] : " ";
+            char0 <= (length >= 4) ? string[(i-3*8) -: 8] : " ";
+            if (i > 4*8 && counter > 3) begin
+                i <= i - 8;
             end
         end
     end
