@@ -6,7 +6,7 @@
 <Project Version="7" Minor="38" Path="C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="0917254c695c4cb5998f17b74e73445e"/>
+    <Option Name="Id" Val="db52332ba613410db0f1dffea75d0a72"/>
     <Option Name="Part" Val="xc7a35tcpg236-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -79,6 +79,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/bcd.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/bcd.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -86,6 +88,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/char_disp.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/char_disp.v"/>
+          <Attr Name="ImportTime" Val="1585387922"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -93,6 +97,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/clk20k.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/clk20k.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -102,6 +108,60 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../EE2026-Design-Project-master/coordinate_display.v"/>
           <Attr Name="ImportTime" Val="1585099183"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/custom_background.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_background.v"/>
+          <Attr Name="ImportTime" Val="1585387390"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/custom_border.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_border.v"/>
+          <Attr Name="ImportTime" Val="1585387338"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/custom_high.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_high.v"/>
+          <Attr Name="ImportTime" Val="1585387471"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/custom_low.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_low.v"/>
+          <Attr Name="ImportTime" Val="1585387418"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/custom_med.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_med.v"/>
+          <Attr Name="ImportTime" Val="1585387443"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/dictionary.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dictionary.v"/>
+          <Attr Name="ImportTime" Val="1585387521"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -118,6 +178,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/ledDriv.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/ledDriv.v"/>
+          <Attr Name="ImportTime" Val="1585387960"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -125,6 +187,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/mux.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/mux.v"/>
+          <Attr Name="ImportTime" Val="1585388383"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -150,6 +214,17 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/string_driver.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/string_driver.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/text_select.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/text_select.v"/>
+          <Attr Name="ImportTime" Val="1585387499"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -185,6 +260,8 @@
       <File Path="$PSRCDIR/sources_1/new/clk_divider.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/clk_divider.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -193,6 +270,8 @@
       <File Path="$PSRCDIR/sources_1/new/dff.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dff.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -201,6 +280,8 @@
       <File Path="$PSRCDIR/sources_1/new/spc.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/spc.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -209,11 +290,14 @@
       <File Path="$PSRCDIR/sources_1/new/test.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/test.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/archive_project_summary.txt"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Top_Student"/>
@@ -237,6 +321,8 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/new/clk20k_sim.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/clk20k_sim.v"/>
+          <Attr Name="ImportTime" Val="1585385074"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

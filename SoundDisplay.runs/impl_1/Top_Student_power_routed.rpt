@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Mar 28 16:41:55 2020
-| Host             : Battlestation running 64-bit major release  (build 9200)
+| Date             : Sat Mar 28 17:51:43 2020
+| Host             : WIN8-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.080        |
+| Total On-Chip Power (W)  | 0.078        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.009        |
+| Dynamic (W)              | 0.006        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |     1219 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      544 |     20800 |            2.62 |
-|   CARRY4       |    <0.001 |       89 |      8150 |            1.09 |
-|   Register     |    <0.001 |      440 |     41600 |            1.06 |
-|   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
-|   Others       |     0.000 |       33 |       --- |             --- |
-|   BUFG         |     0.000 |        3 |        32 |            9.38 |
-| Signals        |     0.001 |      909 |       --- |             --- |
-| I/O            |     0.005 |       46 |       106 |           43.40 |
+| Slice Logic    |     0.002 |     2227 |       --- |             --- |
+|   LUT as Logic |     0.001 |      906 |     20800 |            4.36 |
+|   CARRY4       |    <0.001 |      111 |      8150 |            1.36 |
+|   Register     |    <0.001 |      958 |     41600 |            2.30 |
+|   Others       |     0.000 |       63 |       --- |             --- |
+|   BUFG         |     0.000 |        5 |        32 |           15.63 |
+|   F7/F8 Muxes  |     0.000 |        1 |     32600 |           <0.01 |
+| Signals        |     0.001 |     1579 |       --- |             --- |
+| I/O            |    <0.001 |       50 |       106 |           47.17 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.080 |          |           |                 |
+| Total          |     0.078 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.004 |      0.010 |
+| Vccint    |       1.000 |     0.015 |       0.005 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,26 +139,51 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| Top_Student      |     0.009 |
-|   clk20          |    <0.001 |
-|   clk20k         |    <0.001 |
-|   clk4           |    <0.001 |
-|   clk625m        |    <0.001 |
-|   disp1          |    <0.001 |
-|     border1      |     0.000 |
-|     coord        |    <0.001 |
-|     volume1      |     0.000 |
-|   ledDriver      |    <0.001 |
-|     clk600       |    <0.001 |
-|   mic            |    <0.001 |
-|   nolabel_line64 |     0.000 |
-|     dff1         |     0.000 |
-|     dff2         |     0.000 |
-|   oled           |    <0.001 |
-|   strdriv        |    <0.001 |
-+------------------+-----------+
++-------------------+-----------+
+| Name              | Power (W) |
++-------------------+-----------+
+| Top_Student       |     0.006 |
+|   clk1            |    <0.001 |
+|   clk20           |    <0.001 |
+|   clk20k          |    <0.001 |
+|   clk361          |    <0.001 |
+|   clk4            |    <0.001 |
+|   clk625m         |    <0.001 |
+|   disp1           |    <0.001 |
+|     border1       |     0.000 |
+|     coord         |    <0.001 |
+|     customHigh    |    <0.001 |
+|     customLow     |    <0.001 |
+|     customMed     |    <0.001 |
+|     custombackgrd |    <0.001 |
+|     customborder  |    <0.001 |
+|     volume1       |    <0.001 |
+|   down            |     0.000 |
+|     dff1          |     0.000 |
+|     dff2          |     0.000 |
+|   ledDriver       |    <0.001 |
+|     clk600        |    <0.001 |
+|   left            |     0.000 |
+|     dff1          |     0.000 |
+|     dff2          |     0.000 |
+|   mic             |    <0.001 |
+|   mid             |     0.000 |
+|     dff1          |     0.000 |
+|     dff2          |     0.000 |
+|   muxseg0         |    <0.001 |
+|   muxseg1         |    <0.001 |
+|   muxseg2         |    <0.001 |
+|   muxseg3         |    <0.001 |
+|   oled            |    <0.001 |
+|   right           |     0.000 |
+|     dff1          |     0.000 |
+|     dff2          |     0.000 |
+|   str_0           |     0.000 |
+|   str_1           |     0.000 |
+|   strdriv         |    <0.001 |
+|   up              |     0.000 |
+|     dff1          |     0.000 |
+|     dff2          |     0.000 |
++-------------------+-----------+
 
 

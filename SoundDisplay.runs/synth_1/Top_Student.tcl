@@ -36,12 +36,19 @@ read_verilog -library xil_defaultlib {
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/char_disp.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/clk20k.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/dictionary.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/draw_border.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/ledDriv.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/mux.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/single_dff.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/single_pulse.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_select.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/volume_bar.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/xycalculator.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v

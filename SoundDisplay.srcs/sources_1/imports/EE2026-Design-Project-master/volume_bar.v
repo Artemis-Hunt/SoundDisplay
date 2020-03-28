@@ -21,7 +21,7 @@
 
 //16 sound bars, 15 black lines: 58 horizontal rows to work with (Green & Yellow = 3 Pixels High, Red = 2 pixels High)
 //Centre index = 47 x coordinate, 15 pixels wide (39-53)
-module volume_bar(input [6:0] x, y, input clock, onOff, input [3:0] volume, output reg [1:0]check = 0);
+module volume_bar(input [6:0] x, y, input clock, onOff, input [3:0] volume, output reg [1:0]check = 0, input blink_clock, mode_low, mode_med, mode_high, customColour);
 
     //All Flags used
     reg flag0 = 0;
@@ -153,6 +153,23 @@ module volume_bar(input [6:0] x, y, input clock, onOff, input [3:0] volume, outp
                 high_volume = 0;
             else
                 high_volume = 1;
+                
+            //Blinking mode for custom mode
+            if(customColour == 1 && (mode_low == 1 && blink_clock == 0))
+            begin
+                if(low_volume == 1)
+                    low_volume = 0;
+            end
+            if(customColour == 1 && (mode_med == 1 && blink_clock == 0))
+            begin
+                if(medium_volume == 1)
+                    medium_volume = 0;
+            end
+            if(customColour == 1 && (mode_high == 1 && blink_clock == 0))
+            begin
+                if(high_volume == 1)
+                    high_volume = 0;
+            end
                 
             //Assigning output value for colour multiplexer
             check = (high_volume) ? 2'd3 : (medium_volume) ? 2'd2 : (low_volume) ? 2'd1 : 0;  

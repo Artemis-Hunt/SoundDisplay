@@ -9,8 +9,8 @@
 //  STUDENT A NAME: 
 //  STUDENT A MATRICULATION NUMBER: 
 //
-//  STUDENT B NAME: 
-//  STUDENT B MATRICULATION NUMBER: 
+//  STUDENT B NAME: Danzel Ong Jing Hern
+//  STUDENT B MATRICULATION NUMBER: A0199331Y
 //
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -22,15 +22,19 @@ module Top_Student (
     input CLK100MHZ,
     output [15:0]led,
     input btnC,
+    input btnR,
+    input btnL,
+    input btnU,
+    input btnD,
     input [15:0] sw,
-    output [6:0] seg,
+    output [7:0] seg,
     output [3:0] an,
     output [7:0] JC
     );
     
     parameter MIN_VOL = 2000, STEP = 131, MAX_LEN = 32;   //Ambient noise level |||| step size for each discrete volume level |||| Max string length
-    wire clk20ksig, clk6p25msig, clk20sig, clk10sig, clk4sig, clk1sig;   //Various clock signals
-    wire colour_sel;   //Single pulse output from colour select button
+    wire clk20ksig, clk6p25msig, clk361sig, clk20sig, clk10sig, clk4sig, clk1sig;   //Various clock signals
+    wire mid_sel, right_sel, left_sel, up_sel, down_sel;   //Single pulse output from colour select button
     wire frame_begin, sending_pixels, sample_pixels;   // Unused output data
     wire [4:0] teststate;                              //  from OLED
     wire [12:0] pixel_index;   //Index of current pixel being drawn
@@ -46,6 +50,9 @@ module Top_Student (
     wire [7:0] char [3:0];
     wire [6:0] charseg [3:0];
     wire [6:0] segData [3:0];
+    wire [7:0] customSeg;
+    wire [3:0] customAnode;
+    wire customFlag;
     integer i, j;   //Loop variables
     
     //Text to be scrolled
@@ -55,13 +62,19 @@ module Top_Student (
     //Clock dividers
     clk clk625m(CLK100MHZ, 7, clk6p25msig);
     clk clk20k(CLK100MHZ, 2499, clk20ksig);
+    clk clk361(CLK100MHZ, 138503, clk361sig);
     clk clk20(CLK100MHZ, 2_499_999, clk20sig); 
     clk clk10(CLK100MHZ, 4_999_999, clk10sig);
     clk clk4(CLK100MHZ, 12_499_999, clk4sig);
     clk clk1(CLK100MHZ, 49_999_999, clk1sig);
+
     
     //Single pulse debouncing for pushbuttons
-    single_pulse(clk20sig, btnC, colour_sel);
+    single_pulse mid(clk20sig, btnC, mid_sel);
+    single_pulse right(clk20sig, btnR, right_sel);
+    single_pulse left(clk20sig, btnL, left_sel);
+    single_pulse up(clk20sig, btnU, up_sel);
+    single_pulse down(clk20sig, btnD, down_sel);
     
     //Multiplexer between raw mic data and peak volume meter
     mux mux0(mic_raw, ledBar, sw[0], mic_out);
@@ -86,18 +99,23 @@ module Top_Student (
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
-    mux muxseg0(bcdseg[0], charseg[0], sw[1], segData[0]);
-    mux muxseg1(bcdseg[1], charseg[1], sw[1], segData[1]);
-    mux muxseg2(7'b1111111, charseg[2], sw[1], segData[2]);
-    mux muxseg3(7'b1111111, charseg[3], sw[1], segData[3]);
+//    mux muxseg0(bcdseg[0], charseg[0], customSeg, customFlag, sw[1], segData[0]);
+//    mux muxseg1(bcdseg[1], charseg[1], customSeg, customFlag, sw[1], segData[1]);
+//    mux muxseg2(8'b11111111, charseg[2], customSeg, customFlag, sw[1], segData[2]);
+//    mux muxseg3(8'b11111111, charseg[3], customSeg, customFlag, sw[1], segData[3]);
+    mux muxseg0(bcdseg[0], customSeg, customFlag, segData[0]);
+    mux muxseg1(bcdseg[1], customSeg, customFlag, segData[1]);
+    mux muxseg2(8'b11111111, customSeg, customFlag, segData[2]);
+    mux muxseg3(8'b11111111, customSeg, customFlag, segData[3]);
     
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
     ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], seg, an);
     
     //Display driver for OLED
-    coordinate_display disp1(clk6p25msig, clk20sig, maxLED, colour_sel, sw[15], sw[14], sw[13],
-                                sw[12], pixel_index, pixel_data);
+    coordinate_display disp1(clk6p25msig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
+                                left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
+                                 pixel_index, pixel_data, customFlag);
                                 
     //Mic and OLED modules
     Audio_Capture mic(CLK100MHZ, clk20ksig, J_MIC3_Pin3, J_MIC3_Pin1,J_MIC3_Pin4, mic_in); 

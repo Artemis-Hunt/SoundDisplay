@@ -1,42 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585384796">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585388999">
   <File Type="BITSTR-BMM" Name="Top_Student_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Top_Student_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Top_Student_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="Top_Student_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Top_Student.tcl"/>
-  <File Type="OPT-TIMING" Name="Top_Student_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="Top_Student_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="Top_Student_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="Top_Student_reports.tcl"/>
   <File Type="OPT-DRC" Name="Top_Student_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="Top_Student.hwdef"/>
   <File Type="PWROPT-DCP" Name="Top_Student_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="Top_Student_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="Top_Student_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="Top_Student_placed.dcp"/>
   <File Type="PLACE-IO" Name="Top_Student_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Top_Student_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="Top_Student_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="Top_Student_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="Top_Student_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Top_Student_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Top_Student_incremental_reuse_pre_placed.rpt"/>
   <File Type="BG-BGN" Name="Top_Student.bgn"/>
-  <File Type="PLACE-TIMING" Name="Top_Student_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="Top_Student_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="Top_Student.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Top_Student_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="Top_Student_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Top_Student_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="Top_Student.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="Top_Student_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="Top_Student_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="Top_Student_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="Top_Student_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="Top_Student_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="Top_Student_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="Top_Student.ltx"/>
   <File Type="ROUTE-DRC-RPX" Name="Top_Student_drc_routed.rpx"/>
   <File Type="BITSTR-MMI" Name="Top_Student.mmi"/>
@@ -50,24 +38,17 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="Top_Student_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="Top_Student_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="Top_Student_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="Top_Student_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="Top_Student.vdi"/>
   <File Type="ROUTE-CLK" Name="Top_Student_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="Top_Student_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="Top_Student_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="Top_Student_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Top_Student_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Top_Student_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Top_Student_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Top_Student_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Top_Student_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Top_Student_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Top_Student_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="Top_Student.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Top_Student_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="Top_Student.rbt"/>
   <File Type="BITSTR-NKY" Name="Top_Student.nky"/>
   <File Type="BG-DRC" Name="Top_Student.drc"/>
-  <File Type="RDI-RDI" Name="Top_Student.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -91,6 +72,8 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/bcd.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/bcd.v"/>
+        <Attr Name="ImportTime" Val="1585385074"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -98,6 +81,8 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/char_disp.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/char_disp.v"/>
+        <Attr Name="ImportTime" Val="1585387922"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -105,6 +90,8 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/clk20k.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/clk20k.v"/>
+        <Attr Name="ImportTime" Val="1585385074"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -114,6 +101,60 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../EE2026-Design-Project-master/coordinate_display.v"/>
         <Attr Name="ImportTime" Val="1585099183"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/custom_background.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_background.v"/>
+        <Attr Name="ImportTime" Val="1585387390"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/custom_border.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_border.v"/>
+        <Attr Name="ImportTime" Val="1585387338"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/custom_high.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_high.v"/>
+        <Attr Name="ImportTime" Val="1585387471"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/custom_low.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_low.v"/>
+        <Attr Name="ImportTime" Val="1585387418"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/custom_med.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/custom_med.v"/>
+        <Attr Name="ImportTime" Val="1585387443"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/dictionary.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dictionary.v"/>
+        <Attr Name="ImportTime" Val="1585387521"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -130,6 +171,8 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/ledDriv.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/ledDriv.v"/>
+        <Attr Name="ImportTime" Val="1585387960"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -137,6 +180,8 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/mux.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/mux.v"/>
+        <Attr Name="ImportTime" Val="1585388383"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -162,6 +207,17 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/string_driver.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/string_driver.v"/>
+        <Attr Name="ImportTime" Val="1585385074"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/text_select.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/text_select.v"/>
+        <Attr Name="ImportTime" Val="1585387499"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -197,6 +253,8 @@
     <File Path="$PSRCDIR/sources_1/new/clk_divider.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/clk_divider.v"/>
+        <Attr Name="ImportTime" Val="1585385074"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -205,6 +263,8 @@
     <File Path="$PSRCDIR/sources_1/new/dff.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dff.v"/>
+        <Attr Name="ImportTime" Val="1585385074"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -213,6 +273,8 @@
     <File Path="$PSRCDIR/sources_1/new/spc.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/spc.v"/>
+        <Attr Name="ImportTime" Val="1585385074"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -221,6 +283,8 @@
     <File Path="$PSRCDIR/sources_1/new/test.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/test.v"/>
+        <Attr Name="ImportTime" Val="1585385074"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

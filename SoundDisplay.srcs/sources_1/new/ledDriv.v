@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ledDriv(input CLOCK, input [6:0] sig0, sig1, sig2, sig3, output reg [6:0] seg, output reg [3:0] an = 4'b1110);
+module ledDriv(input CLOCK, input [7:0] sig0, sig1, sig2, sig3, output reg [7:0] seg, output reg [3:0] an = 4'b1110);
     wire ledclock;
     clk clk600(CLOCK, 83_333, ledclock);
     
