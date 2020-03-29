@@ -82,9 +82,9 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
     end
     
     //Output 7-seg
-    stopwatch_output minute_tens_pos(minute_tens_count, minuteTens);
-    stopwatch_output minute_pos(minutes, minute);
-    stopwatch_output second_tens_pos(second_tens_count, secondTens);
-    stopwatch_output second_pos(seconds, second);
+    char_disp minute_tens_pos(minute_tens_count, minuteTens);
+    char_disp minute_pos(minutes, minute);
+    char_disp second_tens_pos(second_tens_count, secondTens);
+    char_disp second_pos(seconds, second);
     
 endmodule

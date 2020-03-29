@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun Mar 29 13:12:10 2020
-| Host         : Battlestation running 64-bit major release  (build 9200)
+| Date         : Sun Mar 29 13:39:51 2020
+| Host         : WIN8-PC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Top_Student_methodology_drc_routed.rpt -pb Top_Student_methodology_drc_routed.pb -rpx Top_Student_methodology_drc_routed.rpx
 | Design       : Top_Student
 | Device       : xc7a35tcpg236-1
@@ -23,21 +23,20 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 552
+             Violations found: 523
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert  | 1          |
-| TIMING-17 | Warning  | Non-clocked sequential cell   | 513        |
+| TIMING-17 | Warning  | Non-clocked sequential cell   | 512        |
 | TIMING-18 | Warning  | Missing input or output delay | 10         |
-| TIMING-20 | Warning  | Non-clocked latch             | 28         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell down/dff1/minute_tens_count[0]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) watchmod/minute_count_reg[1]/CLR, watchmod/minute_count_reg[2]/CLR, watchmod/minute_count_reg[3]/CLR, watchmod/minute_count_reg[4]/CLR, watchmod/minute_count_reg[5]/CLR, watchmod/minute_tens_count_reg[0]/CLR, watchmod/minute_tens_count_reg[1]/CLR, watchmod/minute_tens_count_reg[2]/CLR, watchmod/minute_tens_count_reg[3]/CLR, watchmod/minute_tens_count_reg[4]/CLR, watchmod/minutes_reg[0]/CLR, watchmod/minutes_reg[1]/CLR, watchmod/minutes_reg[2]/CLR, watchmod/minutes_reg[3]/CLR, watchmod/second_count_reg[0]/CLR (the first 15 of 55 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell down/dff1/second_count[31]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) watchmod/minute_count_reg[0]/CLR, watchmod/minute_count_reg[1]/CLR, watchmod/minute_count_reg[2]/CLR, watchmod/minute_count_reg[3]/CLR, watchmod/minute_count_reg[4]/CLR, watchmod/minute_count_reg[5]/CLR, watchmod/minute_tens_count_reg[0]/CLR, watchmod/minute_tens_count_reg[1]/CLR, watchmod/minute_tens_count_reg[2]/CLR, watchmod/minutes_reg[0]/CLR, watchmod/minutes_reg[1]/CLR, watchmod/minutes_reg[2]/CLR, watchmod/minutes_reg[3]/CLR, watchmod/second_count_reg[0]/CLR, watchmod/second_count_reg[10]/CLR (the first 15 of 54 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -2327,280 +2326,275 @@ Related violations: <none>
 
 TIMING-17#458 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_count_reg[1]/C is not reached by a timing clock
+The clock pin watchmod/minute_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#459 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_count_reg[2]/C is not reached by a timing clock
+The clock pin watchmod/minute_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#460 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_count_reg[3]/C is not reached by a timing clock
+The clock pin watchmod/minute_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#461 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_count_reg[4]/C is not reached by a timing clock
+The clock pin watchmod/minute_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#462 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_count_reg[5]/C is not reached by a timing clock
+The clock pin watchmod/minute_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#463 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_tens_count_reg[0]/C is not reached by a timing clock
+The clock pin watchmod/minute_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#464 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_tens_count_reg[1]/C is not reached by a timing clock
+The clock pin watchmod/minute_tens_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#465 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_tens_count_reg[2]/C is not reached by a timing clock
+The clock pin watchmod/minute_tens_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#466 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_tens_count_reg[3]/C is not reached by a timing clock
+The clock pin watchmod/minute_tens_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#467 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minute_tens_count_reg[4]/C is not reached by a timing clock
+The clock pin watchmod/minutes_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#468 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minutes_reg[0]/C is not reached by a timing clock
+The clock pin watchmod/minutes_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#469 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minutes_reg[1]/C is not reached by a timing clock
+The clock pin watchmod/minutes_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#470 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minutes_reg[2]/C is not reached by a timing clock
+The clock pin watchmod/minutes_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#471 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/minutes_reg[3]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#472 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[0]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#473 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[10]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#474 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[11]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#475 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[12]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#476 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[13]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#477 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[14]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#478 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[15]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#479 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[16]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#480 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[17]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#481 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[18]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#482 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[19]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#483 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[1]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#484 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[20]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#485 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[21]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#486 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[22]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#487 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[23]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#488 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[24]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#489 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[25]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#490 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[26]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#491 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[27]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#492 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[28]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#493 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[29]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#494 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[2]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#495 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[30]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#496 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[31]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#497 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[3]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#498 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[4]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#499 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[5]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#500 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[6]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#501 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[7]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#502 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[8]/C is not reached by a timing clock
+The clock pin watchmod/second_count_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#503 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_count_reg[9]/C is not reached by a timing clock
+The clock pin watchmod/second_tens_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#504 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_tens_count_reg[0]/C is not reached by a timing clock
+The clock pin watchmod/second_tens_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#505 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_tens_count_reg[1]/C is not reached by a timing clock
+The clock pin watchmod/second_tens_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#506 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_tens_count_reg[2]/C is not reached by a timing clock
+The clock pin watchmod/second_tens_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#507 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_tens_count_reg[3]/C is not reached by a timing clock
+The clock pin watchmod/second_tens_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#508 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/second_tens_count_reg[4]/C is not reached by a timing clock
+The clock pin watchmod/seconds_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#509 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/seconds_reg[0]/C is not reached by a timing clock
+The clock pin watchmod/seconds_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#510 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/seconds_reg[1]/C is not reached by a timing clock
+The clock pin watchmod/seconds_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#511 Warning
 Non-clocked sequential cell  
-The clock pin watchmod/seconds_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#512 Warning
-Non-clocked sequential cell  
 The clock pin watchmod/seconds_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#513 Warning
+TIMING-17#512 Warning
 Non-clocked sequential cell  
 The clock pin watchmod/start_flag_reg/C is not reached by a timing clock
 Related violations: <none>
@@ -2653,146 +2647,6 @@ Related violations: <none>
 TIMING-18#10 Warning
 Missing input or output delay  
 An output delay is missing on J_MIC3_Pin4 relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch watchmod/minute_pos/seg_reg[0] cannot be properly analyzed as its control pin watchmod/minute_pos/seg_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch watchmod/minute_pos/seg_reg[1] cannot be properly analyzed as its control pin watchmod/minute_pos/seg_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch watchmod/minute_pos/seg_reg[2] cannot be properly analyzed as its control pin watchmod/minute_pos/seg_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch watchmod/minute_pos/seg_reg[3] cannot be properly analyzed as its control pin watchmod/minute_pos/seg_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch watchmod/minute_pos/seg_reg[4] cannot be properly analyzed as its control pin watchmod/minute_pos/seg_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#6 Warning
-Non-clocked latch  
-The latch watchmod/minute_pos/seg_reg[5] cannot be properly analyzed as its control pin watchmod/minute_pos/seg_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#7 Warning
-Non-clocked latch  
-The latch watchmod/minute_pos/seg_reg[6] cannot be properly analyzed as its control pin watchmod/minute_pos/seg_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch watchmod/minute_tens_pos/seg_reg[0] cannot be properly analyzed as its control pin watchmod/minute_tens_pos/seg_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch watchmod/minute_tens_pos/seg_reg[1] cannot be properly analyzed as its control pin watchmod/minute_tens_pos/seg_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch watchmod/minute_tens_pos/seg_reg[2] cannot be properly analyzed as its control pin watchmod/minute_tens_pos/seg_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#11 Warning
-Non-clocked latch  
-The latch watchmod/minute_tens_pos/seg_reg[3] cannot be properly analyzed as its control pin watchmod/minute_tens_pos/seg_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#12 Warning
-Non-clocked latch  
-The latch watchmod/minute_tens_pos/seg_reg[4] cannot be properly analyzed as its control pin watchmod/minute_tens_pos/seg_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#13 Warning
-Non-clocked latch  
-The latch watchmod/minute_tens_pos/seg_reg[5] cannot be properly analyzed as its control pin watchmod/minute_tens_pos/seg_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#14 Warning
-Non-clocked latch  
-The latch watchmod/minute_tens_pos/seg_reg[6] cannot be properly analyzed as its control pin watchmod/minute_tens_pos/seg_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch watchmod/second_pos/seg_reg[0] cannot be properly analyzed as its control pin watchmod/second_pos/seg_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch watchmod/second_pos/seg_reg[1] cannot be properly analyzed as its control pin watchmod/second_pos/seg_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch watchmod/second_pos/seg_reg[2] cannot be properly analyzed as its control pin watchmod/second_pos/seg_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch watchmod/second_pos/seg_reg[3] cannot be properly analyzed as its control pin watchmod/second_pos/seg_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch watchmod/second_pos/seg_reg[4] cannot be properly analyzed as its control pin watchmod/second_pos/seg_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch watchmod/second_pos/seg_reg[5] cannot be properly analyzed as its control pin watchmod/second_pos/seg_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch watchmod/second_pos/seg_reg[6] cannot be properly analyzed as its control pin watchmod/second_pos/seg_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#22 Warning
-Non-clocked latch  
-The latch watchmod/second_tens_pos/seg_reg[0] cannot be properly analyzed as its control pin watchmod/second_tens_pos/seg_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#23 Warning
-Non-clocked latch  
-The latch watchmod/second_tens_pos/seg_reg[1] cannot be properly analyzed as its control pin watchmod/second_tens_pos/seg_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#24 Warning
-Non-clocked latch  
-The latch watchmod/second_tens_pos/seg_reg[2] cannot be properly analyzed as its control pin watchmod/second_tens_pos/seg_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#25 Warning
-Non-clocked latch  
-The latch watchmod/second_tens_pos/seg_reg[3] cannot be properly analyzed as its control pin watchmod/second_tens_pos/seg_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#26 Warning
-Non-clocked latch  
-The latch watchmod/second_tens_pos/seg_reg[4] cannot be properly analyzed as its control pin watchmod/second_tens_pos/seg_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#27 Warning
-Non-clocked latch  
-The latch watchmod/second_tens_pos/seg_reg[5] cannot be properly analyzed as its control pin watchmod/second_tens_pos/seg_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#28 Warning
-Non-clocked latch  
-The latch watchmod/second_tens_pos/seg_reg[6] cannot be properly analyzed as its control pin watchmod/second_tens_pos/seg_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 
