@@ -1,0 +1,969 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 15584
+License: Customer
+
+Current time: 	Sun Mar 29 10:13:27 SGT 2020
+Time zone: 	Singapore Time (Asia/Singapore)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 118 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	D:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Taylor
+User home directory: C:/Users/Taylor
+User working directory: C:/School/Y1S2/EE2026/SoundDisplay
+User country: 	SG
+User language: 	en
+User locale: 	en_SG
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2018.2
+RDI_DATADIR: D:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: D:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	D:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/School/Y1S2/EE2026/SoundDisplay/vivado.log
+Vivado journal file location: 	C:/School/Y1S2/EE2026/SoundDisplay/vivado.jou
+Engine tmp dir: 	C:/School/Y1S2/EE2026/SoundDisplay/.Xil/Vivado-15584-Battlestation
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2018.2
+XILINX_SDK: D:/Xilinx/SDK/2018.2
+XILINX_VIVADO: D:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	204 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 517 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: Sourcing tcl script 'C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/Vivado_init.tcl' 
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr. Version: Vivado v2018.2 
+// bx (ck):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.xpr 
+// [GUI Memory]: 89 MB (+91101kb) [00:00:09]
+// [Engine Memory]: 498 MB (+371149kb) [00:00:09]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 123 MB (+30861kb) [00:00:12]
+// [Engine Memory]: 547 MB (+24338kb) [00:00:12]
+// [GUI Memory]: 137 MB (+8437kb) [00:00:14]
+// HMemoryUtils.trashcanNow. Engine heap size: 564 MB. GUI used memory: 50 MB. Current time: 3/29/20 10:13:34 AM SGT
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 897.164 ; gain = 159.410 
+// Project name: SoundDisplay; location: C:/School/Y1S2/EE2026/SoundDisplay; part: xc7a35tcpg236-1
+// [Engine Memory]: 588 MB (+15046kb) [00:00:18]
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (Top_Student.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v)]", 2, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), clk20k : clk (clk20k.v)]", 4, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v)]", 31, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v), volume1 : volume_bar (volume_bar.v)]", 34, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "Font_table"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 14 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Font_table.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Font_table.v 
+// I (ck): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // JButton (A, H)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Font_table (Font_table.v)]", 46, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Font_table (Font_table.v)]", 46, false, false, false, false, false, true); // B (D, ck) - Double Click
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("Font_table.v", 30, 417); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 609 MB. GUI used memory: 55 MB. Current time: 3/29/20 10:14:14 AM SGT
+// Elapsed time: 29 seconds
+selectCodeEditor("Font_table.v", 420, 381); // ce (w, ck)
+// Elapsed time: 23 seconds
+selectCodeEditor("Font_table.v", 189, 438); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("Font_table.v", 516, 438); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 582, 809); // ce (w, ck)
+selectCodeEditor("Font_table.v", 80, 399); // ce (w, ck)
+selectCodeEditor("Font_table.v", 85, 401); // ce (w, ck)
+selectCodeEditor("Font_table.v", 497, 396); // ce (w, ck)
+selectCodeEditor("Font_table.v", 503, 428); // ce (w, ck)
+selectCodeEditor("Font_table.v", 337, 423); // ce (w, ck)
+selectCodeEditor("Font_table.v", 177, 459); // ce (w, ck)
+selectCodeEditor("Font_table.v", 85, 419); // ce (w, ck)
+selectCodeEditor("Font_table.v", 173, 397); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'c'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 84, 415); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 81, 814); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 85, 793); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 82, 777); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 81, 755); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 82, 736); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 81, 719); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 82, 705); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 79, 687); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 84, 673); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 83, 654); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 82, 636); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 82, 621); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 76, 691); // ce (w, ck)
+selectCodeEditor("Font_table.v", 174, 690); // ce (w, ck)
+selectCodeEditor("Font_table.v", 74, 688); // ce (w, ck)
+selectCodeEditor("Font_table.v", 85, 601); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 84, 585); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 84, 568); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 83, 550); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 83, 536); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 82, 518); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 83, 502); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 83, 488); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 84, 467); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 84, 451); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 84, 432); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 99, 412); // ce (w, ck)
+// Elapsed time: 22 seconds
+selectCodeEditor("Font_table.v", 501, 417); // ce (w, ck)
+selectCodeEditor("Font_table.v", 508, 423); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'c'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 501, 433); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+selectCodeEditor("Font_table.v", 540, 414); // ce (w, ck)
+selectCodeEditor("Font_table.v", 539, 433); // ce (w, ck)
+selectCodeEditor("Font_table.v", 503, 462); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Font_table.v", 656, 815); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Font_table.v", 692, 585); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Font_table.v", 542, 376); // ce (w, ck)
+typeControlKey((HResource) null, "Font_table.v", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("Font_table.v", 151, 365); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Font_table.v", 116, 351); // ce (w, ck)
+selectCodeEditor("Font_table.v", 120, 823); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("Font_table.v", 482, 286); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Font_table.v", 338, 343); // ce (w, ck)
+selectCodeEditor("Font_table.v", 171, 369); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Font_table.v", 397, 506); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("Font_table.v", 130, 363); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "coordinate_display.v", 2); // k (j, ck)
+// Elapsed time: 329 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Font_table.v", 3); // k (j, ck)
+selectCodeEditor("Font_table.v", 588, 543); // ce (w, ck)
+selectCodeEditor("Font_table.v", 707, 527); // ce (w, ck)
+selectComboBox("FindAndReplaceDialog.ck_Find what:", "0x", -1); // JComboBox (ck, FindAndReplaceDialog)
+selectComboBox("FindAndReplaceDialog.ck_Replace with:", "8'h", -1); // JComboBox (ck, FindAndReplaceDialog)
+selectButton("FindAndReplaceDialog.ck_Find", "Find"); // JButton (ck, FindAndReplaceDialog)
+selectCodeEditor("Font_table.v", 630, 611); // ce (w, ck)
+selectCodeEditor("Font_table.v", 568, 829); // ce (w, ck)
+selectCodeEditor("Font_table.v", 316, 745); // ce (w, ck)
+selectCodeEditor("Font_table.v", 441, 769); // ce (w, ck)
+selectCodeEditor("Font_table.v", 544, 590); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Font_table.v", 188, 337); // ce (w, ck)
+selectCodeEditor("Font_table.v", 198, 293); // ce (w, ck)
+selectCodeEditor("Font_table.v", 377, 332); // ce (w, ck)
+selectCodeEditor("Font_table.v", 215, 396); // ce (w, ck)
+selectCodeEditor("Font_table.v", 356, 367); // ce (w, ck)
+selectCodeEditor("Font_table.v", 541, 322); // ce (w, ck)
+selectCodeEditor("Font_table.v", 692, 456); // ce (w, ck)
+selectCodeEditor("Font_table.v", 610, 547); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("Font_table.v", 327, 445); // ce (w, ck)
+selectCodeEditor("Font_table.v", 162, 371); // ce (w, ck)
+selectCodeEditor("Font_table.v", 110, 361); // ce (w, ck)
+selectCodeEditor("Font_table.v", 79, 358); // ce (w, ck)
+selectCodeEditor("Font_table.v", 83, 359, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Font_table.v", 156, 346); // ce (w, ck)
+selectCodeEditor("Font_table.v", 281, 281); // ce (w, ck)
+selectCodeEditor("Font_table.v", 298, 312); // ce (w, ck)
+selectCodeEditor("Font_table.v", 452, 302); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 153 seconds
+selectCodeEditor("Font_table.v", 271, 441); // ce (w, ck)
+selectCodeEditor("Font_table.v", 658, 188); // ce (w, ck)
+selectCodeEditor("Font_table.v", 120, 314); // ce (w, ck)
+selectCodeEditor("Font_table.v", 187, 58); // ce (w, ck)
+selectCodeEditor("Font_table.v", 58, 314); // ce (w, ck)
+selectCodeEditor("Font_table.v", 115, 58); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "text_disp"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 8 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v 
+// I (ck): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // JButton (A, H)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, text_disp (text_disp.v)]", 47, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, text_disp (text_disp.v)]", 47, false, false, false, false, false, true); // B (D, ck) - Double Click
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "text_disp.v", 4); // k (j, ck)
+selectCodeEditor("text_disp.v", 26, 414); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "coordinate_display.v", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "text_disp.v", 3); // k (j, ck)
+// Elapsed time: 41 seconds
+selectCodeEditor("text_disp.v", 353, 389); // ce (w, ck)
+// Elapsed time: 112 seconds
+selectCodeEditor("text_disp.v", 25, 468); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Font_table.v", 4); // k (j, ck)
+selectCodeEditor("Font_table.v", 165, 423); // ce (w, ck)
+selectCodeEditor("Font_table.v", 176, 416); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "text_disp.v", 3); // k (j, ck)
+selectCodeEditor("text_disp.v", 100, 451); // ce (w, ck)
+selectCodeEditor("text_disp.v", 112, 433); // ce (w, ck)
+selectCodeEditor("text_disp.v", 86, 456); // ce (w, ck)
+selectCodeEditor("text_disp.v", 115, 432); // ce (w, ck)
+// Elapsed time: 25 seconds
+selectCodeEditor("text_disp.v", 163, 381); // ce (w, ck)
+selectCodeEditor("text_disp.v", 96, 402); // ce (w, ck)
+selectCodeEditor("text_disp.v", 185, 439); // ce (w, ck)
+// Elapsed time: 32 seconds
+selectCodeEditor("text_disp.v", 24, 404); // ce (w, ck)
+selectCodeEditor("text_disp.v", 26, 396); // ce (w, ck)
+selectCodeEditor("text_disp.v", 339, 419); // ce (w, ck)
+selectCodeEditor("text_disp.v", 124, 420); // ce (w, ck)
+// Elapsed time: 76 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), disp1 : coordinate_display (coordinate_display.v)]", 31); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), mic : Audio_Capture (Audio_Capture.v)]", 33, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), mic : Audio_Capture (Audio_Capture.v)]", 33, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("Audio_Capture.v", 179, 420); // ce (w, ck)
+typeControlKey((HResource) null, "Audio_Capture.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("Top_Student.v", 475, 476); // ce (w, ck)
+// Elapsed time: 16 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 39); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys3_Master.xdc]", 41, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys3_Master.xdc]", 41, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 52 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// Elapsed time: 87 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), clk10 : clk (clk20k.v)]", 7, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), clk10 : clk (clk20k.v)]", 7, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 59 seconds
+selectCodeEditor("clk20k.v", 440, 233); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "text_disp.v", 3); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectCodeEditor("text_disp.v", 379, 424); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 29 seconds
+selectCodeEditor("text_disp.v", 23, 403); // ce (w, ck)
+selectCodeEditor("text_disp.v", 28, 405); // ce (w, ck)
+selectCodeEditor("text_disp.v", 28, 404, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("text_disp.v", 38, 405); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("text_disp.v", 361, 434); // ce (w, ck)
+selectCodeEditor("text_disp.v", 197, 414); // ce (w, ck)
+selectCodeEditor("text_disp.v", 262, 404); // ce (w, ck)
+selectCodeEditor("text_disp.v", 262, 407, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("text_disp.v", 252, 411); // ce (w, ck)
+selectCodeEditor("text_disp.v", 257, 395); // ce (w, ck)
+selectCodeEditor("text_disp.v", 378, 438); // ce (w, ck)
+selectCodeEditor("text_disp.v", 345, 436); // ce (w, ck)
+selectCodeEditor("text_disp.v", 364, 438); // ce (w, ck)
+selectCodeEditor("text_disp.v", 120, 437); // ce (w, ck)
+selectCodeEditor("text_disp.v", 258, 427); // ce (w, ck)
+selectCodeEditor("text_disp.v", 336, 437); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("text_disp.v", 175, 447); // ce (w, ck)
+selectCodeEditor("text_disp.v", 202, 469); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 58 seconds
+selectCodeEditor("text_disp.v", 153, 484); // ce (w, ck)
+// Elapsed time: 116 seconds
+selectCodeEditor("text_disp.v", 115, 542); // ce (w, ck)
+selectCodeEditor("text_disp.v", 189, 508); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("text_disp.v", 196, 499); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("text_disp.v", 183, 405); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Font_table.v", 4); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "text_disp.v", 3); // k (j, ck)
+selectCodeEditor("text_disp.v", 58, 416); // ce (w, ck)
+selectCodeEditor("text_disp.v", 179, 431); // ce (w, ck)
+selectCodeEditor("text_disp.v", 228, 538); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("text_disp.v", 150, 396); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 609 MB. GUI used memory: 58 MB. Current time: 3/29/20 10:44:14 AM SGT
+// Elapsed time: 238 seconds
+selectCodeEditor("text_disp.v", 74, 481); // ce (w, ck)
+selectCodeEditor("text_disp.v", 156, 434); // ce (w, ck)
+selectCodeEditor("text_disp.v", 125, 421); // ce (w, ck)
+selectCodeEditor("text_disp.v", 123, 416); // ce (w, ck)
+selectCodeEditor("text_disp.v", 246, 541); // ce (w, ck)
+selectCodeEditor("text_disp.v", 171, 399); // ce (w, ck)
+// Elapsed time: 47 seconds
+selectCodeEditor("text_disp.v", 191, 595); // ce (w, ck)
+selectCodeEditor("text_disp.v", 184, 582); // ce (w, ck)
+selectCodeEditor("text_disp.v", 175, 575); // ce (w, ck)
+selectCodeEditor("text_disp.v", 260, 479); // ce (w, ck)
+selectCodeEditor("text_disp.v", 232, 503); // ce (w, ck)
+selectCodeEditor("text_disp.v", 315, 485); // ce (w, ck)
+// Elapsed time: 47 seconds
+selectCodeEditor("text_disp.v", 114, 531); // ce (w, ck)
+selectCodeEditor("text_disp.v", 90, 520); // ce (w, ck)
+selectCodeEditor("text_disp.v", 170, 422); // ce (w, ck)
+// Elapsed time: 52 seconds
+selectCodeEditor("text_disp.v", 35, 752); // ce (w, ck)
+selectCodeEditor("text_disp.v", 119, 521); // ce (w, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("text_disp.v", 329, 522); // ce (w, ck)
+selectCodeEditor("text_disp.v", 349, 535); // ce (w, ck)
+selectCodeEditor("text_disp.v", 144, 517); // ce (w, ck)
+selectCodeEditor("text_disp.v", 235, 548); // ce (w, ck)
+selectCodeEditor("text_disp.v", 233, 538); // ce (w, ck)
+// Elapsed time: 39 seconds
+selectCodeEditor("text_disp.v", 162, 543); // ce (w, ck)
+// Elapsed time: 95 seconds
+selectCodeEditor("text_disp.v", 5, 517); // ce (w, ck)
+selectCodeEditor("text_disp.v", 256, 541); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("text_disp.v", 208, 437); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("text_disp.v", 135, 450); // ce (w, ck)
+selectCodeEditor("text_disp.v", 161, 420); // ce (w, ck)
+selectCodeEditor("text_disp.v", 95, 415); // ce (w, ck)
+selectCodeEditor("text_disp.v", 46, 416); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("text_disp.v", 502, 496); // ce (w, ck)
+selectCodeEditor("text_disp.v", 500, 488); // ce (w, ck)
+selectCodeEditor("text_disp.v", 189, 503); // ce (w, ck)
+selectCodeEditor("text_disp.v", 50, 414); // ce (w, ck)
+selectCodeEditor("text_disp.v", 201, 504); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 16 seconds
+selectCodeEditor("text_disp.v", 226, 569); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectCodeEditor("text_disp.v", 166, 414); // ce (w, ck)
+selectCodeEditor("text_disp.v", 147, 423); // ce (w, ck)
+selectCodeEditor("text_disp.v", 195, 413); // ce (w, ck)
+selectCodeEditor("text_disp.v", 285, 584); // ce (w, ck)
+selectCodeEditor("text_disp.v", 163, 414); // ce (w, ck)
+// Elapsed time: 56 seconds
+selectCodeEditor("text_disp.v", 62, 691); // ce (w, ck)
+selectCodeEditor("text_disp.v", 320, 563); // ce (w, ck)
+selectCodeEditor("text_disp.v", 420, 551); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("text_disp.v", 291, 518); // ce (w, ck)
+selectCodeEditor("text_disp.v", 96, 539); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("text_disp.v", 166, 604); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("text_disp.v", 81, 592); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 24 seconds
+selectCodeEditor("text_disp.v", 243, 520); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("text_disp.v", 242, 583); // ce (w, ck)
+selectCodeEditor("text_disp.v", 483, 484); // ce (w, ck)
+// Elapsed time: 21 seconds
+selectCodeEditor("text_disp.v", 126, 480); // ce (w, ck)
+selectCodeEditor("text_disp.v", 622, 491); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 18 seconds
+selectCodeEditor("text_disp.v", 260, 521); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 106 seconds
+selectCodeEditor("text_disp.v", 58, 607); // ce (w, ck)
+selectCodeEditor("text_disp.v", 242, 608); // ce (w, ck)
+selectCodeEditor("text_disp.v", 307, 603); // ce (w, ck)
+selectCodeEditor("text_disp.v", 51, 582); // ce (w, ck)
+selectCodeEditor("text_disp.v", 73, 599); // ce (w, ck)
+selectCodeEditor("text_disp.v", 58, 603); // ce (w, ck)
+selectCodeEditor("text_disp.v", 329, 602); // ce (w, ck)
+selectCodeEditor("text_disp.v", 585, 382); // ce (w, ck)
+selectCodeEditor("text_disp.v", 558, 484); // ce (w, ck)
+selectCodeEditor("text_disp.v", 333, 485); // ce (w, ck)
+selectCodeEditor("text_disp.v", 297, 571); // ce (w, ck)
+selectCodeEditor("text_disp.v", 269, 607); // ce (w, ck)
+selectCodeEditor("text_disp.v", 414, 608); // ce (w, ck)
+// Elapsed time: 286 seconds
+closeMainWindow("SoundDisplay - [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.xpr] - Vivado 2018.2"); // ck
+// aj (ck): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Save Project"); // aj (ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 33 seconds
+selectCodeEditor("text_disp.v", 58, 583); // ce (w, ck)
+selectCodeEditor("text_disp.v", 281, 653); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 38 seconds
+selectCodeEditor("text_disp.v", 206, 570); // ce (w, ck)
+selectCodeEditor("text_disp.v", 86, 572); // ce (w, ck)
+selectCodeEditor("text_disp.v", 95, 574); // ce (w, ck)
+selectCodeEditor("text_disp.v", 83, 539); // ce (w, ck)
+typeControlKey(null, null, 'z');
+selectCodeEditor("text_disp.v", 83, 534); // ce (w, ck)
+selectCodeEditor("text_disp.v", 83, 520); // ce (w, ck)
+selectCodeEditor("text_disp.v", 276, 542); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("text_disp.v", 499, 513); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("text_disp.v", 88, 518); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("text_disp.v", 86, 502); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("text_disp.v", 482, 503); // ce (w, ck)
+selectCodeEditor("text_disp.v", 484, 508); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("text_disp.v", 54, 503); // ce (w, ck)
+selectCodeEditor("text_disp.v", 145, 520); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 11 seconds
+selectCodeEditor("text_disp.v", 73, 553); // ce (w, ck)
+selectCodeEditor("text_disp.v", 229, 563); // ce (w, ck)
+// Elapsed time: 26 seconds
+selectCodeEditor("text_disp.v", 223, 448); // ce (w, ck)
+selectCodeEditor("text_disp.v", 196, 431); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aE (Q, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near endmodule. [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v:39]. ]", 7, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\text_disp.v;-;;-;16;-;line;-;39;-;;-;16;-;"); // ah (O, ck)
+selectCodeEditor("text_disp.v", 392, 571); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // g (aQ, ck): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis,  Command: synth_design -top Top_Student -part xc7a35tcpg236-1. ]", 4, true); // ah (O, ck) - Node
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis,  Command: synth_design -top Top_Student -part xc7a35tcpg236-1. ]", 4); // ah (O, ck)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis,  Command: synth_design -top Top_Student -part xc7a35tcpg236-1. ]", 4); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6090] variable 'i' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v:41]. ]", 6, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\string_driver.v;-;;-;16;-;line;-;41;-;;-;16;-;"); // ah (O, ck)
+selectCodeEditor("string_driver.v", 134, 556); // ce (w, ck)
+selectCodeEditor("string_driver.v", 97, 385); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5788] Register counter_reg in module string_driver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v:30]. ]", 7, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\string_driver.v;-;;-;16;-;line;-;30;-;;-;16;-;"); // ah (O, ck)
+// Elapsed time: 16 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5788] Register counter_reg in module string_driver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v:30]. ]", 7); // ah (O, ck)
+// Elapsed time: 10 seconds
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5788] Register counter_reg in module string_driver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v:30]. ]", 7); // ah (O, ck)
+// Elapsed time: 48 seconds
+selectCodeEditor("string_driver.v", 267, 422); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("string_driver.v", 158, 454); // ce (w, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("string_driver.v", 124, 566); // ce (w, ck)
+selectCodeEditor("string_driver.v", 325, 536); // ce (w, ck)
+selectCodeEditor("string_driver.v", 206, 550); // ce (w, ck)
+// Elapsed time: 21 seconds
+selectCodeEditor("string_driver.v", 211, 569); // ce (w, ck)
+// Elapsed time: 37 seconds
+selectCodeEditor("string_driver.v", 140, 361); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5788] Register counter_reg in module string_driver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v:30]. ]", 7, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\string_driver.v;-;;-;16;-;line;-;30;-;;-;16;-;"); // ah (O, ck)
+selectCodeEditor("string_driver.v", 239, 549); // ce (w, ck)
+selectCodeEditor("string_driver.v", 249, 537); // ce (w, ck)
+selectCodeEditor("string_driver.v", 259, 537); // ce (w, ck)
+selectCodeEditor("string_driver.v", 276, 540); // ce (w, ck)
+selectCodeEditor("string_driver.v", 207, 553); // ce (w, ck)
+selectCodeEditor("string_driver.v", 266, 533); // ce (w, ck)
+selectCodeEditor("string_driver.v", 204, 556); // ce (w, ck)
+selectCodeEditor("string_driver.v", 144, 560); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("string_driver.v", 350, 553); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 37 seconds
+selectCodeEditor("string_driver.v", 306, 573); // ce (w, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'mux0' of module 'mux' requires 6 connections, but only 4 given [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:83]. ]", 9, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\Top_Student.v;-;;-;16;-;line;-;83;-;;-;16;-;"); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'mux0' of module 'mux' requires 6 connections, but only 4 given [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:83]. ]", 9, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\Top_Student.v;-;;-;16;-;line;-;83;-;;-;16;-;"); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-350] instance 'mux0' of module 'mux' requires 6 connections, but only 4 given [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:83]. ]", 9, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\Top_Student.v;-;;-;16;-;line;-;83;-;;-;16;-;"); // ah (O, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), mux0 : mux (mux.v)]", 15, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), mux0 : mux (mux.v)]", 15, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 22 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+selectCodeEditor("Top_Student.v", 250, 46); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 206, 42); // ce (w, ck)
+// Elapsed time: 25 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7); // k (j, ck)
+selectCodeEditor("mux.v", 48, 386); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("mux.v", 130, 127); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("mux.v", 145, 132); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("Top_Student.v", 47, 415); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Top_Student.v", 47, 47); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7); // k (j, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), mux0 : xil_defaultlib.mux]", 15, false); // B (D, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7); // k (j, ck)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7, true, false); // k (j, ck) - Popup Trigger
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Student (Top_Student.v), char1 : char_disp (char_disp.v)]", 17, false); // B (D, ck)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "mux1"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 5 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/mux1.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/mux1.v 
+// I (ck): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // JButton (A, H)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("mux.v", 86, 449); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+typeControlKey((HResource) null, "mux.v", 'c'); // ce (w, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mux1 (mux1.v)]", 37, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mux1 (mux1.v)]", 37, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("mux1.v", 48, 422); // ce (w, ck)
+selectCodeEditor("mux1.v", 86, 426); // ce (w, ck)
+selectCodeEditor("mux1.v", 85, 426, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("mux1.v", 105, 432); // ce (w, ck)
+selectCodeEditor("mux1.v", 108, 432, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("mux1.v", 69, 431); // ce (w, ck)
+typeControlKey((HResource) null, "mux1.v", 'v'); // ce (w, ck)
+selectCodeEditor("mux1.v", 90, 379); // ce (w, ck)
+selectCodeEditor("mux1.v", 373, 425); // ce (w, ck)
+selectCodeEditor("mux1.v", 314, 386); // ce (w, ck)
+selectCodeEditor("mux1.v", 412, 385); // ce (w, ck)
+selectCodeEditor("mux1.v", 293, 420); // ce (w, ck)
+selectCodeEditor("mux1.v", 284, 424); // ce (w, ck)
+selectCodeEditor("mux1.v", 367, 365); // ce (w, ck)
+selectCodeEditor("mux1.v", 482, 368); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Top_Student.v", 157, 65); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Top_Student.v", 209, 56); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7); // k (j, ck)
+selectCodeEditor("mux.v", 657, 344); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 609 MB. GUI used memory: 58 MB. Current time: 3/29/20 11:14:14 AM SGT
+selectCodeEditor("Top_Student.v", 664, 446); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// bx (ck):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Sun Mar 29 11:14:20 2020] Launched synth_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (ck)
+selectCodeEditor("Top_Student.v", 410, 518); // ce (w, ck)
+// TclEventType: RUN_FAILED
+// ah (ck): Synthesis Failed: addNotify
+// Elapsed time: 20 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Failed"); // ah (ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'mux' not found [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:113]. ]", 8, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\Top_Student.v;-;;-;16;-;line;-;113;-;;-;16;-;"); // ah (O, ck)
+selectCodeEditor("Top_Student.v", 50, 556); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6090] variable 'i' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v:41]. ]", 6, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\string_driver.v;-;;-;16;-;line;-;41;-;;-;16;-;"); // ah (O, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("string_driver.v", 213, 436); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 26 seconds
+selectCodeEditor("string_driver.v", 204, 564); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("string_driver.v", 328, 544); // ce (w, ck)
+selectCodeEditor("string_driver.v", 349, 553); // ce (w, ck)
+selectCodeEditor("string_driver.v", 312, 525); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("string_driver.v", 344, 547); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("string_driver.v", 331, 523); // ce (w, ck)
+selectCodeEditor("string_driver.v", 352, 530); // ce (w, ck)
+selectCodeEditor("string_driver.v", 278, 573); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("string_driver.v", 184, 534); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("string_driver.v", 69, 264); // ce (w, ck)
+// Elapsed time: 31 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "string_driver.v", 6); // k (j, ck)
+// Elapsed time: 36 seconds
+selectCodeEditor("string_driver.v", 235, 553); // ce (w, ck)
+selectCodeEditor("string_driver.v", 331, 552); // ce (w, ck)
+selectCodeEditor("string_driver.v", 257, 550); // ce (w, ck)
+selectCodeEditor("string_driver.v", 229, 550); // ce (w, ck)
+selectCodeEditor("string_driver.v", 162, 537); // ce (w, ck)
+selectCodeEditor("string_driver.v", 243, 552); // ce (w, ck)
+// Elapsed time: 17 seconds
+selectCodeEditor("string_driver.v", 273, 535); // ce (w, ck)
+// Elapsed time: 12 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("string_driver.v", 338, 562); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 11 seconds
+selectCodeEditor("string_driver.v", 131, 591); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("string_driver.v", 110, 551); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("string_driver.v", 276, 558); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 29 seconds
+selectCodeEditor("string_driver.v", 71, 264); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 31 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// bx (ck):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Sun Mar 29 11:19:18 2020] Launched synth_1... Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (ck)
+// Elapsed time: 34 seconds
+selectCodeEditor("string_driver.v", 149, 582); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// ah (ck): Synthesis Completed: addNotify
+// Elapsed time: 22 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Completed"); // ah (ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-5788] Register i_reg in module string_driver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v:31]. ]", 6, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\string_driver.v;-;;-;16;-;line;-;31;-;;-;16;-;"); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-327] inferring latch for variable 'seg_reg' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch_output.v:27]. ]", 11, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.srcs\sources_1\new\stopwatch_output.v;-;;-;16;-;line;-;27;-;;-;16;-;"); // ah (O, ck)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be removed from module string_driver.. ]", 12); // ah (O, ck)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be removed from module string_driver.. ]", 12); // ah (O, ck)
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// Elapsed time: 100 seconds
+selectCodeEditor("Top_Student.v", 332, 262); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 49, 365); // ce (w, ck)
+typeControlKey((HResource) null, "Top_Student.v", 'v'); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 56, 383); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 40, 231); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 51 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux1.v", 8); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.v", 7); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Top_Student.v", 1); // k (j, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 17 seconds
+selectCodeEditor("Top_Student.v", 382, 390); // ce (w, ck)
+selectCodeEditor("Top_Student.v", 382, 437); // ce (w, ck)

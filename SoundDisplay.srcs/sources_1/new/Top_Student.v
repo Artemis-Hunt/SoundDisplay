@@ -80,7 +80,7 @@ module Top_Student (
     single_pulse down(clk20sig, btnD, down_sel);
     
     //Multiplexer between raw mic data and peak volume meter
-    mux mux0(mic_raw, ledBar, sw[0], mic_out);
+    mux1 mux0(mic_raw, ledBar, sw[0], mic_out);
     assign led = mic_out;
     
     ///VOLUME LEVEL DISPLAY FOR 7SEG///
@@ -100,18 +100,20 @@ module Top_Student (
     char_disp str_3(char[3], charseg[3]);
     ///TEXT SCROLLING///
     
-    //mux for 7-seg
-    //sw1 off = second input; on = first input
-    mux muxseg0(bcdseg[0], charseg[0], watch0, sw[1], sw[9], segData[0]);
-    mux muxseg1(bcdseg[1], charseg[1], watch1, sw[1], sw[9], segData[1]);
-    mux muxseg2(8'b11111111, charseg[2], watch2, sw[1], sw[9], segData[2]);
-    mux muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
+    //mux for volume level || string || stopwatch
+    //sw9 on = stopwatch mode, else sw1 on = volume level, sw1 off = string
+    mux3to1 muxseg0(bcdseg[0], charseg[0], watch0, sw[1], sw[9], segData[0]);
+    mux3to1 muxseg1(bcdseg[1], charseg[1], watch1, sw[1], sw[9], segData[1]);
+    mux3to1 muxseg2(8'b11111111, charseg[2], watch2, sw[1], sw[9], segData[2]);
+    mux3to1 muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
     ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
     
-    mux muxFinal(customSeg, segY, customFlag, seg);
-    mux muxFinal2(customAnode, anY, customFlag, an);
+    //mux for 7-seg
+    //sw1 off = second input; on = first input
+    mux1 muxFinal(customSeg, segY, customFlag, seg);
+    mux1 muxFinal2(customAnode, anY, customFlag, an);
     
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 

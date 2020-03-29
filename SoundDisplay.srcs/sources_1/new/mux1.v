@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11.03.2020 15:42:28
+// Create Date: 29.03.2020 11:13:21
 // Design Name: 
-// Module Name: mux3to1
+// Module Name: mux1
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux3to1(input [15:0]sig1, sig2, watchSeg, input ctrl, watchMode, output [15:0] opt);
+module mux1(input [15:0]sig1, sig2, input ctrl,output [15:0] opt);
 
-    assign opt = (watchMode) ? watchSeg : (ctrl) ? sig1 : sig2; //Ctrl on == sig1
+    assign opt = (ctrl) ? sig1 : sig2; //Ctrl on == sig1
     
 endmodule
