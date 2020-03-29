@@ -102,10 +102,10 @@ module Top_Student (
     
     //mux for volume level || string || stopwatch
     //sw9 on = stopwatch mode, else sw1 on = volume level, sw1 off = string
-    mux3to1 muxseg0(bcdseg[0], charseg[0], watch0, sw[1], sw[9], segData[0]);
-    mux3to1 muxseg1(bcdseg[1], charseg[1], watch1, sw[1], sw[9], segData[1]);
-    mux3to1 muxseg2(8'b11111111, charseg[2], watch2, sw[1], sw[9], segData[2]);
-    mux3to1 muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
+    mux3to1 muxseg0(bcdseg[0], charseg[0], watch3, sw[1], sw[9], segData[0]);
+    mux3to1 muxseg1(bcdseg[1], charseg[1], watch2, sw[1], sw[9], segData[1]);
+    mux3to1 muxseg2(8'b11111111, charseg[2], watch1, sw[1], sw[9], segData[2]);
+    mux3to1 muxseg3(8'b11111111, charseg[3], watch0, sw[1], sw[9], segData[3]);
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
     ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
