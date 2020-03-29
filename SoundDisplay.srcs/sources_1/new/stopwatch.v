@@ -36,9 +36,9 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
         if(enable == 1)
         begin
             if(start == 1)
-                start_flag <= 1;
+                start_flag = 1;
             if(reset == 1)
-                start_flag <= 0;
+                start_flag = 0;
         end     
     end
     
@@ -47,33 +47,38 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
     begin
         if(reset == 1) //Reset stopwatch
         begin
-            second_count <= 0;
-            minute_count <= 0;
-            minute_tens_count <= 0;
-            second_tens_count <= 0;
+            second_count = 0;
+            minute_count = 0;
+            minute_tens_count = 0;
+            second_tens_count = 0;
+            seconds = 0;
+            minutes = 0;
         end
         else
         begin
             if(start_flag == 1 && pause == 0)
-                second_count <= second_count + 1;
-        
-            if(second_count == 3601) //Hold value when maxed out
-                second_count <= 3601;
+                second_count = second_count + 1;
             
-            if((second_count % 60 == 0) && (start_flag == 1 && pause == 0)) //Calculate minutes
-                minute_count <= minute_count + 1;
-        
-            if(minute_count % 10 == 0) //10 minute blocks
-                minute_tens_count <= minute_tens_count + 1;
-            
-            if(second_count % 10 == 0) //10 second blocks
-                second_tens_count <= second_tens_count + 1;
-            if(second_tens_count == 6)
-                second_tens_count <= 0;
+            if(second_count == 3600) //Hold at max count
+                second_count = 3600;
                 
-            seconds <= second_count % 10;
-            minutes <= minute_count % 10;
-        end
+            seconds = second_count % 10; //Dislay seconds 0 - 9
+            
+            if((second_count != 0) && ((second_count % 10) == 0)) //Every 10 second, update the tenths count
+                second_tens_count = second_tens_count + 1;
+            if(second_tens_count == 6) //Every 60 seconds = 1 minute
+            begin
+                second_tens_count = 0;
+                minute_count = minute_count + 1;
+            end
+            
+            minutes = minute_count % 10; //Display minute
+            
+            if((minute_count != 0) && ((minute_count % 10) == 0)) //Every 10 minute, shift to tenths count
+                minute_tens_count = minute_tens_count + 1;    
+            if(minute_tens_count == 6)
+                minute_tens_count = 6;
+        end 
     end
     
     //Output 7-seg
