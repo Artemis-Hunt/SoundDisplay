@@ -102,16 +102,16 @@ module Top_Student (
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
-    mux muxseg0(bcdseg[0], charseg[0], watch0, sw[1], sw[9], segData[0]);
-    mux muxseg1(bcdseg[1], charseg[1], watch1, sw[1], sw[9], segData[1]);
-    mux muxseg2(8'b11111111, charseg[2], watch2, sw[1], sw[9], segData[2]);
-    mux muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
+    mux muxseg0(bcdseg[0], charseg[0], watch3, sw[1], sw[9], segData[0]);
+    mux muxseg1(bcdseg[1], charseg[1], watch2, sw[1], sw[9], segData[1]);
+    mux muxseg2(8'b11111111, charseg[2], watch1, sw[1], sw[9], segData[2]);
+    mux muxseg3(8'b11111111, charseg[3], watch0, sw[1], sw[9], segData[3]);
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
     ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
     
-    mux muxFinal(customSeg, segY, customFlag, seg);
-    mux muxFinal2(customAnode, anY, customFlag, an);
+    mux muxFinal(customSeg, segY, segY, customFlag, sw[9], seg);
+    mux muxFinal2(customAnode, anY, anY, customFlag, sw[9], an);
     
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
@@ -119,7 +119,7 @@ module Top_Student (
                                  pixel_index, pixel_data, customFlag, sw[9]);
                                  
     //Stopwatch Module
-    stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, up_sel, watch0, watch1, watch2, watch3);
+    stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, sw[8], watch0, watch1, watch2, watch3);
               
     //Mic and OLED modules
     Audio_Capture mic(CLK100MHZ, clk20ksig, J_MIC3_Pin3, J_MIC3_Pin1,J_MIC3_Pin4, mic_in); 
