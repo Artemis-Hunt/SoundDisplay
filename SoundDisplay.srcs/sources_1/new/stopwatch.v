@@ -49,6 +49,8 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
         begin
             second_count <= 0;
             minute_count <= 0;
+            minute_tens_count <= 0;
+            second_tens_count <= 0;
         end
         else
         begin
@@ -58,7 +60,7 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
             if(second_count == 3601) //Hold value when maxed out
                 second_count <= 3601;
             
-            if(second_count % 60 == 0) //Calculate minutes
+            if((second_count % 60 == 0) && (start_flag == 1 && pause == 0)) //Calculate minutes
                 minute_count <= minute_count + 1;
         
             if(minute_count % 10 == 0) //10 minute blocks

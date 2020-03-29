@@ -39,3 +39,5 @@ reset_run synth_1
 launch_runs synth_1 -jobs 8
 [Sun Mar 29 11:19:18 2020] Launched synth_1...
 Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

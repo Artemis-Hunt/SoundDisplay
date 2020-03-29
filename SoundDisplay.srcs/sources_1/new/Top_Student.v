@@ -121,7 +121,7 @@ module Top_Student (
                                  pixel_index, pixel_data, customFlag, sw[9]);
                                  
     //Stopwatch Module
-    stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, up_sel, watch0, watch1, watch2, watch3);
+    stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, sw[8], watch0, watch1, watch2, watch3);
               
     //Mic and OLED modules
     Audio_Capture mic(CLK100MHZ, clk20ksig, J_MIC3_Pin3, J_MIC3_Pin1,J_MIC3_Pin4, mic_in); 
