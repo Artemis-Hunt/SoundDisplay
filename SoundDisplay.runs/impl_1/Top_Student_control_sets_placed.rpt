@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun Mar 29 15:19:26 2020
+| Date         : Sun Mar 29 16:23:12 2020
 | Host         : WIN8-PC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
 | Design       : Top_Student
@@ -65,58 +65,58 @@ Table of Contents
 |        Clock Signal       |          Enable Signal          |             Set/Reset Signal             | Slice Load Count | Bel Load Count |
 +---------------------------+---------------------------------+------------------------------------------+------------------+----------------+
 | ~clk6p25msig_BUFG         |                                 |                                          |                1 |              2 |
-|  clk20sig_BUFG            | disp1/custombackgrd/number1     |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/custombackgrd/number2     |                                          |                1 |              8 |
+|  clk20sig_BUFG            | disp1/customLow/number3         |                                          |                2 |              8 |
 |  clk6p25msig_BUFG         | disp1/coord/E[0]                |                                          |                3 |              8 |
-|  clk20sig_BUFG            | disp1/custombackgrd/number3     |                                          |                2 |              8 |
 |  clk20sig_BUFG            | disp1/customborder/number0      |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customborder/number2      |                                          |                2 |              8 |
+|  J_MIC3_Pin1_OBUF_BUFG    | maxLED[3]_i_1_n_0               |                                          |                4 |              8 |
+|  clk20sig_BUFG            | disp1/hold_volume[3]_i_1_n_0    |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/button_counter[3]_i_2_n_0 | disp1/button_counter[3]_i_1_n_0          |                1 |              8 |
+|  clk20sig_BUFG            | disp1/customLow/number0         |                                          |                3 |              8 |
+|  clk20sig_BUFG            | disp1/customMed/number0         |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/customMed/number2         |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/customMed/number3         |                                          |                1 |              8 |
+|  clk20sig_BUFG            | disp1/customLow/number2         |                                          |                1 |              8 |
+|  clk20sig_BUFG            | disp1/customMed/number1         |                                          |                1 |              8 |
+|  clk20sig_BUFG            |                                 | disp1/custom_volume                      |                2 |              8 |
+|  clk20sig_BUFG            | disp1/customLow/number1         |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/custombackgrd/number2     |                                          |                1 |              8 |
+|  clk20sig_BUFG            | disp1/custombackgrd/number3     |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/custombackgrd/number0     |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/custombackgrd/number1     |                                          |                2 |              8 |
 |  clk20sig_BUFG            | disp1/customborder/number3      |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customHigh/number2        |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/customborder/number2      |                                          |                2 |              8 |
 |  clk20sig_BUFG            | disp1/customborder/number1      |                                          |                3 |              8 |
-|  clk20sig_BUFG            | disp1/customHigh/number3        |                                          |                2 |              8 |
 |  clk20sig_BUFG            | disp1/customHigh/number0        |                                          |                2 |              8 |
 |  clk20sig_BUFG            | disp1/customHigh/number1        |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customLow/number0         |                                          |                3 |              8 |
-|  clk20sig_BUFG            | disp1/customLow/number1         |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customLow/number2         |                                          |                1 |              8 |
-|  J_MIC3_Pin1_OBUF_BUFG    | maxLED[3]_i_1_n_0               |                                          |                4 |              8 |
-|  clk20sig_BUFG            | disp1/customLow/number3         |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customMed/number2         |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customMed/number0         |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customMed/number1         |                                          |                1 |              8 |
-|  clk20sig_BUFG            | disp1/button_counter[3]_i_2_n_0 | disp1/button_counter[3]_i_1_n_0          |                1 |              8 |
-|  clk20sig_BUFG            | disp1/custombackgrd/number0     |                                          |                2 |              8 |
-|  clk20sig_BUFG            | disp1/hold_volume[3]_i_1_n_0    |                                          |                2 |              8 |
-|  clk20sig_BUFG            |                                 | disp1/custom_volume                      |                2 |              8 |
-|  clk20sig_BUFG            | disp1/customMed/number3         |                                          |                1 |              8 |
+|  clk20sig_BUFG            | disp1/customHigh/number3        |                                          |                2 |              8 |
+|  clk20sig_BUFG            | disp1/customHigh/number2        |                                          |                2 |              8 |
 |  ledDriver/clk600/slowclk |                                 |                                          |                1 |             10 |
-|  clk4sig_BUFG             |                                 | strdriv/char0[6]_i_1_n_0                 |                1 |             10 |
 |  clk4sig_BUFG             |                                 | strdriv/char3[6]_i_1_n_0                 |                2 |             10 |
 |  clk4sig_BUFG             |                                 | strdriv/char2[6]_i_1_n_0                 |                2 |             10 |
 |  clk4sig_BUFG             |                                 | strdriv/char1[6]_i_1_n_0                 |                1 |             10 |
+|  clk4sig_BUFG             |                                 | strdriv/char0[6]_i_1_n_0                 |                1 |             10 |
 |  clk4sig_BUFG             | strdriv/i                       |                                          |                2 |             12 |
 |  ledDriver/clk600/slowclk | ledDriver/seg[6]_i_1_n_0        |                                          |                5 |             14 |
 |  clk6p25msig_BUFG         | disp1/OLED_colour[15]_i_2_n_0   | disp1/textTest1/OLED_colour_reg[9]       |                3 |             14 |
 |  CLK100MHZ_IBUF_BUFG      |                                 |                                          |                8 |             16 |
 |  clk6p25msig_BUFG         | disp1/OLED_colour[15]_i_2_n_0   | disp1/nolabel_line60/OLED_colour_reg[15] |                4 |             16 |
 | ~mic/J_MIC3_Pin4_OBUF     |                                 |                                          |                6 |             24 |
-|  CLK100MHZ_IBUF_BUFG      |                                 | J_MIC3_Pin1_OBUF_BUFG                    |                3 |             24 |
 |  J_MIC3_Pin1_OBUF_BUFG    |                                 |                                          |                7 |             24 |
 |  J_MIC3_Pin1_OBUF_BUFG    |                                 | mic/SR[0]                                |                5 |             24 |
+|  CLK100MHZ_IBUF_BUFG      |                                 | J_MIC3_Pin1_OBUF_BUFG                    |                3 |             24 |
 |  J_MIC3_Pin1_OBUF_BUFG    |                                 | maxLED[3]_i_1_n_0                        |                4 |             26 |
 |  clk4sig_BUFG             |                                 |                                          |                8 |             30 |
 | ~clk6p25msig_BUFG         |                                 | oled/frame_counter[16]_i_1_n_0           |                5 |             34 |
 | ~clk6p25msig_BUFG         | oled/delay[0]_i_1_n_0           |                                          |                5 |             40 |
 |  clk20sig_BUFG            |                                 |                                          |               17 |             62 |
-|  CLK100MHZ_IBUF_BUFG      |                                 | clk1/clear                               |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG      |                                 | clk20/clear                              |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG      |                                 | clk20k/clear                             |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG      |                                 | clk4/clear                               |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG      |                                 | clk625m/clear                            |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG      |                                 | ledDriver/clk600/clear                   |                8 |             64 |
 |  CLK100MHZ_IBUF_BUFG      |                                 | clk361/clear                             |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG      |                                 | ledDriver/clk600/clear                   |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG      |                                 | clk20k/clear                             |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG      |                                 | clk20/clear                              |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG      |                                 | clk625m/clear                            |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG      |                                 | clk4/clear                               |                8 |             64 |
 |  clk6p25msig_BUFG         |                                 |                                          |               19 |             64 |
+|  CLK100MHZ_IBUF_BUFG      |                                 | clk1/clear                               |                8 |             64 |
 | ~clk6p25msig_BUFG         | oled/state                      |                                          |                9 |             64 |
 | ~clk6p25msig_BUFG         |                                 | oled/spi_word[39]_i_1_n_0                |               20 |             90 |
 |  clk1sig_BUFG             |                                 | down/dff1/AR[0]                          |               16 |            108 |
