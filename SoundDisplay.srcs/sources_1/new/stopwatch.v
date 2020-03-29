@@ -74,10 +74,10 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
             
             minutes = minute_count % 10; //Display minute
             
-            if((minute_count != 0) && ((minute_count % 10) == 0)) //Every 10 minute, shift to tenths count
-                minute_tens_count = minute_tens_count + 1;    
-            if(minute_tens_count == 6)
-                minute_tens_count = 6;
+            minute_tens_count = minute_count/10;   
+             
+            if(minute_count >= 60)
+                minute_count = 0;
         end 
     end
     
