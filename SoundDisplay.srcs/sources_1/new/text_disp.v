@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module text_disp(input clock, currX, currY, startX, startY, input [7:0] char, output reg pixel);
+module text_disp(input clock, input [6:0] currX, currY, startX, startY, input [7:0] char, output reg pixel);
     reg startFlag = 0;
     reg [3:0] row = 0, index = 0;
     wire [64:1] data;

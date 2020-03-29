@@ -54,8 +54,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     volume_bar volume1(x_coord, y_coord, clock, bar_onOff, input_volume, volume_out, blink_clock, mode_low, mode_med, mode_high, customColour); 
     
     //Text modules
-    text_select text1(text_clock, text_onOff, text_x, text_y, letter_code);
-    dictionary dictionary1(clock, x_coord, y_coord, text_x, text_y, letter_code, text_out);
+    text_disp text(clock, x_coord, y_coord, 6, 10, "A", text_out);
     
     //Modules to enable custom colours
     custom_border customborder(text_clock, button_clock, blink_clock, mid_sel, right_sel, left_sel, up_sel, 
@@ -124,6 +123,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         */
         //End of testing block
         
+        //Hold volume
         if(pause == 0)
             hold_volume = mic_volume;
         

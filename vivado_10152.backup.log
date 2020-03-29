@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Mar 29 11:34:32 2020
+# Process ID: 10152
+# Current directory: C:/School/Y1S2/EE2026/SoundDisplay
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11204 C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr
+# Log file: C:/School/Y1S2/EE2026/SoundDisplay/vivado.log
+# Journal file: C:/School/Y1S2/EE2026/SoundDisplay\vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script 'C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/Vivado_init.tcl'
+start_gui
+open_project C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 11:37:24 2020...
