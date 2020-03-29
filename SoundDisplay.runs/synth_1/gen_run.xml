@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585453449">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585457613">
   <File Type="PA-TCL" Name="Top_Student.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Top_Student_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Top_Student_reports.tcl"/>
@@ -15,6 +15,13 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/Audio_Capture.v"/>
         <Attr Name="ImportTime" Val="1570395503"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Font_table.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -117,15 +124,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/dictionary.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dictionary.v"/>
-        <Attr Name="ImportTime" Val="1585387521"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/EE2026-Design-Project-master/draw_border.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../EE2026-Design-Project-master/draw_border.v"/>
@@ -192,6 +190,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/str_oled.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/string_driver.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/string_driver.v"/>
@@ -201,10 +206,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/text_select.v">
+    <File Path="$PSRCDIR/sources_1/new/text_disp.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/text_select.v"/>
-        <Attr Name="ImportTime" Val="1585387499"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -278,22 +281,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/archive_project_summary.txt"/>
-    <File Path="$PSRCDIR/sources_1/new/Font_table.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/text_disp.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="Top_Student"/>

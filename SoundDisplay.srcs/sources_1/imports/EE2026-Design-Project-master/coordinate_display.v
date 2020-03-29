@@ -29,9 +29,9 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
-    wire border_out, text_out;
+    wire border_out, text_out, string_out;
     wire [1:0] volume_out;
-    reg [1:0] colour_select = 0;
+    reg [2:0] colour_select = 0;
     reg [3:0] hold_volume = 0;
     reg [3:0] input_volume = 0;
     wire [6:0] text_x, text_y;
@@ -54,7 +54,8 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     volume_bar volume1(x_coord, y_coord, clock, bar_onOff, input_volume, volume_out, blink_clock, mode_low, mode_med, mode_high, customColour); 
     
     //Text modules
-    text_disp text(clock, x_coord, y_coord, 6, 10, "A", text_out);
+//    text_disp text(clock, x_coord, y_coord, 6, 10, "A", text_out);
+    str_oled(clock, x_coord, y_coord, 1, "HELLO", string_out);
     
     //Modules to enable custom colours
     custom_border customborder(text_clock, button_clock, blink_clock, mid_sel, right_sel, left_sel, up_sel, 
@@ -81,8 +82,8 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
             end
             if(right_sel == 1) //Scroll right to choose theme
             begin
-                if(colour_select == 3)
-                    colour_select <= 3;
+                if(colour_select == 4)
+                    colour_select <= 4;
                 else
                     colour_select <= colour_select + 1;
             end
@@ -144,6 +145,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         2'd2: OLED_colour = (volume_out == 3) ? 16'h2145 : (volume_out == 2) ? 16'h9534 : (volume_out == 1) ? 16'h57B9 : (border_out) ? 16'hFCA0 : 16'h9841;
         2'd3: OLED_colour = (volume_out == 3) ? high_colour : (volume_out == 2) ? med_colour : (volume_out == 1) ? low_colour : (border_out) ? 
                                 border_colour : (mode_background == 1 && back_blink == 0) ? 16'h3186 : background_colour;
+        3'd4: OLED_colour = string_out;
         endcase
     end
     

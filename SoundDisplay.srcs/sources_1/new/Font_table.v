@@ -50,6 +50,7 @@ module font(input [7:0] char, output reg [64:1] data);
             "X": data = {8'hC6, 8'h6C, 8'h38, 8'h38, 8'h38, 8'h6C, 8'hC6, 8'h00};   // Char 088 (X)
             "Y": data = {8'h66, 8'h66, 8'h66, 8'h3C, 8'h18, 8'h18, 8'h3C, 8'h00};   // Char 089 (Y)
             "Z": data = {8'hFE, 8'hC6, 8'h8C, 8'h18, 8'h32, 8'h66, 8'hFE, 8'h00};   // Char 090 (Z)
+            default: data = {16{1'b1}};                                             // Unknown character
         endcase
     end
 endmodule

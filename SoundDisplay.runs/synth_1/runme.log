@@ -8,15 +8,16 @@
   **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
+Sourcing tcl script 'C:/Users/Taylor/AppData/Roaming/Xilinx/Vivado/Vivado_init.tcl'
 source Top_Student.tcl -notrace
 Command: synth_design -top Top_Student -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16140 
+INFO: Helper process launched with PID 18128 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 356.453 ; gain = 100.230
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 372.121 ; gain = 97.297
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 	Parameter MIN_VOL bound to: 2000 - type: integer 
@@ -95,40 +96,56 @@ WARNING: [Synth 8-6014] Unused sequential element low_volume_reg was removed.  [
 WARNING: [Synth 8-6014] Unused sequential element medium_volume_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/volume_bar.v:65]
 WARNING: [Synth 8-6014] Unused sequential element high_volume_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/volume_bar.v:66]
 INFO: [Synth 8-6155] done synthesizing module 'volume_bar' (12#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/volume_bar.v:24]
-INFO: [Synth 8-6157] synthesizing module 'text_select' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_select.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_select.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'text_select' (13#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_select.v:23]
-INFO: [Synth 8-6157] synthesizing module 'dictionary' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/dictionary.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'dictionary' (14#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/dictionary.v:23]
+INFO: [Synth 8-6157] synthesizing module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:23]
+INFO: [Synth 8-6157] synthesizing module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v:23]
+INFO: [Synth 8-6157] synthesizing module 'font' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Font_table.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'font' (13#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Font_table.v:23]
+WARNING: [Synth 8-6014] Unused sequential element startFlag_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v:32]
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v:32]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'text_disp' (14#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:28]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:29]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:30]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:31]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:32]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:33]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:34]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:35]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:36]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:37]
+WARNING: [Synth 8-689] width (32) of port connection 'startY' does not match port width (7) of module 'text_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'str_oled' (15#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_border' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
 INFO: [Synth 8-6157] synthesizing module 'colourHex_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'colourHex_disp' (15#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'colourHex_disp' (16#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_border' (16#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_border' (17#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_background' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_background' (17#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_background' (18#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_low' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_low' (18#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_low' (19#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_med' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_med' (19#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_med' (20#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_high' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_high' (20#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_high' (21#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:101]
-INFO: [Synth 8-6155] done synthesizing module 'coordinate_display' (21#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:25]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:142]
+INFO: [Synth 8-6155] done synthesizing module 'coordinate_display' (22#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:25]
 WARNING: [Synth 8-689] width (5) of port connection 'mic_volume' does not match port width (4) of module 'coordinate_display' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:119]
 INFO: [Synth 8-6157] synthesizing module 'stopwatch' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:23]
 INFO: [Synth 8-6157] synthesizing module 'stopwatch_output' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch_output.v:22]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch_output.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'stopwatch_output' (22#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch_output.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch_output' (23#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch_output.v:22]
 WARNING: [Synth 8-5788] Register seconds_reg in module stopwatch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:74]
 WARNING: [Synth 8-5788] Register minutes_reg in module stopwatch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'stopwatch' (23#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch' (24#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Audio_Capture' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'Audio_Capture' (24#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Audio_Capture' (25#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -183,7 +200,7 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/School/Y1S2/EE2026/S
 INFO: [Synth 8-226] default block is never used [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:124]
 INFO: [Synth 8-226] default block is never used [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:201]
 WARNING: [Synth 8-693] zero replication count - replication ignored [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:349]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (25#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (26#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
 WARNING: [Synth 8-324] index 16 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:159]
 WARNING: [Synth 8-324] index 17 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:159]
 WARNING: [Synth 8-324] index 18 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:159]
@@ -200,12 +217,13 @@ WARNING: [Synth 8-324] index 28 out of range [C:/School/Y1S2/EE2026/SoundDisplay
 WARNING: [Synth 8-324] index 29 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:159]
 WARNING: [Synth 8-324] index 30 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:159]
 WARNING: [Synth 8-324] index 31 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:159]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (26#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (27#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 WARNING: [Synth 8-3331] design custom_high has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_med has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_low has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_background has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_border has unconnected port mid_sel
+WARNING: [Synth 8-3331] design coordinate_display has unconnected port text_onOff
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JC[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[7]
@@ -215,7 +233,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 417.375 ; gain = 161.152
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 433.180 ; gain = 158.355
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -228,10 +246,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 417.375 ; gain = 161.152
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 433.180 ; gain = 158.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 417.375 ; gain = 161.152
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 433.180 ; gain = 158.355
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -247,28 +265,29 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 766.254 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.007 . Memory (MB): peak = 783.031 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 766.254 ; gain = 510.031
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 783.031 ; gain = 508.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 766.254 ; gain = 510.031
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 783.031 ; gain = 508.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 766.254 ; gain = 510.031
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 783.031 ; gain = 508.207
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "seg" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "i" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "seg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "x" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v:31]
 INFO: [Synth 8-5544] ROM "number0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "number1" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "number2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -344,7 +363,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [C:/School/Y1S2/EE
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 766.254 ; gain = 510.031
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 783.031 ; gain = 508.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -357,18 +376,17 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 2     
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input     13 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 4     
-	   2 Input      8 Bit       Adders := 8     
-	   2 Input      7 Bit       Adders := 2     
+	   3 Input      8 Bit       Adders := 22    
 	   2 Input      6 Bit       Adders := 2     
 	   2 Input      5 Bit       Adders := 2     
 	  15 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 42    
-	   2 Input      3 Bit       Adders := 16    
-	   2 Input      2 Bit       Adders := 2     
+	   3 Input      4 Bit       Adders := 22    
+	   2 Input      3 Bit       Adders := 18    
 +---Registers : 
 	               40 Bit    Registers := 1     
 	               32 Bit    Registers := 1     
@@ -377,14 +395,16 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 4     
 	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 10    
-	                7 Bit    Registers := 5     
+	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 2     
-	                5 Bit    Registers := 4     
-	                4 Bit    Registers := 31    
-	                3 Bit    Registers := 11    
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 29    
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 32    
+	                3 Bit    Registers := 12    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 40    
 +---Muxes : 
+	  28 Input     64 Bit        Muxes := 11    
+	   2 Input     64 Bit        Muxes := 11    
 	   2 Input     40 Bit        Muxes := 3     
 	   2 Input     32 Bit        Muxes := 3     
 	  32 Input     32 Bit        Muxes := 1     
@@ -392,8 +412,7 @@ Detailed RTL Component Info :
 	   2 Input     17 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 13    
 	   4 Input     16 Bit        Muxes := 2     
-	   5 Input     16 Bit        Muxes := 1     
-	   8 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 2     
 	  16 Input     16 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 3     
@@ -401,24 +420,21 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit        Muxes := 14    
 	   5 Input      8 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 5     
-	   2 Input      7 Bit        Muxes := 3     
-	   4 Input      7 Bit        Muxes := 1     
 	  32 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 4     
-	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
 	  32 Input      5 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 96    
+	   2 Input      4 Bit        Muxes := 129   
 	   4 Input      4 Bit        Muxes := 5     
 	   7 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 21    
+	   2 Input      3 Bit        Muxes := 24    
 	   5 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 109   
+	   2 Input      1 Bit        Muxes := 107   
 	   3 Input      1 Bit        Muxes := 3     
 	   5 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 5     
 	   7 Input      1 Bit        Muxes := 13    
+	   6 Input      1 Bit        Muxes := 1     
 	  11 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -508,28 +524,27 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   5 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 3     
-Module text_select 
+Module font 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      7 Bit       Adders := 2     
-+---Registers : 
-	                7 Bit    Registers := 3     
-	                5 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      7 Bit        Muxes := 3     
-	   4 Input      7 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 1     
-	   4 Input      5 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 1     
-Module dictionary 
+	  28 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 1     
+Module text_disp 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      8 Bit       Adders := 8     
+	   3 Input      8 Bit       Adders := 2     
+	   3 Input      4 Bit       Adders := 2     
 +---Registers : 
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+Module str_oled 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 Module custom_border 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -614,23 +629,23 @@ Module coordinate_display
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      4 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
 +---Registers : 
 	               16 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 7     
 +---Muxes : 
 	   4 Input     16 Bit        Muxes := 2     
-	   5 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 2     
-	   8 Input     16 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 4     
 	   7 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 14    
 	   7 Input      1 Bit        Muxes := 13    
+	   6 Input      1 Bit        Muxes := 1     
 Module stopwatch_output 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -702,6 +717,17 @@ INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size 
 INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk600/slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "font_disp/data" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5545] ROM "second_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "second_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
@@ -717,6 +743,7 @@ WARNING: [Synth 8-3331] design custom_med has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_low has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_background has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_border has unconnected port mid_sel
+WARNING: [Synth 8-3331] design coordinate_display has unconnected port text_onOff
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JC[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[7]
@@ -745,45 +772,25 @@ WARNING: [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be remo
 WARNING: [Synth 8-3332] Sequential element (i_reg[1]) is unused and will be removed from module string_driver.
 WARNING: [Synth 8-3332] Sequential element (i_reg[0]) is unused and will be removed from module string_driver.
 WARNING: [Synth 8-3332] Sequential element (char0_reg[3]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (text1/x_reg[6]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/x_reg[5]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/x_reg[4]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/x_reg[3]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/x_reg[2]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/x_reg[1]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/x_reg[0]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/y_reg[6]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/y_reg[5]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/y_reg[4]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/y_reg[3]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/y_reg[2]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/y_reg[1]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/y_reg[0]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/letter_code_reg[4]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/letter_code_reg[3]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/letter_code_reg[2]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/letter_code_reg[1]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (text1/letter_code_reg[0]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (dictionary1/check_reg) is unused and will be removed from module coordinate_display.
 WARNING: [Synth 8-3332] Sequential element (minute_tens_pos/seg_reg[7]) is unused and will be removed from module stopwatch.
 WARNING: [Synth 8-3332] Sequential element (minute_pos/seg_reg[7]) is unused and will be removed from module stopwatch.
 WARNING: [Synth 8-3332] Sequential element (second_tens_pos/seg_reg[7]) is unused and will be removed from module stopwatch.
 WARNING: [Synth 8-3332] Sequential element (second_pos/seg_reg[7]) is unused and will be removed from module stopwatch.
 WARNING: [Synth 8-3332] Sequential element (slowclk_reg) is unused and will be removed from module clk__6.
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/\customMed/seg_reg[7] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/\customLow/seg_reg[7] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/\custombackgrd/seg_reg[7] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/\customborder/seg_reg[7] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/\customHigh/seg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/customMed/\seg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/customLow/\seg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/custombackgrd/\seg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/customHigh/\seg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (disp1/customborder/\seg_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\maxLED_reg[4] )
-WARNING: [Synth 8-3332] Sequential element (customborder/seg_reg[7]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (custombackgrd/seg_reg[7]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (customLow/seg_reg[7]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (customMed/seg_reg[7]) is unused and will be removed from module coordinate_display.
-WARNING: [Synth 8-3332] Sequential element (customHigh/seg_reg[7]) is unused and will be removed from module coordinate_display.
+WARNING: [Synth 8-3332] Sequential element (seg_reg[7]) is unused and will be removed from module custom_border.
+WARNING: [Synth 8-3332] Sequential element (seg_reg[7]) is unused and will be removed from module custom_background.
+WARNING: [Synth 8-3332] Sequential element (seg_reg[7]) is unused and will be removed from module custom_low.
+WARNING: [Synth 8-3332] Sequential element (seg_reg[7]) is unused and will be removed from module custom_med.
+WARNING: [Synth 8-3332] Sequential element (seg_reg[7]) is unused and will be removed from module custom_high.
 WARNING: [Synth 8-3332] Sequential element (maxLED_reg[4]) is unused and will be removed from module Top_Student.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 766.254 ; gain = 510.031
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 783.031 ; gain = 508.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -795,13 +802,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:37 . Memory (MB): peak = 766.254 ; gain = 510.031
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 783.031 ; gain = 508.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:37 . Memory (MB): peak = 779.051 ; gain = 522.828
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 800.301 ; gain = 525.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -823,7 +830,7 @@ WARNING: [Synth 8-3332] Sequential element (disp1/customMed/an_pointer_reg[2]) i
 WARNING: [Synth 8-3332] Sequential element (disp1/customHigh/counter_reg[2]) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (disp1/customHigh/an_pointer_reg[2]) is unused and will be removed from module Top_Student.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -847,7 +854,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -860,7 +867,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -872,25 +879,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -907,17 +914,17 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     7|
-|2     |CARRY4 |   189|
-|3     |LUT1   |    52|
-|4     |LUT2   |   217|
-|5     |LUT3   |   277|
-|6     |LUT4   |   374|
-|7     |LUT5   |   198|
-|8     |LUT6   |   515|
-|9     |MUXF7  |    12|
+|2     |CARRY4 |   255|
+|3     |LUT1   |   175|
+|4     |LUT2   |   355|
+|5     |LUT3   |   278|
+|6     |LUT4   |   365|
+|7     |LUT5   |   214|
+|8     |LUT6   |   568|
+|9     |MUXF7  |    19|
 |10    |FDCE   |    48|
 |11    |FDE_1  |    32|
-|12    |FDRE   |   651|
+|12    |FDRE   |   668|
 |13    |FDSE   |    10|
 |14    |LD     |    28|
 |15    |IBUF   |    15|
@@ -929,64 +936,76 @@ Report Instance Areas:
 +------+--------------------+--------------------+------+
 |      |Instance            |Module              |Cells |
 +------+--------------------+--------------------+------+
-|1     |top                 |                    |  2663|
+|1     |top                 |                    |  3075|
 |2     |  muxFinal          |mux1                |     8|
 |3     |  muxFinal2         |mux1_7              |     4|
 |4     |  clk1              |clk                 |    63|
 |5     |  clk20             |clk_0               |    63|
 |6     |  clk20k            |clk_1               |    63|
 |7     |  clk361            |clk_2               |    63|
-|8     |  clk4              |clk_3               |    63|
+|8     |  clk4              |clk_3               |    64|
 |9     |  clk625m           |clk_4               |    64|
-|10    |  disp1             |coordinate_display  |   719|
-|11    |    border1         |draw_border         |     3|
-|12    |    coord           |xycalculator        |    97|
-|13    |    customHigh      |custom_high         |   100|
-|14    |    customLow       |custom_low          |    98|
-|15    |    customMed       |custom_med          |   108|
-|16    |    custombackgrd   |custom_background   |   102|
-|17    |    customborder    |custom_border       |   102|
-|18    |    volume1         |volume_bar          |    51|
-|19    |  down              |single_pulse        |    26|
-|20    |    dff1            |single_dff_25       |    20|
-|21    |    dff2            |single_dff_26       |     6|
-|22    |  ledDriver         |ledDriv             |    91|
-|23    |    clk600          |clk_24              |    54|
-|24    |  left              |single_pulse_5      |     3|
-|25    |    dff1            |single_dff_22       |     2|
-|26    |    dff2            |single_dff_23       |     1|
-|27    |  mic               |Audio_Capture       |    96|
-|28    |  mid               |single_pulse_6      |     3|
-|29    |    dff1            |single_dff_20       |     1|
-|30    |    dff2            |single_dff_21       |     2|
-|31    |  muxseg0           |mux3to1             |     7|
-|32    |  muxseg1           |mux3to1_8           |     1|
-|33    |  muxseg2           |mux3to1_9           |     7|
-|34    |  muxseg3           |mux3to1_10          |    14|
-|35    |  oled              |Oled_Display        |   382|
-|36    |  right             |single_pulse_11     |     4|
-|37    |    dff1            |single_dff_18       |     2|
-|38    |    dff2            |single_dff_19       |     2|
-|39    |  str_0             |char_disp           |     7|
-|40    |  str_1             |char_disp_12        |     4|
-|41    |  strdriv           |string_driver       |    84|
-|42    |  up                |single_pulse_13     |     3|
-|43    |    dff1            |single_dff          |     1|
-|44    |    dff2            |single_dff_17       |     2|
-|45    |  watchmod          |stopwatch           |   580|
-|46    |    minute_pos      |stopwatch_output    |    15|
-|47    |    minute_tens_pos |stopwatch_output_14 |    15|
-|48    |    second_pos      |stopwatch_output_15 |    22|
-|49    |    second_tens_pos |stopwatch_output_16 |    15|
+|10    |  disp1             |coordinate_display  |  1106|
+|11    |    border1         |draw_border         |     2|
+|12    |    coord           |xycalculator        |   410|
+|13    |    customHigh      |custom_high         |   107|
+|14    |    customLow       |custom_low          |    97|
+|15    |    customMed       |custom_med          |   106|
+|16    |    custombackgrd   |custom_background   |   101|
+|17    |    customborder    |custom_border       |   104|
+|18    |    nolabel_line58  |str_oled            |    67|
+|19    |      text0         |text_disp           |     5|
+|20    |      text1         |text_disp_27        |     5|
+|21    |      text10        |text_disp_28        |     5|
+|22    |      text2         |text_disp_29        |     5|
+|23    |      text3         |text_disp_30        |     5|
+|24    |      text4         |text_disp_31        |     5|
+|25    |      text5         |text_disp_32        |     5|
+|26    |      text6         |text_disp_33        |     6|
+|27    |      text7         |text_disp_34        |     7|
+|28    |      text8         |text_disp_35        |     8|
+|29    |      text9         |text_disp_36        |     6|
+|30    |    volume1         |volume_bar          |    49|
+|31    |  down              |single_pulse        |    19|
+|32    |    dff1            |single_dff_25       |    17|
+|33    |    dff2            |single_dff_26       |     2|
+|34    |  ledDriver         |ledDriv             |    91|
+|35    |    clk600          |clk_24              |    54|
+|36    |  left              |single_pulse_5      |     3|
+|37    |    dff1            |single_dff_22       |     2|
+|38    |    dff2            |single_dff_23       |     1|
+|39    |  mic               |Audio_Capture       |    96|
+|40    |  mid               |single_pulse_6      |     3|
+|41    |    dff1            |single_dff_20       |     1|
+|42    |    dff2            |single_dff_21       |     2|
+|43    |  muxseg0           |mux3to1             |     7|
+|44    |  muxseg1           |mux3to1_8           |     1|
+|45    |  muxseg2           |mux3to1_9           |     7|
+|46    |  muxseg3           |mux3to1_10          |    14|
+|47    |  oled              |Oled_Display        |   399|
+|48    |  right             |single_pulse_11     |     6|
+|49    |    dff1            |single_dff_18       |     5|
+|50    |    dff2            |single_dff_19       |     1|
+|51    |  str_0             |char_disp           |     7|
+|52    |  str_1             |char_disp_12        |     4|
+|53    |  strdriv           |string_driver       |    84|
+|54    |  up                |single_pulse_13     |     3|
+|55    |    dff1            |single_dff          |     1|
+|56    |    dff2            |single_dff_17       |     2|
+|57    |  watchmod          |stopwatch           |   580|
+|58    |    minute_pos      |stopwatch_output    |    15|
+|59    |    minute_tens_pos |stopwatch_output_14 |    15|
+|60    |    second_pos      |stopwatch_output_15 |    22|
+|61    |    second_tens_pos |stopwatch_output_16 |    15|
 +------+--------------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 818.645 ; gain = 562.422
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 839.906 ; gain = 565.082
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 60 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 818.645 ; gain = 213.543
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 818.645 ; gain = 562.422
+Synthesis finished with 0 errors, 0 critical warnings and 41 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 839.906 ; gain = 215.230
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 839.906 ; gain = 565.082
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 276 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 349 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -996,11 +1015,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE: 28 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-156 Infos, 140 Warnings, 0 Critical Warnings and 0 Errors encountered.
+170 Infos, 136 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:43 . Memory (MB): peak = 818.645 ; gain = 575.301
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 839.906 ; gain = 577.016
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 818.645 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 11:44:58 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 839.906 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 12:54:24 2020...
