@@ -22,7 +22,7 @@
 
 module str_oled(input clock, input [6:0] currX, currY, input [2:0] row, input [11*8:1] string, output reg pixel);
     reg [7:0] chardata [31:0];
-    wire [11:0] pixOpt;
+    wire [10:0] pixOpt;
     reg [3:0] i;
     
     text_disp text0(clock, currX, currY, 3, row*8, string[11*8 -: 8], pixOpt[0]);
@@ -38,7 +38,7 @@ module str_oled(input clock, input [6:0] currX, currY, input [2:0] row, input [1
     text_disp text10(clock, currX, currY, 3+10*8, row*8, string[1*8 -: 8], pixOpt[10]);
     
     always @ (posedge clock) begin
-        if(currX >=3 && currX <= 83) begin
+        if(currX >=3 && currX <= 90) begin
             i <= (currX - 3) / 8;
             pixel <= pixOpt[i];
         end
