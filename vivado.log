@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Mar 29 13:06:29 2020
-# Process ID: 18684
+# Start of session at: Sun Mar 29 13:07:57 2020
+# Process ID: 4924
 # Current directory: C:/School/Y1S2/EE2026/SoundDisplay
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18636 C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17660 C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr
 # Log file: C:/School/Y1S2/EE2026/SoundDisplay/vivado.log
 # Journal file: C:/School/Y1S2/EE2026/SoundDisplay\vivado.jou
 #-----------------------------------------------------------
@@ -19,6 +19,7 @@ WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 801.340 ; gain = 70.078
 update_compile_order -fileset sources_1
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 13:06:53 2020...
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 13:09:06 2020...
