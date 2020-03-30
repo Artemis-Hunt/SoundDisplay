@@ -35,5 +35,6 @@ module text_disp(input clock, input [6:0] currX, currY, startX, startY, input [7
         
         if(startFlag == 1)
             pixel = data[64 - row*8 - index];
+        else pixel = 0;
     end
 endmodule

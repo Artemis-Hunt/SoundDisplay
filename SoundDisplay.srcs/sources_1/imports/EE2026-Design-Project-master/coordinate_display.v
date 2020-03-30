@@ -145,7 +145,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         2'd2: OLED_colour = (volume_out == 3) ? 16'h2145 : (volume_out == 2) ? 16'h9534 : (volume_out == 1) ? 16'h57B9 : (border_out) ? 16'hFCA0 : 16'h9841;
         2'd3: OLED_colour = (volume_out == 3) ? high_colour : (volume_out == 2) ? med_colour : (volume_out == 1) ? low_colour : (border_out) ? 
                                 border_colour : (mode_background == 1 && back_blink == 0) ? 16'h3186 : background_colour;
-        3'd4: OLED_colour = string_out;
+        3'd4: OLED_colour = string_out ? 16'hFFFF : 16'H0000;
         endcase
     end
     
