@@ -52,7 +52,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     volume_bar volume1(x_coord, y_coord, clock, bar_onOff, input_volume, volume_out, blink_clock, mode_low, mode_med, mode_high, customColour); 
     
     //String display
-    str_oled str(clock, x_coord, y_coord, 8, {8'hFE, "Testing 12345"}, string_out);
+    str_oled str(clock, x_coord, y_coord, 8, {8'h7E, "Testing 12345"}, string_out);
     str_oled str1(clock, x_coord, y_coord, 16, "Testing12345678", string1_out);
     logo_tetris(clock, x_coord, y_coord, 40, logo_out);
     

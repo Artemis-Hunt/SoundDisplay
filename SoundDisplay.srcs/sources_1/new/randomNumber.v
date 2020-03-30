@@ -23,8 +23,8 @@
 
 module randomNumber (input clock, input reset, output [12:0] rnd);
  
-    reg [12:0] random, random_next, random_done;
-    reg [3:0] count, count_next; //to keep track of the shifts
+    reg [12:0] random = 0 , random_next = 12'hA5E, random_done = 0;
+    reg [3:0] count = 0, count_next = 0; //to keep track of the shifts
     
     wire feedback = random[12] ^ random[3] ^ random[2] ^ random[0]; 
  
@@ -32,7 +32,7 @@ module randomNumber (input clock, input reset, output [12:0] rnd);
     begin
         if (reset)
         begin
-            random <= 13'hF; //An LFSR cannot have an all 0 state, thus reset to FF
+            random <= 13'hFFF; //An LFSR cannot have an all 0 state, thus reset to FF
             count <= 0;
         end
         else
@@ -49,10 +49,10 @@ module randomNumber (input clock, input reset, output [12:0] rnd);
    
         random_next = {random[11:0], feedback}; //shift left the xor'd every posedge clock
         count_next = count + 1;
- 
-        if (count == 13)
+        
+        count = (count == 13) ? 0 : count;
+        if (count == 0)
         begin
-            count = 0;
             random_done = random; //assign the random number to output after 13 shifts
         end 
     end

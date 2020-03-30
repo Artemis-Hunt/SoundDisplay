@@ -17,3 +17,55 @@ update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 8
 wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sim_1/new/rng_sim.v w ]
+add_files -fileset sim_1 C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sim_1/new/rng_sim.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top rng_sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source rng_sim.tcl
+run 10 us
+close_sim
+launch_simulation
+source rng_sim.tcl
+run 10 us
+close_sim
+launch_simulation
+source rng_sim.tcl
+close_sim
+launch_simulation
+source rng_sim.tcl
+close_sim
+launch_simulation
+source rng_sim.tcl
+close_sim
+launch_simulation
+source rng_sim.tcl
+close_sim
+launch_simulation
+source rng_sim.tcl
+close_sim
+launch_simulation
+source rng_sim.tcl
+current_wave_config {Untitled 8}
+add_wave {{/rng_sim/rng/random}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim

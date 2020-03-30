@@ -33,7 +33,7 @@ module Top_Student (
     );
     
     parameter MIN_VOL = 2000, STEP = 131, MAX_LEN = 32;   //Ambient noise level |||| step size for each discrete volume level |||| Max string length
-    wire clk20ksig, clk6p25msig, clk361sig, clk20sig, clk10sig, clk4sig, clk1sig;   //Various clock signals
+    wire clk20ksig, clk6p25msig, clk361sig, clk40sig, clk20sig, clk10sig, clk4sig, clk1sig;   //Various clock signals
     wire mid_sel, right_sel, left_sel, up_sel, down_sel;   //Single pulse output from colour select button
     wire frame_begin, sending_pixels, sample_pixels;   // Unused output data
     wire [4:0] teststate;                              //  from OLED
@@ -66,6 +66,7 @@ module Top_Student (
     clk clk625m(CLK100MHZ, 7, clk6p25msig);
     clk clk20k(CLK100MHZ, 2499, clk20ksig);
     clk clk361(CLK100MHZ, 138503, clk361sig);
+    clk clk40(CLK100MHZ, 1_249_999, clk40sig);
     clk clk20(CLK100MHZ, 2_499_999, clk20sig); 
     clk clk10(CLK100MHZ, 4_999_999, clk10sig);
     clk clk4(CLK100MHZ, 12_499_999, clk4sig);
@@ -136,7 +137,7 @@ module Top_Student (
     //Peak volume meter code, refreshes max at a rate of 20kHz
     always @ (posedge clk20ksig) begin
         resetMax = resetMax + 1; 
-        if(resetMax >= 1000) begin   //Update LED trail at a 20Hz frequency
+        if(resetMax >= 999) begin   //Update LED trail at a 20Hz frequency
             resetMax = 0;
             maxLED = 0;
             for(j = (MIN_VOL + STEP); j < 4096; j = j + STEP)   //Update index of highest lit LED

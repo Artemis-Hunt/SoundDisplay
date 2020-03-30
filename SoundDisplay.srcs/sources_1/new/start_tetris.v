@@ -22,7 +22,9 @@
  
 module start_tetris(input clock, input [6:0] currX, currY, input btnU, btnD, btnL, btnR, btnC, output reg [1:0] gamestate=3, output reg [16:0] colour = 16'hFFFF, output reg pixel);
     parameter MAX_LEN = 15;
-    reg [1:0] opt_sel = 0, row = 0;
+    reg [1:0] opt_sel = 0;
+    reg [2:0] row = 0;
+    reg [19:0] button_debounce = 0;
     wire logo_out, continue_out, newgame_out, credits_out;
     wire [MAX_LEN*8:1] continue, newgame, credits;
     wire [MAX_LEN*8:1] cred_disp [7:0];
@@ -47,13 +49,16 @@ module start_tetris(input clock, input [6:0] currX, currY, input btnU, btnD, btn
     
     //Gamestate 3: Start screen; state 2: Credits; state 1: New game; state 0: Continue
     always @ (posedge clock) begin
+        button_debounce <= (button_debounce == 156_249) ? 0 : button_debounce + 1;  //Check for button inputs at a frequency of 40Hz
         if(gamestate == 3) begin
-            if(btnU)
-                opt_sel <= (opt_sel == 0) ? 0 : opt_sel - 1;
-            if(btnD)
-                opt_sel <= (opt_sel == 2) ? 2 : opt_sel + 1;
-            if(btnC)
-                gamestate <= opt_sel;
+            if(button_debounce == 0) begin
+                if(btnU)
+                    opt_sel <= (opt_sel == 0) ? 0 : opt_sel - 1;
+                if(btnD)
+                    opt_sel <= (opt_sel == 2) ? 2 : opt_sel + 1;
+                if(btnC)
+                    gamestate <= opt_sel;
+            end
                 
             if(currY >= 6 && currY <= 21)
                 pixel <= logo_out;
