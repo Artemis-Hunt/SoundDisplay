@@ -29,7 +29,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
-    wire border_out, text_out, text_out2, string_out;
+    wire border_out, text_out, text_out2, string_out, logo_out;
     wire [1:0] volume_out;
     reg [2:0] colour_select = 0;
     reg [3:0] hold_volume = 0;
@@ -58,6 +58,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     text_disp textTest2(clock, x_coord, y_coord, 83, 16, "A", text_out2); //Test Module
     
     str_oled(clock, x_coord, y_coord, 1, "HELLO", string_out);
+    logo_tetris(clock, x_coord, y_coord, 40, logo_out);
     
     //Modules to enable custom colours
     custom_border customborder(text_clock, button_clock, blink_clock, mid_sel, right_sel, left_sel, up_sel, 
@@ -147,7 +148,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         3'd2: OLED_colour = (volume_out == 3) ? 16'h2145 : (volume_out == 2) ? 16'h9534 : (volume_out == 1) ? 16'h57B9 : (border_out) ? 16'hFCA0 : 16'h9841;
         3'd3: OLED_colour = (volume_out == 3) ? high_colour : (volume_out == 2) ? med_colour : (volume_out == 1) ? low_colour : (border_out) ? 
                                 border_colour : (mode_background == 1 && back_blink == 0) ? 16'h3186 : background_colour;
-        3'd4: OLED_colour = (text_out2) ? 16'hFFFF : (text_out) ? 16'hFCA0 : (string_out) ? 16'hFFFF: 16'h0000; //Testing for text
+        3'd4: OLED_colour = (logo_out) ? 16'hFF00 : (text_out2) ? 16'hFFFF : (text_out) ? 16'hFCA0 : (string_out) ? 16'hFFFF: 16'h0000; //Testing for text
         endcase
     end
     

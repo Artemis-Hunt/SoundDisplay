@@ -31,11 +31,9 @@ module text_disp(input clock, input [6:0] currX, currY, startX, startY, input [7
     //Draws a character in an 5x8 block starting from the given XY coordinates
     always @ (posedge clock) begin
         if(currX >= startX && currY >= startY && (currY - startY) < CHAR_HEIGHT && (currX - startX) < CHAR_WIDTH) begin 
-            startFlag = 1; row = currY - startY; index = currX - startX; 
-        end
-        else begin startFlag = 0; row = 0; index = 0; end
-        if(startFlag == 1)
+            row = currY - startY; index = currX - startX; 
             pixel = data[40 - row - index*CHAR_HEIGHT];
-        else pixel = 0;
+        end
+        else begin pixel = 0; row = 0; index = 0; end
     end
 endmodule
