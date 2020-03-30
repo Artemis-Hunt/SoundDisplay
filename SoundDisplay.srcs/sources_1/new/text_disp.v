@@ -23,7 +23,7 @@
 module text_disp(input clock, input [6:0] currX, currY, startX, startY, input [7:0] char, output reg pixel);
     reg startFlag = 0;
     reg [3:0] row = 0, index = 0;
-    wire [64:1] data;
+    wire [40:1] data;
     
     font font_disp(char, data);
     
@@ -34,7 +34,7 @@ module text_disp(input clock, input [6:0] currX, currY, startX, startY, input [7
         else begin startFlag = 0; row = 0; index = 0; end
         
         if(startFlag == 1)
-            pixel = data[64 - row*8 - index];
+            pixel = data[40 - row - index*8];
         else pixel = 0;
     end
 endmodule

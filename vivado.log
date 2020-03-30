@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Mar 30 09:45:13 2020
-# Process ID: 2904
+# Start of session at: Mon Mar 30 10:22:28 2020
+# Process ID: 18132
 # Current directory: C:/School/Y1S2/EE2026/SoundDisplay
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7060 C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1432 C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr
 # Log file: C:/School/Y1S2/EE2026/SoundDisplay/vivado.log
 # Journal file: C:/School/Y1S2/EE2026/SoundDisplay\vivado.jou
 #-----------------------------------------------------------
@@ -17,5 +17,11 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 889.953 ; gain = 149.801
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 892.551 ; gain = 170.293
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Mon Mar 30 10:24:12 2020] Launched synth_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log
+[Mon Mar 30 10:24:13 2020] Launched impl_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log
