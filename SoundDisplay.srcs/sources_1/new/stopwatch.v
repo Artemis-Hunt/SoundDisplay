@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Stopwatch module that counts to 60 mins
+//Switch 9 to turn on, switch 8 to pause, middle_button to start, down_button to reset, works in background 
 module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output [7:0] minuteTens, minute, secondTens, second);
 
     reg [31:0] second_count = 0;
@@ -82,9 +83,9 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
     end
     
     //Output 7-seg
-    stopwatch_output minute_tens_pos(minute_tens_count, minuteTens);
-    stopwatch_output minute_pos(minutes, minute);
-    stopwatch_output second_tens_pos(second_tens_count, secondTens);
-    stopwatch_output second_pos(seconds, second);
+    char_disp minute_tens_pos(minute_tens_count, minuteTens);
+    char_disp minute_pos(minutes, minute);
+    char_disp second_tens_pos(second_tens_count, secondTens);
+    char_disp second_pos(seconds, second);
     
 endmodule
