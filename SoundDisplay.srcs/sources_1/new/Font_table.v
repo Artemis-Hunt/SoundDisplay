@@ -9,8 +9,8 @@
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
-// 
+// Description: Bitmap 5x8(WxH) font table, stored vertically.
+//              TO draw a character: Access bits 40,32,24,16,8 for first row etc.
 // Dependencies: 
 // 
 // Revision:
@@ -75,7 +75,21 @@ module font(input [7:0] char, output reg [40:1] data);
             "w": data = {8'h1E, 8'h01, 8'h0E, 8'h01, 8'h1E}; 
             "x": data = {8'h11, 8'h0A, 8'h04, 8'h0A, 8'h11}; 
             "y": data = {8'h00, 8'h39, 8'h05, 8'h05, 8'h3E}; 
-            "z": data = {8'h11, 8'h13, 8'h15, 8'h19, 8'h11}; 
+            "z": data = {8'h11, 8'h13, 8'h15, 8'h19, 8'h11};
+            "1": data = {8'h00, 8'h41, 8'hFF, 8'h01, 8'h00};
+            "2": data = {8'h43, 8'h85, 8'h89, 8'h91, 8'h61};
+            "3": data = {8'h42, 8'h81, 8'h91, 8'h91, 8'h6E};
+            "4": data = {8'h18, 8'h28, 8'h48, 8'hFF, 8'h08};
+            "5": data = {8'hF2, 8'h91, 8'h91, 8'h91, 8'h8E};
+            "6": data = {8'h1E, 8'h29, 8'h49, 8'h89, 8'h86};
+            "7": data = {8'h80, 8'h8F, 8'h90, 8'hA0, 8'hC0};
+            "8": data = {8'h6E, 8'h91, 8'h91, 8'h91, 8'h6E};
+            "9": data = {8'h70, 8'h89, 8'h89, 8'h8A, 8'h7C};
+            "?": data = {8'h60, 8'h80, 8'h8D, 8'h90, 8'h60};
+            "!": data = {8'h00, 8'h00, 8'hFD, 8'h00, 8'h00};
+            "0": data = {8'h7E, 8'h89, 8'h91, 8'hA1, 8'h7E};
+            8'h7E: data = {8'h10, 8'h10, 8'h54, 8'h38, 8'h10}; //  R arrow
+            8'h7F: data = {8'h08, 8'h1C, 8'h2A, 8'h08, 8'h08}; //  L arrow
             default: data = 0;
         endcase
     end

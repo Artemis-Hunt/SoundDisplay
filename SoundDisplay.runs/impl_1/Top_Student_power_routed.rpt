@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Mon Mar 30 10:26:33 2020
+| Date             : Mon Mar 30 11:16:31 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     2737 |       --- |             --- |
-|   LUT as Logic |     0.003 |     1356 |     20800 |            6.52 |
-|   CARRY4       |    <0.001 |      208 |      8150 |            2.55 |
+| Slice Logic    |     0.003 |     2986 |       --- |             --- |
+|   LUT as Logic |     0.003 |     1518 |     20800 |            7.30 |
+|   CARRY4       |    <0.001 |      246 |      8150 |            3.02 |
 |   Register     |    <0.001 |      752 |     41600 |            1.81 |
 |   F7/F8 Muxes  |    <0.001 |       14 |     32600 |            0.04 |
 |   Others       |     0.000 |       81 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.003 |     2040 |       --- |             --- |
+| Signals        |     0.003 |     2175 |       --- |             --- |
 | I/O            |     0.002 |       53 |       106 |           50.00 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.082 |          |           |                 |
@@ -159,10 +159,10 @@ Table of Contents
 |     customborder   |    <0.001 |
 |     nolabel_line60 |     0.000 |
 |       text10       |     0.000 |
-|       text6        |     0.000 |
-|       text7        |     0.000 |
-|       text8        |     0.000 |
-|       text9        |     0.000 |
+|       text11       |     0.000 |
+|       text12       |     0.000 |
+|       text13       |     0.000 |
+|       text14       |     0.000 |
 |     textTest1      |     0.000 |
 |     textTest2      |    <0.001 |
 |     volume1        |    <0.001 |
