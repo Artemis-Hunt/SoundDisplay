@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Mon Mar 30 16:57:22 2020
+| Date             : Mon Mar 30 18:27:11 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     3050 |       --- |             --- |
-|   LUT as Logic |     0.003 |     1562 |     20800 |            7.51 |
-|   CARRY4       |    <0.001 |      254 |      8150 |            3.12 |
-|   Register     |    <0.001 |      753 |     41600 |            1.81 |
-|   F7/F8 Muxes  |    <0.001 |       19 |     32600 |            0.06 |
-|   Others       |     0.000 |       83 |       --- |             --- |
+| Slice Logic    |     0.003 |     4230 |       --- |             --- |
+|   LUT as Logic |     0.003 |     2245 |     20800 |           10.79 |
+|   CARRY4       |    <0.001 |      425 |      8150 |            5.21 |
+|   Register     |    <0.001 |      799 |     41600 |            1.92 |
+|   F7/F8 Muxes  |    <0.001 |       15 |     32600 |            0.05 |
+|   Others       |     0.000 |      121 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.003 |     2226 |       --- |             --- |
+| Signals        |     0.002 |     2970 |       --- |             --- |
 | I/O            |     0.002 |       53 |       106 |           50.00 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.082 |          |           |                 |
@@ -139,63 +139,82 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------+-----------+
-| Name               | Power (W) |
-+--------------------+-----------+
-| Top_Student        |     0.010 |
-|   clk1             |    <0.001 |
-|   clk20            |    <0.001 |
-|   clk20k           |    <0.001 |
-|   clk361           |    <0.001 |
-|   clk4             |    <0.001 |
-|   clk625m          |    <0.001 |
-|   disp1            |     0.002 |
-|     border1        |     0.000 |
-|     coord          |    <0.001 |
-|     customHigh     |    <0.001 |
-|     customLow      |    <0.001 |
-|     customMed      |    <0.001 |
-|     custombackgrd  |    <0.001 |
-|     customborder   |    <0.001 |
-|     nolabel_line60 |    <0.001 |
-|       text10       |     0.000 |
-|       text11       |     0.000 |
-|       text12       |     0.000 |
-|       text13       |     0.000 |
-|       text14       |     0.000 |
-|     nolabel_line61 |    <0.001 |
-|     textTest1      |     0.000 |
-|     textTest2      |     0.000 |
-|     volume1        |    <0.001 |
-|   down             |     0.000 |
-|     dff1           |     0.000 |
-|     dff2           |     0.000 |
-|   ledDriver        |    <0.001 |
-|     clk600         |    <0.001 |
-|   left             |     0.000 |
-|     dff1           |     0.000 |
-|     dff2           |     0.000 |
-|   mic              |    <0.001 |
-|   mid              |    <0.001 |
-|     dff1           |     0.000 |
-|     dff2           |    <0.001 |
-|   muxFinal         |    <0.001 |
-|   muxFinal2        |    <0.001 |
-|   muxseg0          |    <0.001 |
-|   muxseg1          |    <0.001 |
-|   muxseg2          |    <0.001 |
-|   muxseg3          |    <0.001 |
-|   oled             |    <0.001 |
-|   right            |     0.000 |
-|     dff1           |     0.000 |
-|     dff2           |     0.000 |
-|   str_0            |     0.000 |
-|   str_1            |     0.000 |
-|   strdriv          |    <0.001 |
-|   up               |     0.000 |
-|     dff1           |     0.000 |
-|     dff2           |     0.000 |
-|   watchmod         |    <0.001 |
-+--------------------+-----------+
++----------------------+-----------+
+| Name                 | Power (W) |
++----------------------+-----------+
+| Top_Student          |     0.010 |
+|   clk1               |    <0.001 |
+|   clk20              |    <0.001 |
+|   clk20k             |    <0.001 |
+|   clk361             |    <0.001 |
+|   clk4               |    <0.001 |
+|   clk625m            |    <0.001 |
+|   disp1              |     0.002 |
+|     border1          |     0.000 |
+|     coord            |    <0.001 |
+|     customHigh       |    <0.001 |
+|     customLow        |    <0.001 |
+|     customMed        |    <0.001 |
+|     custombackgrd    |    <0.001 |
+|     customborder     |    <0.001 |
+|     nolabel_line62   |     0.000 |
+|       text10         |     0.000 |
+|       text11         |     0.000 |
+|       text12         |     0.000 |
+|       text13         |     0.000 |
+|       text14         |     0.000 |
+|     nolabel_line63   |     0.000 |
+|     nolabel_line64   |     0.000 |
+|       nolabel_line32 |     0.000 |
+|       option1        |     0.000 |
+|         text10       |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       option2        |     0.000 |
+|         text10       |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       option3        |     0.000 |
+|         text10       |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|     textTest1        |     0.000 |
+|     textTest2        |     0.000 |
+|     volume1          |    <0.001 |
+|   down               |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   ledDriver          |    <0.001 |
+|     clk600           |    <0.001 |
+|   left               |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   mic                |    <0.001 |
+|   mid                |    <0.001 |
+|     dff1             |     0.000 |
+|     dff2             |    <0.001 |
+|   muxFinal           |    <0.001 |
+|   muxFinal2          |    <0.001 |
+|   muxseg0            |    <0.001 |
+|   muxseg1            |    <0.001 |
+|   muxseg2            |    <0.001 |
+|   muxseg3            |    <0.001 |
+|   oled               |    <0.001 |
+|   right              |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   str_0              |     0.000 |
+|   str_1              |     0.000 |
+|   strdriv            |    <0.001 |
+|   up                 |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   watchmod           |    <0.001 |
++----------------------+-----------+
 
 

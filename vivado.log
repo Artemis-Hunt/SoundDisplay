@@ -29,3 +29,21 @@ launch_runs impl_1 -to_step write_bitstream -jobs 8
 Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log
 [Mon Mar 30 16:55:01 2020] Launched impl_1...
 Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log
+close [ open C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v w ]
+add_files C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Mon Mar 30 18:22:22 2020] Launched synth_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log
+[Mon Mar 30 18:22:22 2020] Launched impl_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Mon Mar 30 18:24:21 2020] Launched synth_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log
+[Mon Mar 30 18:24:21 2020] Launched impl_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log

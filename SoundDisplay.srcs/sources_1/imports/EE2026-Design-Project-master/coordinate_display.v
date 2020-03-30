@@ -29,13 +29,15 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
-    wire border_out, text_out, text_out2, string_out, logo_out;
+    wire border_out, text_out, text_out2, string_out, logo_out, start_out;
     wire [1:0] volume_out;
     reg [2:0] colour_select = 0;
     reg [3:0] hold_volume = 0;
     reg [3:0] input_volume = 0;
     wire [6:0] text_x, text_y;
     wire [4:0] letter_code;
+    wire startsel_up, startsel_down, startsel_mid;
+    wire [1:0] gamestate;
     
     reg custom_volume = 0;
     reg mode_brd, mode_background, mode_low, mode_med, mode_high;
@@ -57,8 +59,13 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     text_disp textTest1(clock, x_coord, y_coord, 3, 8, "A", text_out); //Test Module
     text_disp textTest2(clock, x_coord, y_coord, 83, 16, "A", text_out2); //Test Module
     
-    str_oled(clock, x_coord, y_coord, 1, "HELLO", string_out);
+    str_oled(clock, x_coord, y_coord, 8, "HELLO", string_out);
     logo_tetris(clock, x_coord, y_coord, 40, logo_out);
+    start_tetris(clock, x_coord, y_coord, startsel_up, startsel_down, startsel_mid, gamestate, start_out);
+    assign startsel_up = (colour_select == 5) ? up_sel : 0;
+    assign startsel_down = (colour_select == 5) ? down_sel : 0;
+    assign startsel_mid = (colour_select == 5) ? mid_sel : 0;
+    
     
     //Modules to enable custom colours
     custom_border customborder(text_clock, button_clock, blink_clock, mid_sel, right_sel, left_sel, up_sel, 
@@ -85,8 +92,8 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
             end
             if(right_sel == 1) //Scroll right to choose theme
             begin
-                if(colour_select == 4)
-                    colour_select <= 4;
+                if(colour_select == 5)
+                    colour_select <= 5;
                 else
                     colour_select <= colour_select + 1;
             end
@@ -109,7 +116,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         4'd4: begin mode_med <= 0; mode_high <= 1; end 
         4'd5: begin mode_high <= 0; custom_flag <= 0; customColour <= 0; button_counter <= 0; end
         endcase
-        
+            
     end
     
     always @ (posedge button_clock) //Pause Function (clock will be same output clock as mic LEDs)
@@ -149,6 +156,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         3'd3: OLED_colour = (volume_out == 3) ? high_colour : (volume_out == 2) ? med_colour : (volume_out == 1) ? low_colour : (border_out) ? 
                                 border_colour : (mode_background == 1 && back_blink == 0) ? 16'h3186 : background_colour;
         3'd4: OLED_colour = (logo_out) ? 16'hFF00 : (text_out2) ? 16'hFFFF : (text_out) ? 16'hFCA0 : (string_out) ? 16'hFFFF: 16'h0000; //Testing for text
+        3'd5: OLED_colour = (start_out) ? 16'hFF00 : 0;
         endcase
     end
     

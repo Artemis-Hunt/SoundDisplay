@@ -49,6 +49,7 @@ read_verilog -library xil_defaultlib {
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/mux1.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/single_dff.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/single_pulse.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v
