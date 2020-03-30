@@ -29,25 +29,21 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
-    wire border_out, text_out, text_out2, string_out, logo_out, start_out;
+    wire border_out, text_out, text_out2, string_out, string1_out, logo_out, tetris_out;
     wire [1:0] volume_out;
     reg [2:0] colour_select = 0;
     reg [3:0] hold_volume = 0;
     reg [3:0] input_volume = 0;
     wire [6:0] text_x, text_y;
     wire [4:0] letter_code;
-    wire startsel_up, startsel_down, startsel_mid;
+    wire tetris_sel_up, tetris_sel_down, tetris_sel_mid, tetris_sel_left, tetris_sel_right;
     wire [1:0] gamestate;
     
     reg custom_volume = 0;
     reg mode_brd, mode_background, mode_low, mode_med, mode_high;
     reg custom_flag = 0;
     reg [3:0] button_counter = 0;
-    wire [15:0] high_colour;
-    wire [15:0] med_colour;
-    wire [15:0] low_colour;
-    wire [15:0] background_colour;
-    wire [15:0] border_colour;
+    wire [15:0] high_colour, med_colour, low_colour, background_colour, border_colour, tetris_colour;
     wire [3:0] an1, an2, an3, an4, an5;
     wire [7:0] seg1, seg2, seg3, seg4, seg5;
     
@@ -55,16 +51,19 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     draw_border border1(x_coord, y_coord, clock, brd_sel, brd_onOff, border_out, blink_clock, mode_brd, customColour);
     volume_bar volume1(x_coord, y_coord, clock, bar_onOff, input_volume, volume_out, blink_clock, mode_low, mode_med, mode_high, customColour); 
     
-    //Text modules
-    text_disp textTest1(clock, x_coord, y_coord, 3, 8, "A", text_out); //Test Module
-    text_disp textTest2(clock, x_coord, y_coord, 83, 16, "A", text_out2); //Test Module
-    
-    str_oled(clock, x_coord, y_coord, 8, "HELLO", string_out);
+    //String display
+    str_oled str(clock, x_coord, y_coord, 8, {8'hFE, "Testing 12345"}, string_out);
+    str_oled str1(clock, x_coord, y_coord, 16, "Testing12345678", string1_out);
     logo_tetris(clock, x_coord, y_coord, 40, logo_out);
-    start_tetris(clock, x_coord, y_coord, startsel_up, startsel_down, startsel_mid, gamestate, start_out);
-    assign startsel_up = (colour_select == 5) ? up_sel : 0;
-    assign startsel_down = (colour_select == 5) ? down_sel : 0;
-    assign startsel_mid = (colour_select == 5) ? mid_sel : 0;
+    
+    //Tetris
+    start_tetris(clock, x_coord, y_coord, tetris_sel_up, tetris_sel_down, tetris_sel_left, tetris_sel_right, tetris_sel_mid,
+                    gamestate, tetris_colour, tetris_out);
+    assign tetris_sel_up = (colour_select == 5) ? up_sel : 0;
+    assign tetris_sel_down = (colour_select == 5) ? down_sel : 0;
+    assign tetris_sel_left = (colour_select == 5) ? left_sel : 0;
+    assign tetris_sel_right = (colour_select == 5) ? right_sel : 0;
+    assign tetris_sel_mid = (colour_select == 5) ? mid_sel : 0;
     
     
     //Modules to enable custom colours
@@ -81,7 +80,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     
     always @ (posedge button_clock) //Button Operations
     begin
-        if(custom_flag != 1)
+        if(custom_flag != 1 && gamestate == 3)
         begin
             if(left_sel == 1) //Scroll left to choose theme
             begin
@@ -155,8 +154,8 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         3'd2: OLED_colour = (volume_out == 3) ? 16'h2145 : (volume_out == 2) ? 16'h9534 : (volume_out == 1) ? 16'h57B9 : (border_out) ? 16'hFCA0 : 16'h9841;
         3'd3: OLED_colour = (volume_out == 3) ? high_colour : (volume_out == 2) ? med_colour : (volume_out == 1) ? low_colour : (border_out) ? 
                                 border_colour : (mode_background == 1 && back_blink == 0) ? 16'h3186 : background_colour;
-        3'd4: OLED_colour = (logo_out) ? 16'hFF00 : (text_out2) ? 16'hFFFF : (text_out) ? 16'hFCA0 : (string_out) ? 16'hFFFF: 16'h0000; //Testing for text
-        3'd5: OLED_colour = (start_out) ? 16'hFF00 : 0;
+        3'd4: OLED_colour = (logo_out) ? 16'hFF00 : (string_out) ? 16'hFFFF: 16'h0000; //Testing for text
+        3'd5: OLED_colour = (tetris_out) ? tetris_colour : 0;
         endcase
     end
     

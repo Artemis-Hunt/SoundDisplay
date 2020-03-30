@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Mon Mar 30 18:27:11 2020
+| Date             : Mon Mar 30 21:52:11 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.082        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.010        |
+| Dynamic (W)              | 0.011        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     4230 |       --- |             --- |
-|   LUT as Logic |     0.003 |     2245 |     20800 |           10.79 |
-|   CARRY4       |    <0.001 |      425 |      8150 |            5.21 |
-|   Register     |    <0.001 |      799 |     41600 |            1.92 |
-|   F7/F8 Muxes  |    <0.001 |       15 |     32600 |            0.05 |
-|   Others       |     0.000 |      121 |       --- |             --- |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |     7106 |       --- |             --- |
+|   LUT as Logic |     0.003 |     4011 |     20800 |           19.28 |
+|   CARRY4       |    <0.001 |      877 |      8150 |           10.76 |
+|   Register     |    <0.001 |      911 |     41600 |            2.19 |
+|   F7/F8 Muxes  |    <0.001 |       16 |     32600 |            0.05 |
+|   Others       |     0.000 |      225 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.002 |     2970 |       --- |             --- |
+| Signals        |     0.003 |     4620 |       --- |             --- |
 | I/O            |     0.002 |       53 |       106 |           50.00 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.082 |          |           |                 |
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.018 |       0.008 |      0.010 |
+| Vccint    |       1.000 |     0.019 |       0.009 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,14 +142,14 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| Top_Student          |     0.010 |
+| Top_Student          |     0.011 |
 |   clk1               |    <0.001 |
 |   clk20              |    <0.001 |
 |   clk20k             |    <0.001 |
 |   clk361             |    <0.001 |
 |   clk4               |    <0.001 |
 |   clk625m            |    <0.001 |
-|   disp1              |     0.002 |
+|   disp1              |     0.003 |
 |     border1          |     0.000 |
 |     coord            |    <0.001 |
 |     customHigh       |    <0.001 |
@@ -157,34 +157,86 @@ Table of Contents
 |     customMed        |    <0.001 |
 |     custombackgrd    |    <0.001 |
 |     customborder     |    <0.001 |
-|     nolabel_line62   |     0.000 |
-|       text10         |     0.000 |
-|       text11         |     0.000 |
-|       text12         |     0.000 |
-|       text13         |     0.000 |
-|       text14         |     0.000 |
-|     nolabel_line63   |     0.000 |
-|     nolabel_line64   |     0.000 |
-|       nolabel_line32 |     0.000 |
+|     nolabel_line57   |     0.000 |
+|     nolabel_line60   |    <0.001 |
+|       credits0       |     0.000 |
+|         text0        |     0.000 |
+|         text1        |     0.000 |
+|         text10       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       credits1       |     0.000 |
+|         text10       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text14       |     0.000 |
+|         text9        |     0.000 |
+|       credits2       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text14       |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       credits3       |     0.000 |
+|         text0        |     0.000 |
+|         text1        |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|       nolabel_line34 |     0.000 |
 |       option1        |     0.000 |
 |         text10       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
 |         text6        |     0.000 |
 |         text7        |     0.000 |
 |         text8        |     0.000 |
 |         text9        |     0.000 |
 |       option2        |     0.000 |
 |         text10       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
 |         text7        |     0.000 |
 |         text8        |     0.000 |
 |         text9        |     0.000 |
 |       option3        |     0.000 |
 |         text10       |     0.000 |
+|         text2        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
 |         text6        |     0.000 |
 |         text7        |     0.000 |
 |         text8        |     0.000 |
 |         text9        |     0.000 |
-|     textTest1        |     0.000 |
-|     textTest2        |     0.000 |
+|     str              |     0.000 |
+|       text10         |     0.000 |
+|       text11         |     0.000 |
+|       text12         |     0.000 |
+|       text13         |     0.000 |
+|       text14         |     0.000 |
+|       text2          |     0.000 |
+|       text3          |     0.000 |
+|       text4          |     0.000 |
+|       text5          |     0.000 |
+|       text6          |     0.000 |
+|       text7          |     0.000 |
+|       text8          |     0.000 |
 |     volume1          |    <0.001 |
 |   down               |     0.000 |
 |     dff1             |     0.000 |
