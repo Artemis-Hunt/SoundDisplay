@@ -38,7 +38,7 @@ module Top_Student (
     wire frame_begin, sending_pixels, sample_pixels;   // Unused output data
     wire [4:0] teststate;                              //  from OLED
     wire [12:0] pixel_index;   //Index of current pixel being drawn
-    wire [15:0] pixel_data;   //Colour info to be drawn on next pixel
+    wire [15:0] pixel_data, pixel_data_main;   //Colour info to be drawn on next pixel
     wire [11:0] mic_in;   //Microphone data
     wire [15:0] mic_out;   //Multiplexed output directly assigned to LEDs
     wire [3:0] bcd [1:0];   //Actual number to be displayed on 7-seg
@@ -56,6 +56,7 @@ module Top_Student (
     wire [7:0] watch0, watch1, watch2, watch3;
     wire [7:0] segY;
     wire[3:0] anY;
+    wire [15:0] tetris_pixel;
     integer i, j;   //Loop variables
     
     //Text to be scrolled
@@ -119,10 +120,16 @@ module Top_Student (
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
                                 left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
-                                 pixel_index, pixel_data, customFlag, sw[9]);
+                                 pixel_index, pixel_data_main, customFlag, sw[9]);
+                                 
+    //Tetris game
+    tetris_main tetrisgame(clk20sig, clk6p25msig, 1, 0, up_sel, down_sel, left_sel, right_sel, mid_sel,
+                            pixel_index, tetris_pixel);
+                            
                                  
     //Stopwatch Module
     stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, sw[8], watch3, watch2, watch1, watch0);
+    mux1 tetris_opt(tetris_pixel, pixel_data_main, sw[8], pixel_data);
               
     //Mic and OLED modules
     Audio_Capture mic(CLK100MHZ, clk20ksig, J_MIC3_Pin3, J_MIC3_Pin1,J_MIC3_Pin4, mic_in); 
