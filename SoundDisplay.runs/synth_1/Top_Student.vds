@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Apr  3 15:03:28 2020
-# Process ID: 17348
+# Start of session at: Fri Apr  3 15:20:03 2020
+# Process ID: 3348
 # Current directory: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.vds
@@ -16,9 +16,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18680 
+INFO: Helper process launched with PID 6732 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 372.504 ; gain = 98.254
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 372.512 ; gain = 97.816
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 	Parameter MIN_VOL bound to: 2000 - type: integer 
@@ -65,12 +65,12 @@ WARNING: [Synth 8-689] width (8) of port connection 'opt' does not match port wi
 INFO: [Synth 8-6157] synthesizing module 'ledDriv' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/ledDriv.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/ledDriv.v:29]
 INFO: [Synth 8-6155] done synthesizing module 'ledDriv' (9#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/ledDriv.v:23]
-WARNING: [Synth 8-689] width (8) of port connection 'sig1' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:119]
-WARNING: [Synth 8-689] width (8) of port connection 'sig2' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:119]
-WARNING: [Synth 8-689] width (8) of port connection 'opt' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:119]
-WARNING: [Synth 8-689] width (4) of port connection 'sig1' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:120]
-WARNING: [Synth 8-689] width (4) of port connection 'sig2' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:120]
-WARNING: [Synth 8-689] width (4) of port connection 'opt' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:120]
+WARNING: [Synth 8-689] width (8) of port connection 'sig1' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:118]
+WARNING: [Synth 8-689] width (8) of port connection 'sig2' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:118]
+WARNING: [Synth 8-689] width (8) of port connection 'opt' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:118]
+WARNING: [Synth 8-689] width (4) of port connection 'sig1' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:119]
+WARNING: [Synth 8-689] width (4) of port connection 'sig2' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:119]
+WARNING: [Synth 8-689] width (4) of port connection 'opt' does not match port width (16) of module 'mux1' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:119]
 INFO: [Synth 8-6157] synthesizing module 'coordinate_display' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:25]
 INFO: [Synth 8-6157] synthesizing module 'xycalculator' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/xycalculator.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'xycalculator' (10#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/xycalculator.v:23]
@@ -128,14 +128,13 @@ WARNING: [Synth 8-689] width (120) of port connection 'pixel' does not match por
 WARNING: [Synth 8-689] width (120) of port connection 'pixel' does not match port width (1) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v:46]
 WARNING: [Synth 8-689] width (120) of port connection 'pixel' does not match port width (1) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v:47]
 WARNING: [Synth 8-689] width (120) of port connection 'pixel' does not match port width (1) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v:48]
-WARNING: [Synth 8-6014] Unused sequential element button_debounce_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v:72]
 INFO: [Synth 8-6155] done synthesizing module 'start_tetris' (17#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v:23]
 WARNING: [Synth 8-689] width (7) of port connection 'clk20Hz' does not match port width (1) of module 'start_tetris' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:61]
 WARNING: [Synth 8-689] width (1) of port connection 'currY' does not match port width (7) of module 'start_tetris' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:61]
 WARNING: [Synth 8-689] width (2) of port connection 'btnC' does not match port width (1) of module 'start_tetris' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:62]
 WARNING: [Synth 8-689] width (16) of port connection 'gamestate' does not match port width (2) of module 'start_tetris' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:62]
 WARNING: [Synth 8-689] width (1) of port connection 'colour' does not match port width (17) of module 'start_tetris' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:62]
-WARNING: [Synth 8-350] instance 'nolabel_line61' of module 'start_tetris' requires 14 connections, but only 12 given [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:61]
+WARNING: [Synth 8-350] instance 'nolabel_line61' of module 'start_tetris' requires 14 connections, but only 13 given [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:61]
 INFO: [Synth 8-6157] synthesizing module 'tetris_main' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:25]
 INFO: [Synth 8-6157] synthesizing module 'collision_check' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/rotate_check.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'collision_check' (18#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/rotate_check.v:23]
@@ -150,37 +149,40 @@ WARNING: [Synth 8-5788] Register block_state_reg in module tetris_main is has bo
 WARNING: [Synth 8-5788] Register drop_down_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:63]
 WARNING: [Synth 8-5788] Register current_block_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:121]
 INFO: [Synth 8-6155] done synthesizing module 'tetris_main' (19#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:25]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:66]
+INFO: [Synth 8-6157] synthesizing module 'peak_average' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:23]
+	Parameter DIVISOR bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'peak_average' (20#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_border' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
 INFO: [Synth 8-6157] synthesizing module 'colourHex_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'colourHex_disp' (20#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'colourHex_disp' (21#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_border' (21#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_border' (22#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_background' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_background' (22#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_background' (23#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_low' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_low' (23#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_low' (24#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_med' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_med' (24#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_med' (25#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_high' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_high' (25#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:113]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'custom_high' (26#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:116]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:144]
 WARNING: [Synth 8-3848] Net gamestate in module/entity coordinate_display does not have driver. [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:40]
-WARNING: [Synth 8-3848] Net tetris_reset in module/entity coordinate_display does not have driver. [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:41]
-INFO: [Synth 8-6155] done synthesizing module 'coordinate_display' (26#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:25]
-WARNING: [Synth 8-689] width (5) of port connection 'mic_volume' does not match port width (4) of module 'coordinate_display' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:123]
+INFO: [Synth 8-6155] done synthesizing module 'coordinate_display' (27#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:25]
+WARNING: [Synth 8-689] width (5) of port connection 'mic_volume' does not match port width (4) of module 'coordinate_display' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:122]
 INFO: [Synth 8-6157] synthesizing module 'stopwatch' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:24]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:86]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:87]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:88]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:89]
-INFO: [Synth 8-6155] done synthesizing module 'stopwatch' (27#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch' (28#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:24]
 INFO: [Synth 8-6157] synthesizing module 'Audio_Capture' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'Audio_Capture' (28#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Audio_Capture' (29#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -235,35 +237,39 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/School/Y1S2/EE2026/S
 INFO: [Synth 8-226] default block is never used [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:124]
 INFO: [Synth 8-226] default block is never used [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:201]
 WARNING: [Synth 8-693] zero replication count - replication ignored [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:349]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (29#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
-WARNING: [Synth 8-324] index 16 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 17 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 18 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 19 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 20 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 21 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 22 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 23 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 24 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 25 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 26 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 27 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 28 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 29 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 30 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-324] index 31 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:163]
-WARNING: [Synth 8-3848] Net pixel_data in module/entity Top_Student does not have driver. [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:41]
-WARNING: [Synth 8-3848] Net shifted_seg in module/entity Top_Student does not have driver. [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:53]
-WARNING: [Synth 8-3848] Net buttons_seg in module/entity Top_Student does not have driver. [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:53]
-WARNING: [Synth 8-3848] Net tetris_game_count in module/entity Top_Student does not have driver. [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:53]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (30#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (30#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
+WARNING: [Synth 8-324] index 16 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 17 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 18 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 19 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 20 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 21 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 22 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 23 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 24 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 25 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 26 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 27 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 28 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 29 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 30 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+WARNING: [Synth 8-324] index 31 out of range [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:162]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (31#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 WARNING: [Synth 8-3331] design custom_high has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_med has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_low has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_background has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_border has unconnected port mid_sel
+WARNING: [Synth 8-3331] design peak_average has unconnected port mic_volume[3]
+WARNING: [Synth 8-3331] design peak_average has unconnected port mic_volume[2]
+WARNING: [Synth 8-3331] design peak_average has unconnected port mic_volume[1]
+WARNING: [Synth 8-3331] design peak_average has unconnected port mic_volume[0]
+WARNING: [Synth 8-3331] design peak_average has unconnected port button_clock
+WARNING: [Synth 8-3331] design peak_average has unconnected port reset
+WARNING: [Synth 8-3331] design peak_average has unconnected port mode[2]
+WARNING: [Synth 8-3331] design peak_average has unconnected port mode[1]
+WARNING: [Synth 8-3331] design peak_average has unconnected port mode[0]
 WARNING: [Synth 8-3331] design tetris_main has unconnected port btn_up
-WARNING: [Synth 8-3331] design start_tetris has unconnected port clk20Hz
 WARNING: [Synth 8-3331] design start_tetris has unconnected port btnL
 WARNING: [Synth 8-3331] design start_tetris has unconnected port btnR
 WARNING: [Synth 8-3331] design coordinate_display has unconnected port text_onOff
@@ -276,7 +282,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 438.574 ; gain = 164.324
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 438.773 ; gain = 164.078
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -286,55 +292,14 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 WARNING: [Synth 8-3295] tying undriven pin nolabel_line61:btnC to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:61]
-WARNING: [Synth 8-3295] tying undriven pin tetrisgame:reset to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:63]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[7] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[6] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[5] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[4] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[3] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[2] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[1] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig0[0] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[7] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[6] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[5] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[4] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[3] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[2] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[1] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig2[0] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[7] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[6] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[5] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[4] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[3] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[2] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[1] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin ledDriver:sig3[0] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:115]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[15] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[14] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[13] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[12] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[11] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[10] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[9] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[8] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[7] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[6] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[5] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[4] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[3] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[2] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[1] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
-WARNING: [Synth 8-3295] tying undriven pin oled:pixel_data[0] to constant 0 [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:132]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 438.574 ; gain = 164.324
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 438.773 ; gain = 164.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 438.574 ; gain = 164.324
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 438.773 ; gain = 164.078
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -350,22 +315,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 815.500 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 816.281 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 816.344 ; gain = 541.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 816.344 ; gain = 541.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 816.344 ; gain = 541.648
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "seg" won't be mapped to RAM because it is too sparse
@@ -448,7 +413,7 @@ INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 816.344 ; gain = 541.648
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -456,7 +421,7 @@ Report RTL Partitions:
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
 |1     |str_oled                |          13|      8772|
-|2     |start_tetris__GC0       |           1|       472|
+|2     |start_tetris__GC0       |           1|       470|
 |3     |coordinate_display__GC0 |           1|     32375|
 |4     |Top_Student__GC0        |           1|     25522|
 +------+------------------------+------------+----------+
@@ -1160,7 +1125,6 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[5]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (disp1i_2/tetrisgame/new_game_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (disp1i_2/tetrisgame/drop_down_reg)
 INFO: [Synth 8-3886] merging instance 'disp1i_2/tetrisgame/OLED_colour_reg[0]' (FDR) to 'disp1i_2/tetrisgame/OLED_colour_reg[1]'
 INFO: [Synth 8-3886] merging instance 'disp1i_2/tetrisgame/OLED_colour_reg[1]' (FDR) to 'disp1i_2/tetrisgame/OLED_colour_reg[2]'
@@ -1177,114 +1141,29 @@ INFO: [Synth 8-3886] merging instance 'disp1i_2/tetrisgame/OLED_colour_reg[11]' 
 INFO: [Synth 8-3886] merging instance 'disp1i_2/tetrisgame/OLED_colour_reg[12]' (FDS) to 'disp1i_2/tetrisgame/OLED_colour_reg[13]'
 INFO: [Synth 8-3886] merging instance 'disp1i_2/tetrisgame/OLED_colour_reg[13]' (FDS) to 'disp1i_2/tetrisgame/OLED_colour_reg[14]'
 INFO: [Synth 8-3886] merging instance 'disp1i_2/tetrisgame/OLED_colour_reg[14]' (FDS) to 'disp1i_2/tetrisgame/OLED_colour_reg[15]'
-WARNING: [Synth 8-3332] Sequential element (new_game_reg) is unused and will be removed from module tetris_main.
 WARNING: [Synth 8-3332] Sequential element (OLED_colour_reg[10]) is unused and will be removed from module tetris_main.
 WARNING: [Synth 8-3332] Sequential element (drop_down_reg) is unused and will be removed from module tetris_main.
-INFO: [Synth 8-3886] merging instance 'i_0/ledDriver/seg_reg[0]' (FDE) to 'i_0/ledDriver/seg_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ledDriver/seg_reg[1]' (FDE) to 'i_0/ledDriver/seg_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ledDriver/seg_reg[2]' (FDE) to 'i_0/ledDriver/seg_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ledDriver/seg_reg[3]' (FDE) to 'i_0/ledDriver/seg_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ledDriver/seg_reg[4]' (FDE) to 'i_0/ledDriver/seg_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ledDriver/seg_reg[5]' (FDE) to 'i_0/ledDriver/seg_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ledDriver/seg_reg[6]' (FDE) to 'i_0/ledDriver/seg_reg[7]'
-WARNING: [Synth 8-3332] Sequential element (i_reg[8]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (i_reg[7]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (i_reg[6]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (i_reg[5]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (i_reg[4]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (i_reg[3]) is unused and will be removed from module string_driver.
+INFO: [Synth 8-3886] merging instance 'i_0/watchmod/minutes_reg[4]' (FDC) to 'i_0/watchmod/minute_tens_count_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/watchmod/minute_tens_count_reg[4]' (FDC) to 'i_0/watchmod/minute_tens_count_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/watchmod/minute_tens_count_reg[3]' (FDC) to 'i_0/watchmod/seconds_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/watchmod/\seconds_reg[4] )
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char2_reg[7]' (FDE) to 'i_0/strdriv/char2_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char2_reg[4]' (FDE) to 'i_0/strdriv/char2_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char2_reg[3]' (FDE) to 'i_0/strdriv/char0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char3_reg[7]' (FDE) to 'i_0/strdriv/char0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char3_reg[4]' (FDE) to 'i_0/strdriv/char0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char3_reg[3]' (FDE) to 'i_0/strdriv/char0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char1_reg[7]' (FDE) to 'i_0/strdriv/char0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char1_reg[4]' (FDE) to 'i_0/strdriv/char0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char1_reg[3]' (FDE) to 'i_0/strdriv/char0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char0_reg[7]' (FDE) to 'i_0/strdriv/char0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_0/strdriv/char0_reg[4]' (FDE) to 'i_0/strdriv/char0_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/strdriv/\char0_reg[3] )
 WARNING: [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be removed from module string_driver.
 WARNING: [Synth 8-3332] Sequential element (i_reg[1]) is unused and will be removed from module string_driver.
 WARNING: [Synth 8-3332] Sequential element (i_reg[0]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (counter_reg[2]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (counter_reg[1]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (counter_reg[0]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char0_reg[7]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char0_reg[6]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char0_reg[5]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char0_reg[4]) is unused and will be removed from module string_driver.
 WARNING: [Synth 8-3332] Sequential element (char0_reg[3]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char0_reg[2]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char0_reg[1]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char0_reg[0]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[7]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[6]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[5]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[4]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[3]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[2]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[1]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char1_reg[0]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[7]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[6]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[5]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[4]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[3]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[2]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[1]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char2_reg[0]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[7]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[6]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[5]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[4]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[3]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[2]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[1]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (char3_reg[0]) is unused and will be removed from module string_driver.
-WARNING: [Synth 8-3332] Sequential element (start_flag_reg) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[31]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[30]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[29]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[28]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[27]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[26]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[25]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[24]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[23]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[22]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[21]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[20]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[19]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[18]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[17]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[16]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[15]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[14]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[13]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[12]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[11]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[10]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[9]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[8]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[7]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[6]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[5]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[4]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[3]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[2]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[1]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_count_reg[0]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_tens_count_reg[4]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_tens_count_reg[3]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_tens_count_reg[2]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_tens_count_reg[1]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (second_tens_count_reg[0]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minute_tens_count_reg[4]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minute_tens_count_reg[3]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minute_tens_count_reg[2]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minute_tens_count_reg[1]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minute_tens_count_reg[0]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minutes_reg[4]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minutes_reg[3]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minutes_reg[2]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minutes_reg[1]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (minutes_reg[0]) is unused and will be removed from module stopwatch.
 WARNING: [Synth 8-3332] Sequential element (seconds_reg[4]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (seconds_reg[3]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (seconds_reg[2]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (seconds_reg[1]) is unused and will be removed from module stopwatch.
-WARNING: [Synth 8-3332] Sequential element (seconds_reg[0]) is unused and will be removed from module stopwatch.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option1 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option1 /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option1 /text12/pixel_reg)
@@ -1301,6 +1180,26 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/no
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option1 /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option1 /text0/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option1 /pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__1.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__2.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__3.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__4.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__5.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__6.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__7.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__8.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__9.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__10.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__11.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__12.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__13.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__14.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp.
+WARNING: [Synth 8-3332] Sequential element (i_reg[3]) is unused and will be removed from module str_oled.
+WARNING: [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be removed from module str_oled.
+WARNING: [Synth 8-3332] Sequential element (i_reg[1]) is unused and will be removed from module str_oled.
+WARNING: [Synth 8-3332] Sequential element (i_reg[0]) is unused and will be removed from module str_oled.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module str_oled.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option2 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option2 /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option2 /text12/pixel_reg)
@@ -1317,6 +1216,26 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/no
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option2 /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option2 /text0/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option2 /pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__29.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__28.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__27.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__26.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__25.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__24.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__23.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__22.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__21.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__20.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__19.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__18.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__17.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__16.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__15.
+WARNING: [Synth 8-3332] Sequential element (i_reg[3]) is unused and will be removed from module str_oled__1.
+WARNING: [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be removed from module str_oled__1.
+WARNING: [Synth 8-3332] Sequential element (i_reg[1]) is unused and will be removed from module str_oled__1.
+WARNING: [Synth 8-3332] Sequential element (i_reg[0]) is unused and will be removed from module str_oled__1.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module str_oled__1.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option3 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option3 /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option3 /text12/pixel_reg)
@@ -1333,6 +1252,26 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/no
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option3 /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option3 /text0/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/option3 /pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__44.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__43.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__42.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__41.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__40.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__39.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__38.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__37.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__36.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__35.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__34.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__33.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__32.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__31.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__30.
+WARNING: [Synth 8-3332] Sequential element (i_reg[3]) is unused and will be removed from module str_oled__2.
+WARNING: [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be removed from module str_oled__2.
+WARNING: [Synth 8-3332] Sequential element (i_reg[1]) is unused and will be removed from module str_oled__2.
+WARNING: [Synth 8-3332] Sequential element (i_reg[0]) is unused and will be removed from module str_oled__2.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module str_oled__2.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits0 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits0 /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits0 /text12/pixel_reg)
@@ -1346,6 +1285,19 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/no
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits0 /text4/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits0 /text2/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits0 /text1/pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__58.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__57.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__55.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__54.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__53.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__52.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__51.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__50.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__49.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__48.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__47.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__46.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__45.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits1 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits1 /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits1 /text12/pixel_reg)
@@ -1362,6 +1314,27 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/no
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits1 /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits1 /text0/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits1 /pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__74.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__73.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__72.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__71.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__70.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__69.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__68.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__67.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__66.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__65.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__64.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__63.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__62.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__61.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__60.
+WARNING: [Synth 8-3332] Sequential element (i_reg[3]) is unused and will be removed from module str_oled__4.
+WARNING: [Synth 8-3332] Sequential element (i_reg[2]) is unused and will be removed from module str_oled__4.
+WARNING: [Synth 8-3332] Sequential element (i_reg[1]) is unused and will be removed from module str_oled__4.
+WARNING: [Synth 8-3332] Sequential element (i_reg[0]) is unused and will be removed from module str_oled__4.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module str_oled__4.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits2 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits2 /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits2 /text12/pixel_reg)
@@ -1381,10 +1354,23 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/no
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits3 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits3 /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits3 /text12/pixel_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/nolabel_line61/credits3 /text11/pixel_reg)
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'nolabel_line61i_1/row_reg[0]' (FDE) to 'nolabel_line61i_1/row_reg[2]'
+INFO: [Synth 8-3886] merging instance 'nolabel_line61i_1/row_reg[1]' (FDE) to 'nolabel_line61i_1/row_reg[2]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[0]' (FDE) to 'disp1i_2/OLED_colour_reg[1]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[1]' (FDE) to 'disp1i_2/OLED_colour_reg[2]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[2]' (FDE) to 'disp1i_2/OLED_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[3]' (FDE) to 'disp1i_2/OLED_colour_reg[4]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[5]' (FDE) to 'disp1i_2/OLED_colour_reg[6]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[6]' (FDE) to 'disp1i_2/OLED_colour_reg[7]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[7]' (FDE) to 'disp1i_2/OLED_colour_reg[8]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[8]' (FDE) to 'disp1i_2/OLED_colour_reg[9]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[9]' (FDE) to 'disp1i_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[11]' (FDE) to 'disp1i_2/OLED_colour_reg[12]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[12]' (FDE) to 'disp1i_2/OLED_colour_reg[14]'
+INFO: [Synth 8-3886] merging instance 'disp1i_2/OLED_colour_reg[13]' (FDE) to 'disp1i_2/OLED_colour_reg[15]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 816.344 ; gain = 541.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1409,6 +1395,7 @@ ROM:
 |text_disp   | font_disp/data | 256x40        | LUT            | 
 |text_disp   | font_disp/data | 256x40        | LUT            | 
 |text_disp   | font_disp/data | 256x40        | LUT            | 
+|text_disp   | font_disp/data | 256x40        | LUT            | 
 +------------+----------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -1419,34 +1406,34 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |coordinate_display__GC0 |           1|      1943|
-|2     |Top_Student__GC0        |           1|      1756|
+|1     |coordinate_display__GC0 |           1|      2512|
+|2     |Top_Student__GC0        |           1|      3677|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:01:01 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:01:11 . Memory (MB): peak = 816.344 ; gain = 541.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:11 . Memory (MB): peak = 816.344 ; gain = 541.648
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |coordinate_display__GC0 |           1|      1943|
-|2     |Top_Student__GC0        |           1|      1756|
+|1     |coordinate_display__GC0 |           1|      2512|
+|2     |Top_Student__GC0        |           1|      3677|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Technology Mapping : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1470,7 +1457,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished IO Insertion : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1483,7 +1470,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1495,25 +1482,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1529,44 +1516,65 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     3|
-|2     |CARRY4 |    53|
-|3     |LUT1   |    19|
-|4     |LUT2   |    25|
-|5     |LUT3   |    34|
-|6     |LUT4   |    38|
-|7     |LUT5   |    42|
-|8     |LUT6   |   152|
-|9     |MUXF7  |     3|
-|10    |FDE_1  |    32|
-|11    |FDRE   |   292|
-|12    |FDSE   |     6|
-|13    |IBUF   |     3|
-|14    |OBUF   |    37|
-|15    |OBUFT  |     1|
+|1     |BUFG   |     5|
+|2     |CARRY4 |   140|
+|3     |LUT1   |    18|
+|4     |LUT2   |   110|
+|5     |LUT3   |   174|
+|6     |LUT4   |   112|
+|7     |LUT5   |   137|
+|8     |LUT6   |   401|
+|9     |MUXF7  |     7|
+|10    |FDCE   |    54|
+|11    |FDE_1  |    32|
+|12    |FDRE   |   428|
+|13    |FDSE   |     6|
+|14    |IBUF   |    12|
+|15    |OBUF   |    37|
+|16    |OBUFT  |     1|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+------------+--------------+------+
-|      |Instance    |Module        |Cells |
-+------+------------+--------------+------+
-|1     |top         |              |   740|
-|2     |  clk20k    |clk           |    52|
-|3     |  clk4      |clk_0         |    55|
-|4     |  clk625m   |clk_1         |    51|
-|5     |  ledDriver |ledDriv       |    61|
-|6     |    clk600  |clk_2         |    54|
-|7     |  mic       |Audio_Capture |    95|
-|8     |  oled      |Oled_Display  |   289|
-+------+------------+--------------+------+
++------+------------+-------------------+------+
+|      |Instance    |Module             |Cells |
++------+------------+-------------------+------+
+|1     |top         |                   |  1674|
+|2     |  clk1      |clk                |    54|
+|3     |  clk20     |clk_0              |    55|
+|4     |  clk20k    |clk_1              |    52|
+|5     |  clk4      |clk_2              |    55|
+|6     |  clk625m   |clk_3              |    51|
+|7     |  disp1     |coordinate_display |   123|
+|8     |    border1 |draw_border        |     1|
+|9     |    coord   |xycalculator       |    97|
+|10    |    volume1 |volume_bar         |     8|
+|11    |  down      |single_pulse       |     4|
+|12    |    dff1    |single_dff_11      |     3|
+|13    |    dff2    |single_dff_12      |     1|
+|14    |  ledDriver |ledDriv            |    84|
+|15    |    clk600  |clk_10             |    54|
+|16    |  mic       |Audio_Capture      |    95|
+|17    |  mid       |single_pulse_4     |     2|
+|18    |    dff1    |single_dff         |     1|
+|19    |    dff2    |single_dff_9       |     1|
+|20    |  muxseg0   |mux3to1            |    14|
+|21    |  muxseg1   |mux3to1_5          |     1|
+|22    |  muxseg2   |mux3to1_6          |    14|
+|23    |  muxseg3   |mux3to1_7          |    14|
+|24    |  oled      |Oled_Display       |   383|
+|25    |  str_0     |char_disp          |     7|
+|26    |  str_1     |char_disp_8        |     4|
+|27    |  strdriv   |string_driver      |    66|
+|28    |  watchmod  |stopwatch          |   260|
++------+------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1190 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:54 . Memory (MB): peak = 815.563 ; gain = 164.324
-Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 815.563 ; gain = 541.313
+Synthesis finished with 0 errors, 0 critical warnings and 1094 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 839.883 ; gain = 187.617
+Synthesis Optimization Complete : Time (s): cpu = 00:01:09 ; elapsed = 00:01:13 . Memory (MB): peak = 839.883 ; gain = 565.188
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 91 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 191 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1575,11 +1583,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDE_1 => FDRE (inverted pins: C): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-279 Infos, 275 Warnings, 0 Critical Warnings and 0 Errors encountered.
+302 Infos, 237 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:06 . Memory (MB): peak = 815.563 ; gain = 553.816
+synth_design: Time (s): cpu = 00:01:11 ; elapsed = 00:01:16 . Memory (MB): peak = 839.883 ; gain = 577.633
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 815.563 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Apr  3 15:04:40 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 839.883 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  3 15:21:25 2020...
