@@ -50,7 +50,7 @@ module Top_Student (
     wire [7:0] char [3:0];
     wire [7:0] charseg [3:0];
     wire [7:0] segData [3:0];
-    wire [7:0] shifted_seg, tetris_game_count, buttons_seg;
+    wire [7:0] shifted_seg, tetris_game_count, buttons_seg, top_left_seg, block_state_seg;
     wire [7:0] customSeg;
     wire [3:0] customAnode;
     wire customFlag;
@@ -111,7 +111,7 @@ module Top_Student (
     mux3to1 muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
-    ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
+    ledDriv ledDriver(CLK100MHZ, top_left_seg, block_state_seg, segData[2], segData[3], segY, anY);
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
@@ -119,9 +119,9 @@ module Top_Student (
     mux1 muxFinal2(customAnode, anY, customFlag, an);
     
     //Display driver for OLED
-    coordinate_display disp1(clk6p25msig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
+    coordinate_display disp1(clk6p25msig, clk40sig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
                                 left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
-                                 pixel_index, pixel_data, customFlag, sw[9]);              
+                                 pixel_index, pixel_data, customFlag, sw[9], top_left_seg,block_state_seg);              
                                  
     //Stopwatch Module
     stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, sw[8], watch3, watch2, watch1, watch0);

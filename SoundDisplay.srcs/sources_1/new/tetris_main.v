@@ -22,9 +22,9 @@
 //Tetris game driver module: Board == 10 wide by 21 long (+4 height for long block and block generation)
 //bit-0 and bit-11 used for padding the walls
 //To lose, gamestate == 1 and block exceed height limit on static
-module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_down, btn_left, btn_right, btn_mid, input [12:0]pixel_index ,output reg [15:0]OLED_colour = 0);
+module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_down, btn_left, btn_right, btn_mid, input [6:0] x, y ,output reg [15:0]OLED_colour = 0, output [7:0] top_left_seg,block_state_seg);
 
-    reg [4:0] count = 0;
+    reg [5:0] count = 0;
     reg [299:0] static_blocks = 0, moving_blocks = 0;
     wire collision;
     reg [4:0] lowest_row = 3;
@@ -34,8 +34,6 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     wire [2:0] random_block;
     reg generate_block = 0;
     wire [9:0] block_start; //Index of where the current block starts
-    wire [6:0] x;
-    wire [6:0] y;
     reg [3:0] top_left = 0;
     wire [4:0] row, col;
     wire [8:0] row_index;
@@ -49,9 +47,9 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg new_game = 0;
     integer i, j;
     
+    char_disp topleftdebug(top_left, top_left_seg);
+    char_disp blockstatedebug(block_state, block_state_seg);
     
-    //block_generation block(clk20Hz, mic_input, random_block);
-    xycalculator(clk625MHz, pixel_index, x, y);
     
     //Row 0-24, from top to bottom. Row index is the "reversed" index of first pixel in that row 
     //i.e. pixel 299 has row_index 0, pixel 11 has row_index 288
@@ -67,29 +65,25 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     //Visual driver
     always @ (posedge clk625MHz)
     begin
-        
         block_out = 0;
         if(col >= 1 && col <=10 && row <= 24)
             block_out = (static_blocks[299 - col - row_index] | moving_blocks[299 - col - row_index]);
         //Draw border
-            //border_out = (x >= 30 && x <= 32) || x == 95 || (x >= 0 && x <= 1) || (y == 63);
+        border_out = (x >= 33 && x <= 35) || x == 95 || (x >= 0 && x <= 1) || (y == 63);
             
         OLED_colour = (block_out == 1) ? 16'hF800 : (border_out) ? 16'hFFFF : 16'h0000;
-//        (block_out == 7) ? 16'hA87D : (block_out == 6) ? 16'hEDBF : (block_out == 5) ? 16'hFFFF : (block_out == 4) ? 16'h05FF : (block_out == 3) ? 
-//                                16'hFD40 : (block_out == 2) ? 16'h27E0 : 
     end
     
     //Game Engine
-    always @ (posedge clk20Hz or posedge reset) 
+    always @ (posedge clk40Hz or posedge reset) 
     begin
         if(reset) begin
-            moving_blocks = 0;
-            lowest_row = 3;
+            moving_blocks = 0; static_blocks = {25{12'b100000000001}};
             temp_blocks = 0;
             gameState = 0;
-            new_game = 1;
-            count = 0;
-            static_blocks = {25{12'b100000000001}};
+            current_block = 0;
+            new_game = 1; count = 0; fast_drop = 0;
+            
         end
         else begin //Normal operation
             //Reset all variables
@@ -103,14 +97,13 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
             begin
                 temp_blocks = moving_blocks[block_start -: 48] << 1;
                 moving_blocks[block_start -: 48] = new_blocks;
-                top_left = top_left - shifted;
+                top_left = shifted? top_left - 1 : top_left;
             end
-            
-            if(btn_right == 1) //Shift right
+            else if(btn_right == 1) //Shift right
             begin
                 temp_blocks = moving_blocks[block_start -: 48] >> 1;
-                moving_blocks = new_blocks;
-                top_left = top_left + shifted;
+                moving_blocks[block_start -: 48] = new_blocks;
+                top_left = shifted? top_left + 1 : top_left;
             end
             
             if(btn_down == 1) //Fast drop
@@ -146,6 +139,10 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     2'd3: temp_blocks = {12'b100,12'b110,12'b010} << (9-top_left);
                     endcase
                 end
+                3'd3:
+                begin
+                    temp_blocks = current_blocks;
+                end
                 3'd4: //T-block
                 begin
                     case(block_state)
@@ -177,7 +174,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 endcase
                 //Update block_state and moving_blocks
                 moving_blocks[block_start -: 48] = new_blocks;
-                block_state = block_state + shifted;
+                block_state = (shifted) ? block_state + 1 : block_state;
             end
             if(count == 1 || fast_drop == 1) //End of 1 one cycle
             begin
@@ -224,6 +221,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 //Reset flags
                 generate_block = 0;
                 lowest_row = 3;
+                block_state = 0;
             end
             new_game = 0;
         end

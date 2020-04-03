@@ -32,7 +32,7 @@ module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, 
     
     assign continue = (opt_sel == 0) ? {8'h7E, "Continue    "}: "Continue    ";
     assign newgame = (opt_sel == 1) ? {8'h7E, "New Game    "}: "New Game    ";
-    assign credits = (opt_sel == 2) ? {8'h7E, " Credits    "}: " Credits    ";
+    assign credits = (opt_sel == 2) ? {8'h7E, "Credits     "}: "Credits     ";
     
     logo_tetris(clock, currX, currY, 6, logo_out);
     str_oled option1(clock, currX, currY, 29, continue, continue_out);
@@ -49,21 +49,20 @@ module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, 
     
     always @ (posedge clk20Hz)
     begin
-        if(gameReset == 1 && gamestate == 1)
-            gameReset = 0;
+        gameReset = 0;
         if(btnU) begin
             if(gamestate != 3)
                 gamestate = 3;
             else
                 opt_sel = (opt_sel == 0) ? 0 : opt_sel - 1;
         end
-        if(btnD)
-            opt_sel = (opt_sel == 2) ? 2 : opt_sel + 1;
-        if(btnC && (gamestate != 1 && gamestate != 0))
+        else if(btnD && gamestate == 3)
+                opt_sel = (opt_sel == 2) ? 2 : opt_sel + 1; 
+        if(btnC && gamestate == 3)
         begin
             gamestate = opt_sel;
             if(gamestate == 1)
-                gameReset =  1;
+                gameReset = 1;
         end
     end
     
@@ -84,6 +83,6 @@ module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, 
             row <= currY / 8;
             pixel <= cred_disp[row];
         end
-        tetris_enable = (gamestate == 1 || gamestate == 0) ? 1 : 0;
+        tetris_enable = (gamestate == 1 || gamestate == 0);
     end
 endmodule

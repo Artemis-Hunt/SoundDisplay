@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Apr  3 15:22:35 2020
+| Date             : Fri Apr  3 17:02:36 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.079        |
+| Total On-Chip Power (W)  | 0.086        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.007        |
+| Dynamic (W)              | 0.014        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     1664 |       --- |             --- |
-|   LUT as Logic |     0.001 |      800 |     20800 |            3.85 |
-|   CARRY4       |    <0.001 |      140 |      8150 |            1.72 |
-|   Register     |    <0.001 |      521 |     41600 |            1.25 |
-|   Others       |     0.000 |       41 |       --- |             --- |
-|   BUFG         |     0.000 |        4 |        32 |           12.50 |
-|   F7/F8 Muxes  |     0.000 |        7 |     32600 |            0.02 |
-| Signals        |     0.002 |     1354 |       --- |             --- |
-| I/O            |     0.002 |       50 |       106 |           47.17 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.005 |    13592 |       --- |             --- |
+|   LUT as Logic |     0.005 |     8418 |     20800 |           40.47 |
+|   CARRY4       |    <0.001 |     1125 |      8150 |           13.80 |
+|   Register     |    <0.001 |     1657 |     41600 |            3.98 |
+|   F7/F8 Muxes  |    <0.001 |      394 |     32600 |            1.21 |
+|   Others       |     0.000 |      277 |       --- |             --- |
+|   BUFG         |     0.000 |        6 |        32 |           18.75 |
+| Signals        |     0.004 |     9112 |       --- |             --- |
+| I/O            |     0.002 |       53 |       106 |           50.00 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.079 |          |           |                 |
+| Total          |     0.086 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.006 |      0.010 |
+| Vccint    |       1.000 |     0.022 |       0.012 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -139,37 +139,156 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------+-----------+
-| Name        | Power (W) |
-+-------------+-----------+
-| Top_Student |     0.007 |
-|   clk1      |    <0.001 |
-|   clk20     |    <0.001 |
-|   clk20k    |    <0.001 |
-|   clk4      |    <0.001 |
-|   clk625m   |    <0.001 |
-|   disp1     |    <0.001 |
-|     border1 |     0.000 |
-|     coord   |    <0.001 |
-|     volume1 |     0.000 |
-|   down      |    <0.001 |
-|     dff1    |    <0.001 |
-|     dff2    |     0.000 |
-|   ledDriver |    <0.001 |
-|     clk600  |    <0.001 |
-|   mic       |    <0.001 |
-|   mid       |     0.000 |
-|     dff1    |     0.000 |
-|     dff2    |     0.000 |
-|   muxseg0   |    <0.001 |
-|   muxseg1   |    <0.001 |
-|   muxseg2   |    <0.001 |
-|   muxseg3   |    <0.001 |
-|   oled      |    <0.001 |
-|   str_0     |     0.000 |
-|   str_1     |     0.000 |
-|   strdriv   |    <0.001 |
-|   watchmod  |    <0.001 |
-+-------------+-----------+
++----------------------+-----------+
+| Name                 | Power (W) |
++----------------------+-----------+
+| Top_Student          |     0.014 |
+|   clk1               |    <0.001 |
+|   clk20              |    <0.001 |
+|   clk20k             |    <0.001 |
+|   clk361             |    <0.001 |
+|   clk4               |    <0.001 |
+|   clk625m            |    <0.001 |
+|   disp1              |     0.006 |
+|     border1          |     0.000 |
+|     coord            |    <0.001 |
+|     customHigh       |    <0.001 |
+|     customLow        |    <0.001 |
+|     customMed        |    <0.001 |
+|     custombackgrd    |    <0.001 |
+|     customborder     |    <0.001 |
+|     tetrisMenu       |    <0.001 |
+|       credits0       |     0.000 |
+|         text0        |     0.000 |
+|         text1        |     0.000 |
+|         text10       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       credits1       |     0.000 |
+|         text10       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text14       |     0.000 |
+|         text9        |     0.000 |
+|       credits2       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text14       |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       credits3       |     0.000 |
+|         text0        |     0.000 |
+|         text1        |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|       credits4       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text14       |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       credits5       |     0.000 |
+|         text10       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text14       |     0.000 |
+|         text9        |     0.000 |
+|       credits6       |     0.000 |
+|         text0        |     0.000 |
+|         text1        |     0.000 |
+|         text10       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       credits7       |     0.000 |
+|         text10       |     0.000 |
+|         text12       |     0.000 |
+|         text13       |     0.000 |
+|         text14       |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       nolabel_line37 |     0.000 |
+|       option1        |     0.000 |
+|         text10       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       option2        |     0.000 |
+|         text10       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       option3        |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|     tetrisgame       |     0.004 |
+|     volume1          |    <0.001 |
+|   down               |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   ledDriver          |    <0.001 |
+|     clk600           |    <0.001 |
+|   left               |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   mic                |    <0.001 |
+|   mid                |    <0.001 |
+|     dff1             |     0.000 |
+|     dff2             |    <0.001 |
+|   muxFinal           |     0.000 |
+|   muxFinal2          |     0.000 |
+|   muxseg2            |    <0.001 |
+|   muxseg3            |    <0.001 |
+|   oled               |    <0.001 |
+|   right              |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   strdriv            |    <0.001 |
+|   up                 |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
+|   watchmod           |    <0.001 |
++----------------------+-----------+
 
 

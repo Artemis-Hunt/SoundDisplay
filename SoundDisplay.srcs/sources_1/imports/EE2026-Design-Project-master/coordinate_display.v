@@ -22,10 +22,10 @@
 //Button_left == scroll left, button_right == scroll right, sw[15] = Border thick/thin, sw[14] == Border on Off, sw[13] == barOnOff, sw[12] == hold state
 // Theme 3 + center button == custom mode
 
-module coordinate_display(input clock, button_clock, text_clock, blink_clock, back_blink, input [3:0]mic_volume, 
+module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink_clock, back_blink, input [3:0]mic_volume, 
                             input mid_sel, right_sel, left_sel, up_sel, down_sel, brd_sel, brd_onOff, bar_onOff, pause, text_onOff,
                             output [3:0] an, output [7:0] seg, input [12:0] pixel_index, output reg [15:0]OLED_colour = 0, 
-                            output reg customColour = 0, input watchMode);
+                            output reg customColour = 0, input watchMode, output [7:0] top_left_seg, block_state_seg);
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
@@ -36,7 +36,8 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     reg [3:0] input_volume = 0;
     wire [6:0] text_x, text_y;
     wire [4:0] letter_code;
-    wire tetris_sel_up, tetris_sel_down, tetris_sel_mid, tetris_sel_left, tetris_sel_right;
+    wire tetris_start_up, tetris_start_down, tetris_start_mid, tetris_start_left, tetris_start_right;
+    wire tetris_game_up, tetris_game_down, tetris_game_mid, tetris_game_left, tetris_game_right;
     wire [1:0] gamestate;
     wire tetris_enable, tetris_reset;
     
@@ -51,25 +52,28 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     xycalculator coord(clock, pixel_index, x_coord, y_coord);
     draw_border border1(x_coord, y_coord, clock, brd_sel, brd_onOff, border_out, blink_clock, mode_brd, customColour);
     volume_bar volume1(x_coord, y_coord, clock, bar_onOff, input_volume, volume_out, blink_clock, mode_low, mode_med, mode_high, customColour); 
-    
-    //String display
-    str_oled str(clock, x_coord, y_coord, 8, {8'h7E, "Testing 12345"}, string_out);
-    str_oled str1(clock, x_coord, y_coord, 16, "Testing12345678", string1_out);
+   
     
     //Tetris
     //logo_tetris(clock, x_coord, y_coord, 40, logo_out);
-    start_tetris tetrisMenu(clock, button_clock, x_coord, y_coord, tetris_sel_up, tetris_sel_down, tetris_sel_left, tetris_sel_right, tetris_sel_mid,
+    start_tetris tetrisMenu(clock, button_clock, x_coord, y_coord, tetris_start_up, tetris_start_down, tetris_start_left, tetris_start_right, tetris_start_mid,
                     gamestate, tetris_colour, tetris_out, tetris_enable, tetris_reset);
-    tetris_main tetrisgame(button_clock, clock, tetris_enable, tetris_reset, up_sel, down_sel, left_sel, right_sel, mid_sel, pixel_index, tetrisGame_colour);
+    tetris_main tetrisgame(button_clock, clock, tetris_enable, tetris_reset, tetris_start_up, tetris_start_down, tetris_start_left, tetris_start_right, 
+                    tetris_start_mid, x_coord, y_coord, tetrisGame_colour, top_left_seg,block_state_seg);
     
     //Peak and Average Values
     peak_average peakAvg(mic_volume, button_clock, mid_sel, colour_select);
                     
-    assign tetris_sel_up = (colour_select == 4) ? up_sel : 0;
-    assign tetris_sel_down = (colour_select == 4) ? down_sel : 0;
-    assign tetris_sel_left = (colour_select == 4) ? left_sel : 0;
-    assign tetris_sel_right = (colour_select == 4) ? right_sel : 0;
-    assign tetris_sel_mid = (colour_select == 4) ? mid_sel : 0;
+    assign tetris_start_up = (colour_select == 4) ? up_sel : 0;
+    assign tetris_start_down = (colour_select == 4) ? down_sel : 0;
+    assign tetris_start_left = (colour_select == 4) ? left_sel : 0;
+    assign tetris_start_right = (colour_select == 4) ? right_sel : 0;
+    assign tetris_start_mid = (colour_select == 4) ? mid_sel : 0;
+    assign tetris_game_up = (tetris_enable) ? up_sel : 0;
+    assign tetris_game_down = (tetris_enable) ? down_sel : 0;
+    assign tetris_game_left = (tetris_enable) ? left_sel : 0;
+    assign tetris_game_right = (tetris_enable) ? right_sel : 0;
+    assign tetris_game_mid = (tetris_enable) ? mid_sel : 0;
     
     
     //Modules to enable custom colours
@@ -97,8 +101,8 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
             end
             if(right_sel == 1) //Scroll right to choose theme
             begin
-                if(colour_select == 5)
-                    colour_select <= 5;
+                if(colour_select == 4)
+                    colour_select <= 4;
                 else
                     colour_select <= colour_select + 1;
             end
