@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 //Module to calculate the peak and average sound. Mic input = 20Hz, refresh update every second = 1Hz
 
-module peak_average(input [3:0] mic_volume, input button_clock, input reset);
+module peak_average(input [3:0] mic_volume, input button_clock, input reset, input [2:0] mode);
 
     reg [4:0] count = 0;
     reg [3:0] peak = 0;
@@ -30,7 +30,7 @@ module peak_average(input [3:0] mic_volume, input button_clock, input reset);
     
     always @ (posedge button_clock)
     begin
-        if(reset == 1)
+        if(reset == 1 && mode == 5)
         begin
             peak = 0;
             count = 0;
@@ -48,6 +48,7 @@ module peak_average(input [3:0] mic_volume, input button_clock, input reset);
         if(count == 20)
         begin
             average = max_total / DIVISOR;
+            max_total = 0;
             count = 0;
         end
     end

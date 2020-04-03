@@ -61,6 +61,9 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     start_tetris(clock, x_coord, y_coord, tetris_sel_up, tetris_sel_down, tetris_sel_left, tetris_sel_right, tetris_sel_mid,
                     gamestate, tetris_colour, tetris_out, tetris_enable);
     tetris_main tetrisgame(button_clock, clock, tetris_enable, tetris_reset, up_sel, down_sel, left_sel, right_sel, mid_sel, pixel_index, tetrisGame_colour);
+    
+    //Peak and Average Values
+    peak_average peakAvg(mic_volume, button_clock, mid_sel, colour_select);
                     
     assign tetris_sel_up = (colour_select == 4) ? up_sel : 0;
     assign tetris_sel_down = (colour_select == 4) ? down_sel : 0;
