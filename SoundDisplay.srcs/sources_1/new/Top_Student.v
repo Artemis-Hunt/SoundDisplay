@@ -120,16 +120,10 @@ module Top_Student (
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
                                 left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
-                                 pixel_index, pixel_data_main, customFlag, sw[9]);
-                                 
-    //Tetris game
-    tetris_main tetrisgame(clk20sig, clk6p25msig, 1, 0, up_sel, down_sel, left_sel, right_sel, mid_sel,
-                            pixel_index, tetris_pixel);
-                            
+                                 pixel_index, pixel_data_main, customFlag, sw[9]);              
                                  
     //Stopwatch Module
     stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, sw[8], watch3, watch2, watch1, watch0);
-    mux1 tetris_opt(tetris_pixel, pixel_data_main, sw[8], pixel_data);
               
     //Mic and OLED modules
     Audio_Capture mic(CLK100MHZ, clk20ksig, J_MIC3_Pin3, J_MIC3_Pin1,J_MIC3_Pin4, mic_in); 
@@ -166,7 +160,4 @@ module Top_Student (
         for(i = 0; i<=maxLED; i = i + 1)
             ledBar[i] = 1;
     end
-        
-    
-
 endmodule

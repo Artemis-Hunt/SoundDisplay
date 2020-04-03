@@ -38,12 +38,13 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     wire [4:0] letter_code;
     wire tetris_sel_up, tetris_sel_down, tetris_sel_mid, tetris_sel_left, tetris_sel_right;
     wire [1:0] gamestate;
+    wire tetris_enable, tetris_reset;
     
     reg custom_volume = 0;
     reg mode_brd, mode_background, mode_low, mode_med, mode_high;
     reg custom_flag = 0;
     reg [3:0] button_counter = 0;
-    wire [15:0] high_colour, med_colour, low_colour, background_colour, border_colour, tetris_colour;
+    wire [15:0] high_colour, med_colour, low_colour, background_colour, border_colour, tetris_colour, tetrisGame_colour;
     wire [3:0] an1, an2, an3, an4, an5;
     wire [7:0] seg1, seg2, seg3, seg4, seg5;
     
@@ -54,16 +55,18 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     //String display
     str_oled str(clock, x_coord, y_coord, 8, {8'h7E, "Testing 12345"}, string_out);
     str_oled str1(clock, x_coord, y_coord, 16, "Testing12345678", string1_out);
-    logo_tetris(clock, x_coord, y_coord, 40, logo_out);
     
     //Tetris
+    //logo_tetris(clock, x_coord, y_coord, 40, logo_out);
     start_tetris(clock, x_coord, y_coord, tetris_sel_up, tetris_sel_down, tetris_sel_left, tetris_sel_right, tetris_sel_mid,
-                    gamestate, tetris_colour, tetris_out);
-    assign tetris_sel_up = (colour_select == 5) ? up_sel : 0;
-    assign tetris_sel_down = (colour_select == 5) ? down_sel : 0;
-    assign tetris_sel_left = (colour_select == 5) ? left_sel : 0;
-    assign tetris_sel_right = (colour_select == 5) ? right_sel : 0;
-    assign tetris_sel_mid = (colour_select == 5) ? mid_sel : 0;
+                    gamestate, tetris_colour, tetris_out, tetris_enable);
+    tetris_main tetrisgame(button_clock, clock, tetris_enable, tetris_reset, up_sel, down_sel, left_sel, right_sel, mid_sel, pixel_index, tetrisGame_colour);
+                    
+    assign tetris_sel_up = (colour_select == 4) ? up_sel : 0;
+    assign tetris_sel_down = (colour_select == 4) ? down_sel : 0;
+    assign tetris_sel_left = (colour_select == 4) ? left_sel : 0;
+    assign tetris_sel_right = (colour_select == 4) ? right_sel : 0;
+    assign tetris_sel_mid = (colour_select == 4) ? mid_sel : 0;
     
     
     //Modules to enable custom colours
@@ -120,19 +123,6 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     
     always @ (posedge button_clock) //Pause Function (clock will be same output clock as mic LEDs)
     begin
-    
-        //For testing purposes, remove when integrating
-        /*
-        if(up_sel == 1) 
-        begin
-            if(mic_volume == 15)
-                mic_volume <= 0;
-            else
-                mic_volume <= mic_volume + 1;
-        end
-        */
-        //End of testing block
-        
         //Hold volume
         if(pause == 0)
             hold_volume = mic_volume;
@@ -154,8 +144,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
         3'd2: OLED_colour = (volume_out == 3) ? 16'h2145 : (volume_out == 2) ? 16'h9534 : (volume_out == 1) ? 16'h57B9 : (border_out) ? 16'hFCA0 : 16'h9841;
         3'd3: OLED_colour = (volume_out == 3) ? high_colour : (volume_out == 2) ? med_colour : (volume_out == 1) ? low_colour : (border_out) ? 
                                 border_colour : (mode_background == 1 && back_blink == 0) ? 16'h3186 : background_colour;
-        3'd4: OLED_colour = (logo_out) ? 16'hFF00 : (string_out) ? 16'hFFFF: 16'h0000; //Testing for text
-        3'd5: OLED_colour = (tetris_out) ? tetris_colour : 0;
+        3'd4: OLED_colour = (tetris_enable) ? tetrisGame_colour : (tetris_out) ? tetris_colour : 0;
         endcase
     end
     

@@ -20,7 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
  
-module start_tetris(input clock, input [6:0] currX, currY, input btnU, btnD, btnL, btnR, btnC, output reg [1:0] gamestate=3, output reg [16:0] colour = 16'hFFFF, output reg pixel);
+module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, btnD, btnL, btnR, btnC, output reg [1:0] gamestate=3, output reg [16:0] colour = 16'hFFFF, output reg pixel, 
+                    output reg tetris_enable, output reg gameReset);
     parameter MAX_LEN = 15;
     reg [1:0] opt_sel = 0;
     reg [2:0] row = 0;
@@ -46,20 +47,30 @@ module start_tetris(input clock, input [6:0] currX, currY, input btnU, btnD, btn
     str_oled credits6(clock, currX, currY, 48, "Special Thanks ", cred_disp[6]);
     str_oled credits7(clock, currX, currY, 56, "EE Profs TAs", cred_disp[7]);
     
+    always @ (posedge clock)
+    begin
+        if(gameReset == 1 && gamestate == 1)
+            gameReset = 0;
+        if(btnU) begin
+            if(gamestate == 2 || gamestate == 1 || gamestate == 0)
+                gamestate = 3;
+            else
+                opt_sel = (opt_sel == 0) ? 0 : opt_sel - 1;
+        end
+        if(btnD)
+            opt_sel = (opt_sel == 2) ? 2 : opt_sel + 1;
+        if(btnC && (gamestate != 1 && gamestate != 0))
+        begin
+            gamestate = opt_sel;
+            if(gamestate == 1)
+                gameReset =  1;
+        end
+    end
     
     //Gamestate 3: Start screen; state 2: Credits; state 1: New game; state 0: Continue
     always @ (posedge clock) begin
-        button_debounce <= (button_debounce == 156_249) ? 0 : button_debounce + 1;  //Check for button inputs at a frequency of 40Hz
-        if(gamestate == 3) begin
-            if(button_debounce == 0) begin
-                if(btnU)
-                    opt_sel <= (opt_sel == 0) ? 0 : opt_sel - 1;
-                if(btnD)
-                    opt_sel <= (opt_sel == 2) ? 2 : opt_sel + 1;
-                if(btnC)
-                    gamestate <= opt_sel;
-            end
-                
+        button_debounce <= (button_debounce == 156_249) ? 0 : button_debounce + 1;  //Check for button inputs at a frequency of 20Hz
+        if(gamestate == 3) begin //Main Menu
             if(currY >= 6 && currY <= 21)
                 pixel <= logo_out;
             else if(currY >= 29 && currY <=36)
@@ -71,27 +82,9 @@ module start_tetris(input clock, input [6:0] currX, currY, input btnU, btnD, btn
             else pixel <= 0;
         end
         else if(gamestate == 2) begin   //Credits
-            if(btnU)
-                gamestate <= 3;
             row <= currY / 8;
             pixel <= cred_disp[row];
         end
-        else if(gamestate == 1) begin
-            if(btnU)
-                gamestate <= 3;
-            pixel <= 1;
-            //New game
-        end
-        else if(gamestate == 0) begin
-            if(btnU)
-                gamestate <= 3;
-            pixel <= 1;
-            //Continue
-        end
-            
-        
-            
-            
-    
+        tetris_enable = (gamestate == 1 || gamestate == 0) ? 1 : 0;
     end
 endmodule
