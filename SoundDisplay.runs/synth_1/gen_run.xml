@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585904339">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585905576">
   <File Type="PA-TCL" Name="Top_Student.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Top_Student_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Top_Student_reports.tcl"/>
@@ -31,6 +31,13 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../EE2026-Design-Project-master/Oled_Display.v"/>
         <Attr Name="ImportTime" Val="1585099183"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/avgPeak_table.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

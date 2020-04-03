@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Apr  3 17:02:36 2020
-| Host             : Battlestation running 64-bit major release  (build 9200)
+| Date             : Fri Apr  3 17:23:06 2020
+| Host             : WIN8-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
 | Device           : xc7a35tcpg236-1
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |    13592 |       --- |             --- |
-|   LUT as Logic |     0.005 |     8418 |     20800 |           40.47 |
-|   CARRY4       |    <0.001 |     1125 |      8150 |           13.80 |
-|   Register     |    <0.001 |     1657 |     41600 |            3.98 |
-|   F7/F8 Muxes  |    <0.001 |      394 |     32600 |            1.21 |
-|   Others       |     0.000 |      277 |       --- |             --- |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.005 |    15870 |       --- |             --- |
+|   LUT as Logic |     0.005 |     9708 |     20800 |           46.67 |
+|   CARRY4       |    <0.001 |     1476 |      8150 |           18.11 |
+|   Register     |    <0.001 |     1769 |     41600 |            4.25 |
+|   F7/F8 Muxes  |    <0.001 |      393 |     32600 |            1.21 |
+|   Others       |     0.000 |      343 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.004 |     9112 |       --- |             --- |
+| Signals        |     0.005 |    10368 |       --- |             --- |
 | I/O            |     0.002 |       53 |       106 |           50.00 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.086 |          |           |                 |
@@ -157,6 +157,39 @@ Table of Contents
 |     customMed        |    <0.001 |
 |     custombackgrd    |    <0.001 |
 |     customborder     |    <0.001 |
+|     peakAvg          |    <0.001 |
+|       average_info   |     0.000 |
+|         text10       |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|         text9        |     0.000 |
+|       avgNumber      |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|       avgTable       |     0.000 |
+|       peakNumber     |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|       peakTable      |     0.000 |
+|       peak_info      |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text8        |     0.000 |
+|       volume_info    |     0.000 |
+|         text10       |     0.000 |
+|         text11       |     0.000 |
+|         text12       |     0.000 |
+|         text2        |     0.000 |
+|         text3        |     0.000 |
+|         text4        |     0.000 |
+|         text5        |     0.000 |
+|         text6        |     0.000 |
+|         text7        |     0.000 |
+|         text9        |     0.000 |
 |     tetrisMenu       |    <0.001 |
 |       credits0       |     0.000 |
 |         text0        |     0.000 |

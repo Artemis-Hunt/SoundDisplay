@@ -48,6 +48,7 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
     wire [15:0] high_colour, med_colour, low_colour, background_colour, border_colour, tetris_colour, tetrisGame_colour;
     wire [3:0] an1, an2, an3, an4, an5;
     wire [7:0] seg1, seg2, seg3, seg4, seg5;
+    wire [15:0] peakAvgOut;
     
     xycalculator coord(clock, pixel_index, x_coord, y_coord);
     draw_border border1(x_coord, y_coord, clock, brd_sel, brd_onOff, border_out, blink_clock, mode_brd, customColour);
@@ -62,13 +63,13 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
                     tetris_start_mid, x_coord, y_coord, tetrisGame_colour, top_left_seg,block_state_seg);
     
     //Peak and Average Values
-    peak_average peakAvg(mic_volume, button_clock, mid_sel, colour_select);
+    peak_average peakAvg(mic_volume, clock, button_clock, mid_sel, colour_select, x_coord, y_coord, peakAvgOut);
                     
-    assign tetris_start_up = (colour_select == 4) ? up_sel : 0;
-    assign tetris_start_down = (colour_select == 4) ? down_sel : 0;
-    assign tetris_start_left = (colour_select == 4) ? left_sel : 0;
-    assign tetris_start_right = (colour_select == 4) ? right_sel : 0;
-    assign tetris_start_mid = (colour_select == 4) ? mid_sel : 0;
+    assign tetris_start_up = (colour_select == 5) ? up_sel : 0;
+    assign tetris_start_down = (colour_select == 5) ? down_sel : 0;
+    assign tetris_start_left = (colour_select == 5) ? left_sel : 0;
+    assign tetris_start_right = (colour_select == 5) ? right_sel : 0;
+    assign tetris_start_mid = (colour_select == 5) ? mid_sel : 0;
     assign tetris_game_up = (tetris_enable) ? up_sel : 0;
     assign tetris_game_down = (tetris_enable) ? down_sel : 0;
     assign tetris_game_left = (tetris_enable) ? left_sel : 0;
@@ -151,7 +152,8 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
         3'd2: OLED_colour = (volume_out == 3) ? 16'h2145 : (volume_out == 2) ? 16'h9534 : (volume_out == 1) ? 16'h57B9 : (border_out) ? 16'hFCA0 : 16'h9841;
         3'd3: OLED_colour = (volume_out == 3) ? high_colour : (volume_out == 2) ? med_colour : (volume_out == 1) ? low_colour : (border_out) ? 
                                 border_colour : (mode_background == 1 && back_blink == 0) ? 16'h3186 : background_colour;
-        3'd4: OLED_colour = (tetris_enable) ? tetrisGame_colour : (tetris_out) ? tetris_colour : 0;
+        3'd4: OLED_colour = peakAvgOut;
+        3'd5: OLED_colour = (tetris_enable) ? tetrisGame_colour : (tetris_out) ? tetris_colour : 0;
         endcase
     end
     
