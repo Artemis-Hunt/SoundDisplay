@@ -213,6 +213,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/rotate_check.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/EE2026-Design-Project-master/single_dff.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../EE2026-Design-Project-master/single_dff.v"/>

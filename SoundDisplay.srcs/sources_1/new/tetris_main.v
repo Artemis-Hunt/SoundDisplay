@@ -26,7 +26,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
 
     reg [4:0] count = 0;
     reg [299:0] static_blocks = 0, moving_blocks = 0;
-    reg collision = 0;
+    wire collision;
     reg left_clear = 0, right_clear = 0;
     reg [4:0] lowest_row = 3;
     reg [3:0] left_reg = 0;
@@ -35,21 +35,23 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg [3:0] right_pos = 0;
     reg side_collision;
     reg [2:0] current_block = 0;
-    reg [2:0] block_state = 0;
+    reg [1:0] block_state = 0;
     reg [1:0] gameState = 0; //0 = continue, 1 = lose
     wire [2:0] random_block;
-    reg newGame = 1;
     reg generate_block = 0;
     reg [15:0] left_bound = 0, right_bound = 0;
-    reg [9:0] block_start = 0; //Index of where the current block starts
+    wire [9:0] block_start; //Index of where the current block starts
     wire [6:0] x;
     wire [6:0] y;
     reg [3:0] top_left = 0;
-    wire [4:0] row;
+    wire [4:0] row, col;
     wire [8:0] row_index;
     reg [2:0]block_out = 0;
     reg border_out = 0;
-    reg [47:0] temp_rotate = 0;
+    reg [47:0] temp_blocks = 0;
+    reg drop_down = 0;
+    wire [47:0] current_blocks, new_blocks, temp_static;
+    wire shifted;
     integer i, j;
     
     //block_generation block(clk20Hz, mic_input, random_block);
@@ -59,20 +61,24 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     //i.e. pixel 299 has row_index 0, pixel 11 has row_index 288
     assign row = y / 3 + 4;
     assign row_index = row * 12;
+    assign col = x / 3;
+    assign block_start = 299 - (lowest_row-3)*12;
+    assign current_blocks = moving_blocks[block_start -: 48];
+    assign temp_static = (drop_down) ? static_blocks[(block_start- 12) -: 48] : static_blocks[block_start -: 48];
+    
+    collision_check rotate(temp_static, temp_blocks, current_blocks, new_blocks, shifted);
     
     //Visual driver
     always @ (posedge clk625MHz)
     begin
         
         block_out = 0;
-        if( x >= 1 && x <=10 && row >=4 && row <= 24)
-            if(static_blocks[299 - x - row_index] == 1 || moving_blocks[299 - x - row_index] == 1)
-                block_out = 1;
+        if(col >= 0 && col <=11 && row <= 24)
+            block_out = (moving_blocks[299 - col - row_index]);
+        else if(col >= 20 && col <= 31 && row <=24)
+            block_out = static_blocks[299 - (col - 19) - row_index];
         //Draw border
-        if((x >= 30 && x <= 32) || x == 95 || (x >= 0 && x <= 1) || (y == 63))
-            border_out = 1;
-        else
-            border_out = 0;
+            //border_out = (x >= 30 && x <= 32) || x == 95 || (x >= 0 && x <= 1) || (y == 63);
             
         OLED_colour = (block_out == 1) ? 16'hF800 : (border_out) ? 16'hFFFF : 16'h0000;
 //        (block_out == 7) ? 16'hA87D : (block_out == 6) ? 16'hEDBF : (block_out == 5) ? 16'hFFFF : (block_out == 4) ? 16'h05FF : (block_out == 3) ? 
@@ -84,52 +90,42 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     begin
         if(reset == 1) begin
             static_blocks = 0; moving_blocks = 0;
-            collision = 0;
+            temp_blocks = 0;
             gameState = 0;
             count = 0;
-            newGame = 1;
+            static_blocks = {25{12'b100000000001}};
         end
         else begin //Normal operation
             //Reset all variables
-            collision = 0;
             generate_block = 0;
             
-            //Generate play area
-            if(newGame == 1)
-                    static_blocks = {21{12'b100000000001}};
-            
             //Start game
-            if(enable == 1)
-                count = count + 1;
-            
-            block_start = 299 - (lowest_row-3)*12;
+                count = (enable) ? count + 1 : count;
             
             //Button functions
             if(btn_left == 1) //Shift left
             begin
-                collision = (static_blocks[block_start -: 12*4] & (moving_blocks[block_start -: 12*4] << 1) != 0);
-                if(collision == 0) begin
-                    moving_blocks[block_start -: 12*4] = moving_blocks[block_start -: 12*4] << 1;
-                    top_left = top_left - 1;
-                end
+                temp_blocks = moving_blocks[block_start -: 48] << 1;
+                moving_blocks[block_start -: 48] = new_blocks;
+                top_left = top_left - shifted;
             end
             
             if(btn_right == 1) //Shift right
             begin
-                collision = (static_blocks[block_start -: 12*4] & (moving_blocks[block_start -: 12*4] >> 1) != 0);
-                if(collision == 0) begin
-                    moving_blocks = moving_blocks >> 1;
-                    top_left = top_left + 1;
-                end
+                temp_blocks = moving_blocks[block_start -: 48] >> 1;
+                moving_blocks = new_blocks;
+                top_left = top_left + shifted;
             end
             
             if(btn_down == 1) //Fast drop
             begin
-                collision = (static_blocks[(block_start - 12) -: 12*4] & (moving_blocks[block_start -: 12*4] >> 12) != 0);
-                if(collision == 0 && lowest_row > 24) begin
-                    moving_blocks = moving_blocks >> 12;
-                    lowest_row = lowest_row + 1;
+                drop_down = 1;
+                temp_blocks = moving_blocks[block_start -: 48] >> 12;
+                if(lowest_row > 24) begin
+                    moving_blocks = new_blocks;
+                    lowest_row = lowest_row + shifted;
                 end
+                drop_down = 0;
             end
             
             if(btn_mid == 1) //Rotate
@@ -137,269 +133,84 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 case(current_block)
                 3'd0: //Long Block
                 begin 
-                    //Horizontal rotate
-                    if(block_state == 0) begin
-                        temp_rotate = 48'b1111 << (2*12 + (8-top_left));
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 1;
-                        end
-                    end
-                    //Vertical rotate
-                    else if(block_state == 1)
-                    begin
-                        temp_rotate = {4{12'b1}} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 2;
-                        end
-                    end
-                    else if(block_state == 2)
-                    begin
-                        temp_rotate = 48'b1111 << (1*12 + (8-top_left));
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 3;
-                        end
-                    end
-                    else if(block_state == 3)
-                    begin
-                        temp_rotate = {4{12'b1}} << (10-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 0;
-                        end
-                    end
+                    case(block_state)
+                    2'd0: temp_blocks = 48'b1111 << (24 + (8-top_left));
+                    2'd1: temp_blocks = {4{12'b1}} << (9-top_left);
+                    2'd2: temp_blocks = 48'b1111 << (12 + (8-top_left));
+                    2'd3: temp_blocks = {4{12'b1}} << (10-top_left);
+                    endcase
                 end
                 3'd1: //Left Z block
                 begin
-                    if(block_state == 0)
-                    begin
-                        temp_rotate = {12'b011,12'b110,12'b0} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 1;
-                        end
-                    end
-                    else if(block_state == 1)
-                    begin
-                        temp_rotate = {12'b010,12'b011,12'b001} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 2;
-                        end
-                    end
-                    else if(block_state == 2)
-                    begin
-                        temp_rotate = {12'b0,12'b011,12'b110} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 3;
-                        end
-                    end
-                    else if(block_state == 3)
-                    begin
-                        temp_rotate = {12'b100,12'b110,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 0;
-                        end
-                    end
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b011,12'b110,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b010,12'b011,12'b001} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b011,12'b110} << (9-top_left);
+                    2'd3: temp_blocks = {12'b100,12'b110,12'b010} << (9-top_left);
+                    endcase
                 end
                 3'd2: //Right Z block
                 begin
-                    if(block_state == 0)
-                    begin
-                        temp_rotate = {12'b110,12'b011,12'b0} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 1;
-                        end
-                    end
-                    else if(block_state == 1)
-                    begin
-                        temp_rotate = {12'b001,12'b011,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 2;
-                        end
-                    end
-                    else if(block_state == 2)
-                    begin
-                        temp_rotate = {12'b0,12'b110,12'b011} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 3;
-                        end
-                    end
-                    else if(block_state == 3)
-                    begin
-                        temp_rotate = {12'b100,12'b110,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 0;
-                        end
-                    end
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b110,12'b011,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b001,12'b011,12'b010} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b110,12'b011} << (9-top_left);
+                    2'd3: temp_blocks = {12'b100,12'b110,12'b010} << (9-top_left);
+                    endcase
                 end
                 3'd4: //T-block
                 begin
-                    if(block_state == 0)
-                    begin
-                        temp_rotate = {12'b010,12'b111,12'b0} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 1;
-                        end
-                    end
-                    else if(block_state == 1)
-                    begin
-                        temp_rotate = {12'b010,12'b011,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 2;
-                        end
-                    end
-                    else if(block_state == 2)
-                    begin
-                        temp_rotate = {12'b0,12'b111,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 3;
-                        end
-                    end
-                    else if(block_state == 3)
-                    begin
-                        temp_rotate = {12'b010,12'b110,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 0;
-                        end
-                    end
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b010,12'b111,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b010,12'b011,12'b010} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b111,12'b010} << (9-top_left);
+                    2'd3: temp_blocks = {12'b010,12'b110,12'b010} << (9-top_left);
+                    endcase
                 end
                 3'd5: //Normal L block
                 begin
-                    if(block_state == 0)
-                    begin
-                        temp_rotate = {12'b001,12'b111,12'b0} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 1;
-                        end
-                    end
-                    else if(block_state == 1)
-                    begin
-                        temp_rotate = {12'b010,12'b010,12'b011} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 2;
-                        end
-                    end
-                    else if(block_state == 2)
-                    begin
-                        temp_rotate = {12'b0,12'b111,12'b100} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 3;
-                        end
-                    end
-                    else if(block_state == 3)
-                    begin
-                        temp_rotate = {12'b110,12'b010,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 0;
-                        end
-                    end
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b001,12'b111,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b010,12'b010,12'b011} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b111,12'b100} << (9-top_left);
+                    2'd3: temp_blocks = {12'b110,12'b010,12'b010} << (9-top_left);
+                    endcase
                 end
                 3'd6: //Mirrored L block
                 begin
-                    if(block_state == 0)
-                    begin
-                        temp_rotate = {12'b100,12'b111,12'b0} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 1;
-                        end
-                    end
-                    else if(block_state == 1)
-                    begin
-                        temp_rotate = {12'b011,12'b010,12'b010} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 2;
-                        end
-                    end
-                    else if(block_state == 2)
-                    begin
-                        temp_rotate = {12'b0,12'b111,12'b001} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 3;
-                        end
-                    end
-                    else if(block_state == 3)
-                    begin
-                        temp_rotate = {12'b010,12'b010,12'b110} << (9-top_left);
-                        collision = ((static_blocks[block_start -: 12*4] & temp_rotate) != 0);
-                        if(collision == 0) begin
-                            moving_blocks[block_start -: 12*4] = temp_rotate;
-                            block_state = 0;
-                        end
-                    end
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b100,12'b111,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b011,12'b010,12'b010} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b111,12'b001} << (9-top_left);
+                    2'd3: temp_blocks = {12'b010,12'b010,12'b110} << (9-top_left);
+                    endcase
                 end
                 default: ;
                 endcase
+                //Update block_state and moving_blocks
+                moving_blocks[block_start -: 48] = new_blocks;
+                block_state = block_state + shifted;
             end
             
             if(count == 10) //End of 1 one cycle
             begin
                 count = 0;
-                collision = (static_blocks[(block_start - 12) -: 12*4] & (moving_blocks[block_start -: 12*4] >> 12) != 0);
+                drop_down = 1;
+                temp_blocks = moving_blocks[block_start -: 48] >> 12;
                 //Block collides on next frame
-                if (collision == 1 || lowest_row == 24) //Increased the bottom height
+                if (shifted == 0 || lowest_row == 24) //Increased the bottom height
                 begin
                     //Place block into static_array and respective colour arrays
                     static_blocks = static_blocks | moving_blocks;
-                    //Check for continue or lose condition
-                    if(static_blocks[3*12 -: 12] != 0)
-                        gameState = 1;
-                    else
-                    begin
-                        //Checking for rows with all 1's to clear
-                        for(i=4;i<25;i=i+1) begin
-                            if(static_blocks[(299 - i*12) -: 12] == {12{1'b1}}) begin
-                                static_blocks[(299 - i*12) -: 12] = static_blocks[(299 - (i-1)*12) -: 12];
-                                static_blocks[(299 - (i-1)*12) -: 12] = 12'b100000000001;
-                            end
-                                
-                        end
-                    end
+                    //Checking for rows with all 1's to clear
+//                    for(i=24;i>=0;i=i-1) begin
+//                        if(static_blocks[(299 - i*12 - 1) -: 10] == {10{1'b1}}) begin
+//                            static_blocks[(299 - i*12 - 1) -: 10] = static_blocks[299];
+//                        end    
+//                    end
+                    gameState = (static_blocks[263 -: 12] != 0);
                     generate_block = 1; 
                 end
-                
                 //No collision detected, continue game with current block
                 else
                 begin
@@ -409,53 +220,51 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 end
                 
                 //Block Generation
-                if(generate_block == 1 || newGame == 1)
+                if(generate_block == 1)
                 begin
                     current_block = (current_block + 1) % 7;//random_block;
                         
                     case(current_block)
                     3'd0: //Line block
                     begin 
-                        moving_blocks[299 -: 12*4] = {4{12'b000001000000}};
+                        moving_blocks[299 -: 48] = {4{12'b000001000000}};
                         top_left = 4;
                         
                     end
                     3'd1: //Left Z block
                     begin 
-                        moving_blocks[299 -: 12*4] = {12'b0, 12'b000001000000, 12'b000001100000, 12'b000000100000};
+                        moving_blocks[299 -: 48] = {12'b0, 12'b000001000000, 12'b000001100000, 12'b000000100000};
                         top_left = 5;
                     end
                     3'd2: //right Z block
                     begin 
-                        moving_blocks[299 -: 12*4] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000001000000};
+                        moving_blocks[299 -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000001000000};
                         top_left = 5;
                     end
                     3'd3: //Square
                     begin 
-                        moving_blocks[299  -: 12*4] = {12'b000000000000, 12'b000000000000, 12'b000001100000, 12'b000001100000}; 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000000000, 12'b000001100000, 12'b000001100000}; 
                         top_left = 5;
                     end
                     3'd4: //T-block
                     begin 
-                        moving_blocks[299  -: 12*4] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000000100000}; 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000000100000}; 
                         top_left = 5;
                     end
                     3'd5: //Normal L block
                     begin 
-                        moving_blocks[299  -: 12*4] = {12'b000000000000, 12'b000001100000, 12'b000000100000, 12'b000000100000};
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000001100000, 12'b000000100000, 12'b000000100000};
                         top_left = 5;
                     end
                     3'd6: //Mirrored L block
                     begin 
-                        moving_blocks[299  -: 12*4] = {12'b000000000000, 12'b000000100000, 12'b000000100000, 12'b000001100000};
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000100000, 12'b000000100000, 12'b000001100000};
                         top_left = 5;
                     end
                     endcase
                     //Reset flags
-                    newGame = 0;
                     generate_block = 0;
                     lowest_row = 3;
-                    block_state = 0;
                 end
             end
         end
