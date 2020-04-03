@@ -25,7 +25,7 @@
 module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_down, btn_left, btn_right, btn_mid, input [12:0]pixel_index ,output reg [15:0]OLED_colour = 0);
 
     reg [4:0] count = 0;
-    reg [299:0] static_blocks = {25{12'b100000000001}}, moving_blocks = 0;
+    reg [299:0] static_blocks = 0, moving_blocks = 0;
     wire collision;
     reg left_clear = 0, right_clear = 0;
     reg [4:0] lowest_row = 3;
@@ -75,7 +75,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
         block_out = 0;
         if(col >= 0 && col <=11 && row <= 24)
             block_out = (moving_blocks[299 - col - row_index]);
-        else if(col >= 19 && col <= 30 && row <=24)
+        else if(col >= 20 && col <= 31 && row <=24)
             block_out = static_blocks[299 - (col - 19) - row_index];
         //Draw border
             //border_out = (x >= 30 && x <= 32) || x == 95 || (x >= 0 && x <= 1) || (y == 63);
@@ -86,11 +86,10 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     end
     
     //Game Engine
-    always @ (posedge clk20Hz or posedge btn_up) 
+    always @ (posedge clk20Hz or posedge reset) 
     begin
-        if(btn_up) begin
+        if(reset == 1) begin
             static_blocks = 0; moving_blocks = 0;
-            lowest_row = 3;
             temp_blocks = 0;
             gameState = 0;
             count = 0;
@@ -101,7 +100,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
             generate_block = 0;
             
             //Start game
-            count = (enable) ? count + 1 : count;
+                count = (enable) ? count + 1 : count;
             
             //Button functions
             if(btn_left == 1) //Shift left
@@ -114,7 +113,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
             if(btn_right == 1) //Shift right
             begin
                 temp_blocks = moving_blocks[block_start -: 48] >> 1;
-                moving_blocks[block_start -: 48] = new_blocks;
+                moving_blocks = new_blocks;
                 top_left = top_left + shifted;
             end
             
@@ -129,69 +128,69 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 drop_down = 0;
             end
             
-//            if(btn_mid == 1) //Rotate
-//            begin
-//                case(current_block)
-//                3'd0: //Long Block
-//                begin 
-//                    case(block_state)
-//                    2'd0: temp_blocks = 48'b1111 << (24 + (8-top_left));
-//                    2'd1: temp_blocks = {4{12'b1}} << (9-top_left);
-//                    2'd2: temp_blocks = 48'b1111 << (12 + (8-top_left));
-//                    2'd3: temp_blocks = {4{12'b1}} << (10-top_left);
-//                    endcase
-//                end
-//                3'd1: //Left Z block
-//                begin
-//                    case(block_state)
-//                    2'd0: temp_blocks = {12'b011,12'b110,12'b0} << (9-top_left);
-//                    2'd1: temp_blocks = {12'b010,12'b011,12'b001} << (9-top_left);
-//                    2'd2: temp_blocks = {12'b0,12'b011,12'b110} << (9-top_left);
-//                    2'd3: temp_blocks = {12'b100,12'b110,12'b010} << (9-top_left);
-//                    endcase
-//                end
-//                3'd2: //Right Z block
-//                begin
-//                    case(block_state)
-//                    2'd0: temp_blocks = {12'b110,12'b011,12'b0} << (9-top_left);
-//                    2'd1: temp_blocks = {12'b001,12'b011,12'b010} << (9-top_left);
-//                    2'd2: temp_blocks = {12'b0,12'b110,12'b011} << (9-top_left);
-//                    2'd3: temp_blocks = {12'b100,12'b110,12'b010} << (9-top_left);
-//                    endcase
-//                end
-//                3'd4: //T-block
-//                begin
-//                    case(block_state)
-//                    2'd0: temp_blocks = {12'b010,12'b111,12'b0} << (9-top_left);
-//                    2'd1: temp_blocks = {12'b010,12'b011,12'b010} << (9-top_left);
-//                    2'd2: temp_blocks = {12'b0,12'b111,12'b010} << (9-top_left);
-//                    2'd3: temp_blocks = {12'b010,12'b110,12'b010} << (9-top_left);
-//                    endcase
-//                end
-//                3'd5: //Normal L block
-//                begin
-//                    case(block_state)
-//                    2'd0: temp_blocks = {12'b001,12'b111,12'b0} << (9-top_left);
-//                    2'd1: temp_blocks = {12'b010,12'b010,12'b011} << (9-top_left);
-//                    2'd2: temp_blocks = {12'b0,12'b111,12'b100} << (9-top_left);
-//                    2'd3: temp_blocks = {12'b110,12'b010,12'b010} << (9-top_left);
-//                    endcase
-//                end
-//                3'd6: //Mirrored L block
-//                begin
-//                    case(block_state)
-//                    2'd0: temp_blocks = {12'b100,12'b111,12'b0} << (9-top_left);
-//                    2'd1: temp_blocks = {12'b011,12'b010,12'b010} << (9-top_left);
-//                    2'd2: temp_blocks = {12'b0,12'b111,12'b001} << (9-top_left);
-//                    2'd3: temp_blocks = {12'b010,12'b010,12'b110} << (9-top_left);
-//                    endcase
-//                end
-//                default: ;
-//                endcase
-//                //Update block_state and moving_blocks
-//                moving_blocks[block_start -: 48] = new_blocks;
-//                block_state = block_state + shifted;
-//            end
+            if(btn_mid == 1) //Rotate
+            begin
+                case(current_block)
+                3'd0: //Long Block
+                begin 
+                    case(block_state)
+                    2'd0: temp_blocks = 48'b1111 << (24 + (8-top_left));
+                    2'd1: temp_blocks = {4{12'b1}} << (9-top_left);
+                    2'd2: temp_blocks = 48'b1111 << (12 + (8-top_left));
+                    2'd3: temp_blocks = {4{12'b1}} << (10-top_left);
+                    endcase
+                end
+                3'd1: //Left Z block
+                begin
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b011,12'b110,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b010,12'b011,12'b001} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b011,12'b110} << (9-top_left);
+                    2'd3: temp_blocks = {12'b100,12'b110,12'b010} << (9-top_left);
+                    endcase
+                end
+                3'd2: //Right Z block
+                begin
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b110,12'b011,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b001,12'b011,12'b010} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b110,12'b011} << (9-top_left);
+                    2'd3: temp_blocks = {12'b100,12'b110,12'b010} << (9-top_left);
+                    endcase
+                end
+                3'd4: //T-block
+                begin
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b010,12'b111,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b010,12'b011,12'b010} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b111,12'b010} << (9-top_left);
+                    2'd3: temp_blocks = {12'b010,12'b110,12'b010} << (9-top_left);
+                    endcase
+                end
+                3'd5: //Normal L block
+                begin
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b001,12'b111,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b010,12'b010,12'b011} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b111,12'b100} << (9-top_left);
+                    2'd3: temp_blocks = {12'b110,12'b010,12'b010} << (9-top_left);
+                    endcase
+                end
+                3'd6: //Mirrored L block
+                begin
+                    case(block_state)
+                    2'd0: temp_blocks = {12'b100,12'b111,12'b0} << (9-top_left);
+                    2'd1: temp_blocks = {12'b011,12'b010,12'b010} << (9-top_left);
+                    2'd2: temp_blocks = {12'b0,12'b111,12'b001} << (9-top_left);
+                    2'd3: temp_blocks = {12'b010,12'b010,12'b110} << (9-top_left);
+                    endcase
+                end
+                default: ;
+                endcase
+                //Update block_state and moving_blocks
+                moving_blocks[block_start -: 48] = new_blocks;
+                block_state = block_state + shifted;
+            end
             
             if(count == 10) //End of 1 one cycle
             begin
@@ -204,9 +203,11 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     //Place block into static_array and respective colour arrays
                     static_blocks = static_blocks | moving_blocks;
                     //Checking for rows with all 1's to clear
-//                    for(i=24;i>=0;i=i-1)
-//                        if(static_blocks[(299 - i*12 - 1) -: 10] == {10{1'b1}})
-//                            static_blocks[(299 - i*12 - 1) -: 10] = static_blocks[299];   
+//                    for(i=24;i>=0;i=i-1) begin
+//                        if(static_blocks[(299 - i*12 - 1) -: 10] == {10{1'b1}}) begin
+//                            static_blocks[(299 - i*12 - 1) -: 10] = static_blocks[299];
+//                        end    
+//                    end
                     gameState = (static_blocks[263 -: 12] != 0);
                     generate_block = 1; 
                 end
@@ -217,20 +218,50 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     moving_blocks = moving_blocks >> 12;
                     lowest_row = lowest_row + 1;
                 end
+                
                 //Block Generation
                 if(generate_block == 1)
                 begin
-                    current_block = (current_block + 1) % 7;//random_block;    
+                    current_block = (current_block + 1) % 7;//random_block;
+                        
                     case(current_block)
-                    3'd0: moving_blocks[299 -: 48] = {4{12'b000001000000}};                                                      //Line
-                    3'd1: moving_blocks[299 -: 48] = {12'b0, 12'b000001000000, 12'b000001100000, 12'b000000100000};              //Left Z
-                    3'd2: moving_blocks[299 -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000001000000};   //Right Z 
-                    3'd3: moving_blocks[299 -: 48] = {12'b000000000000, 12'b000000000000, 12'b000001100000, 12'b000001100000};   //Square
-                    3'd4: moving_blocks[299 -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000000100000};   //T block
-                    3'd5: moving_blocks[299 -: 48] = {12'b000000000000, 12'b000001100000, 12'b000000100000, 12'b000000100000};   //Normal L block
-                    3'd6: moving_blocks[299 -: 48] = {12'b000000000000, 12'b000000100000, 12'b000000100000, 12'b000001100000};   //Mirrored L block
+                    3'd0: //Line block
+                    begin 
+                        moving_blocks[299 -: 48] = {4{12'b000001000000}};
+                        top_left = 4;
+                        
+                    end
+                    3'd1: //Left Z block
+                    begin 
+                        moving_blocks[299 -: 48] = {12'b0, 12'b000001000000, 12'b000001100000, 12'b000000100000};
+                        top_left = 5;
+                    end
+                    3'd2: //right Z block
+                    begin 
+                        moving_blocks[299 -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000001000000};
+                        top_left = 5;
+                    end
+                    3'd3: //Square
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000000000, 12'b000001100000, 12'b000001100000}; 
+                        top_left = 5;
+                    end
+                    3'd4: //T-block
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000000100000}; 
+                        top_left = 5;
+                    end
+                    3'd5: //Normal L block
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000001100000, 12'b000000100000, 12'b000000100000};
+                        top_left = 5;
+                    end
+                    3'd6: //Mirrored L block
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000100000, 12'b000000100000, 12'b000001100000};
+                        top_left = 5;
+                    end
                     endcase
-                    top_left  = (current_block == 0) ? 4 : 5;
                     //Reset flags
                     generate_block = 0;
                     lowest_row = 3;
