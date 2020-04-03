@@ -102,8 +102,8 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
             end
             if(right_sel == 1) //Scroll right to choose theme
             begin
-                if(colour_select == 4)
-                    colour_select <= 4;
+                if(colour_select == 5)
+                    colour_select <= 5;
                 else
                     colour_select <= colour_select + 1;
             end

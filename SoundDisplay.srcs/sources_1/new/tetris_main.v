@@ -24,7 +24,7 @@
 //To lose, gamestate == 1 and block exceed height limit on static
 module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_down, btn_left, btn_right, btn_mid, input [6:0] x, y ,output reg [15:0]OLED_colour = 0, output [7:0] top_left_seg,block_state_seg);
 
-    reg [5:0] count = 0;
+    reg [5:0] count = 0, movement_count = 0;
     reg [299:0] static_blocks = 0, moving_blocks = 0;
     wire collision;
     reg [4:0] lowest_row = 3;
@@ -43,7 +43,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg drop_down = 0, fast_drop = 0;
     wire [47:0] current_blocks, new_blocks, temp_static;
     wire shifted;
-    reg collision_down = 0;
+    reg collision_down = 0, movement = 0;
     reg new_game = 0;
     integer i, j;
     
@@ -88,21 +88,19 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
         else begin //Normal operation
             //Reset all variables
             generate_block = new_game;
-            
             //Start game
             count = (enable) ? ((count == 10) ? 0 : count + 1 ): count;
-            
             //Button functions
             if(btn_left == 1) //Shift left
             begin
                 temp_blocks = moving_blocks[block_start -: 48] << 1;
-                moving_blocks[block_start -: 48] = new_blocks;
-                top_left = shifted? top_left - 1 : top_left;
+                movement = shifted;
+                top_left = shifted ? top_left - 1 : top_left;
             end
             else if(btn_right == 1) //Shift right
             begin
                 temp_blocks = moving_blocks[block_start -: 48] >> 1;
-                moving_blocks[block_start -: 48] = new_blocks;
+                movement = shifted;
                 top_left = shifted? top_left + 1 : top_left;
             end
             
@@ -173,9 +171,12 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 default: ;
                 endcase
                 //Update block_state and moving_blocks
-                moving_blocks[block_start -: 48] = new_blocks;
+                movement = shifted;
                 block_state = (shifted) ? block_state + 1 : block_state;
             end
+            
+            if(movement) moving_blocks[block_start -: 48] = new_blocks;
+            movement = 0;
             if(count == 1 || fast_drop == 1) //End of 1 one cycle
             begin
                 drop_down = 1;

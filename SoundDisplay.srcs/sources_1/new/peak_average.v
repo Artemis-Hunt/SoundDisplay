@@ -34,10 +34,10 @@ module peak_average(input [3:0] mic_volume, input clk625MHz, button_clock, input
     str_oled volume_info(clk625MHz, currX, currY, 8, "  VOLUME INFO  ", textPlain);
     str_oled peak_info(clk625MHz, currX, currY, 20, "     PEAK      ", textBlue1);
     str_oled peakNumber(clk625MHz, currX, currY, 29, peakIn, textPeak);
-    str_oled average_info(clk625MHz, currX, currY, 35, "     AVERAGE    ", textBlue);
-    str_oled avgNumber(clk625MHz, currX, currY, 44, averageIn, textAverage);
+    str_oled average_info(clk625MHz, currX, currY, 40, "     AVERAGE    ", textBlue);
+    str_oled avgNumber(clk625MHz, currX, currY, 49, averageIn, textAverage);
     
-    avgPeak_table peakTable(button_clock, peak, peakIn );
+    avgPeak_table peakTable(button_clock, peak, peakIn);
     avgPeak_table avgTable(button_clock, average, averageIn);
     
     assign color_out = ((textPeak == 1 && (peak > 10  && peak <= 15)) || (textAverage == 1 && (average > 10 && average <= 15))) ? 16'hF800 : ((textPeak == 1 && (peak > 5  && peak <= 10)) || 

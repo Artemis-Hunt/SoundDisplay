@@ -41,7 +41,6 @@ module avgPeak_table(input clock, input [3:0] selection, output reg [120:1] numb
         4'd13: number = 120'h202020202020203133202020202020;
         4'd14: number = 120'h202020202020203134202020202020;
         4'd15: number = 120'h202020202020203135202020202020;
-        
         endcase
     end
 endmodule
