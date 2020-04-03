@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module collision_check(input [48:1] static_blocks, input [48:1] temp_blocks, input [48:1] current_blocks, output [48:1] new_blocks, output shifted);
+module collision_check(input [48:1] static_blocks, input [48:1] temp_blocks, input [48:1] current_blocks, output shifted);
     assign shifted = ((static_blocks & temp_blocks) == 48'b0);
-    assign new_blocks = (shifted) ? temp_blocks : current_blocks;
+    //assign new_blocks = (shifted) ? temp_blocks : current_blocks;
 endmodule

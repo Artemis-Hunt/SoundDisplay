@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
  
-module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, btnD, btnL, btnR, btnC, output reg [1:0] gamestate=3, output reg [16:0] colour = 16'hFFFF, output reg pixel, 
+module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, btnD, btnL, btnR, btnC, output reg [1:0] gamestate=3, output reg [15:0] colour = 16'hFFFF, output reg pixel, 
                     output reg tetris_enable, output reg gameReset);
     parameter MAX_LEN = 15;
     reg [1:0] opt_sel = 0;

@@ -45,7 +45,7 @@ module Top_Student (
     wire [7:0] bcdseg [1:0];   //Segment data for 7-seg display
     reg [15:0] ledBar;   // Data for volume bar, directly assigned to the LEDs
     wire [15:0] ledMic;
-    reg [4:0] maxLED = 0;   //Index of the highest LED that should be lit
+    reg [3:0] maxLED = 0;   //Index of the highest LED that should be lit
     reg [11:0] max = 0, mic_raw = 0;   //Peak volume in a given period |||| Raw mic data, updated at 4Hz
     reg [12:0] resetMax = 0;   //Counter for resetting max
     wire [7:0] char [3:0];
@@ -56,8 +56,8 @@ module Top_Student (
     wire [3:0] customAnode;
     wire customFlag;
     wire [7:0] watch0, watch1, watch2, watch3;
-    wire [7:0] segY, segF;
-    wire[3:0] anY, anF;
+    wire [7:0] segY, segF, segDebug, segOut;
+    wire[3:0] anY, anF, anDebug, anOut;
     wire startMode;
     integer i, j;   //Loop variables
     
@@ -86,15 +86,15 @@ module Top_Student (
     single_pulse down(clk20sig, btnD, down_sel);
     
     //Multiplexer between raw mic data and peak volume meter
-    mux1 mux0(mic_raw, ledBar, sw[0], mic_out);
+    mux1 mux0({4'b0,mic_raw}, ledBar, sw[0], mic_out);
     assign ledMic = mic_out;
     
     ///VOLUME LEVEL DISPLAY FOR 7SEG///
     //Convert 0-15 into BCD
     bcd bcd1(maxLED, bcd[1], bcd[0]);
     //Convert 4-bit BCD into 7-seg data
-    char_disp char1(bcd[1], bcdseg[1]);
-    char_disp char0(bcd[0], bcdseg[0]);
+    char_disp char1({4'b0,bcd[1]}, bcdseg[1]);
+    char_disp char0({4'b0,bcd[0]}, bcdseg[0]);
     ///VOLUME LEVEL DISPLAY FOR 7SEG///
     
     ///TEXT SCROLLING///
@@ -108,22 +108,26 @@ module Top_Student (
     
     //mux for volume level || string || stopwatch
     //sw9 on = stopwatch mode, else sw1 on = volume level, sw1 off = string
-    mux3to1 muxseg0(bcdseg[0], charseg[0], watch0, sw[1], sw[9], segData[0]);
-    mux3to1 muxseg1(bcdseg[1], charseg[1], watch1, sw[1], sw[9], segData[1]);
+    mux3to1 muxseg0(bcdseg[0],charseg[0], watch0, sw[1], sw[9], segData[0]);
+    mux3to1 muxseg1(bcdseg[1],charseg[1], watch1, sw[1], sw[9], segData[1]);
     mux3to1 muxseg2(8'b11111111, charseg[2], watch2, sw[1], sw[9], segData[2]);
     mux3to1 muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
-    ledDriv ledDriver(CLK100MHZ, top_left_seg, block_state_seg, segData[2], segData[3], segY, anY);
+    ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
+    ledDriv ledDriverDebug(CLK100MHZ, top_left_seg, block_state_seg, {8{1'b1}} , {8{1'b1}}, segDebug, anDebug);
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
     mux1 muxFinal(customSeg, segY, customFlag, segF);
     mux1 muxFinal2(customAnode, anY, customFlag, anF);
+    mux1 muxDebug(segDebug, segF, sw[7], segOut);
+    mux1 muxDebug1(anDebug, anF, sw[7], anOut);
+    
     
     //StartMode && EcoMode Multiplex
-    assign seg = (startMode || ecoMode) ? 8'b11111111 : segF;
-    assign an = (startMode || ecoMode) ? 4'b1111 : anF; //Input Scrolling later
+    assign seg = (startMode || ecoMode) ? 8'b11111111 : segOut;
+    assign an = (startMode || ecoMode) ? 4'b1111 : anOut; //Input Scrolling later
     assign led = (startMode || ecoMode) ? 16'h0000 : ledMic;
     assign pixel_data = (ecoMode) ? 0 : pixel_data_main;
     
