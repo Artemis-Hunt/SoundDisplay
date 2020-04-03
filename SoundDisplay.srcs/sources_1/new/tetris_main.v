@@ -25,7 +25,7 @@
 module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_down, btn_left, btn_right, btn_mid, input [12:0]pixel_index ,output reg [15:0]OLED_colour = 0 , output [7:0] seg, seg1, seg_buttons);
 
     reg [4:0] count = 0;
-    reg [299:0] static_blocks = {25{12'b100000000001}}, moving_blocks = 0;
+    reg [299:0] static_blocks = 0, moving_blocks = 0;
     wire collision;
     reg [4:0] lowest_row = 3;
     reg [2:0] current_block = 0;
@@ -84,7 +84,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
     end
     
     //Game Engine
-    always @ (posedge clk20Hz or posedge btn_up) 
+    always @ (posedge clk20Hz or posedge reset) 
     begin
         if(btn_up) begin
             moving_blocks = 0;
@@ -113,7 +113,7 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
             if(btn_right == 1) //Shift right
             begin
                 temp_blocks = moving_blocks[block_start -: 48] >> 1;
-                moving_blocks[block_start -: 48] = new_blocks;
+                moving_blocks = new_blocks;
                 top_left = top_left + shifted;
             end
             
@@ -218,8 +218,55 @@ module tetris_main(input clk20Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     moving_blocks = moving_blocks >> 12;
                     lowest_row = lowest_row + 1;
                 end
-                drop_down = 0;
+				
+                drop_down = 0;    
                 //Block Generation
+                if(generate_block == 1)
+                begin
+                    current_block = (current_block + 1) % 7;//random_block;
+                        
+                    case(current_block)
+                    3'd0: //Line block
+                    begin 
+                        moving_blocks[299 -: 48] = {4{12'b000001000000}};
+                        top_left = 4;
+                        
+                    end
+                    3'd1: //Left Z block
+                    begin 
+                        moving_blocks[299 -: 48] = {12'b0, 12'b000001000000, 12'b000001100000, 12'b000000100000};
+                        top_left = 5;
+                    end
+                    3'd2: //right Z block
+                    begin 
+                        moving_blocks[299 -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000001000000};
+                        top_left = 5;
+                    end
+                    3'd3: //Square
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000000000, 12'b000001100000, 12'b000001100000}; 
+                        top_left = 5;
+                    end
+                    3'd4: //T-block
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000100000, 12'b000001100000, 12'b000000100000}; 
+                        top_left = 5;
+                    end
+                    3'd5: //Normal L block
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000001100000, 12'b000000100000, 12'b000000100000};
+                        top_left = 5;
+                    end
+                    3'd6: //Mirrored L block
+                    begin 
+                        moving_blocks[299  -: 48] = {12'b000000000000, 12'b000000100000, 12'b000000100000, 12'b000001100000};
+                        top_left = 5;
+                    end
+                    endcase
+                    //Reset flags
+                    generate_block = 0;
+                    lowest_row = 3;
+                end
             end
             if(generate_block == 1)
             begin
