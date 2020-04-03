@@ -43,10 +43,12 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg fast_drop = 0;
     wire [47:0] current_blocks, new_blocks, temp_static;
     reg collision_down = 0, collision_LRrotate = 0; 
+    reg [129:0] rows_to_clear = 0;
+    reg [4:0] current_clearing_row = 0;
     reg [1:0] movement = 0;
     reg new_game = 0;
     reg first_game = 1;
-    integer i, j;
+    integer i, j = 1;
     
     char_disp topleftdebug(top_left, top_left_seg);
     char_disp blockstatedebug(block_state, block_state_seg);
@@ -85,7 +87,6 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             gameState = 0;
             current_block = 0;
             new_game = 1; count = 0; fast_drop = 0;
-            
         end
         else begin //Normal operation
             //Reset all variables
@@ -174,7 +175,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 movement = 3;
             end
             
-            collision_LRrotate = ((temp_static & temp_blocks) != 48'b0);
+            collision_LRrotate = (movement != 0) ? ((temp_static & temp_blocks) != 48'b0) : 1;
             if(collision_LRrotate == 0) begin
                 moving_blocks[block_start -: 48] = temp_blocks;
                 case(movement)
@@ -183,7 +184,6 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     2'd3: block_state = block_state + 1;
                 endcase
             end
-            else moving_blocks[block_start -: 48] = current_blocks;
             movement = 0;
             if(count == 1 || fast_drop == 1) //End of 1 one cycle
             begin
@@ -194,9 +194,12 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     //Place block into static_array and respective colour arrays
                     static_blocks = static_blocks | moving_blocks;
                     //Checking for rows with all 1's to clear
-//                    for(i=24;i>=0;i=i-1)
-//                        if(static_blocks[(299 - i*12 - 1) -: 10] == {10{1'b1}})
-//                            static_blocks[(299 - i*12 - 1) -: 10] = static_blocks[299];   
+                    for(i=24;i>=4;i=i-1)
+                        if(static_blocks[(299 - i*12 - 1) -: 10] == {10{1'b1}}) begin
+                            for(j=i;j>=4;j=j-1)
+                                static_blocks[(299 - j*12 - 1) -: 10] = static_blocks[(299 - (j-1)*12 - 1) -: 10];
+//                            i=i+1;
+                        end
                     //gameState = (static_blocks[263 -: 12] != 0);
                     moving_blocks = 0;
                     generate_block = 1; 
