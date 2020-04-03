@@ -59,7 +59,7 @@ module coordinate_display(input clock, button_clock, text_clock, blink_clock, ba
     //Tetris
     //logo_tetris(clock, x_coord, y_coord, 40, logo_out);
     start_tetris(clock, x_coord, y_coord, tetris_sel_up, tetris_sel_down, tetris_sel_left, tetris_sel_right, tetris_sel_mid,
-                    gamestate, tetris_colour, tetris_out, tetris_enable);
+                    gamestate, tetris_colour, tetris_out, tetris_enable, tetris_reset);
     tetris_main tetrisgame(button_clock, clock, tetris_enable, tetris_reset, up_sel, down_sel, left_sel, right_sel, mid_sel, pixel_index, tetrisGame_colour);
     
     //Peak and Average Values
