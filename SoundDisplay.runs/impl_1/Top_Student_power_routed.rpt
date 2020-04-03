@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Apr  3 21:52:42 2020
+| Date             : Fri Apr  3 22:30:32 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |    15519 |       --- |             --- |
-|   LUT as Logic |     0.005 |     9385 |     20800 |           45.12 |
+| Slice Logic    |     0.005 |    16688 |       --- |             --- |
+|   LUT as Logic |     0.005 |    10355 |     20800 |           49.78 |
 |   CARRY4       |    <0.001 |     1498 |      8150 |           18.38 |
-|   Register     |    <0.001 |     1799 |     41600 |            4.32 |
-|   F7/F8 Muxes  |    <0.001 |      379 |     32600 |            1.16 |
+|   Register     |    <0.001 |     1802 |     41600 |            4.33 |
+|   F7/F8 Muxes  |    <0.001 |      370 |     32600 |            1.13 |
 |   Others       |     0.000 |      351 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.005 |    10110 |       --- |             --- |
+| Signals        |     0.004 |    11309 |       --- |             --- |
 | I/O            |     0.007 |       54 |       106 |           50.94 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.091 |          |           |                 |
@@ -139,195 +139,197 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------------+-----------+
-| Name                 | Power (W) |
-+----------------------+-----------+
-| Top_Student          |     0.019 |
-|   clk1               |    <0.001 |
-|   clk20              |    <0.001 |
-|   clk20k             |    <0.001 |
-|   clk361             |    <0.001 |
-|   clk4               |    <0.001 |
-|   clk625m            |    <0.001 |
-|   disp1              |     0.006 |
-|     border1          |     0.000 |
-|     coord            |    <0.001 |
-|     customHigh       |    <0.001 |
-|     customLow        |    <0.001 |
-|     customMed        |    <0.001 |
-|     custombackgrd    |    <0.001 |
-|     customborder     |    <0.001 |
-|     orange           |     0.000 |
-|     peakAvg          |    <0.001 |
-|       average_info   |     0.000 |
-|         text10       |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       avgNumber      |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|       avgTable       |     0.000 |
-|       peakNumber     |    <0.001 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|       peakTable      |     0.000 |
-|       peak_info      |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|       volume_info    |     0.000 |
-|         text10       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text9        |     0.000 |
-|     tetrisMenu       |    <0.001 |
-|       credits0       |     0.000 |
-|         text0        |     0.000 |
-|         text1        |     0.000 |
-|         text10       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits1       |     0.000 |
-|         text10       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text9        |     0.000 |
-|       credits2       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits3       |     0.000 |
-|         text0        |     0.000 |
-|         text1        |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|       credits4       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits5       |     0.000 |
-|         text10       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text9        |     0.000 |
-|       credits6       |     0.000 |
-|         text0        |     0.000 |
-|         text1        |     0.000 |
-|         text10       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits7       |     0.000 |
-|         text10       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       nolabel_line37 |     0.000 |
-|       option1        |     0.000 |
-|         text10       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       option2        |     0.000 |
-|         text10       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       option3        |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|     tetrisgame       |     0.003 |
-|     volume1          |    <0.001 |
-|     white            |    <0.001 |
-|   down               |     0.000 |
-|     dff1             |     0.000 |
-|     dff2             |     0.000 |
-|   ledDriver          |    <0.001 |
-|     clk600           |    <0.001 |
-|   ledDriverDebug     |    <0.001 |
-|     clk600           |    <0.001 |
-|   left               |     0.000 |
-|     dff1             |     0.000 |
-|     dff2             |     0.000 |
-|   mic                |    <0.001 |
-|   mid                |    <0.001 |
-|     dff1             |     0.000 |
-|     dff2             |    <0.001 |
-|   muxseg0            |    <0.001 |
-|   muxseg1            |    <0.001 |
-|   muxseg2            |    <0.001 |
-|   muxseg3            |    <0.001 |
-|   oled               |    <0.001 |
-|   right              |     0.000 |
-|     dff1             |     0.000 |
-|     dff2             |     0.000 |
-|   str_0              |     0.000 |
-|   str_1              |     0.000 |
-|   strdriv            |    <0.001 |
-|   up                 |    <0.001 |
-|     dff1             |    <0.001 |
-|     dff2             |     0.000 |
-|   watchmod           |    <0.001 |
-+----------------------+-----------+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| Top_Student           |     0.019 |
+|   clk1                |    <0.001 |
+|   clk20               |    <0.001 |
+|   clk20k              |    <0.001 |
+|   clk361              |    <0.001 |
+|   clk4                |    <0.001 |
+|   clk625m             |    <0.001 |
+|   disp1               |     0.006 |
+|     border1           |     0.000 |
+|     coord             |    <0.001 |
+|     customHigh        |    <0.001 |
+|     customLow         |    <0.001 |
+|     customMed         |    <0.001 |
+|     custombackgrd     |    <0.001 |
+|     customborder      |    <0.001 |
+|     orange            |     0.000 |
+|     peakAvg           |    <0.001 |
+|       average_info    |     0.000 |
+|         text10        |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       avgNumber       |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       avgTable        |     0.000 |
+|       peakNumber      |    <0.001 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       peakTable       |     0.000 |
+|       peak_info       |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       volume_info     |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text9         |     0.000 |
+|     tetrisMenu        |    <0.001 |
+|       credits0        |     0.000 |
+|         text0         |     0.000 |
+|         text1         |     0.000 |
+|         text10        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits1        |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text9         |     0.000 |
+|       credits2        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits3        |     0.000 |
+|         text0         |     0.000 |
+|         text1         |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       credits4        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits5        |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text9         |     0.000 |
+|       credits6        |     0.000 |
+|         text0         |     0.000 |
+|         text1         |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits7        |     0.000 |
+|         text10        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       nolabel_line37  |     0.000 |
+|       option1         |     0.000 |
+|         text10        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       option2         |     0.000 |
+|         text10        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       option3         |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|     tetrisgame        |     0.003 |
+|       blockstatedebug |     0.000 |
+|       topleftdebug    |    <0.001 |
+|     volume1           |    <0.001 |
+|     white             |    <0.001 |
+|   down                |     0.000 |
+|     dff1              |     0.000 |
+|     dff2              |     0.000 |
+|   ledDriver           |    <0.001 |
+|     clk600            |    <0.001 |
+|   ledDriverDebug      |    <0.001 |
+|     clk600            |    <0.001 |
+|   left                |     0.000 |
+|     dff1              |     0.000 |
+|     dff2              |     0.000 |
+|   mic                 |    <0.001 |
+|   mid                 |    <0.001 |
+|     dff1              |     0.000 |
+|     dff2              |    <0.001 |
+|   muxseg0             |    <0.001 |
+|   muxseg1             |    <0.001 |
+|   muxseg2             |    <0.001 |
+|   muxseg3             |    <0.001 |
+|   oled                |    <0.001 |
+|   right               |     0.000 |
+|     dff1              |     0.000 |
+|     dff2              |     0.000 |
+|   str_0               |     0.000 |
+|   str_1               |     0.000 |
+|   strdriv             |    <0.001 |
+|   up                  |    <0.001 |
+|     dff1              |    <0.001 |
+|     dff2              |     0.000 |
+|   watchmod            |    <0.001 |
++-----------------------+-----------+
 
 

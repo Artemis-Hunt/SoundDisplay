@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Apr  3 21:47:35 2020
-# Process ID: 14584
+# Start of session at: Fri Apr  3 22:24:54 2020
+# Process ID: 17260
 # Current directory: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.vds
@@ -16,9 +16,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18944 
+INFO: Helper process launched with PID 21052 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 373.023 ; gain = 98.637
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 373.273 ; gain = 98.363
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 	Parameter MIN_VOL bound to: 2000 - type: integer 
@@ -161,13 +161,13 @@ INFO: [Synth 8-6157] synthesizing module 'tetris_main' [C:/School/Y1S2/EE2026/So
 WARNING: [Synth 8-689] width (4) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:51]
 WARNING: [Synth 8-689] width (2) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:52]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:180]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:215]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:217]
 WARNING: [Synth 8-6014] Unused sequential element block_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:69]
 WARNING: [Synth 8-6014] Unused sequential element border_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:73]
 WARNING: [Synth 8-6014] Unused sequential element gameState_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:85]
 WARNING: [Synth 8-6014] Unused sequential element generate_block_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:93]
 WARNING: [Synth 8-6014] Unused sequential element collision_LRrotate_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:177]
-WARNING: [Synth 8-6014] Unused sequential element collision_down_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:189]
+WARNING: [Synth 8-6014] Unused sequential element collision_down_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:190]
 WARNING: [Synth 8-5788] Register first_game_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:92]
 WARNING: [Synth 8-5788] Register top_left_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:51]
 WARNING: [Synth 8-5788] Register block_state_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:52]
@@ -282,7 +282,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 442.438 ; gain = 168.051
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 442.961 ; gain = 168.051
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -295,10 +295,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 442.438 ; gain = 168.051
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 442.961 ; gain = 168.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 442.438 ; gain = 168.051
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 442.961 ; gain = 168.051
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -314,22 +314,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 832.090 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 834.078 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 832.090 ; gain = 557.703
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 834.078 ; gain = 559.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 832.090 ; gain = 557.703
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 834.078 ; gain = 559.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 832.090 ; gain = 557.703
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 834.078 ; gain = 559.168
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "seg" won't be mapped to RAM because it is too sparse
@@ -345,6 +345,7 @@ INFO: [Synth 8-5544] ROM "OLED_colour0" won't be mapped to Block RAM because add
 INFO: [Synth 8-5544] ROM "top_left0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "OLED_colour0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "top_left0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "moving_blocks" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "top_left" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "block_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "number0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -417,20 +418,21 @@ INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 832.090 ; gain = 557.703
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 834.078 ; gain = 559.168
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-------------------------+------------+----------+
-|      |RTL Partition            |Replication |Instances |
-+------+-------------------------+------------+----------+
-|1     |str_oled                 |          16|      8772|
-|2     |start_tetris__GC0        |           1|       470|
-|3     |peak_average__GC0        |           1|      4148|
-|4     |tetris_main              |           1|     38140|
-|5     |coordinate_display__GCB1 |           1|      8947|
-|6     |Top_Student__GC0         |           1|     25974|
-+------+-------------------------+------------+----------+
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |str_oled                |          16|      8772|
+|2     |start_tetris__GC0       |           1|       470|
+|3     |tetris_main__GB0        |           1|     29938|
+|4     |tetris_main__GB1        |           1|     12498|
+|5     |peak_average__GC0       |           1|      4148|
+|6     |coordinate_display__GC0 |           1|      8947|
+|7     |Top_Student__GC0        |           1|     25974|
++------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -473,11 +475,12 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 5     
 	                1 Bit    Registers := 298   
 +---Muxes : 
-	   2 Input    300 Bit        Muxes := 5     
+	   2 Input    300 Bit        Muxes := 7     
+	   8 Input    295 Bit        Muxes := 1     
 	   2 Input    103 Bit        Muxes := 3     
-	   2 Input     48 Bit        Muxes := 12    
+	   2 Input     48 Bit        Muxes := 10    
 	   4 Input     48 Bit        Muxes := 6     
-	   8 Input     48 Bit        Muxes := 3     
+	   8 Input     48 Bit        Muxes := 1     
 	   2 Input     40 Bit        Muxes := 3     
 	   2 Input     32 Bit        Muxes := 3     
 	  32 Input     32 Bit        Muxes := 1     
@@ -501,7 +504,7 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 101   
 	   4 Input      4 Bit        Muxes := 5     
 	   7 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 29    
+	   2 Input      3 Bit        Muxes := 28    
 	   2 Input      2 Bit        Muxes := 15    
 	   5 Input      2 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 1     
@@ -714,14 +717,15 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input    300 Bit        Muxes := 5     
-	   2 Input     48 Bit        Muxes := 12    
+	   2 Input    300 Bit        Muxes := 7     
+	   8 Input    295 Bit        Muxes := 1     
+	   2 Input     48 Bit        Muxes := 10    
 	   4 Input     48 Bit        Muxes := 6     
-	   8 Input     48 Bit        Muxes := 3     
+	   8 Input     48 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 3     
 	   2 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 4     
 	   5 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
@@ -749,6 +753,10 @@ Detailed RTL Component Info :
 	   2 Input      9 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 1     
+Module xycalculator 
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 2     
 Module draw_border 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -787,10 +795,6 @@ Detailed RTL Component Info :
 	   2 Input      7 Bit       Adders := 1     
 +---Registers : 
 	                1 Bit    Registers := 1     
-Module xycalculator 
-Detailed RTL Component Info : 
-+---Registers : 
-	                7 Bit    Registers := 2     
 Module custom_border 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1183,8 +1187,8 @@ INFO: [Synth 8-5545] ROM "clk1/slowclk0" won't be mapped to RAM because address 
 INFO: [Synth 8-5544] ROM "credits" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "newgame" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "continue" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5587] ROM size for "topleftdebug/seg" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "blockstatedebug/seg" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "topleftdebug/seg" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5545] ROM "clk600/slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk600/slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5587] ROM size for "minute_tens_pos/seg" is below threshold of ROM address width. It will be mapped to LUTs
@@ -1215,161 +1219,110 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[5]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/movement_reg[0]' (FDC) to 'disp1/tetrisgame/movement_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisgame /\movement_reg[1] )
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[0]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[1]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[2]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[3]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[4]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[5]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[6]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[7]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[8]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[9]' (FDR) to 'disp1/tetrisgame/OLED_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[11]' (FDS) to 'disp1/tetrisgame/OLED_colour_reg[15]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[12]' (FDS) to 'disp1/tetrisgame/OLED_colour_reg[15]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[13]' (FDS) to 'disp1/tetrisgame/OLED_colour_reg[15]'
-INFO: [Synth 8-3886] merging instance 'disp1/tetrisgame/OLED_colour_reg[14]' (FDS) to 'disp1/tetrisgame/OLED_colour_reg[15]'
-WARNING: [Synth 8-3332] Sequential element (movement_reg[1]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[299]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[288]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[287]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[276]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[275]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[264]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[263]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[252]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[251]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[240]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[239]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[228]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[227]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[216]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[215]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[204]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[203]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[192]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[191]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[180]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[179]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[168]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[167]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[156]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[155]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[144]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[143]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[132]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[131]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[120]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[119]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[108]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[107]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[96]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[95]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[84]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[83]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[72]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[71]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[60]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[59]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[48]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[47]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[36]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[35]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[24]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[23]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[12]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[11]) is unused and will be removed from module tetris_main.
-WARNING: [Synth 8-3332] Sequential element (static_blocks_reg[0]) is unused and will be removed from module tetris_main.
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[1]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[2]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[3]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[4]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[5]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[6]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[7]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[8]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[9]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[10]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[11]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[12]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[13]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[14]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[15]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[16]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[17]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[18]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[19]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[20]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[21]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[22]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[23]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[24]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[25]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[26]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[27]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[28]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[29]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[30]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[31]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[32]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[33]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[34]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[35]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[36]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[37]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[38]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[39]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[40]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[41]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[42]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[43]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[44]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[45]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[46]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[47]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[48]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[52]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[54]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[55]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[56]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[61]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[62]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[63]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[64]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[65]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[66]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[67]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[68]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[69]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[70]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[71]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[72]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[73]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[74]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[75]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[76]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[77]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[78]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[79]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[80]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[81]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[82]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[83]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[84]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[85]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[86]' (FD) to 'peakAvgi_2/peakTable/number_reg[118]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[87]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[88]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[89]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[90]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[91]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[92]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_2/avgTable/number_reg[93]' (FD) to 'peakAvgi_2/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/movement_reg[0]' (FDC) to 'tetrisgamei_2/movement_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetrisgamei_2/\movement_reg[1] )
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[0]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[1]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[2]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[3]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[4]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[5]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[6]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[7]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[8]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[9]' (FDR) to 'tetrisgamei_2/OLED_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[11]' (FDS) to 'tetrisgamei_2/OLED_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[12]' (FDS) to 'tetrisgamei_2/OLED_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[13]' (FDS) to 'tetrisgamei_2/OLED_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_2/OLED_colour_reg[14]' (FDS) to 'tetrisgamei_2/OLED_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[1]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[2]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[3]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[4]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[5]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[6]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[7]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[8]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[9]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[10]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[11]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[12]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[13]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[14]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[15]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[16]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[17]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[18]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[19]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[20]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[21]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[22]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[23]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[24]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[25]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[26]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[27]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[28]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[29]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[30]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[31]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[32]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[33]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[34]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[35]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[36]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[37]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[38]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[39]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[40]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[41]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[42]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[43]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[44]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[45]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[46]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[47]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[48]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[52]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[54]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[55]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[56]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[61]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[62]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[63]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[64]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[65]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[66]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[67]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[68]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[69]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[70]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[71]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[72]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[73]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[74]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[75]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[76]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[77]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[78]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[79]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[80]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[81]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[82]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[83]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[84]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[85]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[86]' (FD) to 'peakAvgi_4/peakTable/number_reg[118]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[87]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[88]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[89]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[90]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[91]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[92]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_4/avgTable/number_reg[93]' (FD) to 'peakAvgi_4/peakTable/number_reg[117]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (peakAvgi_2/\peakTable/number_reg[117] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (peakAvgi_2/\peakTable/number_reg[118] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (peakAvgi_4/\peakTable/number_reg[117] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (peakAvgi_4/\peakTable/number_reg[118] )
 WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module logo_blue.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/watchmod/\seconds_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/strdriv/\char0_reg[3] )
@@ -1469,7 +1422,11 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/te
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits3 /text10/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits3 /text9/pixel_reg)
 WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__95.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__94.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__93.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__92.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__91.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__90.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text10/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text7/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text6/pixel_reg)
@@ -1479,6 +1436,15 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/te
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text2/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text0/pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__119.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__118.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__117.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__116.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__115.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__114.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__113.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__112.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__109.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits5 /text8/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits5 /text7/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits5 /text6/pixel_reg)
@@ -1488,18 +1454,39 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/te
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits5 /text2/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits5 /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits5 /text0/pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__134.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__133.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__132.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__131.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__130.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__129.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__128.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__127.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__126.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits6 /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits6 /text7/pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__142.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__135.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits7 /text11/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits7 /text5/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits7 /text2/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits7 /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits7 /text0/pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__164.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__163.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__162.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__159.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__153.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/volume_info /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/volume_info /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/volume_info /text8/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/volume_info /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/volume_info /text0/pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__179.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__178.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__171.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__166.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__165.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peak_info /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peak_info /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peak_info /text12/pixel_reg)
@@ -1511,6 +1498,17 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/pe
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peak_info /text2/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peak_info /text1/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peak_info /text0/pixel_reg)
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__194.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__193.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__192.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__191.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__190.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__185.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__184.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__183.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__182.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__181.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__180.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peakNumber /text14/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peakNumber /text13/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peakNumber /text12/pixel_reg)
@@ -1518,8 +1516,14 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/pe
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peakNumber /text10/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/peakAvg/peakNumber /text9/pixel_reg)
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__209.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__208.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__207.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__206.
+WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__205.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:13 ; elapsed = 00:02:19 . Memory (MB): peak = 892.500 ; gain = 618.113
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:28 ; elapsed = 00:02:32 . Memory (MB): peak = 990.738 ; gain = 715.828
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1544,6 +1548,7 @@ ROM:
 |text_disp   | font_disp/data | 256x40        | LUT            | 
 |text_disp   | font_disp/data | 256x40        | LUT            | 
 |text_disp   | font_disp/data | 256x40        | LUT            | 
+|text_disp   | font_disp/data | 256x40        | LUT            | 
 +------------+----------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -1551,75 +1556,77 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-------------------------+------------+----------+
-|      |RTL Partition            |Replication |Instances |
-+------+-------------------------+------------+----------+
-|1     |str_oled                 |           1|      1212|
-|2     |start_tetris__GC0        |           1|       307|
-|3     |peak_average__GC0        |           1|       342|
-|4     |tetris_main              |           1|      9072|
-|5     |coordinate_display__GCB1 |           1|      3646|
-|6     |Top_Student__GC0         |           1|      3999|
-|7     |str_oled__1              |           1|      1236|
-|8     |str_oled__2              |           1|      1330|
-|9     |str_oled__3              |           1|      1203|
-|10    |str_oled__4              |           1|       831|
-|11    |str_oled__5              |           1|       840|
-|12    |str_oled__6              |           1|      1048|
-|13    |str_oled__7              |           1|       847|
-|14    |str_oled__8              |           1|       819|
-|15    |str_oled__9              |           1|      1314|
-|16    |str_oled__10             |           1|      1057|
-|17    |str_oled__11             |           1|      1079|
-|18    |str_oled__12             |           1|       741|
-|19    |str_oled__13             |           1|       823|
-|20    |str_oled__14             |           1|       911|
-|21    |str_oled__15             |           1|       830|
-+------+-------------------------+------------+----------+
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |str_oled                |           1|      1212|
+|2     |start_tetris__GC0       |           1|       307|
+|3     |tetris_main__GB0        |           1|     14107|
+|4     |tetris_main__GB1        |           1|        63|
+|5     |peak_average__GC0       |           1|       342|
+|6     |coordinate_display__GC0 |           1|      3646|
+|7     |Top_Student__GC0        |           1|      3999|
+|8     |str_oled__1             |           1|      1236|
+|9     |str_oled__2             |           1|      1330|
+|10    |str_oled__3             |           1|      1203|
+|11    |str_oled__4             |           1|       831|
+|12    |str_oled__5             |           1|       840|
+|13    |str_oled__6             |           1|      1048|
+|14    |str_oled__7             |           1|       847|
+|15    |str_oled__8             |           1|       819|
+|16    |str_oled__9             |           1|      1314|
+|17    |str_oled__10            |           1|      1057|
+|18    |str_oled__11            |           1|      1079|
+|19    |str_oled__12            |           1|       741|
+|20    |str_oled__13            |           1|       823|
+|21    |str_oled__14            |           1|       911|
+|22    |str_oled__15            |           1|       830|
++------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:22 ; elapsed = 00:02:29 . Memory (MB): peak = 892.500 ; gain = 618.113
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:37 ; elapsed = 00:02:43 . Memory (MB): peak = 990.738 ; gain = 715.828
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:24 ; elapsed = 00:02:31 . Memory (MB): peak = 896.461 ; gain = 622.074
+Finished Timing Optimization : Time (s): cpu = 00:02:39 ; elapsed = 00:02:45 . Memory (MB): peak = 990.738 ; gain = 715.828
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-------------------------+------------+----------+
-|      |RTL Partition            |Replication |Instances |
-+------+-------------------------+------------+----------+
-|1     |str_oled                 |           1|      1212|
-|2     |start_tetris__GC0        |           1|       307|
-|3     |peak_average__GC0        |           1|       342|
-|4     |tetris_main              |           1|      9072|
-|5     |coordinate_display__GCB1 |           1|      3646|
-|6     |Top_Student__GC0         |           1|      3999|
-|7     |str_oled__1              |           1|      1236|
-|8     |str_oled__2              |           1|      1330|
-|9     |str_oled__3              |           1|      1203|
-|10    |str_oled__4              |           1|       831|
-|11    |str_oled__5              |           1|       840|
-|12    |str_oled__6              |           1|      1048|
-|13    |str_oled__7              |           1|       847|
-|14    |str_oled__8              |           1|       819|
-|15    |str_oled__9              |           1|      1314|
-|16    |str_oled__10             |           1|      1057|
-|17    |str_oled__11             |           1|      1079|
-|18    |str_oled__12             |           1|       741|
-|19    |str_oled__13             |           1|       823|
-|20    |str_oled__14             |           1|       911|
-|21    |str_oled__15             |           1|       830|
-+------+-------------------------+------------+----------+
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |str_oled                |           1|      1212|
+|2     |start_tetris__GC0       |           1|       307|
+|3     |tetris_main__GB0        |           1|     14107|
+|4     |tetris_main__GB1        |           1|        63|
+|5     |peak_average__GC0       |           1|       342|
+|6     |coordinate_display__GC0 |           1|      3646|
+|7     |Top_Student__GC0        |           1|      3999|
+|8     |str_oled__1             |           1|      1236|
+|9     |str_oled__2             |           1|      1330|
+|10    |str_oled__3             |           1|      1203|
+|11    |str_oled__4             |           1|       831|
+|12    |str_oled__5             |           1|       840|
+|13    |str_oled__6             |           1|      1048|
+|14    |str_oled__7             |           1|       847|
+|15    |str_oled__8             |           1|       819|
+|16    |str_oled__9             |           1|      1314|
+|17    |str_oled__10            |           1|      1057|
+|18    |str_oled__11            |           1|      1079|
+|19    |str_oled__12            |           1|       741|
+|20    |str_oled__13            |           1|       823|
+|21    |str_oled__14            |           1|       911|
+|22    |str_oled__15            |           1|       830|
++------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:30 ; elapsed = 00:02:37 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished Technology Mapping : Time (s): cpu = 00:02:46 ; elapsed = 00:02:52 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1643,7 +1650,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:32 ; elapsed = 00:02:39 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished IO Insertion : Time (s): cpu = 00:02:48 ; elapsed = 00:02:54 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1656,7 +1663,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:32 ; elapsed = 00:02:39 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:48 ; elapsed = 00:02:54 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1668,25 +1675,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:34 ; elapsed = 00:02:41 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:49 ; elapsed = 00:02:56 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:34 ; elapsed = 00:02:41 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:50 ; elapsed = 00:02:56 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:34 ; elapsed = 00:02:42 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:51 ; elapsed = 00:02:57 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:35 ; elapsed = 00:02:42 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:51 ; elapsed = 00:02:57 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1704,223 +1711,225 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     7|
 |2     |CARRY4 |  1498|
-|3     |LUT1   |  1553|
-|4     |LUT2   |  2872|
-|5     |LUT3   |   971|
-|6     |LUT4   |   980|
-|7     |LUT5   |  1357|
-|8     |LUT6   |  3820|
-|9     |MUXF7  |   299|
-|10    |MUXF8  |    83|
+|3     |LUT1   |  1539|
+|4     |LUT2   |  3147|
+|5     |LUT3   |  1179|
+|6     |LUT4   |  1036|
+|7     |LUT5   |  1367|
+|8     |LUT6   |  4448|
+|9     |MUXF7  |   291|
+|10    |MUXF8  |    82|
 |11    |FDCE   |   667|
 |12    |FDE_1  |    32|
 |13    |FDPE   |     1|
-|14    |FDRE   |  1069|
-|15    |FDSE   |    30|
+|14    |FDRE   |  1071|
+|15    |FDSE   |    31|
 |16    |IBUF   |    16|
 |17    |OBUF   |    37|
 |18    |OBUFT  |     1|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+---------------------+-------------------+------+
-|      |Instance             |Module             |Cells |
-+------+---------------------+-------------------+------+
-|1     |top                  |                   | 15293|
-|2     |  clk1               |clk                |    54|
-|3     |  clk20              |clk_0              |    55|
-|4     |  clk20k             |clk_1              |    52|
-|5     |  clk361             |clk_2              |    54|
-|6     |  clk4               |clk_3              |    56|
-|7     |  clk625m            |clk_4              |    51|
-|8     |  disp1              |coordinate_display | 13477|
-|9     |    border1          |draw_border        |     1|
-|10    |    coord            |xycalculator       |  4879|
-|11    |    customHigh       |custom_high        |   120|
-|12    |    customLow        |custom_low         |    98|
-|13    |    customMed        |custom_med         |    98|
-|14    |    custombackgrd    |custom_background  |   115|
-|15    |    customborder     |custom_border      |    98|
-|16    |    orange           |logo_orange        |    54|
-|17    |    peakAvg          |peak_average       |  1624|
-|18    |      average_info   |str_oled_126       |   538|
-|19    |        text10       |text_disp_150      |     2|
-|20    |        text4        |text_disp_151      |     1|
-|21    |        text5        |text_disp_152      |     2|
-|22    |        text6        |text_disp_153      |     2|
-|23    |        text7        |text_disp_154      |     3|
-|24    |        text8        |text_disp_155      |     1|
-|25    |        text9        |text_disp_156      |     4|
-|26    |      avgNumber      |str_oled_127       |   157|
-|27    |        text7        |text_disp_148      |     2|
-|28    |        text8        |text_disp_149      |     3|
-|29    |      avgTable       |avgPeak_table      |    41|
-|30    |      peakNumber     |str_oled_128       |   184|
-|31    |        text7        |text_disp_146      |     2|
-|32    |        text8        |text_disp_147      |     4|
-|33    |      peakTable      |avgPeak_table_129  |    45|
-|34    |      peak_info      |str_oled_130       |   289|
-|35    |        text5        |text_disp_142      |     2|
-|36    |        text6        |text_disp_143      |     4|
-|37    |        text7        |text_disp_144      |     1|
-|38    |        text8        |text_disp_145      |     3|
-|39    |      volume_info    |str_oled_131       |   278|
-|40    |        text10       |text_disp_132      |     2|
-|41    |        text11       |text_disp_133      |     3|
-|42    |        text12       |text_disp_134      |     3|
-|43    |        text2        |text_disp_135      |     2|
-|44    |        text3        |text_disp_136      |     1|
-|45    |        text4        |text_disp_137      |     2|
-|46    |        text5        |text_disp_138      |     2|
-|47    |        text6        |text_disp_139      |     2|
-|48    |        text7        |text_disp_140      |     3|
-|49    |        text9        |text_disp_141      |     3|
-|50    |    tetrisMenu       |start_tetris       |  2024|
-|51    |      credits0       |str_oled           |   174|
-|52    |        text0        |text_disp_115      |     2|
-|53    |        text1        |text_disp_116      |     2|
-|54    |        text10       |text_disp_117      |     4|
-|55    |        text2        |text_disp_118      |     1|
-|56    |        text3        |text_disp_119      |     3|
-|57    |        text4        |text_disp_120      |     2|
-|58    |        text5        |text_disp_121      |     2|
-|59    |        text6        |text_disp_122      |     1|
-|60    |        text7        |text_disp_123      |     3|
-|61    |        text8        |text_disp_124      |     2|
-|62    |        text9        |text_disp_125      |     2|
-|63    |      credits1       |str_oled_25        |   164|
-|64    |        text10       |text_disp_109      |     3|
-|65    |        text11       |text_disp_110      |     2|
-|66    |        text12       |text_disp_111      |     4|
-|67    |        text13       |text_disp_112      |     2|
-|68    |        text14       |text_disp_113      |     2|
-|69    |        text9        |text_disp_114      |     2|
-|70    |      credits2       |str_oled_26        |   204|
-|71    |        text11       |text_disp_103      |     2|
-|72    |        text12       |text_disp_104      |     2|
-|73    |        text13       |text_disp_105      |     3|
-|74    |        text14       |text_disp_106      |     4|
-|75    |        text8        |text_disp_107      |     1|
-|76    |        text9        |text_disp_108      |     2|
-|77    |      credits3       |str_oled_27        |   192|
-|78    |        text0        |text_disp_94       |     2|
-|79    |        text1        |text_disp_95       |     2|
-|80    |        text2        |text_disp_96       |     2|
-|81    |        text3        |text_disp_97       |     2|
-|82    |        text4        |text_disp_98       |     2|
-|83    |        text5        |text_disp_99       |     2|
-|84    |        text6        |text_disp_100      |     3|
-|85    |        text7        |text_disp_101      |     3|
-|86    |        text8        |text_disp_102      |     4|
-|87    |      credits4       |str_oled_28        |   162|
-|88    |        text11       |text_disp_88       |     2|
-|89    |        text12       |text_disp_89       |     2|
-|90    |        text13       |text_disp_90       |     3|
-|91    |        text14       |text_disp_91       |     4|
-|92    |        text8        |text_disp_92       |     1|
-|93    |        text9        |text_disp_93       |     2|
-|94    |      credits5       |str_oled_29        |   163|
-|95    |        text10       |text_disp_82       |     3|
-|96    |        text11       |text_disp_83       |     2|
-|97    |        text12       |text_disp_84       |     4|
-|98    |        text13       |text_disp_85       |     2|
-|99    |        text14       |text_disp_86       |     2|
-|100   |        text9        |text_disp_87       |     2|
-|101   |      credits6       |str_oled_30        |   192|
-|102   |        text0        |text_disp_69       |     2|
-|103   |        text1        |text_disp_70       |     2|
-|104   |        text10       |text_disp_71       |     2|
-|105   |        text11       |text_disp_72       |     4|
-|106   |        text12       |text_disp_73       |     3|
-|107   |        text13       |text_disp_74       |     4|
-|108   |        text2        |text_disp_75       |     2|
-|109   |        text3        |text_disp_76       |     2|
-|110   |        text4        |text_disp_77       |     2|
-|111   |        text5        |text_disp_78       |     2|
-|112   |        text6        |text_disp_79       |     2|
-|113   |        text8        |text_disp_80       |     1|
-|114   |        text9        |text_disp_81       |     2|
-|115   |      credits7       |str_oled_31        |   173|
-|116   |        text10       |text_disp_59       |     2|
-|117   |        text12       |text_disp_60       |     1|
-|118   |        text13       |text_disp_61       |     3|
-|119   |        text14       |text_disp_62       |     3|
-|120   |        text3        |text_disp_63       |     3|
-|121   |        text4        |text_disp_64       |     2|
-|122   |        text6        |text_disp_65       |     3|
-|123   |        text7        |text_disp_66       |     2|
-|124   |        text8        |text_disp_67       |     1|
-|125   |        text9        |text_disp_68       |     2|
-|126   |      nolabel_line37 |logo_tetris        |    18|
-|127   |      option1        |str_oled_32        |   194|
-|128   |        text10       |text_disp_50       |     2|
-|129   |        text2        |text_disp_51       |     4|
-|130   |        text3        |text_disp_52       |     2|
-|131   |        text4        |text_disp_53       |     1|
-|132   |        text5        |text_disp_54       |     3|
-|133   |        text6        |text_disp_55       |     2|
-|134   |        text7        |text_disp_56       |     1|
-|135   |        text8        |text_disp_57       |     4|
-|136   |        text9        |text_disp_58       |     2|
-|137   |      option2        |str_oled_33        |   170|
-|138   |        text10       |text_disp_42       |     3|
-|139   |        text2        |text_disp_43       |     4|
-|140   |        text3        |text_disp_44       |     1|
-|141   |        text4        |text_disp_45       |     1|
-|142   |        text5        |text_disp_46       |     3|
-|143   |        text7        |text_disp_47       |     2|
-|144   |        text8        |text_disp_48       |     2|
-|145   |        text9        |text_disp_49       |     2|
-|146   |      option3        |str_oled_34        |   173|
-|147   |        text2        |text_disp          |     4|
-|148   |        text3        |text_disp_35       |     2|
-|149   |        text4        |text_disp_36       |     3|
-|150   |        text5        |text_disp_37       |     2|
-|151   |        text6        |text_disp_38       |     1|
-|152   |        text7        |text_disp_39       |     2|
-|153   |        text8        |text_disp_40       |     4|
-|154   |        text9        |text_disp_41       |     2|
-|155   |    tetrisgame       |tetris_main        |  4056|
-|156   |    volume1          |volume_bar         |    52|
-|157   |    white            |logo_white         |   146|
-|158   |  down               |single_pulse       |     3|
-|159   |    dff1             |single_dff_23      |     2|
-|160   |    dff2             |single_dff_24      |     1|
-|161   |  ledDriver          |ledDriv            |    84|
-|162   |    clk600           |clk_22             |    54|
-|163   |  ledDriverDebug     |ledDriv_5          |    77|
-|164   |    clk600           |clk_21             |    54|
-|165   |  left               |single_pulse_6     |     3|
-|166   |    dff1             |single_dff_19      |     2|
-|167   |    dff2             |single_dff_20      |     1|
-|168   |  mic                |Audio_Capture      |    96|
-|169   |  mid                |single_pulse_7     |     5|
-|170   |    dff1             |single_dff_17      |     2|
-|171   |    dff2             |single_dff_18      |     3|
-|172   |  muxseg0            |mux3to1            |    14|
-|173   |  muxseg1            |mux3to1_8          |     1|
-|174   |  muxseg2            |mux3to1_9          |    14|
-|175   |  muxseg3            |mux3to1_10         |    14|
-|176   |  oled               |Oled_Display       |   436|
-|177   |  right              |single_pulse_11    |     4|
-|178   |    dff1             |single_dff_15      |     2|
-|179   |    dff2             |single_dff_16      |     2|
-|180   |  str_0              |char_disp          |     7|
-|181   |  str_1              |char_disp_12       |     4|
-|182   |  strdriv            |string_driver      |    66|
-|183   |  up                 |single_pulse_13    |     5|
-|184   |    dff1             |single_dff         |     4|
-|185   |    dff2             |single_dff_14      |     1|
-|186   |  watchmod           |stopwatch          |   212|
-+------+---------------------+-------------------+------+
++------+----------------------+-------------------+------+
+|      |Instance              |Module             |Cells |
++------+----------------------+-------------------+------+
+|1     |top                   |                   | 16450|
+|2     |  clk1                |clk                |    54|
+|3     |  clk20               |clk_0              |    55|
+|4     |  clk20k              |clk_1              |    52|
+|5     |  clk361              |clk_2              |    54|
+|6     |  clk4                |clk_3              |    56|
+|7     |  clk625m             |clk_4              |    51|
+|8     |  disp1               |coordinate_display | 14634|
+|9     |    border1           |draw_border        |     1|
+|10    |    coord             |xycalculator       |  4884|
+|11    |    customHigh        |custom_high        |   120|
+|12    |    customLow         |custom_low         |    98|
+|13    |    customMed         |custom_med         |    98|
+|14    |    custombackgrd     |custom_background  |   115|
+|15    |    customborder      |custom_border      |    98|
+|16    |    orange            |logo_orange        |    54|
+|17    |    peakAvg           |peak_average       |  1624|
+|18    |      average_info    |str_oled_128       |   538|
+|19    |        text10        |text_disp_152      |     2|
+|20    |        text4         |text_disp_153      |     1|
+|21    |        text5         |text_disp_154      |     2|
+|22    |        text6         |text_disp_155      |     2|
+|23    |        text7         |text_disp_156      |     3|
+|24    |        text8         |text_disp_157      |     1|
+|25    |        text9         |text_disp_158      |     4|
+|26    |      avgNumber       |str_oled_129       |   157|
+|27    |        text7         |text_disp_150      |     2|
+|28    |        text8         |text_disp_151      |     3|
+|29    |      avgTable        |avgPeak_table      |    41|
+|30    |      peakNumber      |str_oled_130       |   184|
+|31    |        text7         |text_disp_148      |     2|
+|32    |        text8         |text_disp_149      |     4|
+|33    |      peakTable       |avgPeak_table_131  |    45|
+|34    |      peak_info       |str_oled_132       |   289|
+|35    |        text5         |text_disp_144      |     2|
+|36    |        text6         |text_disp_145      |     4|
+|37    |        text7         |text_disp_146      |     1|
+|38    |        text8         |text_disp_147      |     3|
+|39    |      volume_info     |str_oled_133       |   278|
+|40    |        text10        |text_disp_134      |     2|
+|41    |        text11        |text_disp_135      |     3|
+|42    |        text12        |text_disp_136      |     3|
+|43    |        text2         |text_disp_137      |     2|
+|44    |        text3         |text_disp_138      |     1|
+|45    |        text4         |text_disp_139      |     2|
+|46    |        text5         |text_disp_140      |     2|
+|47    |        text6         |text_disp_141      |     2|
+|48    |        text7         |text_disp_142      |     3|
+|49    |        text9         |text_disp_143      |     3|
+|50    |    tetrisMenu        |start_tetris       |  2025|
+|51    |      credits0        |str_oled           |   174|
+|52    |        text0         |text_disp_117      |     2|
+|53    |        text1         |text_disp_118      |     2|
+|54    |        text10        |text_disp_119      |     4|
+|55    |        text2         |text_disp_120      |     1|
+|56    |        text3         |text_disp_121      |     3|
+|57    |        text4         |text_disp_122      |     2|
+|58    |        text5         |text_disp_123      |     2|
+|59    |        text6         |text_disp_124      |     1|
+|60    |        text7         |text_disp_125      |     3|
+|61    |        text8         |text_disp_126      |     2|
+|62    |        text9         |text_disp_127      |     2|
+|63    |      credits1        |str_oled_27        |   164|
+|64    |        text10        |text_disp_111      |     3|
+|65    |        text11        |text_disp_112      |     2|
+|66    |        text12        |text_disp_113      |     4|
+|67    |        text13        |text_disp_114      |     2|
+|68    |        text14        |text_disp_115      |     2|
+|69    |        text9         |text_disp_116      |     2|
+|70    |      credits2        |str_oled_28        |   204|
+|71    |        text11        |text_disp_105      |     2|
+|72    |        text12        |text_disp_106      |     2|
+|73    |        text13        |text_disp_107      |     3|
+|74    |        text14        |text_disp_108      |     4|
+|75    |        text8         |text_disp_109      |     1|
+|76    |        text9         |text_disp_110      |     2|
+|77    |      credits3        |str_oled_29        |   192|
+|78    |        text0         |text_disp_96       |     2|
+|79    |        text1         |text_disp_97       |     2|
+|80    |        text2         |text_disp_98       |     2|
+|81    |        text3         |text_disp_99       |     2|
+|82    |        text4         |text_disp_100      |     2|
+|83    |        text5         |text_disp_101      |     2|
+|84    |        text6         |text_disp_102      |     3|
+|85    |        text7         |text_disp_103      |     3|
+|86    |        text8         |text_disp_104      |     4|
+|87    |      credits4        |str_oled_30        |   162|
+|88    |        text11        |text_disp_90       |     2|
+|89    |        text12        |text_disp_91       |     2|
+|90    |        text13        |text_disp_92       |     3|
+|91    |        text14        |text_disp_93       |     4|
+|92    |        text8         |text_disp_94       |     1|
+|93    |        text9         |text_disp_95       |     2|
+|94    |      credits5        |str_oled_31        |   163|
+|95    |        text10        |text_disp_84       |     3|
+|96    |        text11        |text_disp_85       |     2|
+|97    |        text12        |text_disp_86       |     4|
+|98    |        text13        |text_disp_87       |     2|
+|99    |        text14        |text_disp_88       |     2|
+|100   |        text9         |text_disp_89       |     2|
+|101   |      credits6        |str_oled_32        |   192|
+|102   |        text0         |text_disp_71       |     2|
+|103   |        text1         |text_disp_72       |     2|
+|104   |        text10        |text_disp_73       |     2|
+|105   |        text11        |text_disp_74       |     4|
+|106   |        text12        |text_disp_75       |     3|
+|107   |        text13        |text_disp_76       |     4|
+|108   |        text2         |text_disp_77       |     2|
+|109   |        text3         |text_disp_78       |     2|
+|110   |        text4         |text_disp_79       |     2|
+|111   |        text5         |text_disp_80       |     2|
+|112   |        text6         |text_disp_81       |     2|
+|113   |        text8         |text_disp_82       |     1|
+|114   |        text9         |text_disp_83       |     2|
+|115   |      credits7        |str_oled_33        |   173|
+|116   |        text10        |text_disp_61       |     2|
+|117   |        text12        |text_disp_62       |     1|
+|118   |        text13        |text_disp_63       |     3|
+|119   |        text14        |text_disp_64       |     3|
+|120   |        text3         |text_disp_65       |     3|
+|121   |        text4         |text_disp_66       |     2|
+|122   |        text6         |text_disp_67       |     3|
+|123   |        text7         |text_disp_68       |     2|
+|124   |        text8         |text_disp_69       |     1|
+|125   |        text9         |text_disp_70       |     2|
+|126   |      nolabel_line37  |logo_tetris        |    18|
+|127   |      option1         |str_oled_34        |   194|
+|128   |        text10        |text_disp_52       |     2|
+|129   |        text2         |text_disp_53       |     4|
+|130   |        text3         |text_disp_54       |     2|
+|131   |        text4         |text_disp_55       |     1|
+|132   |        text5         |text_disp_56       |     3|
+|133   |        text6         |text_disp_57       |     2|
+|134   |        text7         |text_disp_58       |     1|
+|135   |        text8         |text_disp_59       |     4|
+|136   |        text9         |text_disp_60       |     2|
+|137   |      option2         |str_oled_35        |   170|
+|138   |        text10        |text_disp_44       |     3|
+|139   |        text2         |text_disp_45       |     4|
+|140   |        text3         |text_disp_46       |     1|
+|141   |        text4         |text_disp_47       |     1|
+|142   |        text5         |text_disp_48       |     3|
+|143   |        text7         |text_disp_49       |     2|
+|144   |        text8         |text_disp_50       |     2|
+|145   |        text9         |text_disp_51       |     2|
+|146   |      option3         |str_oled_36        |   173|
+|147   |        text2         |text_disp          |     4|
+|148   |        text3         |text_disp_37       |     2|
+|149   |        text4         |text_disp_38       |     3|
+|150   |        text5         |text_disp_39       |     2|
+|151   |        text6         |text_disp_40       |     1|
+|152   |        text7         |text_disp_41       |     2|
+|153   |        text8         |text_disp_42       |     4|
+|154   |        text9         |text_disp_43       |     2|
+|155   |    tetrisgame        |tetris_main        |  5207|
+|156   |      blockstatedebug |char_disp_25       |     1|
+|157   |      topleftdebug    |char_disp_26       |     7|
+|158   |    volume1           |volume_bar         |    52|
+|159   |    white             |logo_white         |   146|
+|160   |  down                |single_pulse       |     3|
+|161   |    dff1              |single_dff_23      |     2|
+|162   |    dff2              |single_dff_24      |     1|
+|163   |  ledDriver           |ledDriv            |    84|
+|164   |    clk600            |clk_22             |    54|
+|165   |  ledDriverDebug      |ledDriv_5          |    77|
+|166   |    clk600            |clk_21             |    54|
+|167   |  left                |single_pulse_6     |     3|
+|168   |    dff1              |single_dff_19      |     2|
+|169   |    dff2              |single_dff_20      |     1|
+|170   |  mic                 |Audio_Capture      |    96|
+|171   |  mid                 |single_pulse_7     |     5|
+|172   |    dff1              |single_dff_17      |     2|
+|173   |    dff2              |single_dff_18      |     3|
+|174   |  muxseg0             |mux3to1            |    14|
+|175   |  muxseg1             |mux3to1_8          |     1|
+|176   |  muxseg2             |mux3to1_9          |    14|
+|177   |  muxseg3             |mux3to1_10         |    14|
+|178   |  oled                |Oled_Display       |   436|
+|179   |  right               |single_pulse_11    |     4|
+|180   |    dff1              |single_dff_15      |     2|
+|181   |    dff2              |single_dff_16      |     2|
+|182   |  str_0               |char_disp          |     7|
+|183   |  str_1               |char_disp_12       |     4|
+|184   |  strdriv             |string_driver      |    66|
+|185   |  up                  |single_pulse_13    |     5|
+|186   |    dff1              |single_dff         |     4|
+|187   |    dff2              |single_dff_14      |     1|
+|188   |  watchmod            |stopwatch          |   212|
++------+----------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:35 ; elapsed = 00:02:42 . Memory (MB): peak = 955.488 ; gain = 681.102
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:51 ; elapsed = 00:02:57 . Memory (MB): peak = 995.914 ; gain = 721.004
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 195 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:21 ; elapsed = 00:02:30 . Memory (MB): peak = 955.488 ; gain = 291.449
-Synthesis Optimization Complete : Time (s): cpu = 00:02:35 ; elapsed = 00:02:42 . Memory (MB): peak = 955.488 ; gain = 681.102
+Synthesis finished with 0 errors, 0 critical warnings and 144 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:39 ; elapsed = 00:02:47 . Memory (MB): peak = 995.914 ; gain = 329.887
+Synthesis Optimization Complete : Time (s): cpu = 00:02:51 ; elapsed = 00:02:57 . Memory (MB): peak = 995.914 ; gain = 721.004
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1928 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1919 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1929,11 +1938,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDE_1 => FDRE (inverted pins: C): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-377 Infos, 215 Warnings, 0 Critical Warnings and 0 Errors encountered.
+378 Infos, 215 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:40 ; elapsed = 00:02:48 . Memory (MB): peak = 955.488 ; gain = 693.734
+synth_design: Time (s): cpu = 00:02:56 ; elapsed = 00:03:03 . Memory (MB): peak = 995.914 ; gain = 733.074
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.135 . Memory (MB): peak = 955.488 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Apr  3 21:50:35 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 995.914 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  3 22:28:07 2020...

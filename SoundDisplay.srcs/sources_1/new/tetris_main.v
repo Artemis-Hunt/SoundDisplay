@@ -174,7 +174,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 movement = 3;
             end
             
-            collision_LRrotate = ((temp_static & temp_blocks) == 48'b0);
+            collision_LRrotate = ((temp_static & temp_blocks) != 48'b0);
             if(collision_LRrotate == 0) begin
                 moving_blocks[block_start -: 48] = temp_blocks;
                 case(movement)
@@ -183,6 +183,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     2'd3: block_state = block_state + 1;
                 endcase
             end
+            else moving_blocks[block_start -: 48] = current_blocks;
             movement = 0;
             if(count == 1 || fast_drop == 1) //End of 1 one cycle
             begin
@@ -211,6 +212,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             end
             if(generate_block == 1)
             begin
+                moving_blocks = 0;
                 current_block = (current_block == 6) ? 0 : current_block + 1;//random_block;    
                 case(current_block)
                 3'd0: moving_blocks[299 -: 48] = {4{12'b000001000000}};                                                      //Line
