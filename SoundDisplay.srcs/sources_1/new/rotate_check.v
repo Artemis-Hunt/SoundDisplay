@@ -22,7 +22,7 @@
 
 module collision_check(input [48:1] static_blocks, input [48:1] temp_blocks, input [48:1] current_blocks, output [48:1] new_blocks, output shifted);
     wire collision;
-    assign collision = (static_blocks & temp_blocks == 48'b0) ? 0 : 1;
+    assign collision = ((static_blocks & temp_blocks) != 48'b0);
     assign new_blocks = (collision) ? current_blocks : temp_blocks;
     assign shifted = ~collision;
 endmodule

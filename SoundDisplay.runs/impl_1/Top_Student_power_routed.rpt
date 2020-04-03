@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Apr  3 12:44:25 2020
+| Date             : Fri Apr  3 14:46:29 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |    14458 |       --- |             --- |
-|   LUT as Logic |     0.003 |     8834 |     20800 |           42.47 |
-|   CARRY4       |    <0.001 |     1272 |      8150 |           15.61 |
-|   Register     |    <0.001 |     1666 |     41600 |            4.00 |
-|   F7/F8 Muxes  |    <0.001 |      238 |     32600 |            0.73 |
-|   Others       |     0.000 |      309 |       --- |             --- |
-|   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.003 |     9852 |       --- |             --- |
-| I/O            |     0.004 |       53 |       106 |           50.00 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.004 |    15950 |       --- |             --- |
+|   LUT as Logic |     0.004 |    10036 |     20800 |           48.25 |
+|   CARRY4       |    <0.001 |     1215 |      8150 |           14.91 |
+|   Register     |    <0.001 |     1606 |     41600 |            3.86 |
+|   F7/F8 Muxes  |    <0.001 |      409 |     32600 |            1.25 |
+|   Others       |     0.000 |      305 |       --- |             --- |
+|   BUFG         |     0.000 |        5 |        32 |           15.63 |
+| Signals        |     0.004 |    11135 |       --- |             --- |
+| I/O            |     0.004 |       52 |       106 |           49.06 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.086 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -278,9 +278,9 @@ Table of Contents
 |       text7          |     0.000 |
 |       text8          |     0.000 |
 |     volume1          |    <0.001 |
-|   down               |    <0.001 |
-|     dff1             |    <0.001 |
-|     dff2             |    <0.001 |
+|   down               |     0.000 |
+|     dff1             |     0.000 |
+|     dff2             |     0.000 |
 |   ledDriver          |    <0.001 |
 |     clk600           |    <0.001 |
 |   left               |     0.000 |
@@ -290,18 +290,15 @@ Table of Contents
 |   mid                |     0.000 |
 |     dff1             |     0.000 |
 |     dff2             |     0.000 |
-|   muxFinal           |     0.000 |
 |   oled               |    <0.001 |
 |   right              |     0.000 |
 |     dff1             |     0.000 |
 |     dff2             |     0.000 |
-|   strdriv            |    <0.001 |
-|   tetrisgame         |    <0.001 |
-|     nolabel_line58   |    <0.001 |
+|   tetrisgame         |     0.003 |
+|     nolabel_line58   |     0.000 |
 |   up                 |     0.000 |
 |     dff1             |     0.000 |
 |     dff2             |     0.000 |
-|   watchmod           |     0.001 |
 +----------------------+-----------+
 
 

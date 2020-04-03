@@ -50,6 +50,7 @@ module Top_Student (
     wire [7:0] char [3:0];
     wire [7:0] charseg [3:0];
     wire [7:0] segData [3:0];
+    wire [7:0] shifted_seg, tetris_game_count, buttons_seg;
     wire [7:0] customSeg;
     wire [3:0] customAnode;
     wire customFlag;
@@ -110,7 +111,8 @@ module Top_Student (
     mux3to1 muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
-    ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
+//    ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
+    ledDriv ledDriver(CLK100MHZ, shifted_seg, {8{1'b1}}, buttons_seg, tetris_game_count, segY, anY);
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
@@ -124,7 +126,7 @@ module Top_Student (
                                  
     //Tetris game
     tetris_main tetrisgame(clk20sig, clk6p25msig, 1, 0, up_sel, down_sel, left_sel, right_sel, mid_sel,
-                            pixel_index, tetris_pixel);
+                            pixel_index, tetris_pixel, shifted_seg, tetris_game_count, buttons_seg);
                             
                                  
     //Stopwatch Module
