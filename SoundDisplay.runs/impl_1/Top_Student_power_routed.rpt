@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Apr  3 20:37:19 2020
+| Date             : Fri Apr  3 21:52:42 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.092        |
+| Total On-Chip Power (W)  | 0.091        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.021        |
+| Dynamic (W)              | 0.019        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |    15442 |       --- |             --- |
-|   LUT as Logic |     0.005 |     9372 |     20800 |           45.06 |
+| Slice Logic    |     0.005 |    15519 |       --- |             --- |
+|   LUT as Logic |     0.005 |     9385 |     20800 |           45.12 |
 |   CARRY4       |    <0.001 |     1498 |      8150 |           18.38 |
-|   Register     |    <0.001 |     1800 |     41600 |            4.33 |
-|   F7/F8 Muxes  |    <0.001 |      369 |     32600 |            1.13 |
+|   Register     |    <0.001 |     1799 |     41600 |            4.32 |
+|   F7/F8 Muxes  |    <0.001 |      379 |     32600 |            1.16 |
 |   Others       |     0.000 |      351 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.004 |     9936 |       --- |             --- |
-| I/O            |     0.008 |       54 |       106 |           50.94 |
+| Signals        |     0.005 |    10110 |       --- |             --- |
+| I/O            |     0.007 |       54 |       106 |           50.94 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.092 |          |           |                 |
+| Total          |     0.091 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.022 |       0.013 |      0.010 |
+| Vccint    |       1.000 |     0.022 |       0.012 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,7 +142,7 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| Top_Student          |     0.021 |
+| Top_Student          |     0.019 |
 |   clk1               |    <0.001 |
 |   clk20              |    <0.001 |
 |   clk20k             |    <0.001 |

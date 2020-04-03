@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Apr  3 20:36:36 2020
+| Date         : Fri Apr  3 21:51:53 2020
 | Host         : Battlestation running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
 | Design       : Top_Student
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |   149 |
-| Unused register locations in slices containing registers |   112 |
+| Number of unique control sets                            |    74 |
+| Unused register locations in slices containing registers |   114 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,7 +35,7 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      2 |            2 |
-|      8 |          106 |
+|      8 |           31 |
 |     10 |            8 |
 |     12 |            1 |
 |     14 |            1 |
@@ -49,170 +49,95 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             968 |          299 |
-| No           | No                    | Yes                    |             236 |           60 |
-| No           | Yes                   | No                     |             830 |          120 |
-| Yes          | No                    | No                     |             434 |           92 |
-| Yes          | No                    | Yes                    |            1100 |          373 |
-| Yes          | Yes                   | No                     |              32 |            6 |
+| No           | No                    | No                     |             966 |          292 |
+| No           | No                    | Yes                    |             836 |          250 |
+| No           | Yes                   | No                     |             830 |          117 |
+| Yes          | No                    | No                     |             434 |           94 |
+| Yes          | No                    | Yes                    |             500 |          149 |
+| Yes          | Yes                   | No                     |              32 |            7 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------------+---------------------------------------------+----------------------------------------------+------------------+----------------+
-|          Clock Signal          |                Enable Signal                |               Set/Reset Signal               | Slice Load Count | Bel Load Count |
-+--------------------------------+---------------------------------------------+----------------------------------------------+------------------+----------------+
-|  clk1sig_BUFG                  |                                             |                                              |                1 |              2 |
-| ~clk6p25msig_BUFG              |                                             |                                              |                1 |              2 |
-|  J_MIC3_Pin1_OBUF_BUFG         | maxLED[3]_i_1_n_0                           |                                              |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[171]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[195]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  ledDriverDebug/clk600/slowclk |                                             |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[207]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[199]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[191]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[203]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[19]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[223]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[219]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[215]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[211]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[231]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[23]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[227]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[239]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[235]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[292]               | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[251]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk6p25msig_BUFG              |                                             | disp1/orange/final_colour_reg[0]             |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[243]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[247]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_20[0]                  |                                              |                1 |              8 |
-|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_21[0]                  |                                              |                1 |              8 |
-|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_19[0]                  |                                              |                1 |              8 |
-|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_22[0]                  |                                              |                1 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[27]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[43]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[39]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[3]_i_1_n_0   | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[63]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[51]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[67]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[55]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[47]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[59]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[87]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[79]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[83]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[75]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[71]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[91]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[99]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[95]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/hold_volume[3]_i_1_n_0                |                                              |                2 |              8 |
-|  clk20sig_BUFG                 |                                             | disp1/custom_volume                          |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/customborder/number0                  |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/customborder/number2                  |                                              |                1 |              8 |
-|  clk20sig_BUFG                 | disp1/customborder/number1                  |                                              |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/customborder/number3                  |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/customLow/number1                     |                                              |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/customLow/number0                     |                                              |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/customHigh/number2                    |                                              |                1 |              8 |
-|  clk20sig_BUFG                 | disp1/customHigh/number1                    |                                              |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/customHigh/number0                    |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/customHigh/number3                    |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/customLow/number3                     |                                              |                1 |              8 |
-|  clk20sig_BUFG                 | disp1/customLow/number2                     |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/custombackgrd/number1                 |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/custombackgrd/number2                 |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/custombackgrd/number0                 |                                              |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/custombackgrd/number3                 |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/customMed/number0                     |                                              |                1 |              8 |
-|  clk20sig_BUFG                 | disp1/customMed/number3                     |                                              |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/customMed/number2                     |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/customMed/number1                     |                                              |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/peakAvg/average[3]_i_2_n_0            | disp1/peakAvg/peak1                          |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/i___213_n_0                | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/i___214_n_0                | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/i___215_n_0                | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/button_counter[3]_i_2_n_0             | disp1/button_counter[3]_i_1_n_0              |                1 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[35]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[296]               | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[264]               | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[252]               | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[268]               | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[256]               | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[288]               | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[260]               | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[276]               | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[284]               | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[280]               | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/p_3_out[272]               | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[111]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[107]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[103]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[115]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[11]_i_1_n_0  | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[119]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[127]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[123]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                4 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[135]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[139]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[131]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[143]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[155]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[151]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[159]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[147]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                2 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[163]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[187]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[167]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[175]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[183]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/moving_blocks[179]_i_1_n_0 | disp1/tetrisMenu/tetris_reset                |                3 |              8 |
-|  ledDriver/clk600/slowclk      |                                             |                                              |                3 |             10 |
-|  clk4sig_BUFG                  |                                             | strdriv/char2[6]_i_1_n_0                     |                1 |             10 |
-|  clk4sig_BUFG                  |                                             | strdriv/char3[6]_i_1_n_0                     |                2 |             10 |
-|  clk1sig_BUFG                  |                                             | mid/dff2/AR[0]                               |                2 |             10 |
-|  clk20sig_BUFG                 |                                             | disp1/peakAvg/peakTable/number[60]_i_1_n_0   |                1 |             10 |
-|  clk20sig_BUFG                 |                                             | disp1/peakAvg/avgTable/number[60]_i_1__0_n_0 |                1 |             10 |
-|  clk4sig_BUFG                  |                                             | strdriv/char0[6]_i_1_n_0                     |                1 |             10 |
-|  clk4sig_BUFG                  |                                             | strdriv/char1[6]_i_1_n_0                     |                2 |             10 |
-|  clk4sig_BUFG                  | strdriv/i                                   |                                              |                2 |             12 |
-|  ledDriver/clk600/slowclk      | ledDriver/seg[6]_i_1__4_n_0                 |                                              |                6 |             14 |
-|  ledDriverDebug/clk600/slowclk | ledDriverDebug/seg[7]_i_2_n_0               | ledDriverDebug/seg[7]_i_1__0_n_0             |                3 |             16 |
-|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_1[0]                   |                                              |                3 |             16 |
-|  clk6p25msig_BUFG              |                                             | disp1/white/final_colour_reg[5]_0            |                3 |             16 |
-|  CLK100MHZ_IBUF_BUFG           |                                             |                                              |                9 |             18 |
-|  J_MIC3_Pin1_OBUF_BUFG         |                                             | mic/SR[0]                                    |                5 |             24 |
-|  clk6p25msig_BUFG              | disp1/coord/i_reg[3]_12[0]                  |                                              |                3 |             24 |
-| ~mic/J_MIC3_Pin4_OBUF          |                                             |                                              |                3 |             24 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | J_MIC3_Pin1_OBUF_BUFG                        |                3 |             24 |
-|  J_MIC3_Pin1_OBUF_BUFG         |                                             |                                              |                4 |             24 |
-|  J_MIC3_Pin1_OBUF_BUFG         |                                             | maxLED[3]_i_1_n_0                            |                4 |             26 |
-|  clk20sig_BUFG                 |                                             | disp1/peakAvg/average[3]_i_2_n_0             |                5 |             28 |
-|  clk4sig_BUFG                  |                                             |                                              |                8 |             30 |
-| ~clk6p25msig_BUFG              |                                             | oled/frame_counter[16]_i_1_n_0               |                5 |             34 |
-| ~clk6p25msig_BUFG              | oled/delay[0]_i_1_n_0                       |                                              |                5 |             40 |
-|  clk6p25msig_BUFG              | disp1/coord/E[0]                            |                                              |               10 |             56 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | clk625m/count[0]_i_1__7_n_0                  |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | clk1/clear                                   |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | clk20/count[0]_i_1__3_n_0                    |                8 |             64 |
-| ~clk6p25msig_BUFG              | oled/state                                  |                                              |               10 |             64 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | ledDriverDebug/clk600/clear                  |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | ledDriver/clk600/clear                       |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | clk4/count[0]_i_1__6_n_0                     |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | clk361/count[0]_i_1__8_n_0                   |                8 |             64 |
-|  CLK100MHZ_IBUF_BUFG           |                                             | clk20k/count[0]_i_1__4_n_0                   |                8 |             64 |
-| ~clk6p25msig_BUFG              |                                             | oled/spi_word[39]_i_1_n_0                    |               19 |             90 |
-|  clk1sig_BUFG                  |                                             | down/dff1/AR[0]                              |               19 |            108 |
-|  clk20sig_BUFG                 |                                             | disp1/tetrisMenu/tetris_reset                |               39 |            118 |
-|  clk361sig_BUFG                |                                             |                                              |               39 |            130 |
-|  clk20sig_BUFG                 |                                             |                                              |               38 |            152 |
-|  clk20sig_BUFG                 | disp1/tetrisgame/i___154_n_0                | disp1/tetrisMenu/tetris_reset                |              148 |            500 |
-|  clk6p25msig_BUFG              |                                             |                                              |              191 |            568 |
-+--------------------------------+---------------------------------------------+----------------------------------------------+------------------+----------------+
++--------------------------------+----------------------------------+----------------------------------------------+------------------+----------------+
+|          Clock Signal          |           Enable Signal          |               Set/Reset Signal               | Slice Load Count | Bel Load Count |
++--------------------------------+----------------------------------+----------------------------------------------+------------------+----------------+
+|  clk1sig_BUFG                  |                                  |                                              |                1 |              2 |
+| ~clk6p25msig_BUFG              |                                  |                                              |                1 |              2 |
+|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_22[0]       |                                              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/custombackgrd/number2      |                                              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/custombackgrd/number1      |                                              |                2 |              8 |
+|  ledDriverDebug/clk600/slowclk |                                  |                                              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/custombackgrd/number0      |                                              |                4 |              8 |
+|  clk20sig_BUFG                 | disp1/customMed/number1          |                                              |                3 |              8 |
+|  clk6p25msig_BUFG              |                                  | disp1/orange/final_colour_reg[0]             |                3 |              8 |
+|  clk20sig_BUFG                 | disp1/custombackgrd/number3      |                                              |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/customLow/number1          |                                              |                3 |              8 |
+|  J_MIC3_Pin1_OBUF_BUFG         | maxLED[3]_i_1_n_0                |                                              |                3 |              8 |
+|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_21[0]       |                                              |                2 |              8 |
+|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_19[0]       |                                              |                2 |              8 |
+|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_20[0]       |                                              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/peakAvg/average[3]_i_2_n_0 | disp1/peakAvg/peak1                          |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/button_counter[3]_i_2_n_0  | disp1/button_counter[3]_i_1_n_0              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/customLow/number3          |                                              |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/customLow/number2          |                                              |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/customLow/number0          |                                              |                3 |              8 |
+|  clk20sig_BUFG                 | disp1/customHigh/number3         |                                              |                3 |              8 |
+|  clk20sig_BUFG                 | disp1/customHigh/number2         |                                              |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/hold_volume[3]_i_1_n_0     |                                              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/customborder/number3       |                                              |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/customHigh/number0         |                                              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/customHigh/number1         |                                              |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/customborder/number2       |                                              |                2 |              8 |
+|  clk20sig_BUFG                 | disp1/customborder/number1       |                                              |                3 |              8 |
+|  clk20sig_BUFG                 | disp1/customborder/number0       |                                              |                2 |              8 |
+|  clk20sig_BUFG                 |                                  | disp1/custom_volume                          |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/customMed/number3          |                                              |                1 |              8 |
+|  clk20sig_BUFG                 | disp1/customMed/number0          |                                              |                4 |              8 |
+|  clk20sig_BUFG                 | disp1/customMed/number2          |                                              |                2 |              8 |
+|  ledDriver/clk600/slowclk      |                                  |                                              |                3 |             10 |
+|  clk20sig_BUFG                 |                                  | disp1/peakAvg/avgTable/number[60]_i_1__0_n_0 |                1 |             10 |
+|  clk4sig_BUFG                  |                                  | strdriv/char1[6]_i_1_n_0                     |                3 |             10 |
+|  clk4sig_BUFG                  |                                  | strdriv/char3[6]_i_1_n_0                     |                2 |             10 |
+|  clk4sig_BUFG                  |                                  | strdriv/char0[6]_i_1_n_0                     |                2 |             10 |
+|  clk20sig_BUFG                 |                                  | disp1/peakAvg/peakTable/number[60]_i_1_n_0   |                1 |             10 |
+|  clk4sig_BUFG                  |                                  | strdriv/char2[6]_i_1_n_0                     |                1 |             10 |
+|  clk1sig_BUFG                  |                                  | mid/dff2/AR[0]                               |                2 |             10 |
+|  clk4sig_BUFG                  | strdriv/i                        |                                              |                3 |             12 |
+|  ledDriver/clk600/slowclk      | ledDriver/seg[6]_i_1__4_n_0      |                                              |                4 |             14 |
+|  ledDriverDebug/clk600/slowclk | ledDriverDebug/seg[7]_i_2_n_0    | ledDriverDebug/seg[7]_i_1__0_n_0             |                4 |             16 |
+|  clk6p25msig_BUFG              |                                  | disp1/white/final_colour_reg[5]_0            |                2 |             16 |
+|  clk6p25msig_BUFG              | disp1/coord/i_reg[0]_1[0]        |                                              |                3 |             16 |
+|  CLK100MHZ_IBUF_BUFG           |                                  |                                              |                9 |             18 |
+|  clk6p25msig_BUFG              | disp1/coord/i_reg[3]_12[0]       |                                              |                4 |             24 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | J_MIC3_Pin1_OBUF_BUFG                        |                3 |             24 |
+| ~mic/J_MIC3_Pin4_OBUF          |                                  |                                              |                5 |             24 |
+|  J_MIC3_Pin1_OBUF_BUFG         |                                  |                                              |                6 |             24 |
+|  J_MIC3_Pin1_OBUF_BUFG         |                                  | mic/SR[0]                                    |                5 |             24 |
+|  J_MIC3_Pin1_OBUF_BUFG         |                                  | maxLED[3]_i_1_n_0                            |                4 |             26 |
+|  clk20sig_BUFG                 |                                  | disp1/peakAvg/average[3]_i_2_n_0             |                5 |             28 |
+|  clk4sig_BUFG                  |                                  |                                              |                9 |             30 |
+| ~clk6p25msig_BUFG              |                                  | oled/frame_counter[16]_i_1_n_0               |                5 |             34 |
+| ~clk6p25msig_BUFG              | oled/delay[0]_i_1_n_0            |                                              |                5 |             40 |
+|  clk6p25msig_BUFG              | disp1/coord/E[0]                 |                                              |                9 |             56 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | ledDriverDebug/clk600/clear                  |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | ledDriver/clk600/clear                       |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | clk20/count[0]_i_1__3_n_0                    |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | clk1/clear                                   |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | clk625m/count[0]_i_1__7_n_0                  |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | clk361/count[0]_i_1__8_n_0                   |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | clk4/count[0]_i_1__6_n_0                     |                8 |             64 |
+|  CLK100MHZ_IBUF_BUFG           |                                  | clk20k/count[0]_i_1__4_n_0                   |                8 |             64 |
+| ~clk6p25msig_BUFG              | oled/state                       |                                              |               10 |             64 |
+| ~clk6p25msig_BUFG              |                                  | oled/spi_word[39]_i_1_n_0                    |               15 |             90 |
+|  clk1sig_BUFG                  |                                  | down/dff1/AR[0]                              |               17 |            108 |
+|  clk361sig_BUFG                |                                  |                                              |               35 |            130 |
+|  clk20sig_BUFG                 |                                  |                                              |               37 |            150 |
+|  clk20sig_BUFG                 | disp1/tetrisgame/static_blocks   | disp1/tetrisMenu/tetris_reset                |              149 |            500 |
+|  clk6p25msig_BUFG              |                                  |                                              |              185 |            568 |
+|  clk20sig_BUFG                 |                                  | disp1/tetrisMenu/tetris_reset                |              231 |            718 |
++--------------------------------+----------------------------------+----------------------------------------------+------------------+----------------+
 
 

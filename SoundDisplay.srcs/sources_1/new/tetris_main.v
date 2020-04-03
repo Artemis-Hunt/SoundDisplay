@@ -42,8 +42,8 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg [47:0] temp_blocks = 0;
     reg fast_drop = 0;
     wire [47:0] current_blocks, new_blocks, temp_static;
-    wire shifted;
-    reg collision_down = 0, movement = 0;
+    reg collision_down = 0, collision_LRrotate = 0; 
+    reg [1:0] movement = 0;
     reg new_game = 0;
     reg first_game = 1;
     integer i, j;
@@ -61,7 +61,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     assign current_blocks = moving_blocks[block_start -: 48];
     assign temp_static = static_blocks[block_start -: 48];
     
-    collision_check rotate(temp_static, temp_blocks, current_blocks, shifted);
+    //collision_check rotate(temp_static, temp_blocks, current_blocks, shifted);
     
     //Visual driver
     always @ (posedge clk625MHz)
@@ -80,6 +80,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     begin
         if(reset) begin
             moving_blocks = 0; static_blocks = {25{12'b100000000001}};
+            movement = 0;
             temp_blocks = 0;
             gameState = 0;
             current_block = 0;
@@ -97,20 +98,16 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             if(btn_left == 1) //Shift left
             begin
                 temp_blocks = moving_blocks[block_start -: 48] << 1;
-                movement = shifted;
-                top_left = shifted ? top_left - 1 : top_left;
+                movement = 1;
             end
             else if(btn_right == 1) //Shift right
             begin
                 temp_blocks = moving_blocks[block_start -: 48] >> 1;
-                movement = shifted;
-                top_left = shifted? top_left + 1 : top_left;
+                movement = 2;
             end
-            
-            if(btn_down == 1) //Fast drop
+            else if(btn_down == 1) //Fast drop
                 fast_drop = 1;
-            
-            if(btn_mid == 1) //Rotate
+            else if(btn_mid == 1) //Rotate
             begin
                 case(current_block)
                 3'd0: //Long Block
@@ -174,11 +171,18 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 default: ;
                 endcase
                 //Update block_state and moving_blocks
-                movement = shifted;
-                block_state = (shifted) ? block_state + 1 : block_state;
+                movement = 3;
             end
             
-            moving_blocks[block_start -: 48] = (movement) ? temp_blocks : current_blocks;
+            collision_LRrotate = ((temp_static & temp_blocks) == 48'b0);
+            if(collision_LRrotate == 0) begin
+                moving_blocks[block_start -: 48] = temp_blocks;
+                case(movement)
+                    2'd1: top_left = top_left - 1;
+                    2'd2: top_left = top_left + 1;
+                    2'd3: block_state = block_state + 1;
+                endcase
+            end
             movement = 0;
             if(count == 1 || fast_drop == 1) //End of 1 one cycle
             begin
