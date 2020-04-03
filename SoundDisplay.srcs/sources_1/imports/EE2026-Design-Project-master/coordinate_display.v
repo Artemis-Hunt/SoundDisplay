@@ -24,8 +24,8 @@
 
 module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink_clock, back_blink, input [3:0]mic_volume, 
                             input mid_sel, right_sel, left_sel, up_sel, down_sel, brd_sel, brd_onOff, bar_onOff, pause, text_onOff,
-                            output [3:0] an, output [7:0] seg, input [12:0] pixel_index, output reg [15:0]OLED_colour = 0, 
-                            output reg customColour = 0, input watchMode, output [7:0] top_left_seg, block_state_seg);
+                            output [3:0] an, output [7:0] seg, input [12:0] pixel_index, output reg [15:0]final_colour = 0, 
+                            output reg customColour = 0, input watchMode, output [7:0] top_left_seg, block_state_seg, output reg startMode = 1);
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
@@ -49,11 +49,19 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
     wire [3:0] an1, an2, an3, an4, an5;
     wire [7:0] seg1, seg2, seg3, seg4, seg5;
     wire [15:0] peakAvgOut;
+    wire orange_out, white_out, blue_out;
+    
+    reg [15:0] OLED_colour = 0;
+    reg [15:0] startScreen = 0;
     
     xycalculator coord(clock, pixel_index, x_coord, y_coord);
     draw_border border1(x_coord, y_coord, clock, brd_sel, brd_onOff, border_out, blink_clock, mode_brd, customColour);
     volume_bar volume1(x_coord, y_coord, clock, bar_onOff, input_volume, volume_out, blink_clock, mode_low, mode_med, mode_high, customColour); 
-   
+    
+    //Main Menu NUS Logo
+    logo_orange orange(clock, x_coord, y_coord, orange_out); 
+    logo_white white(clock, x_coord, y_coord, white_out);
+    logo_blue blue(clock, x_coord, y_coord, blue_out);
     
     //Tetris
     //logo_tetris(clock, x_coord, y_coord, 40, logo_out);
@@ -91,7 +99,9 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
     
     always @ (posedge button_clock) //Button Operations
     begin
-        if(custom_flag != 1 && gamestate == 3)
+        if(startMode == 1 && mid_sel == 1)
+            startMode = 0;
+        if(custom_flag != 1 && gamestate == 3 && startMode == 0)
         begin
             if(left_sel == 1) //Scroll left to choose theme
             begin
@@ -146,6 +156,7 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
 
     always @ (posedge clock) //Pixel Data output multiplexer
     begin
+        startScreen = (orange_out) ? 16'hFDA0 : (white_out) ? 16'hFFFF : (blue_out) ? 16'h014B : 16'h014B;
         case(colour_select)
         3'd0: OLED_colour = (volume_out == 3) ? 16'hF800 : (volume_out == 2) ? 16'hFFE0 : (volume_out == 1) ? 16'h5FE0 : (border_out) ? 16'hFFFF : 16'h0000;
         3'd1: OLED_colour = (volume_out == 3) ? 16'hDFFF : (volume_out == 2) ? 16'h3EFE : (volume_out == 1) ? 16'h0914 : (border_out) ? 16'h07FF : 16'hB01F;
@@ -155,6 +166,8 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
         3'd4: OLED_colour = peakAvgOut;
         3'd5: OLED_colour = (tetris_enable) ? tetrisGame_colour : (tetris_out) ? tetris_colour : 0;
         endcase
+        
+        final_colour = (startMode) ? startScreen : OLED_colour;
     end
     
     assign an = (button_counter == 4) ? an5 : (button_counter == 3) ? an4 : (button_counter == 2) ? an3: (button_counter == 1) ? an2 : an1;

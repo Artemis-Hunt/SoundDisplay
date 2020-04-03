@@ -44,6 +44,7 @@ module Top_Student (
     wire [3:0] bcd [1:0];   //Actual number to be displayed on 7-seg
     wire [7:0] bcdseg [1:0];   //Segment data for 7-seg display
     reg [15:0] ledBar;   // Data for volume bar, directly assigned to the LEDs
+    wire [15:0] ledMic;
     reg [4:0] maxLED = 0;   //Index of the highest LED that should be lit
     reg [11:0] max = 0, mic_raw = 0;   //Peak volume in a given period |||| Raw mic data, updated at 4Hz
     reg [12:0] resetMax = 0;   //Counter for resetting max
@@ -55,10 +56,13 @@ module Top_Student (
     wire [3:0] customAnode;
     wire customFlag;
     wire [7:0] watch0, watch1, watch2, watch3;
-    wire [7:0] segY;
-    wire[3:0] anY;
-    wire [15:0] tetris_pixel;
+    wire [7:0] segY, segF;
+    wire[3:0] anY, anF;
+    wire startMode;
     integer i, j;   //Loop variables
+    
+    reg [5:0] ecoCount = 0;
+    reg ecoMode = 0;
     
     //Text to be scrolled
     reg [32*8:1] string = "ABD DBA AAC CAD";   //String to be shown on 7-seg
@@ -74,7 +78,6 @@ module Top_Student (
     clk clk4(CLK100MHZ, 12_499_999, clk4sig);
     clk clk1(CLK100MHZ, 49_999_999, clk1sig);
 
-    
     //Single pulse debouncing for pushbuttons
     single_pulse mid(clk20sig, btnC, mid_sel);
     single_pulse right(clk20sig, btnR, right_sel);
@@ -84,7 +87,7 @@ module Top_Student (
     
     //Multiplexer between raw mic data and peak volume meter
     mux1 mux0(mic_raw, ledBar, sw[0], mic_out);
-    assign led = mic_out;
+    assign ledMic = mic_out;
     
     ///VOLUME LEVEL DISPLAY FOR 7SEG///
     //Convert 0-15 into BCD
@@ -115,13 +118,36 @@ module Top_Student (
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
-    mux1 muxFinal(customSeg, segY, customFlag, seg);
-    mux1 muxFinal2(customAnode, anY, customFlag, an);
+    mux1 muxFinal(customSeg, segY, customFlag, segF);
+    mux1 muxFinal2(customAnode, anY, customFlag, anF);
+    
+    //StartMode && EcoMode Multiplex
+    assign seg = (startMode || ecoMode) ? 8'b11111111 : segF;
+    assign an = (startMode || ecoMode) ? 4'b1111 : anF; //Input Scrolling later
+    assign led = (startMode || ecoMode) ? 16'h0000 : ledMic;
+    assign pixel_data = (ecoMode) ? 0 : pixel_data_main;
     
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk40sig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
                                 left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
-                                 pixel_index, pixel_data, customFlag, sw[9], top_left_seg,block_state_seg);              
+                                 pixel_index, pixel_data_main, customFlag, sw[9], top_left_seg,block_state_seg, startMode); 
+    //Eco-mode
+    always @ (posedge clk1sig or posedge mid_sel or posedge up_sel or posedge down_sel or posedge left_sel or posedge right_sel)
+    begin
+        if(mid_sel == 1 || up_sel == 1 || down_sel == 1 || left_sel == 1 || right_sel == 1) //Reset timer
+            ecoCount = 0;
+        else
+        begin
+            ecoCount = ecoCount + 1;
+            if(ecoCount >= 30)
+            begin
+                ecoCount = 30;
+                ecoMode = 1;
+            end
+            else
+                ecoMode = 0;
+        end 
+    end             
                                  
     //Stopwatch Module
     stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, sw[8], watch3, watch2, watch1, watch0);
