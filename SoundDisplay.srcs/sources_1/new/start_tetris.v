@@ -47,12 +47,12 @@ module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, 
     str_oled credits6(clock, currX, currY, 48, "Special Thanks ", cred_disp[6]);
     str_oled credits7(clock, currX, currY, 56, "EE Profs TAs", cred_disp[7]);
     
-    always @ (posedge clock)
+    always @ (posedge clk20Hz)
     begin
         if(gameReset == 1 && gamestate == 1)
             gameReset = 0;
         if(btnU) begin
-            if(gamestate == 2 || gamestate == 1 || gamestate == 0)
+            if(gamestate != 3)
                 gamestate = 3;
             else
                 opt_sel = (opt_sel == 0) ? 0 : opt_sel - 1;
@@ -69,7 +69,6 @@ module start_tetris(input clock, clk20Hz, input [6:0] currX, currY, input btnU, 
     
     //Gamestate 3: Start screen; state 2: Credits; state 1: New game; state 0: Continue
     always @ (posedge clock) begin
-        button_debounce <= (button_debounce == 156_249) ? 0 : button_debounce + 1;  //Check for button inputs at a frequency of 20Hz
         if(gamestate == 3) begin //Main Menu
             if(currY >= 6 && currY <= 21)
                 pixel <= logo_out;
