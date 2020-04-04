@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Apr  4 21:24:23 2020
-# Process ID: 4764
+# Start of session at: Sat Apr  4 22:53:26 2020
+# Process ID: 5496
 # Current directory: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7464 
+INFO: Helper process launched with PID 14420 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 356.148 ; gain = 100.578
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 356.426 ; gain = 100.445
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 	Parameter MIN_VOL bound to: 2000 - type: integer 
@@ -319,7 +319,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 432.141 ; gain = 176.570
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 432.043 ; gain = 176.063
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -332,10 +332,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 432.141 ; gain = 176.570
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 432.043 ; gain = 176.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 432.141 ; gain = 176.570
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 432.043 ; gain = 176.063
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -351,22 +351,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 852.820 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 853.043 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 853.043 ; gain = 597.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 853.043 ; gain = 597.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 853.043 ; gain = 597.063
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "counter0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -465,7 +465,7 @@ INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 853.043 ; gain = 597.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -474,7 +474,7 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |string_driver           |           2|     16400|
 |2     |str_oled                |          32|      8772|
-|3     |start_tetris__GC0       |           1|       554|
+|3     |start_tetris__GC0       |           1|       557|
 |4     |tetris_main__GCB0       |           1|     42361|
 |5     |tetris_main__GCB1       |           1|     12495|
 |6     |tetris_main__GCB2       |           1|     24528|
@@ -482,7 +482,7 @@ Report RTL Partitions:
 |8     |tetris_main__GCB4       |           1|     25587|
 |9     |peak_average__GC0       |           1|       820|
 |10    |coordinate_display__GC0 |           1|     10246|
-|11    |Top_Student__GC0        |           1|      9644|
+|11    |Top_Student__GC0        |           1|      9637|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -570,6 +570,7 @@ Detailed RTL Component Info :
 	   4 Input      4 Bit        Muxes := 5     
 	   7 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 42    
+	   3 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 36    
 	   4 Input      2 Bit        Muxes := 1     
@@ -770,6 +771,7 @@ Detailed RTL Component Info :
 	   2 Input    103 Bit        Muxes := 3     
 	   3 Input    103 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 28    
 	   2 Input      1 Bit        Muxes := 9     
 Module avgPeak_table__1 
@@ -1585,7 +1587,7 @@ WARNING: [Synth 8-3331] design custom_low has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_background has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_border has unconnected port mid_sel
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:56 ; elapsed = 00:03:19 . Memory (MB): peak = 875.785 ; gain = 620.215
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:19 ; elapsed = 00:03:43 . Memory (MB): peak = 876.617 ; gain = 620.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1638,7 +1640,7 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |string_driver           |           2|      1034|
 |2     |str_oled                |           1|      1079|
-|3     |start_tetris__GC0       |           1|       327|
+|3     |start_tetris__GC0       |           1|       328|
 |4     |tetris_main__GCB0       |           1|     10959|
 |5     |tetris_main__GCB1       |           1|      2049|
 |6     |tetris_main__GCB2       |           1|      3636|
@@ -1646,7 +1648,7 @@ Report RTL Partitions:
 |8     |tetris_main__GCB4       |           1|      2904|
 |9     |peak_average__GC0       |           1|       318|
 |10    |coordinate_display__GC0 |           1|      4112|
-|11    |Top_Student__GC0        |           1|      4471|
+|11    |Top_Student__GC0        |           1|      4472|
 |12    |str_oled__1             |           1|      1392|
 |13    |str_oled__2             |           1|      1093|
 |14    |str_oled__3             |           1|      1055|
@@ -1683,7 +1685,7 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:06 ; elapsed = 00:03:31 . Memory (MB): peak = 907.445 ; gain = 651.875
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:29 ; elapsed = 00:03:55 . Memory (MB): peak = 907.871 ; gain = 651.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -1710,7 +1712,7 @@ INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char0_reg[4]' (FDE) to 'ecoMo
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char0_reg[6]' (FDE) to 'ecoModeDisp/char0_reg[7]'
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char1_reg[0]' (FDE) to 'ecoModeDisp/char1_reg[6]'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:14 ; elapsed = 00:03:40 . Memory (MB): peak = 960.324 ; gain = 704.754
+Finished Timing Optimization : Time (s): cpu = 00:03:38 ; elapsed = 00:04:05 . Memory (MB): peak = 959.816 ; gain = 703.836
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1719,7 +1721,7 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |string_driver           |           1|       384|
 |2     |str_oled                |           1|      1035|
-|3     |start_tetris__GC0       |           1|       327|
+|3     |start_tetris__GC0       |           1|       328|
 |4     |tetris_main__GCB0       |           1|     10787|
 |5     |tetris_main__GCB1       |           1|      1447|
 |6     |tetris_main__GCB2       |           1|      2418|
@@ -1727,7 +1729,7 @@ Report RTL Partitions:
 |8     |tetris_main__GCB4       |           1|      2842|
 |9     |peak_average__GC0       |           1|       318|
 |10    |coordinate_display__GC0 |           1|      4087|
-|11    |Top_Student__GC0        |           1|      4182|
+|11    |Top_Student__GC0        |           1|      4183|
 |12    |str_oled__1             |           1|      1348|
 |13    |str_oled__2             |           1|      1049|
 |14    |str_oled__3             |           1|      1055|
@@ -1776,7 +1778,7 @@ INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char3_reg[3]' (FDRE) to 'ecoM
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char3_reg[6]' (FDRE) to 'ecoModeDisp/char2_reg[6]'
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char2_reg[6]' (FDRE) to 'ecoModeDisp/char1_reg[6]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:20 ; elapsed = 00:03:57 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Technology Mapping : Time (s): cpu = 00:03:46 ; elapsed = 00:04:22 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1785,7 +1787,7 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |string_driver           |           1|       110|
 |2     |str_oled                |           1|       409|
-|3     |start_tetris__GC0       |           1|       105|
+|3     |start_tetris__GC0       |           1|       104|
 |4     |tetris_main__GCB0       |           1|      5364|
 |5     |tetris_main__GCB1       |           1|       158|
 |6     |tetris_main__GCB2       |           1|      1249|
@@ -1846,7 +1848,7 @@ INFO: [Synth 8-3886] merging instance 'ledDriverEco/seg_reg[4]' (FDE) to 'ledDri
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:26 ; elapsed = 00:04:03 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished IO Insertion : Time (s): cpu = 00:03:52 ; elapsed = 00:04:28 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1859,7 +1861,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:26 ; elapsed = 00:04:03 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:52 ; elapsed = 00:04:29 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1871,25 +1873,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:28 ; elapsed = 00:04:05 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:54 ; elapsed = 00:04:31 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:29 ; elapsed = 00:04:06 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:55 ; elapsed = 00:04:32 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:31 ; elapsed = 00:04:08 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:57 ; elapsed = 00:04:33 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:31 ; elapsed = 00:04:08 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:57 ; elapsed = 00:04:34 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1908,11 +1910,11 @@ Report Cell Usage:
 |1     |BUFG   |     7|
 |2     |CARRY4 |  2588|
 |3     |LUT1   |  2360|
-|4     |LUT2   |  5219|
+|4     |LUT2   |  5220|
 |5     |LUT3   |  2091|
-|6     |LUT4   |  2051|
-|7     |LUT5   |  3263|
-|8     |LUT6   |  6137|
+|6     |LUT4   |  2050|
+|7     |LUT5   |  3259|
+|8     |LUT6   |  6140|
 |9     |MUXF7  |   303|
 |10    |MUXF8  |    56|
 |11    |FDCE   |   699|
@@ -1929,7 +1931,7 @@ Report Instance Areas:
 +------+------------------------+-------------------+------+
 |      |Instance                |Module             |Cells |
 +------+------------------------+-------------------+------+
-|1     |top                     |                   | 26326|
+|1     |top                     |                   | 26325|
 |2     |  ledDriverStart        |ledDriv_6          |    76|
 |3     |    clk600              |clk_21             |    54|
 |4     |  clk1                  |clk                |    54|
@@ -1938,9 +1940,9 @@ Report Instance Areas:
 |7     |  clk361                |clk_2              |    54|
 |8     |  clk4                  |clk_3              |    56|
 |9     |  clk625m               |clk_4              |    51|
-|10    |  disp1                 |coordinate_display | 24316|
+|10    |  disp1                 |coordinate_display | 24315|
 |11    |    border1             |draw_border        |     1|
-|12    |    coord               |xycalculator       |  6792|
+|12    |    coord               |xycalculator       |  6790|
 |13    |    customHigh          |custom_high        |   102|
 |14    |    customLow           |custom_low         |   106|
 |15    |    customMed           |custom_med         |   122|
@@ -2017,7 +2019,7 @@ Report Instance Areas:
 |86    |      text7             |text_disp_192      |     3|
 |87    |      text8             |text_disp_193      |     2|
 |88    |      text9             |text_disp_194      |     1|
-|89    |    tetrisMenu          |start_tetris       |  3575|
+|89    |    tetrisMenu          |start_tetris       |  3576|
 |90    |      credits0          |str_oled_76        |   319|
 |91    |        text0           |text_disp_175      |     2|
 |92    |        text1           |text_disp_176      |     2|
@@ -2093,7 +2095,7 @@ Report Instance Areas:
 |162   |        text7           |text_disp_126      |     2|
 |163   |        text8           |text_disp_127      |     1|
 |164   |        text9           |text_disp_128      |     2|
-|165   |      nolabel_line38    |logo_tetris        |    39|
+|165   |      nolabel_line38    |logo_tetris        |    41|
 |166   |      option1           |str_oled_84        |   322|
 |167   |        text10          |text_disp_109      |     1|
 |168   |        text2           |text_disp_110      |     6|
@@ -2211,11 +2213,11 @@ Report Instance Areas:
 |280   |  watchmod              |stopwatch          |   220|
 +------+------------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:31 ; elapsed = 00:04:08 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:57 ; elapsed = 00:04:34 . Memory (MB): peak = 968.648 ; gain = 712.668
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 367 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:15 ; elapsed = 00:03:56 . Memory (MB): peak = 970.313 ; gain = 294.063
-Synthesis Optimization Complete : Time (s): cpu = 00:03:31 ; elapsed = 00:04:09 . Memory (MB): peak = 970.313 ; gain = 714.742
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:40 ; elapsed = 00:04:22 . Memory (MB): peak = 968.648 ; gain = 291.668
+Synthesis Optimization Complete : Time (s): cpu = 00:03:57 ; elapsed = 00:04:35 . Memory (MB): peak = 968.648 ; gain = 712.668
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2992 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2228,9 +2230,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 404 Infos, 247 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:38 ; elapsed = 00:04:17 . Memory (MB): peak = 970.313 ; gain = 727.621
+synth_design: Time (s): cpu = 00:04:04 ; elapsed = 00:04:43 . Memory (MB): peak = 968.648 ; gain = 725.492
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.173 . Memory (MB): peak = 970.313 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  4 21:28:51 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 968.648 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  4 22:58:20 2020...

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Apr  4 21:31:34 2020
+| Date             : Sat Apr  4 23:01:04 2020
 | Host             : Richard running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.148        |
+| Total On-Chip Power (W)  | 0.153        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.076        |
+| Dynamic (W)              | 0.081        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.3         |
-| Junction Temperature (C) | 25.7         |
+| Max Ambient (C)          | 84.2         |
+| Junction Temperature (C) | 25.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.036 |    26773 |       --- |             --- |
-|   LUT as Logic |     0.035 |    16874 |     20800 |           81.13 |
+| Slice Logic    |     0.038 |    26772 |       --- |             --- |
+|   LUT as Logic |     0.037 |    16866 |     20800 |           81.09 |
 |   F7/F8 Muxes  |    <0.001 |      350 |     32600 |            1.07 |
-|   CARRY4       |    <0.001 |     2588 |      8150 |           31.75 |
 |   Register     |    <0.001 |     2200 |     41600 |            5.29 |
+|   CARRY4       |    <0.001 |     2588 |      8150 |           31.75 |
 |   Others       |     0.000 |      539 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.036 |    18374 |       --- |             --- |
+| Signals        |     0.039 |    18386 |       --- |             --- |
 | I/O            |     0.001 |       51 |       106 |           48.11 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.148 |          |           |                 |
+| Total          |     0.153 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.085 |       0.075 |      0.010 |
+| Vccint    |       1.000 |     0.090 |       0.080 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,14 +142,14 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| Top_Student             |     0.076 |
+| Top_Student             |     0.081 |
 |   clk1                  |    <0.001 |
 |   clk20                 |    <0.001 |
 |   clk20k                |    <0.001 |
 |   clk361                |    <0.001 |
 |   clk4                  |    <0.001 |
 |   clk625m               |    <0.001 |
-|   disp1                 |     0.069 |
+|   disp1                 |     0.073 |
 |     border1             |     0.000 |
 |     coord               |    <0.001 |
 |     customHigh          |    <0.001 |
@@ -341,8 +341,8 @@ Table of Contents
 |         text4           |     0.000 |
 |         text5           |     0.000 |
 |         text6           |     0.000 |
-|     tetrisgame          |     0.066 |
-|       game_over         |     0.000 |
+|     tetrisgame          |     0.071 |
+|       game_over         |    <0.001 |
 |         text10          |     0.000 |
 |         text11          |     0.000 |
 |         text3           |     0.000 |
@@ -377,13 +377,13 @@ Table of Contents
 |       score_ones        |     0.000 |
 |         text11          |     0.000 |
 |         text12          |     0.000 |
-|       score_screen      |     0.000 |
+|       score_screen      |    <0.001 |
 |         text3           |     0.000 |
 |         text4           |     0.000 |
 |         text5           |     0.000 |
 |         text6           |     0.000 |
 |         text7           |     0.000 |
-|       score_tens        |     0.000 |
+|       score_tens        |    <0.001 |
 |         text10          |     0.000 |
 |         text11          |     0.000 |
 |       score_thousand    |     0.000 |
