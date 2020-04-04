@@ -31,7 +31,8 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg [2:0] current_block = 0;
     reg [1:0] block_state = 0;
     reg [15:0] current_colour = 0;
-    reg [4991:0] static_colour = 0;
+    reg [935:0] static_colour_number = 0;
+    wire [15:0] static_colour_out = 0;
     reg [1:0] gameState = 0; //0 = continue, 1 = lose
     wire [2:0] random_block;
     reg generate_block = 0;
@@ -39,7 +40,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg [3:0] top_left = 0;
     wire [4:0] row, col;
     wire [8:0] row_index;
-    reg [2:0]block_out = 0;
+    reg [2:0]block_out = 0, static_out = 0, moving_out = 0;
     reg border_out = 0;
     reg [47:0] temp_blocks = 0;
     reg fast_drop = 0;
@@ -53,8 +54,11 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     integer i, j = 1;
     
     
+    colour_table blocks_colour(static_colour_number[(311 - col - row_index)*3 +:3], static_colour_out);
+    
+    
     //Row 0-25, from top to bottom. Row index is the "reversed" index of first pixel in that row 
-    //i.e. pixel 311 has row_index 0, pixel 11 has row_index 288
+    //i.e. index 263 has row_index 48, index 11 has row_index 288
     assign row = y / 3 + 4;
     assign row_index = row * 12;
     assign col = x / 3;
@@ -64,18 +68,18 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     assign current_blocks = moving_blocks[block_start -: 48];
     assign temp_static = static_blocks[block_start -: 48];
     
-    //collision_check rotate(temp_static, temp_blocks, current_blocks, shifted);
     
     //Visual driver
     always @ (posedge clk625MHz)
     begin
-        block_out = 0;
-        if(col >= 1 && col <=10 && row <= 24)
-            block_out = (static_blocks[311 - col - row_index] | moving_blocks[311 - col - row_index]);
+        block_out = 0; static_out = 0; moving_out = 0;
+        if(col >= 1 && col <=10 && row <= 24) begin
+            static_out = static_blocks[311 - col - row_index]; 
+            moving_out = moving_blocks[311 - col - row_index];
+        end
         //Draw border
         border_out = (x >= 33 && x <= 35) || x == 95 || (x >= 0 && x <= 1) || (y == 63);
-            
-        OLED_colour = (block_out == 1) ? 16'hF800 : (border_out) ? 16'hFFFF : 16'h0000;
+        OLED_colour = (moving_out) ? current_colour : (static_out) ? 16'hF816 : (border_out) ? 16'hFFFF : 16'h0000;
     end
     
     //Game Engine
@@ -198,19 +202,17 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 begin
                     //Place block into static_array and respective colour arrays
                     static_blocks = static_blocks | moving_blocks;
-                    for(i=top_left;i<=(top_left+3) && i<=10;i=i+1) begin
-                        for(j=block_start;j<=(block_start-36);j=j-12)
-                            if(moving_blocks[j - i])
-                                static_colour[(j - i)*16 +: 16] = current_colour; 
-                    end
+//                    for(j=0;j<48;j=j+1)
+//                        static_colour_number[(block_start - j)*3 +: 3] = (moving_blocks[block_start - j]) ? current_block : 0;  
                     //Checking for rows with all 1's to clear
-                    for(i=24;i>=4;i=i-1)
-                        if(static_blocks[(311 - i*12 - 1) -: 10] == {10{1'b1}}) begin
-                            for(j=i;j>=4;j=j-1)
+                    for(i=4;i<=24;i=i+1) begin                      
+                        if(static_blocks[(311 - i*12 - 1) -: 10] == {10{1'b1}})
+                            for(j=i;j>=4;j=j-1) begin
                                 static_blocks[(311 - j*12 - 1) -: 10] = static_blocks[(311 - (j-1)*12 - 1) -: 10];
-                                static_colour[((311 - j*12) * 16 - 1) -: 160] = static_colour[((311 - (j-1)*12)*16 - 1) -: 160];
-                        end
-                    //gameState = (static_blocks[263 -: 12] != 0);
+//                                static_colour_number[((311 - j*12) * 3 - 1) -: 30] = static_colour_number[((311 - (j-1)*12)*3 - 1) -: 30];
+                            end
+                    end
+                    gameState = (static_blocks[275 -: 12] != 0);
                     moving_blocks = 0;
                     generate_block = 1; 
                     fast_drop = 0;

@@ -111,14 +111,14 @@ module Top_Student (
     char_disp str_3(char[3], charseg[3]);
     
     //Start Screen
-    string_driver startScreen(clk4sig, 0, "PRESS MIDDLE BUTTON TO START", 28, startChar[0], startChar[1], startChar[2], startChar[3]);
+    string_driver startScreen(clk4sig, 0, "PRESS BTNC TO START", 19, startChar[0], startChar[1], startChar[2], startChar[3]);
     char_disp str_4(startChar[0], startSegChar[0]);
     char_disp str_5(startChar[1], startSegChar[1]);
     char_disp str_6(startChar[2], startSegChar[2]);
     char_disp str_7(startChar[3], startSegChar[3]);
     
     //Eco-Mode
-    string_driver ecoModeDisp(clk4sig, 0, "ECO-MODE    ", 12, ecoChar[0], ecoChar[1], ecoChar[2], ecoChar[3]);
+    string_driver ecoModeDisp(clk4sig, 0, "ECO-MODE", 8, ecoChar[0], ecoChar[1], ecoChar[2], ecoChar[3]);
     char_disp str_8(ecoChar[0], ecoSegChar[0]);
     char_disp str_9(ecoChar[1], ecoSegChar[1]);
     char_disp str_10(ecoChar[2], ecoSegChar[2]);
