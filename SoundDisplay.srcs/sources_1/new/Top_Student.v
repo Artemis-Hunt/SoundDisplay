@@ -187,7 +187,7 @@ module Top_Student (
     //Peak volume meter code, refreshes max at a rate of 20kHz
     always @ (posedge clk20ksig) begin
         resetMax = resetMax + 1; 
-        if(resetMax >= 999) begin   //Update LED trail at a 20Hz frequency
+        if(resetMax >= 1499) begin   //Update LED trail at a 13.3Hz frequency
             resetMax = 0;
             maxLED = 0;
             for(j = (MIN_VOL + STEP); j < 4096; j = j + STEP)   //Update index of highest lit LED

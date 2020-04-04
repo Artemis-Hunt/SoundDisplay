@@ -1,8 +1,13 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+<<<<<<< HEAD
 | Date         : Sun Apr  5 00:18:44 2020
 | Host         : WIN8-PC running 64-bit major release  (build 9200)
+=======
+| Date         : Sat Apr  4 22:58:19 2020
+| Host         : Richard running 64-bit major release  (build 9200)
+>>>>>>> 1b055cfd924c67ca03755872535234c915340488
 | Command      : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
 | Design       : Top_Student
 | Device       : 7a35tcpg236-1
@@ -30,8 +35,13 @@ Table of Contents
 +-------------------------+-------+-------+-----------+-------+
 |        Site Type        |  Used | Fixed | Available | Util% |
 +-------------------------+-------+-------+-----------+-------+
+<<<<<<< HEAD
 | Slice LUTs*             | 17359 |     0 |     20800 | 83.46 |
 |   LUT as Logic          | 17359 |     0 |     20800 | 83.46 |
+=======
+| Slice LUTs*             | 16909 |     0 |     20800 | 81.29 |
+|   LUT as Logic          | 16909 |     0 |     20800 | 81.29 |
+>>>>>>> 1b055cfd924c67ca03755872535234c915340488
 |   LUT as Memory         |     0 |     0 |      9600 |  0.00 |
 | Slice Registers         |  2240 |     0 |     41600 |  5.38 |
 |   Register as Flip Flop |  2240 |     0 |     41600 |  5.38 |
@@ -149,6 +159,7 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+<<<<<<< HEAD
 | LUT6     | 6141 |                 LUT |
 | LUT2     | 5272 |                 LUT |
 | LUT5     | 3484 |                 LUT |
@@ -157,6 +168,16 @@ Table of Contents
 | LUT3     | 2216 |                 LUT |
 | LUT4     | 2024 |                 LUT |
 | FDRE     | 1520 |        Flop & Latch |
+=======
+| LUT6     | 6140 |                 LUT |
+| LUT2     | 5220 |                 LUT |
+| LUT5     | 3259 |                 LUT |
+| CARRY4   | 2588 |          CarryLogic |
+| LUT1     | 2360 |                 LUT |
+| LUT3     | 2091 |                 LUT |
+| LUT4     | 2050 |                 LUT |
+| FDRE     | 1482 |        Flop & Latch |
+>>>>>>> 1b055cfd924c67ca03755872535234c915340488
 | FDCE     |  699 |        Flop & Latch |
 | MUXF7    |  308 |               MuxFx |
 | MUXF8    |   60 |               MuxFx |

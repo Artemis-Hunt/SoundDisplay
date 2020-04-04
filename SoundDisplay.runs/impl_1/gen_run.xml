@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1586016899">
+=======
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1586012002">
+>>>>>>> 1b055cfd924c67ca03755872535234c915340488
   <File Type="BITSTR-BMM" Name="Top_Student_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="Top_Student_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="Top_Student_timing_summary_init.rpt"/>
