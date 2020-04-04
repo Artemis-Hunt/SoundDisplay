@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,6 +33,7 @@ read_verilog -library xil_defaultlib {
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Font_table.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/avgPeak_table.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/bcd.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/char_disp.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/clk20k.v
@@ -44,15 +46,20 @@ read_verilog -library xil_defaultlib {
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/draw_border.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/ledDriv.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/logo_blue.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/logo_orange.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/logo_tetris.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/logo_white.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/mux.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/mux1.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/single_dff.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/single_pulse.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/str_oled.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/string_driver.v
+  C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/text_disp.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/volume_bar.v
   C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/xycalculator.v

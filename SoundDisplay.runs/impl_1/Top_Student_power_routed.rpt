@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Mon Mar 30 22:17:55 2020
+| Date             : Sat Apr  4 00:17:03 2020
 | Host             : Battlestation running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.082        |
+| Total On-Chip Power (W)  | 0.091        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.010        |
+| Dynamic (W)              | 0.020        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.6         |
-| Junction Temperature (C) | 25.4         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     9400 |       --- |             --- |
-|   LUT as Logic |     0.003 |     5348 |     20800 |           25.71 |
-|   CARRY4       |    <0.001 |     1250 |      8150 |           15.34 |
-|   Register     |    <0.001 |     1011 |     41600 |            2.43 |
-|   F7/F8 Muxes  |    <0.001 |       17 |     32600 |            0.05 |
-|   Others       |     0.000 |      305 |       --- |             --- |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.006 |    17425 |       --- |             --- |
+|   LUT as Logic |     0.005 |    11076 |     20800 |           53.25 |
+|   CARRY4       |    <0.001 |     1498 |      8150 |           18.38 |
+|   Register     |    <0.001 |     1803 |     41600 |            4.33 |
+|   F7/F8 Muxes  |    <0.001 |      412 |     32600 |            1.26 |
+|   Others       |     0.000 |      351 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.003 |     5910 |       --- |             --- |
-| I/O            |     0.002 |       53 |       106 |           50.00 |
+| Signals        |     0.005 |    11972 |       --- |             --- |
+| I/O            |     0.007 |       54 |       106 |           50.94 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.082 |          |           |                 |
+| Total          |     0.091 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.018 |       0.009 |      0.010 |
+| Vccint    |       1.000 |     0.023 |       0.013 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,174 +139,197 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------------+-----------+
-| Name                 | Power (W) |
-+----------------------+-----------+
-| Top_Student          |     0.010 |
-|   clk1               |    <0.001 |
-|   clk20              |    <0.001 |
-|   clk20k             |    <0.001 |
-|   clk361             |    <0.001 |
-|   clk4               |    <0.001 |
-|   clk625m            |    <0.001 |
-|   disp1              |     0.003 |
-|     border1          |     0.000 |
-|     coord            |    <0.001 |
-|     customHigh       |    <0.001 |
-|     customLow        |    <0.001 |
-|     customMed        |    <0.001 |
-|     custombackgrd    |    <0.001 |
-|     customborder     |    <0.001 |
-|     nolabel_line57   |     0.000 |
-|     nolabel_line60   |    <0.001 |
-|       credits0       |     0.000 |
-|         text0        |     0.000 |
-|         text1        |     0.000 |
-|         text10       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits1       |     0.000 |
-|         text10       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text9        |     0.000 |
-|       credits2       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits3       |     0.000 |
-|         text0        |     0.000 |
-|         text1        |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|       credits4       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits5       |     0.000 |
-|         text10       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text9        |     0.000 |
-|       credits6       |     0.000 |
-|         text0        |     0.000 |
-|         text1        |     0.000 |
-|         text10       |     0.000 |
-|         text11       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       credits7       |     0.000 |
-|         text10       |     0.000 |
-|         text12       |     0.000 |
-|         text13       |     0.000 |
-|         text14       |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       nolabel_line36 |     0.000 |
-|       option1        |     0.000 |
-|         text10       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       option2        |     0.000 |
-|         text10       |     0.000 |
-|         text2        |     0.000 |
-|         text3        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|       option3        |     0.000 |
-|         text10       |     0.000 |
-|         text2        |     0.000 |
-|         text4        |     0.000 |
-|         text5        |     0.000 |
-|         text6        |     0.000 |
-|         text7        |     0.000 |
-|         text8        |     0.000 |
-|         text9        |     0.000 |
-|     str              |     0.000 |
-|       text1          |     0.000 |
-|       text10         |     0.000 |
-|       text11         |     0.000 |
-|       text12         |     0.000 |
-|       text13         |     0.000 |
-|       text14         |     0.000 |
-|       text2          |     0.000 |
-|       text3          |     0.000 |
-|       text4          |     0.000 |
-|       text5          |     0.000 |
-|       text6          |     0.000 |
-|       text7          |     0.000 |
-|       text8          |     0.000 |
-|     volume1          |    <0.001 |
-|   down               |     0.000 |
-|     dff1             |     0.000 |
-|     dff2             |     0.000 |
-|   ledDriver          |    <0.001 |
-|     clk600           |    <0.001 |
-|   left               |     0.000 |
-|     dff1             |     0.000 |
-|     dff2             |     0.000 |
-|   mic                |    <0.001 |
-|   mid                |    <0.001 |
-|     dff1             |     0.000 |
-|     dff2             |    <0.001 |
-|   muxFinal           |    <0.001 |
-|   muxFinal2          |    <0.001 |
-|   muxseg0            |    <0.001 |
-|   muxseg1            |    <0.001 |
-|   muxseg2            |    <0.001 |
-|   muxseg3            |    <0.001 |
-|   oled               |    <0.001 |
-|   right              |     0.000 |
-|     dff1             |     0.000 |
-|     dff2             |     0.000 |
-|   str_0              |     0.000 |
-|   str_1              |     0.000 |
-|   strdriv            |    <0.001 |
-|   up                 |     0.000 |
-|     dff1             |     0.000 |
-|     dff2             |     0.000 |
-|   watchmod           |    <0.001 |
-+----------------------+-----------+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| Top_Student           |     0.020 |
+|   clk1                |    <0.001 |
+|   clk20               |    <0.001 |
+|   clk20k              |    <0.001 |
+|   clk361              |    <0.001 |
+|   clk4                |    <0.001 |
+|   clk625m             |    <0.001 |
+|   disp1               |     0.007 |
+|     border1           |     0.000 |
+|     coord             |    <0.001 |
+|     customHigh        |    <0.001 |
+|     customLow         |    <0.001 |
+|     customMed         |    <0.001 |
+|     custombackgrd     |    <0.001 |
+|     customborder      |    <0.001 |
+|     orange            |     0.000 |
+|     peakAvg           |    <0.001 |
+|       average_info    |     0.000 |
+|         text10        |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       avgNumber       |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       avgTable        |     0.000 |
+|       peakNumber      |    <0.001 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       peakTable       |     0.000 |
+|       peak_info       |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       volume_info     |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text9         |     0.000 |
+|     tetrisMenu        |    <0.001 |
+|       credits0        |     0.000 |
+|         text0         |     0.000 |
+|         text1         |     0.000 |
+|         text10        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits1        |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text9         |     0.000 |
+|       credits2        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits3        |     0.000 |
+|         text0         |     0.000 |
+|         text1         |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|       credits4        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits5        |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text9         |     0.000 |
+|       credits6        |     0.000 |
+|         text0         |     0.000 |
+|         text1         |     0.000 |
+|         text10        |     0.000 |
+|         text11        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       credits7        |     0.000 |
+|         text10        |     0.000 |
+|         text12        |     0.000 |
+|         text13        |     0.000 |
+|         text14        |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       nolabel_line37  |     0.000 |
+|       option1         |     0.000 |
+|         text10        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       option2         |     0.000 |
+|         text10        |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|       option3         |     0.000 |
+|         text2         |     0.000 |
+|         text3         |     0.000 |
+|         text4         |     0.000 |
+|         text5         |     0.000 |
+|         text6         |     0.000 |
+|         text7         |     0.000 |
+|         text8         |     0.000 |
+|         text9         |     0.000 |
+|     tetrisgame        |     0.004 |
+|       blockstatedebug |    <0.001 |
+|       topleftdebug    |    <0.001 |
+|     volume1           |    <0.001 |
+|     white             |    <0.001 |
+|   down                |     0.000 |
+|     dff1              |     0.000 |
+|     dff2              |     0.000 |
+|   ledDriver           |    <0.001 |
+|     clk600            |    <0.001 |
+|   ledDriverDebug      |    <0.001 |
+|     clk600            |    <0.001 |
+|   left                |     0.000 |
+|     dff1              |     0.000 |
+|     dff2              |     0.000 |
+|   mic                 |    <0.001 |
+|   mid                 |    <0.001 |
+|     dff1              |     0.000 |
+|     dff2              |    <0.001 |
+|   muxseg0             |    <0.001 |
+|   muxseg1             |    <0.001 |
+|   muxseg2             |    <0.001 |
+|   muxseg3             |    <0.001 |
+|   oled                |    <0.001 |
+|   right               |     0.000 |
+|     dff1              |     0.000 |
+|     dff2              |     0.000 |
+|   str_0               |     0.000 |
+|   str_1               |     0.000 |
+|   strdriv             |    <0.001 |
+|   up                  |    <0.001 |
+|     dff1              |    <0.001 |
+|     dff2              |     0.000 |
+|   watchmod            |    <0.001 |
++-----------------------+-----------+
 
 
