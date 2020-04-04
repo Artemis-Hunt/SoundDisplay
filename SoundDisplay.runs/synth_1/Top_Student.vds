@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Apr  4 21:24:23 2020
-# Process ID: 4764
+# Start of session at: Sun Apr  5 00:15:01 2020
+# Process ID: 2940
 # Current directory: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7464 
+INFO: Helper process launched with PID 19928 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 356.148 ; gain = 100.578
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 358.180 ; gain = 101.465
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 	Parameter MIN_VOL bound to: 2000 - type: integer 
@@ -170,76 +170,129 @@ WARNING: [Synth 8-689] width (120) of port connection 'pixel' does not match por
 WARNING: [Synth 8-689] width (120) of port connection 'pixel' does not match port width (1) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v:50]
 INFO: [Synth 8-6155] done synthesizing module 'start_tetris' (22#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/start_tetris.v:23]
 INFO: [Synth 8-6157] synthesizing module 'tetris_main' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:25]
-WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:82]
-WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:83]
-WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:84]
-WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:85]
-WARNING: [Synth 8-689] width (16) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:88]
-WARNING: [Synth 8-689] width (24) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:89]
-WARNING: [Synth 8-689] width (32) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:90]
-WARNING: [Synth 8-689] width (40) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:91]
+WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:86]
+WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:87]
+WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:88]
+WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:89]
+WARNING: [Synth 8-689] width (16) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:92]
+WARNING: [Synth 8-689] width (24) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:93]
+WARNING: [Synth 8-689] width (32) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:94]
+WARNING: [Synth 8-689] width (40) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:95]
+INFO: [Synth 8-6157] synthesizing module 'next_line' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_line.v:23]
+	Parameter STARTX bound to: 64 - type: integer 
+	Parameter ENDX bound to: 73 - type: integer 
+	Parameter LOGO_HEIGHT bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_line.v:30]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_line.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'next_line' (23#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_line.v:23]
+INFO: [Synth 8-6157] synthesizing module 'next_leftZ' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_leftZ.v:23]
+	Parameter STARTX bound to: 64 - type: integer 
+	Parameter ENDX bound to: 73 - type: integer 
+	Parameter LOGO_HEIGHT bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_leftZ.v:30]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_leftZ.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'next_leftZ' (24#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_leftZ.v:23]
+INFO: [Synth 8-6157] synthesizing module 'next_rightZ' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_rightZ.v:23]
+	Parameter STARTX bound to: 64 - type: integer 
+	Parameter ENDX bound to: 73 - type: integer 
+	Parameter LOGO_HEIGHT bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_rightZ.v:30]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_rightZ.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'next_rightZ' (25#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_rightZ.v:23]
+INFO: [Synth 8-6157] synthesizing module 'next_square' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_square.v:23]
+	Parameter STARTX bound to: 64 - type: integer 
+	Parameter ENDX bound to: 73 - type: integer 
+	Parameter LOGO_HEIGHT bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_square.v:30]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_square.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'next_square' (26#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_square.v:23]
+INFO: [Synth 8-6157] synthesizing module 'next_T' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_T.v:23]
+	Parameter STARTX bound to: 64 - type: integer 
+	Parameter ENDX bound to: 73 - type: integer 
+	Parameter LOGO_HEIGHT bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_T.v:30]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_T.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'next_T' (27#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_T.v:23]
+INFO: [Synth 8-6157] synthesizing module 'next_L' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_L.v:22]
+	Parameter STARTX bound to: 64 - type: integer 
+	Parameter ENDX bound to: 73 - type: integer 
+	Parameter LOGO_HEIGHT bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_L.v:29]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_L.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'next_L' (28#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_L.v:22]
+INFO: [Synth 8-6157] synthesizing module 'next_RL' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_RL.v:22]
+	Parameter STARTX bound to: 64 - type: integer 
+	Parameter ENDX bound to: 73 - type: integer 
+	Parameter LOGO_HEIGHT bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_RL.v:29]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_RL.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'next_RL' (29#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/next_RL.v:22]
 INFO: [Synth 8-6157] synthesizing module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/avgPeak_table.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'avgPeak_table' (23#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/avgPeak_table.v:23]
-WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:94]
-WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:95]
-WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:96]
-WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:97]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:232]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:257]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:281]
-WARNING: [Synth 8-6014] Unused sequential element block_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:107]
-WARNING: [Synth 8-6014] Unused sequential element static_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:107]
-WARNING: [Synth 8-6014] Unused sequential element moving_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:107]
-WARNING: [Synth 8-6014] Unused sequential element border_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:114]
-WARNING: [Synth 8-6014] Unused sequential element ingame_score_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:121]
-WARNING: [Synth 8-6014] Unused sequential element ingame_score_colour_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:122]
-WARNING: [Synth 8-6014] Unused sequential element gameOverColour_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:123]
-WARNING: [Synth 8-6014] Unused sequential element generate_block_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:142]
-WARNING: [Synth 8-6014] Unused sequential element collision_LRrotate_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:229]
-WARNING: [Synth 8-6014] Unused sequential element collision_down_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:242]
-WARNING: [Synth 8-5788] Register first_game_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:141]
-WARNING: [Synth 8-5788] Register top_left_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:167]
-WARNING: [Synth 8-5788] Register block_state_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:166]
-WARNING: [Synth 8-5788] Register lowest_row_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:75]
-WARNING: [Synth 8-5788] Register current_colour_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:282]
-INFO: [Synth 8-6155] done synthesizing module 'tetris_main' (24#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'avgPeak_table' (30#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/avgPeak_table.v:23]
+WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:108]
+WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:109]
+WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:110]
+WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:111]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:137]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:262]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:287]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:312]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:323]
+WARNING: [Synth 8-6014] Unused sequential element block_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:121]
+WARNING: [Synth 8-6014] Unused sequential element static_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:121]
+WARNING: [Synth 8-6014] Unused sequential element moving_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:121]
+WARNING: [Synth 8-6014] Unused sequential element border_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:129]
+WARNING: [Synth 8-6014] Unused sequential element ingame_score_out_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:147]
+WARNING: [Synth 8-6014] Unused sequential element ingame_score_colour_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:148]
+WARNING: [Synth 8-6014] Unused sequential element gameOverColour_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:149]
+WARNING: [Synth 8-6014] Unused sequential element generate_block_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:168]
+WARNING: [Synth 8-6014] Unused sequential element collision_LRrotate_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:259]
+WARNING: [Synth 8-6014] Unused sequential element collision_down_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:272]
+WARNING: [Synth 8-5788] Register first_game_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:167]
+WARNING: [Synth 8-5788] Register next_block_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:176]
+WARNING: [Synth 8-5788] Register top_left_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:197]
+WARNING: [Synth 8-5788] Register block_state_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:196]
+WARNING: [Synth 8-5788] Register lowest_row_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:79]
+WARNING: [Synth 8-5788] Register current_colour_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:313]
+WARNING: [Synth 8-5788] Register next_colour_reg in module tetris_main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:324]
+INFO: [Synth 8-6155] done synthesizing module 'tetris_main' (31#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:25]
 INFO: [Synth 8-6157] synthesizing module 'peak_average' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:23]
 	Parameter DIVISOR bound to: 20 - type: integer 
 WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:36]
 WARNING: [Synth 8-689] width (128) of port connection 'string' does not match port width (120) of module 'str_oled' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:38]
 WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:40]
 WARNING: [Synth 8-689] width (16) of port connection 'number' does not match port width (120) of module 'avgPeak_table' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:41]
-INFO: [Synth 8-6155] done synthesizing module 'peak_average' (25#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'peak_average' (32#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/peak_average.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_border' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
 INFO: [Synth 8-6157] synthesizing module 'colourHex_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'colourHex_disp' (26#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'colourHex_disp' (33#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/colourHex_disp.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_border' (27#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_border' (34#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_border.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_background' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_background' (28#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_background' (35#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_background.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_low' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_low' (29#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_low' (36#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_low.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_med' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_med' (30#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_med' (37#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_med.v:23]
 INFO: [Synth 8-6157] synthesizing module 'custom_high' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'custom_high' (31#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_high' (38#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/custom_high.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:189]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:220]
 WARNING: [Synth 8-6014] Unused sequential element startScreen_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:217]
 WARNING: [Synth 8-6014] Unused sequential element menucolour_reg was removed.  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:218]
-INFO: [Synth 8-6155] done synthesizing module 'coordinate_display' (32#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'coordinate_display' (39#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/coordinate_display.v:25]
 INFO: [Synth 8-6157] synthesizing module 'stopwatch' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:24]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:91]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:92]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:93]
 WARNING: [Synth 8-689] width (5) of port connection 'char' does not match port width (8) of module 'char_disp' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:94]
-INFO: [Synth 8-6155] done synthesizing module 'stopwatch' (33#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch' (40#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/stopwatch.v:24]
 INFO: [Synth 8-6157] synthesizing module 'Audio_Capture' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'Audio_Capture' (34#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Audio_Capture' (41#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Audio_Capture.v:25]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -294,9 +347,9 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/School/Y1S2/EE2026/S
 INFO: [Synth 8-226] default block is never used [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:124]
 INFO: [Synth 8-226] default block is never used [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:201]
 WARNING: [Synth 8-693] zero replication count - replication ignored [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:349]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (35#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (42#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/imports/EE2026-Design-Project-master/Oled_Display.v:36]
 WARNING: [Synth 8-5788] Register ecoMode_reg in module Top_Student is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:147]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (36#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (43#1) [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/Top_Student.v:18]
 WARNING: [Synth 8-3331] design custom_high has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_med has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_low has unconnected port mid_sel
@@ -319,7 +372,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 432.141 ; gain = 176.570
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 435.992 ; gain = 179.277
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -332,10 +385,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 432.141 ; gain = 176.570
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 435.992 ; gain = 179.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 432.141 ; gain = 176.570
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 435.992 ; gain = 179.277
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -351,22 +404,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 852.820 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 856.738 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 856.738 ; gain = 600.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 856.738 ; gain = 600.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 856.738 ; gain = 600.023
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slowclk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "counter0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -380,7 +433,7 @@ INFO: [Synth 8-5544] ROM "newgame" won't be mapped to Block RAM because address 
 INFO: [Synth 8-5544] ROM "credits" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "exit" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "pixel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:167]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.srcs/sources_1/new/tetris_main.v:197]
 INFO: [Synth 8-5544] ROM "top_left0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "top_left0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "OLED_colour3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -391,6 +444,7 @@ INFO: [Synth 8-5544] ROM "scoreTotal" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "top_left" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "block_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "current_colour" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_colour" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "number0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "number1" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "number2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -465,7 +519,7 @@ INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 852.820 ; gain = 597.250
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 856.738 ; gain = 600.023
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -473,23 +527,24 @@ Report RTL Partitions:
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
 |1     |string_driver           |           2|     16400|
-|2     |str_oled                |          32|      8772|
-|3     |start_tetris__GC0       |           1|       554|
-|4     |tetris_main__GCB0       |           1|     42361|
+|2     |str_oled                |          33|      8772|
+|3     |start_tetris__GC0       |           1|       557|
+|4     |tetris_main__GCB0       |           1|     41915|
 |5     |tetris_main__GCB1       |           1|     12495|
 |6     |tetris_main__GCB2       |           1|     24528|
-|7     |tetris_main__GCB3       |           1|     24785|
-|8     |tetris_main__GCB4       |           1|     25587|
-|9     |peak_average__GC0       |           1|       820|
-|10    |coordinate_display__GC0 |           1|     10246|
-|11    |Top_Student__GC0        |           1|      9644|
+|7     |tetris_main__GCB3       |           1|       896|
+|8     |tetris_main__GCB4       |           1|     24785|
+|9     |tetris_main__GCB5       |           1|     27302|
+|10    |peak_average__GC0       |           1|       820|
+|11    |coordinate_display__GC0 |           1|     10246|
+|12    |Top_Student__GC0        |           1|      9644|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 37    
+	   2 Input     32 Bit       Adders := 38    
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input     14 Bit       Adders := 4     
 	   3 Input     13 Bit       Adders := 3     
@@ -498,14 +553,14 @@ Detailed RTL Component Info :
 	   2 Input     10 Bit       Adders := 3     
 	   2 Input      9 Bit       Adders := 12    
 	   3 Input      9 Bit       Adders := 1     
-	   3 Input      8 Bit       Adders := 964   
+	   3 Input      8 Bit       Adders := 1008  
 	   2 Input      8 Bit       Adders := 3     
-	   3 Input      7 Bit       Adders := 4     
-	   2 Input      7 Bit       Adders := 7     
-	   3 Input      6 Bit       Adders := 480   
+	   3 Input      7 Bit       Adders := 11    
+	   2 Input      7 Bit       Adders := 14    
+	   3 Input      6 Bit       Adders := 495   
 	   2 Input      6 Bit       Adders := 5     
 	   2 Input      5 Bit       Adders := 5     
-	   3 Input      4 Bit       Adders := 960   
+	   3 Input      4 Bit       Adders := 990   
 	   2 Input      4 Bit       Adders := 43    
 	  15 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 21    
@@ -517,7 +572,7 @@ Detailed RTL Component Info :
 	               40 Bit    Registers := 1     
 	               32 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
-	               16 Bit    Registers := 4     
+	               16 Bit    Registers := 5     
 	               14 Bit    Registers := 7     
 	               12 Bit    Registers := 4     
 	               11 Bit    Registers := 2     
@@ -526,10 +581,10 @@ Detailed RTL Component Info :
 	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 4     
 	                5 Bit    Registers := 6     
-	                4 Bit    Registers := 67    
-	                3 Bit    Registers := 18    
+	                4 Bit    Registers := 68    
+	                3 Bit    Registers := 19    
 	                2 Bit    Registers := 6     
-	                1 Bit    Registers := 563   
+	                1 Bit    Registers := 587   
 +---Muxes : 
 	   2 Input    312 Bit        Muxes := 27    
 	   8 Input    307 Bit        Muxes := 1     
@@ -547,8 +602,8 @@ Detailed RTL Component Info :
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 1     
 	   4 Input     16 Bit        Muxes := 4     
-	   8 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 20    
+	   8 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 22    
 	   6 Input     16 Bit        Muxes := 1     
 	   5 Input     16 Bit        Muxes := 2     
 	  16 Input     16 Bit        Muxes := 1     
@@ -569,15 +624,16 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 102   
 	   4 Input      4 Bit        Muxes := 5     
 	   7 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 42    
+	   2 Input      3 Bit        Muxes := 44    
+	   3 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 36    
 	   4 Input      2 Bit        Muxes := 1     
 	   5 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 156   
+	   2 Input      1 Bit        Muxes := 158   
 	   3 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 7     
-	   8 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 2     
 	   5 Input      1 Bit        Muxes := 4     
 	   7 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
@@ -770,6 +826,7 @@ Detailed RTL Component Info :
 	   2 Input    103 Bit        Muxes := 3     
 	   3 Input    103 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 28    
 	   2 Input      1 Bit        Muxes := 9     
 Module avgPeak_table__1 
@@ -788,6 +845,62 @@ Module avgPeak_table__4
 Detailed RTL Component Info : 
 +---Registers : 
 	               14 Bit    Registers := 1     
+Module next_RL 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module next_L 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module next_T 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module next_square 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module next_rightZ 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module next_leftZ 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module next_line 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
 Module tetris_main 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -805,14 +918,14 @@ Detailed RTL Component Info :
 +---Registers : 
 	              312 Bit    Registers := 2     
 	               48 Bit    Registers := 1     
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	               14 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 3     
+	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
 +---Muxes : 
 	   2 Input    312 Bit        Muxes := 27    
 	   8 Input    307 Bit        Muxes := 1     
@@ -820,8 +933,8 @@ Detailed RTL Component Info :
 	   4 Input     48 Bit        Muxes := 6     
 	   8 Input     48 Bit        Muxes := 1     
 	   4 Input     16 Bit        Muxes := 1     
-	   8 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 6     
+	   8 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 8     
 	   3 Input     15 Bit        Muxes := 1     
 	   5 Input     14 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 1     
@@ -829,13 +942,13 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 3     
 	   2 Input      5 Bit        Muxes := 1     
 	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 4     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   5 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 35    
+	   2 Input      1 Bit        Muxes := 37    
 	   4 Input      1 Bit        Muxes := 2     
-	   8 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 2     
 	   5 Input      1 Bit        Muxes := 1     
 Module avgPeak_table__5 
 Detailed RTL Component Info : 
@@ -1291,24 +1404,60 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[5]' (FD) to 'peakAvgi_7/peakTable/number_reg[6]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[6]' (FD) to 'peakAvgi_7/peakTable/number_reg[6]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[7]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[8]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[9]' (FD) to 'peakAvgi_7/avgTable/number_reg[13]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[10]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[11]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[12]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/avgTable/number_reg[13]' (FD) to 'peakAvgi_7/avgTable/number_reg[14]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/peakTable/number_reg[5]' (FD) to 'peakAvgi_7/peakTable/number_reg[6]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (peakAvgi_7/\peakTable/number_reg[6] )
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/peakTable/number_reg[7]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/peakTable/number_reg[8]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/peakTable/number_reg[9]' (FD) to 'peakAvgi_7/peakTable/number_reg[13]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/peakTable/number_reg[10]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/peakTable/number_reg[11]' (FD) to 'peakAvgi_7/peakTable/number_reg[12]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (peakAvgi_7/\peakTable/number_reg[12] )
-INFO: [Synth 8-3886] merging instance 'peakAvgi_7/peakTable/number_reg[13]' (FD) to 'peakAvgi_7/peakTable/number_reg[14]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[5]' (FD) to 'tetrisgamei_5/tens_place/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[6]' (FD) to 'tetrisgamei_5/tens_place/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[7]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[8]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[9]' (FD) to 'tetrisgamei_5/ones_place/number_reg[13]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[10]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[11]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[12]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/ones_place/number_reg[13]' (FD) to 'tetrisgamei_5/ones_place/number_reg[14]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[5]' (FD) to 'tetrisgamei_5/tens_place/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[6]' (FD) to 'tetrisgamei_5/thous_place/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[7]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[8]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[9]' (FD) to 'tetrisgamei_5/tens_place/number_reg[13]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[10]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[11]' (FD) to 'tetrisgamei_5/tens_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[12]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/tens_place/number_reg[13]' (FD) to 'tetrisgamei_5/tens_place/number_reg[14]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[5]' (FD) to 'tetrisgamei_5/thous_place/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[6]' (FD) to 'tetrisgamei_5/thous_place/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[7]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[8]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[9]' (FD) to 'tetrisgamei_5/hund_place/number_reg[13]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[10]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[11]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[12]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/hund_place/number_reg[13]' (FD) to 'tetrisgamei_5/hund_place/number_reg[14]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/thous_place/number_reg[5]' (FD) to 'tetrisgamei_5/thous_place/number_reg[6]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tetrisgamei_5/\thous_place/number_reg[6] )
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/thous_place/number_reg[7]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/thous_place/number_reg[8]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/thous_place/number_reg[9]' (FD) to 'tetrisgamei_5/thous_place/number_reg[13]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/thous_place/number_reg[10]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/thous_place/number_reg[11]' (FD) to 'tetrisgamei_5/thous_place/number_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetrisgamei_5/\thous_place/number_reg[12] )
+INFO: [Synth 8-3886] merging instance 'tetrisgamei_5/thous_place/number_reg[13]' (FD) to 'tetrisgamei_5/thous_place/number_reg[14]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[5]' (FD) to 'peakAvgi_8/peakTable/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[6]' (FD) to 'peakAvgi_8/peakTable/number_reg[6]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[7]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[8]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[9]' (FD) to 'peakAvgi_8/avgTable/number_reg[13]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[10]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[11]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[12]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/avgTable/number_reg[13]' (FD) to 'peakAvgi_8/avgTable/number_reg[14]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/peakTable/number_reg[5]' (FD) to 'peakAvgi_8/peakTable/number_reg[6]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (peakAvgi_8/\peakTable/number_reg[6] )
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/peakTable/number_reg[7]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/peakTable/number_reg[8]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/peakTable/number_reg[9]' (FD) to 'peakAvgi_8/peakTable/number_reg[13]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/peakTable/number_reg[10]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/peakTable/number_reg[11]' (FD) to 'peakAvgi_8/peakTable/number_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (peakAvgi_8/\peakTable/number_reg[12] )
+INFO: [Synth 8-3886] merging instance 'peakAvgi_8/peakTable/number_reg[13]' (FD) to 'peakAvgi_8/peakTable/number_reg[14]'
 INFO: [Synth 8-3886] merging instance 'i_0/watchmod/minutes_reg[4]' (FDC) to 'i_0/watchmod/minute_tens_count_reg[4]'
 INFO: [Synth 8-3886] merging instance 'i_0/watchmod/minute_tens_count_reg[4]' (FDC) to 'i_0/watchmod/minute_tens_count_reg[3]'
 INFO: [Synth 8-3886] merging instance 'i_0/watchmod/minute_tens_count_reg[3]' (FDC) to 'i_0/watchmod/seconds_reg[4]'
@@ -1497,8 +1646,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/te
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text4/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text3/pixel_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text2/pixel_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text1/pixel_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp1/tetrisMenu/credits4 /text0/pixel_reg)
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__194.
 WARNING: [Synth 8-3332] Sequential element (pixel_reg) is unused and will be removed from module text_disp__193.
@@ -1532,48 +1679,26 @@ INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too spar
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-3886] merging instance 'thous_place/number_reg[5]' (FD) to 'thous_place/number_reg[6]'
-INFO: [Synth 8-3886] merging instance 'thous_place/number_reg[7]' (FD) to 'thous_place/number_reg[8]'
-INFO: [Synth 8-3886] merging instance 'thous_place/number_reg[8]' (FD) to 'thous_place/number_reg[10]'
-INFO: [Synth 8-3886] merging instance 'thous_place/number_reg[9]' (FD) to 'thous_place/number_reg[13]'
-INFO: [Synth 8-3886] merging instance 'thous_place/number_reg[10]' (FD) to 'thous_place/number_reg[11]'
-INFO: [Synth 8-3886] merging instance 'thous_place/number_reg[11]' (FD) to 'thous_place/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'thous_place/number_reg[13]' (FD) to 'thous_place/number_reg[14]'
-INFO: [Synth 8-3886] merging instance 'hund_place/number_reg[5]' (FD) to 'hund_place/number_reg[6]'
-INFO: [Synth 8-3886] merging instance 'hund_place/number_reg[7]' (FD) to 'hund_place/number_reg[8]'
-INFO: [Synth 8-3886] merging instance 'hund_place/number_reg[8]' (FD) to 'hund_place/number_reg[10]'
-INFO: [Synth 8-3886] merging instance 'hund_place/number_reg[9]' (FD) to 'hund_place/number_reg[13]'
-INFO: [Synth 8-3886] merging instance 'hund_place/number_reg[10]' (FD) to 'hund_place/number_reg[11]'
-INFO: [Synth 8-3886] merging instance 'hund_place/number_reg[11]' (FD) to 'hund_place/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'hund_place/number_reg[13]' (FD) to 'hund_place/number_reg[14]'
 INFO: [Synth 8-3886] merging instance 'simultaneous_clear_reg[2]' (FDCE) to 'simultaneous_clear_reg[0]'
 INFO: [Synth 8-3886] merging instance 'simultaneous_clear_reg[1]' (FDCE) to 'simultaneous_clear_reg[0]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[1]' (FDE) to 'current_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[1]' (FDE) to 'next_colour_reg[3]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[3]' (FDE) to 'current_colour_reg[4]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[3]' (FDE) to 'next_colour_reg[4]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[5]' (FDE) to 'current_colour_reg[6]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[5]' (FDE) to 'next_colour_reg[6]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[7]' (FDE) to 'current_colour_reg[9]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[7]' (FDE) to 'next_colour_reg[9]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[8]' (FDE) to 'current_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[8]' (FDE) to 'next_colour_reg[10]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[11]' (FDE) to 'current_colour_reg[14]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[11]' (FDE) to 'next_colour_reg[14]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[12]' (FDE) to 'current_colour_reg[13]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[12]' (FDE) to 'next_colour_reg[13]'
 INFO: [Synth 8-3886] merging instance 'current_colour_reg[13]' (FDE) to 'current_colour_reg[15]'
-INFO: [Synth 8-3886] merging instance 'ones_place/number_reg[5]' (FD) to 'ones_place/number_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ones_place/number_reg[7]' (FD) to 'ones_place/number_reg[8]'
-INFO: [Synth 8-3886] merging instance 'ones_place/number_reg[8]' (FD) to 'ones_place/number_reg[10]'
-INFO: [Synth 8-3886] merging instance 'ones_place/number_reg[9]' (FD) to 'ones_place/number_reg[13]'
-INFO: [Synth 8-3886] merging instance 'ones_place/number_reg[10]' (FD) to 'ones_place/number_reg[11]'
-INFO: [Synth 8-3886] merging instance 'ones_place/number_reg[11]' (FD) to 'ones_place/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'ones_place/number_reg[13]' (FD) to 'ones_place/number_reg[14]'
-INFO: [Synth 8-3886] merging instance 'tens_place/number_reg[5]' (FD) to 'tens_place/number_reg[6]'
-INFO: [Synth 8-3886] merging instance 'tens_place/number_reg[7]' (FD) to 'tens_place/number_reg[8]'
-INFO: [Synth 8-3886] merging instance 'tens_place/number_reg[8]' (FD) to 'tens_place/number_reg[10]'
-INFO: [Synth 8-3886] merging instance 'tens_place/number_reg[9]' (FD) to 'tens_place/number_reg[13]'
-INFO: [Synth 8-3886] merging instance 'tens_place/number_reg[10]' (FD) to 'tens_place/number_reg[11]'
-INFO: [Synth 8-3886] merging instance 'tens_place/number_reg[11]' (FD) to 'tens_place/number_reg[12]'
-INFO: [Synth 8-3886] merging instance 'tens_place/number_reg[13]' (FD) to 'tens_place/number_reg[14]'
+INFO: [Synth 8-3886] merging instance 'next_colour_reg[13]' (FDE) to 'next_colour_reg[15]'
 INFO: [Synth 8-3886] merging instance 'movement_reg[1]' (FDC) to 'movement_reg[0]'
 INFO: [Synth 8-3886] merging instance 'OLED_colour_reg[1]' (FDS) to 'OLED_colour_reg[4]'
-INFO: [Synth 8-3886] merging instance 'OLED_colour_reg[5]' (FDS) to 'OLED_colour_reg[6]'
-INFO: [Synth 8-3886] merging instance 'OLED_colour_reg[8]' (FDS) to 'OLED_colour_reg[10]'
 INFO: [Synth 8-3886] merging instance 'OLED_colour_reg[11]' (FDS) to 'OLED_colour_reg[14]'
 INFO: [Synth 8-3886] merging instance 'OLED_colour_reg[12]' (FDS) to 'OLED_colour_reg[15]'
 INFO: [Synth 8-5544] ROM "string0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
@@ -1585,7 +1710,7 @@ WARNING: [Synth 8-3331] design custom_low has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_background has unconnected port mid_sel
 WARNING: [Synth 8-3331] design custom_border has unconnected port mid_sel
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:56 ; elapsed = 00:03:19 . Memory (MB): peak = 875.785 ; gain = 620.215
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:30 ; elapsed = 00:02:47 . Memory (MB): peak = 878.422 ; gain = 621.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1638,52 +1763,54 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |string_driver           |           2|      1034|
 |2     |str_oled                |           1|      1079|
-|3     |start_tetris__GC0       |           1|       327|
-|4     |tetris_main__GCB0       |           1|     10959|
+|3     |start_tetris__GC0       |           1|       328|
+|4     |tetris_main__GCB0       |           1|     11051|
 |5     |tetris_main__GCB1       |           1|      2049|
 |6     |tetris_main__GCB2       |           1|      3636|
-|7     |tetris_main__GCB3       |           1|      3989|
-|8     |tetris_main__GCB4       |           1|      2904|
-|9     |peak_average__GC0       |           1|       318|
-|10    |coordinate_display__GC0 |           1|      4112|
-|11    |Top_Student__GC0        |           1|      4471|
-|12    |str_oled__1             |           1|      1392|
-|13    |str_oled__2             |           1|      1093|
-|14    |str_oled__3             |           1|      1055|
-|15    |str_oled__4             |           1|      2131|
-|16    |str_oled__5             |           1|      1302|
-|17    |str_oled__6             |           1|      1283|
-|18    |str_oled__7             |           1|      1076|
-|19    |str_oled__8             |           1|      1203|
-|20    |str_oled__9             |           1|       819|
-|21    |str_oled__10            |           1|       831|
-|22    |str_oled__11            |           1|      1054|
-|23    |str_oled__12            |           1|       837|
-|24    |str_oled__13            |           1|       806|
-|25    |str_oled__14            |           1|      1309|
-|26    |str_oled__15            |           1|      1066|
-|27    |str_oled__16            |           1|      1005|
-|28    |str_oled__17            |           1|       778|
-|29    |str_oled__18            |           1|      1600|
-|30    |str_oled__19            |           1|      1591|
-|31    |str_oled__20            |           1|      1593|
-|32    |str_oled__21            |           1|      1593|
-|33    |str_oled__22            |           1|       835|
-|34    |str_oled__23            |           1|      1594|
-|35    |str_oled__24            |           1|      1597|
-|36    |str_oled__25            |           1|      1597|
-|37    |str_oled__26            |           1|      1592|
-|38    |str_oled__27            |           1|      1079|
-|39    |str_oled__28            |           1|       741|
-|40    |str_oled__29            |           1|       731|
-|41    |str_oled__30            |           1|       911|
-|42    |str_oled__31            |           1|       741|
+|7     |tetris_main__GCB3       |           1|        60|
+|8     |tetris_main__GCB4       |           1|      3989|
+|9     |tetris_main__GCB5       |           1|      3258|
+|10    |peak_average__GC0       |           1|       318|
+|11    |coordinate_display__GC0 |           1|      4112|
+|12    |Top_Student__GC0        |           1|      4471|
+|13    |str_oled__1             |           1|      1392|
+|14    |str_oled__2             |           1|      1093|
+|15    |str_oled__3             |           1|      1055|
+|16    |str_oled__4             |           1|      2131|
+|17    |str_oled__5             |           1|      1302|
+|18    |str_oled__6             |           1|      1283|
+|19    |str_oled__7             |           1|      1076|
+|20    |str_oled__8             |           1|      1203|
+|21    |str_oled__9             |           1|       819|
+|22    |str_oled__10            |           1|       831|
+|23    |str_oled__11            |           1|      1054|
+|24    |str_oled__12            |           1|       837|
+|25    |str_oled__13            |           1|       806|
+|26    |str_oled__14            |           1|      1309|
+|27    |str_oled__15            |           1|      1066|
+|28    |str_oled__16            |           1|      1005|
+|29    |str_oled__17            |           1|       778|
+|30    |str_oled__18            |           1|       735|
+|31    |str_oled__19            |           1|       724|
+|32    |str_oled__20            |           1|       727|
+|33    |str_oled__21            |           1|       729|
+|34    |str_oled__22            |           1|       835|
+|35    |str_oled__23            |           1|       718|
+|36    |str_oled__24            |           1|       741|
+|37    |str_oled__25            |           1|       720|
+|38    |str_oled__26            |           1|       736|
+|39    |str_oled__27            |           1|       778|
+|40    |str_oled__28            |           1|      1079|
+|41    |str_oled__29            |           1|       741|
+|42    |str_oled__30            |           1|       731|
+|43    |str_oled__31            |           1|       911|
+|44    |str_oled__32            |           1|       741|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:06 ; elapsed = 00:03:31 . Memory (MB): peak = 907.445 ; gain = 651.875
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:39 ; elapsed = 00:02:57 . Memory (MB): peak = 904.719 ; gain = 648.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -1710,7 +1837,7 @@ INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char0_reg[4]' (FDE) to 'ecoMo
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char0_reg[6]' (FDE) to 'ecoModeDisp/char0_reg[7]'
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char1_reg[0]' (FDE) to 'ecoModeDisp/char1_reg[6]'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:14 ; elapsed = 00:03:40 . Memory (MB): peak = 960.324 ; gain = 704.754
+Finished Timing Optimization : Time (s): cpu = 00:02:46 ; elapsed = 00:03:05 . Memory (MB): peak = 958.434 ; gain = 701.719
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1719,47 +1846,49 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |string_driver           |           1|       384|
 |2     |str_oled                |           1|      1035|
-|3     |start_tetris__GC0       |           1|       327|
-|4     |tetris_main__GCB0       |           1|     10787|
+|3     |start_tetris__GC0       |           1|       328|
+|4     |tetris_main__GCB0       |           1|     10963|
 |5     |tetris_main__GCB1       |           1|      1447|
 |6     |tetris_main__GCB2       |           1|      2418|
-|7     |tetris_main__GCB3       |           1|      2788|
-|8     |tetris_main__GCB4       |           1|      2842|
-|9     |peak_average__GC0       |           1|       318|
-|10    |coordinate_display__GC0 |           1|      4087|
-|11    |Top_Student__GC0        |           1|      4182|
-|12    |str_oled__1             |           1|      1348|
-|13    |str_oled__2             |           1|      1049|
-|14    |str_oled__3             |           1|      1055|
-|15    |str_oled__4             |           1|      2131|
-|16    |str_oled__5             |           1|      1302|
-|17    |str_oled__6             |           1|      1283|
-|18    |str_oled__7             |           1|      1076|
-|19    |str_oled__8             |           1|      1203|
-|20    |str_oled__9             |           1|       819|
-|21    |str_oled__10            |           1|       831|
-|22    |str_oled__11            |           1|      1054|
-|23    |str_oled__12            |           1|       837|
-|24    |str_oled__13            |           1|       806|
-|25    |str_oled__14            |           1|      1309|
-|26    |str_oled__15            |           1|      1066|
-|27    |str_oled__16            |           1|      1005|
-|28    |str_oled__17            |           1|       778|
-|29    |str_oled__18            |           1|       735|
-|30    |str_oled__19            |           1|       725|
-|31    |str_oled__20            |           1|       727|
-|32    |str_oled__21            |           1|       728|
-|33    |str_oled__22            |           1|       835|
-|34    |str_oled__23            |           1|       727|
-|35    |str_oled__24            |           1|       731|
-|36    |str_oled__25            |           1|       729|
-|37    |str_oled__26            |           1|       726|
-|38    |str_oled__27            |           1|      1079|
-|39    |str_oled__28            |           1|       741|
-|40    |str_oled__29            |           1|       731|
-|41    |str_oled__30            |           1|       911|
-|42    |str_oled__31            |           1|       741|
-|43    |string_driver__1        |           1|       212|
+|7     |tetris_main__GCB3       |           1|        60|
+|8     |tetris_main__GCB4       |           1|      2788|
+|9     |tetris_main__GCB5       |           1|      3179|
+|10    |peak_average__GC0       |           1|       318|
+|11    |coordinate_display__GC0 |           1|      4090|
+|12    |Top_Student__GC0        |           1|      4182|
+|13    |str_oled__1             |           1|      1348|
+|14    |str_oled__2             |           1|      1049|
+|15    |str_oled__3             |           1|      1055|
+|16    |str_oled__4             |           1|      2131|
+|17    |str_oled__5             |           1|      1302|
+|18    |str_oled__6             |           1|      1283|
+|19    |str_oled__7             |           1|      1076|
+|20    |str_oled__8             |           1|      1203|
+|21    |str_oled__9             |           1|       819|
+|22    |str_oled__10            |           1|       831|
+|23    |str_oled__11            |           1|      1054|
+|24    |str_oled__12            |           1|       837|
+|25    |str_oled__13            |           1|       806|
+|26    |str_oled__14            |           1|      1309|
+|27    |str_oled__15            |           1|      1066|
+|28    |str_oled__16            |           1|      1005|
+|29    |str_oled__17            |           1|       778|
+|30    |str_oled__18            |           1|       735|
+|31    |str_oled__19            |           1|       724|
+|32    |str_oled__20            |           1|       727|
+|33    |str_oled__21            |           1|       729|
+|34    |str_oled__22            |           1|       835|
+|35    |str_oled__23            |           1|       718|
+|36    |str_oled__24            |           1|       741|
+|37    |str_oled__25            |           1|       720|
+|38    |str_oled__26            |           1|       736|
+|39    |str_oled__27            |           1|       778|
+|40    |str_oled__28            |           1|      1079|
+|41    |str_oled__29            |           1|       741|
+|42    |str_oled__30            |           1|       731|
+|43    |str_oled__31            |           1|       911|
+|44    |str_oled__32            |           1|       741|
+|45    |string_driver__1        |           1|       212|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -1768,15 +1897,9 @@ INFO: [Synth 8-3886] merging instance 'ecoModeDisp/i_reg[3]_C' (FDCE) to 'ecoMod
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char2_reg[1]' (FDRE) to 'ecoModeDisp/char2_reg[6]'
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char2_reg[2]' (FDRE) to 'ecoModeDisp/char2_reg[3]'
 INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char1_reg[1]' (FDRE) to 'ecoModeDisp/char1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char1_reg[2]' (FDRE) to 'ecoModeDisp/char1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char1_reg[3]' (FDRE) to 'ecoModeDisp/char1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char3_reg[1]' (FDRE) to 'ecoModeDisp/char3_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char3_reg[2]' (FDRE) to 'ecoModeDisp/char3_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char3_reg[3]' (FDRE) to 'ecoModeDisp/char2_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char3_reg[6]' (FDRE) to 'ecoModeDisp/char2_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ecoModeDisp/char2_reg[6]' (FDRE) to 'ecoModeDisp/char1_reg[6]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:20 ; elapsed = 00:03:57 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Technology Mapping : Time (s): cpu = 00:02:52 ; elapsed = 00:03:19 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1785,46 +1908,48 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |string_driver           |           1|       110|
 |2     |str_oled                |           1|       409|
-|3     |start_tetris__GC0       |           1|       105|
-|4     |tetris_main__GCB0       |           1|      5364|
+|3     |start_tetris__GC0       |           1|       104|
+|4     |tetris_main__GCB0       |           1|      5404|
 |5     |tetris_main__GCB1       |           1|       158|
 |6     |tetris_main__GCB2       |           1|      1249|
-|7     |tetris_main__GCB3       |           1|       313|
-|8     |tetris_main__GCB4       |           1|      1009|
-|9     |peak_average__GC0       |           1|       134|
-|10    |coordinate_display__GC0 |           1|      1305|
-|11    |Top_Student__GC0        |           1|      1613|
-|12    |str_oled__1             |           1|       586|
-|13    |str_oled__2             |           1|       464|
-|14    |str_oled__3             |           1|       543|
-|15    |str_oled__4             |           1|       657|
-|16    |str_oled__5             |           1|       543|
-|17    |str_oled__6             |           1|       546|
-|18    |str_oled__7             |           1|       429|
-|19    |str_oled__8             |           1|       662|
-|20    |str_oled__9             |           1|       464|
-|21    |str_oled__10            |           1|       458|
-|22    |str_oled__11            |           1|       571|
-|23    |str_oled__12            |           1|       464|
-|24    |str_oled__13            |           1|       458|
-|25    |str_oled__14            |           1|       701|
-|26    |str_oled__15            |           1|       576|
-|27    |str_oled__16            |           1|       503|
-|28    |str_oled__17            |           1|       404|
-|29    |str_oled__18            |           1|       337|
-|30    |str_oled__19            |           1|       338|
-|31    |str_oled__20            |           1|       339|
-|32    |str_oled__21            |           1|       341|
-|33    |str_oled__22            |           1|       409|
-|34    |str_oled__23            |           1|       337|
-|35    |str_oled__24            |           1|       341|
-|36    |str_oled__25            |           1|       338|
-|37    |str_oled__26            |           1|       338|
-|38    |str_oled__27            |           1|       611|
-|39    |str_oled__28            |           1|       392|
-|40    |str_oled__29            |           1|       336|
-|41    |str_oled__30            |           1|       496|
-|42    |str_oled__31            |           1|       340|
+|7     |tetris_main__GCB3       |           1|        36|
+|8     |tetris_main__GCB4       |           1|       313|
+|9     |tetris_main__GCB5       |           1|      1239|
+|10    |peak_average__GC0       |           1|       134|
+|11    |coordinate_display__GC0 |           1|      1306|
+|12    |Top_Student__GC0        |           1|      1613|
+|13    |str_oled__1             |           1|       586|
+|14    |str_oled__2             |           1|       464|
+|15    |str_oled__3             |           1|       543|
+|16    |str_oled__4             |           1|       657|
+|17    |str_oled__5             |           1|       543|
+|18    |str_oled__6             |           1|       546|
+|19    |str_oled__7             |           1|       429|
+|20    |str_oled__8             |           1|       662|
+|21    |str_oled__9             |           1|       464|
+|22    |str_oled__10            |           1|       458|
+|23    |str_oled__11            |           1|       571|
+|24    |str_oled__12            |           1|       464|
+|25    |str_oled__13            |           1|       458|
+|26    |str_oled__14            |           1|       701|
+|27    |str_oled__15            |           1|       576|
+|28    |str_oled__16            |           1|       503|
+|29    |str_oled__17            |           1|       404|
+|30    |str_oled__18            |           1|       334|
+|31    |str_oled__19            |           1|       336|
+|32    |str_oled__20            |           1|       337|
+|33    |str_oled__21            |           1|       339|
+|34    |str_oled__22            |           1|       409|
+|35    |str_oled__23            |           1|       335|
+|36    |str_oled__24            |           1|       338|
+|37    |str_oled__25            |           1|       337|
+|38    |str_oled__26            |           1|       335|
+|39    |str_oled__27            |           1|       394|
+|40    |str_oled__28            |           1|       611|
+|41    |str_oled__29            |           1|       392|
+|42    |str_oled__30            |           1|       336|
+|43    |str_oled__31            |           1|       496|
+|44    |str_oled__32            |           1|       340|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1838,15 +1963,11 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'ledDriverEco/seg_reg[0]' (FDE) to 'ledDriverEco/seg_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ledDriverEco/seg_reg[1]' (FDE) to 'ledDriverEco/seg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'ledDriverEco/seg_reg[3]' (FDE) to 'ledDriverEco/seg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'ledDriverEco/seg_reg[4]' (FDE) to 'ledDriverEco/seg_reg[5]'
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:26 ; elapsed = 00:04:03 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished IO Insertion : Time (s): cpu = 00:02:56 ; elapsed = 00:03:24 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1859,7 +1980,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:26 ; elapsed = 00:04:03 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:57 ; elapsed = 00:03:24 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1871,25 +1992,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:28 ; elapsed = 00:04:05 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:59 ; elapsed = 00:03:26 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:29 ; elapsed = 00:04:06 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:59 ; elapsed = 00:03:27 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:31 ; elapsed = 00:04:08 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:00 ; elapsed = 00:03:28 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:31 ; elapsed = 00:04:08 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:01 ; elapsed = 00:03:28 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1906,20 +2027,20 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     7|
-|2     |CARRY4 |  2588|
-|3     |LUT1   |  2360|
-|4     |LUT2   |  5219|
-|5     |LUT3   |  2091|
-|6     |LUT4   |  2051|
-|7     |LUT5   |  3263|
-|8     |LUT6   |  6137|
-|9     |MUXF7  |   303|
-|10    |MUXF8  |    56|
+|2     |CARRY4 |  2699|
+|3     |LUT1   |  2484|
+|4     |LUT2   |  5272|
+|5     |LUT3   |  2216|
+|6     |LUT4   |  2024|
+|7     |LUT5   |  3484|
+|8     |LUT6   |  6141|
+|9     |MUXF7  |   308|
+|10    |MUXF8  |    60|
 |11    |FDCE   |   699|
 |12    |FDE_1  |    32|
 |13    |FDPE   |     1|
-|14    |FDRE   |  1450|
-|15    |FDSE   |    18|
+|14    |FDRE   |  1488|
+|15    |FDSE   |    20|
 |16    |IBUF   |    13|
 |17    |OBUF   |    37|
 |18    |OBUFT  |     1|
@@ -1929,7 +2050,7 @@ Report Instance Areas:
 +------+------------------------+-------------------+------+
 |      |Instance                |Module             |Cells |
 +------+------------------------+-------------------+------+
-|1     |top                     |                   | 26326|
+|1     |top                     |                   | 26986|
 |2     |  ledDriverStart        |ledDriv_6          |    76|
 |3     |    clk600              |clk_21             |    54|
 |4     |  clk1                  |clk                |    54|
@@ -1938,286 +2059,298 @@ Report Instance Areas:
 |7     |  clk361                |clk_2              |    54|
 |8     |  clk4                  |clk_3              |    56|
 |9     |  clk625m               |clk_4              |    51|
-|10    |  disp1                 |coordinate_display | 24316|
+|10    |  disp1                 |coordinate_display | 24972|
 |11    |    border1             |draw_border        |     1|
-|12    |    coord               |xycalculator       |  6792|
+|12    |    coord               |xycalculator       |  7131|
 |13    |    customHigh          |custom_high        |   102|
 |14    |    customLow           |custom_low         |   106|
 |15    |    customMed           |custom_med         |   122|
-|16    |    custombackgrd       |custom_background  |    98|
+|16    |    custombackgrd       |custom_background  |    99|
 |17    |    customborder        |custom_border      |   121|
 |18    |    gameSound           |str_oled           |   292|
-|19    |      text10            |text_disp_242      |     1|
-|20    |      text11            |text_disp_243      |     2|
-|21    |      text12            |text_disp_244      |     2|
-|22    |      text14            |text_disp_245      |     3|
-|23    |      text8             |text_disp_246      |     1|
-|24    |      text9             |text_disp_247      |     1|
+|19    |      text10            |text_disp_247      |     1|
+|20    |      text11            |text_disp_248      |     2|
+|21    |      text12            |text_disp_249      |     2|
+|22    |      text14            |text_disp_250      |     3|
+|23    |      text8             |text_disp_251      |     1|
+|24    |      text9             |text_disp_252      |     1|
 |25    |    gameText            |str_oled_26        |   279|
-|26    |      text10            |text_disp_237      |     1|
-|27    |      text11            |text_disp_238      |     2|
-|28    |      text12            |text_disp_239      |     2|
-|29    |      text14            |text_disp_240      |     3|
-|30    |      text9             |text_disp_241      |     1|
+|26    |      text10            |text_disp_242      |     1|
+|27    |      text11            |text_disp_243      |     2|
+|28    |      text12            |text_disp_244      |     2|
+|29    |      text14            |text_disp_245      |     3|
+|30    |      text9             |text_disp_246      |     1|
 |31    |    gameWatch           |str_oled_27        |   298|
-|32    |      text10            |text_disp_227      |     1|
-|33    |      text11            |text_disp_228      |     4|
-|34    |      text12            |text_disp_229      |     2|
-|35    |      text14            |text_disp_230      |     2|
-|36    |      text4             |text_disp_231      |     2|
-|37    |      text5             |text_disp_232      |     1|
-|38    |      text6             |text_disp_233      |     1|
-|39    |      text7             |text_disp_234      |     3|
-|40    |      text8             |text_disp_235      |     2|
-|41    |      text9             |text_disp_236      |     1|
+|32    |      text10            |text_disp_232      |     1|
+|33    |      text11            |text_disp_233      |     4|
+|34    |      text12            |text_disp_234      |     2|
+|35    |      text14            |text_disp_235      |     2|
+|36    |      text4             |text_disp_236      |     2|
+|37    |      text5             |text_disp_237      |     1|
+|38    |      text6             |text_disp_238      |     1|
+|39    |      text7             |text_disp_239      |     3|
+|40    |      text8             |text_disp_240      |     2|
+|41    |      text9             |text_disp_241      |     1|
 |42    |    menuGame            |logo_game          |     8|
 |43    |    menuSound           |logo_sound         |     8|
 |44    |    menuWatch           |logo_watch         |     8|
 |45    |    orange              |logo_orange        |    54|
-|46    |    peakAvg             |peak_average       |  1385|
-|47    |      average_info      |str_oled_195       |   277|
-|48    |        text10          |text_disp_220      |     2|
-|49    |        text4           |text_disp_221      |     1|
-|50    |        text5           |text_disp_222      |     2|
-|51    |        text6           |text_disp_223      |     2|
-|52    |        text7           |text_disp_224      |     3|
-|53    |        text8           |text_disp_225      |     1|
-|54    |        text9           |text_disp_226      |     4|
-|55    |      avgNumber         |str_oled_196       |   211|
-|56    |        text6           |text_disp_218      |     4|
-|57    |        text7           |text_disp_219      |     2|
-|58    |      avgTable          |avgPeak_table_197  |    21|
-|59    |      peakNumber        |str_oled_198       |   215|
-|60    |        text6           |text_disp_216      |     4|
-|61    |        text7           |text_disp_217      |     2|
-|62    |      peakTable         |avgPeak_table_199  |    21|
-|63    |      peak_info         |str_oled_200       |   236|
-|64    |        text5           |text_disp_212      |     2|
-|65    |        text6           |text_disp_213      |     4|
-|66    |        text7           |text_disp_214      |     1|
-|67    |        text8           |text_disp_215      |     3|
-|68    |      volume_info       |str_oled_201       |   312|
-|69    |        text10          |text_disp_202      |     2|
-|70    |        text11          |text_disp_203      |     3|
-|71    |        text12          |text_disp_204      |     3|
-|72    |        text2           |text_disp_205      |     2|
-|73    |        text3           |text_disp_206      |     1|
-|74    |        text4           |text_disp_207      |     2|
-|75    |        text5           |text_disp_208      |     2|
-|76    |        text6           |text_disp_209      |     2|
-|77    |        text7           |text_disp_210      |     3|
-|78    |        text9           |text_disp_211      |     3|
-|79    |    stopWatchText       |str_oled_28        |   290|
-|80    |      text10            |text_disp_186      |     2|
-|81    |      text11            |text_disp_187      |     2|
-|82    |      text3             |text_disp_188      |     4|
-|83    |      text4             |text_disp_189      |     1|
-|84    |      text5             |text_disp_190      |     1|
-|85    |      text6             |text_disp_191      |     2|
-|86    |      text7             |text_disp_192      |     3|
-|87    |      text8             |text_disp_193      |     2|
-|88    |      text9             |text_disp_194      |     1|
-|89    |    tetrisMenu          |start_tetris       |  3575|
-|90    |      credits0          |str_oled_76        |   319|
-|91    |        text0           |text_disp_175      |     2|
-|92    |        text1           |text_disp_176      |     2|
-|93    |        text10          |text_disp_177      |     4|
-|94    |        text2           |text_disp_178      |     1|
-|95    |        text3           |text_disp_179      |     3|
-|96    |        text4           |text_disp_180      |     2|
-|97    |        text5           |text_disp_181      |     1|
-|98    |        text6           |text_disp_182      |     2|
-|99    |        text7           |text_disp_183      |     3|
-|100   |        text8           |text_disp_184      |     2|
-|101   |        text9           |text_disp_185      |     2|
-|102   |      credits1          |str_oled_77        |   264|
-|103   |        text10          |text_disp_169      |     2|
-|104   |        text11          |text_disp_170      |     2|
-|105   |        text12          |text_disp_171      |     4|
-|106   |        text13          |text_disp_172      |     2|
-|107   |        text14          |text_disp_173      |     2|
-|108   |        text9           |text_disp_174      |     2|
-|109   |      credits2          |str_oled_78        |   260|
-|110   |        text10          |text_disp_163      |     2|
-|111   |        text11          |text_disp_164      |     2|
-|112   |        text12          |text_disp_165      |     3|
-|113   |        text13          |text_disp_166      |     2|
-|114   |        text14          |text_disp_167      |     2|
-|115   |        text9           |text_disp_168      |     1|
-|116   |      credits3          |str_oled_79        |   307|
-|117   |        text0           |text_disp_154      |     2|
-|118   |        text1           |text_disp_155      |     2|
-|119   |        text2           |text_disp_156      |     2|
-|120   |        text3           |text_disp_157      |     3|
-|121   |        text4           |text_disp_158      |     2|
-|122   |        text5           |text_disp_159      |     2|
-|123   |        text6           |text_disp_160      |     3|
-|124   |        text7           |text_disp_161      |     3|
-|125   |        text8           |text_disp_162      |     4|
-|126   |      credits4          |str_oled_80        |   260|
-|127   |        text10          |text_disp_148      |     2|
-|128   |        text11          |text_disp_149      |     2|
-|129   |        text12          |text_disp_150      |     3|
-|130   |        text13          |text_disp_151      |     2|
-|131   |        text14          |text_disp_152      |     2|
-|132   |        text9           |text_disp_153      |     1|
-|133   |      credits5          |str_oled_81        |   264|
-|134   |        text10          |text_disp_142      |     2|
-|135   |        text11          |text_disp_143      |     2|
-|136   |        text12          |text_disp_144      |     4|
-|137   |        text13          |text_disp_145      |     2|
-|138   |        text14          |text_disp_146      |     2|
-|139   |        text9           |text_disp_147      |     2|
-|140   |      credits6          |str_oled_82        |   346|
-|141   |        text0           |text_disp_129      |     2|
-|142   |        text1           |text_disp_130      |     2|
-|143   |        text10          |text_disp_131      |     1|
-|144   |        text11          |text_disp_132      |     4|
-|145   |        text12          |text_disp_133      |     3|
-|146   |        text13          |text_disp_134      |     4|
-|147   |        text2           |text_disp_135      |     2|
-|148   |        text3           |text_disp_136      |     2|
-|149   |        text4           |text_disp_137      |     1|
-|150   |        text5           |text_disp_138      |     1|
-|151   |        text6           |text_disp_139      |     2|
-|152   |        text8           |text_disp_140      |     1|
-|153   |        text9           |text_disp_141      |     2|
-|154   |      credits7          |str_oled_83        |   306|
-|155   |        text10          |text_disp_119      |     2|
-|156   |        text12          |text_disp_120      |     1|
-|157   |        text13          |text_disp_121      |     3|
-|158   |        text14          |text_disp_122      |     3|
-|159   |        text3           |text_disp_123      |     3|
-|160   |        text4           |text_disp_124      |     2|
-|161   |        text6           |text_disp_125      |     3|
-|162   |        text7           |text_disp_126      |     2|
-|163   |        text8           |text_disp_127      |     1|
-|164   |        text9           |text_disp_128      |     2|
-|165   |      nolabel_line38    |logo_tetris        |    39|
-|166   |      option1           |str_oled_84        |   322|
-|167   |        text10          |text_disp_109      |     1|
-|168   |        text2           |text_disp_110      |     6|
-|169   |          font_disp     |font_118           |     1|
-|170   |        text3           |text_disp_111      |     2|
-|171   |        text4           |text_disp_112      |     2|
-|172   |        text5           |text_disp_113      |     2|
-|173   |        text6           |text_disp_114      |     2|
-|174   |        text7           |text_disp_115      |     1|
-|175   |        text8           |text_disp_116      |     4|
+|46    |    peakAvg             |peak_average       |  1381|
+|47    |      average_info      |str_oled_200       |   277|
+|48    |        text10          |text_disp_225      |     2|
+|49    |        text4           |text_disp_226      |     1|
+|50    |        text5           |text_disp_227      |     2|
+|51    |        text6           |text_disp_228      |     2|
+|52    |        text7           |text_disp_229      |     3|
+|53    |        text8           |text_disp_230      |     1|
+|54    |        text9           |text_disp_231      |     4|
+|55    |      avgNumber         |str_oled_201       |   211|
+|56    |        text6           |text_disp_223      |     4|
+|57    |        text7           |text_disp_224      |     2|
+|58    |      avgTable          |avgPeak_table_202  |    21|
+|59    |      peakNumber        |str_oled_203       |   215|
+|60    |        text6           |text_disp_221      |     4|
+|61    |        text7           |text_disp_222      |     2|
+|62    |      peakTable         |avgPeak_table_204  |    21|
+|63    |      peak_info         |str_oled_205       |   236|
+|64    |        text5           |text_disp_217      |     2|
+|65    |        text6           |text_disp_218      |     4|
+|66    |        text7           |text_disp_219      |     1|
+|67    |        text8           |text_disp_220      |     3|
+|68    |      volume_info       |str_oled_206       |   308|
+|69    |        text10          |text_disp_207      |     2|
+|70    |        text11          |text_disp_208      |     3|
+|71    |        text12          |text_disp_209      |     3|
+|72    |        text2           |text_disp_210      |     2|
+|73    |        text3           |text_disp_211      |     1|
+|74    |        text4           |text_disp_212      |     2|
+|75    |        text5           |text_disp_213      |     2|
+|76    |        text6           |text_disp_214      |     2|
+|77    |        text7           |text_disp_215      |     3|
+|78    |        text9           |text_disp_216      |     3|
+|79    |    stopWatchText       |str_oled_28        |   289|
+|80    |      text10            |text_disp_191      |     2|
+|81    |      text11            |text_disp_192      |     2|
+|82    |      text3             |text_disp_193      |     4|
+|83    |      text4             |text_disp_194      |     1|
+|84    |      text5             |text_disp_195      |     1|
+|85    |      text6             |text_disp_196      |     2|
+|86    |      text7             |text_disp_197      |     3|
+|87    |      text8             |text_disp_198      |     2|
+|88    |      text9             |text_disp_199      |     1|
+|89    |    tetrisMenu          |start_tetris       |  3580|
+|90    |      credits0          |str_oled_81        |   319|
+|91    |        text0           |text_disp_180      |     2|
+|92    |        text1           |text_disp_181      |     2|
+|93    |        text10          |text_disp_182      |     4|
+|94    |        text2           |text_disp_183      |     1|
+|95    |        text3           |text_disp_184      |     3|
+|96    |        text4           |text_disp_185      |     2|
+|97    |        text5           |text_disp_186      |     1|
+|98    |        text6           |text_disp_187      |     2|
+|99    |        text7           |text_disp_188      |     3|
+|100   |        text8           |text_disp_189      |     2|
+|101   |        text9           |text_disp_190      |     2|
+|102   |      credits1          |str_oled_82        |   264|
+|103   |        text10          |text_disp_174      |     2|
+|104   |        text11          |text_disp_175      |     2|
+|105   |        text12          |text_disp_176      |     4|
+|106   |        text13          |text_disp_177      |     2|
+|107   |        text14          |text_disp_178      |     2|
+|108   |        text9           |text_disp_179      |     2|
+|109   |      credits2          |str_oled_83        |   260|
+|110   |        text10          |text_disp_168      |     2|
+|111   |        text11          |text_disp_169      |     2|
+|112   |        text12          |text_disp_170      |     3|
+|113   |        text13          |text_disp_171      |     2|
+|114   |        text14          |text_disp_172      |     2|
+|115   |        text9           |text_disp_173      |     1|
+|116   |      credits3          |str_oled_84        |   307|
+|117   |        text0           |text_disp_159      |     2|
+|118   |        text1           |text_disp_160      |     2|
+|119   |        text2           |text_disp_161      |     2|
+|120   |        text3           |text_disp_162      |     3|
+|121   |        text4           |text_disp_163      |     2|
+|122   |        text5           |text_disp_164      |     2|
+|123   |        text6           |text_disp_165      |     3|
+|124   |        text7           |text_disp_166      |     3|
+|125   |        text8           |text_disp_167      |     4|
+|126   |      credits4          |str_oled_85        |   260|
+|127   |        text10          |text_disp_153      |     2|
+|128   |        text11          |text_disp_154      |     2|
+|129   |        text12          |text_disp_155      |     3|
+|130   |        text13          |text_disp_156      |     2|
+|131   |        text14          |text_disp_157      |     2|
+|132   |        text9           |text_disp_158      |     1|
+|133   |      credits5          |str_oled_86        |   264|
+|134   |        text10          |text_disp_147      |     2|
+|135   |        text11          |text_disp_148      |     2|
+|136   |        text12          |text_disp_149      |     4|
+|137   |        text13          |text_disp_150      |     2|
+|138   |        text14          |text_disp_151      |     2|
+|139   |        text9           |text_disp_152      |     2|
+|140   |      credits6          |str_oled_87        |   346|
+|141   |        text0           |text_disp_134      |     2|
+|142   |        text1           |text_disp_135      |     2|
+|143   |        text10          |text_disp_136      |     1|
+|144   |        text11          |text_disp_137      |     4|
+|145   |        text12          |text_disp_138      |     3|
+|146   |        text13          |text_disp_139      |     4|
+|147   |        text2           |text_disp_140      |     2|
+|148   |        text3           |text_disp_141      |     2|
+|149   |        text4           |text_disp_142      |     1|
+|150   |        text5           |text_disp_143      |     1|
+|151   |        text6           |text_disp_144      |     2|
+|152   |        text8           |text_disp_145      |     1|
+|153   |        text9           |text_disp_146      |     2|
+|154   |      credits7          |str_oled_88        |   306|
+|155   |        text10          |text_disp_124      |     2|
+|156   |        text12          |text_disp_125      |     1|
+|157   |        text13          |text_disp_126      |     3|
+|158   |        text14          |text_disp_127      |     3|
+|159   |        text3           |text_disp_128      |     3|
+|160   |        text4           |text_disp_129      |     2|
+|161   |        text6           |text_disp_130      |     3|
+|162   |        text7           |text_disp_131      |     2|
+|163   |        text8           |text_disp_132      |     1|
+|164   |        text9           |text_disp_133      |     2|
+|165   |      nolabel_line38    |logo_tetris        |    41|
+|166   |      option1           |str_oled_89        |   322|
+|167   |        text10          |text_disp_114      |     1|
+|168   |        text2           |text_disp_115      |     6|
+|169   |          font_disp     |font_123           |     1|
+|170   |        text3           |text_disp_116      |     2|
+|171   |        text4           |text_disp_117      |     2|
+|172   |        text5           |text_disp_118      |     2|
+|173   |        text6           |text_disp_119      |     2|
+|174   |        text7           |text_disp_120      |     1|
+|175   |        text8           |text_disp_121      |     4|
 |176   |          font_disp     |font               |     1|
-|177   |        text9           |text_disp_117      |     2|
-|178   |      option2           |str_oled_85        |   279|
-|179   |        text10          |text_disp_101      |     4|
-|180   |        text2           |text_disp_102      |     2|
-|181   |        text3           |text_disp_103      |     1|
-|182   |        text4           |text_disp_104      |     2|
-|183   |        text5           |text_disp_105      |     2|
-|184   |        text7           |text_disp_106      |     2|
-|185   |        text8           |text_disp_107      |     2|
-|186   |        text9           |text_disp_108      |     2|
-|187   |      option3           |str_oled_86        |   293|
-|188   |        text2           |text_disp_93       |     2|
-|189   |        text3           |text_disp_94       |     2|
-|190   |        text4           |text_disp_95       |     3|
-|191   |        text5           |text_disp_96       |     2|
-|192   |        text6           |text_disp_97       |     2|
-|193   |        text7           |text_disp_98       |     3|
-|194   |        text8           |text_disp_99       |     4|
-|195   |        text9           |text_disp_100      |     2|
-|196   |      option4           |str_oled_87        |   246|
-|197   |        text2           |text_disp_88       |     3|
-|198   |        text3           |text_disp_89       |     2|
-|199   |        text4           |text_disp_90       |     3|
-|200   |        text5           |text_disp_91       |     1|
-|201   |        text6           |text_disp_92       |     2|
-|202   |    tetrisgame          |tetris_main        | 10453|
-|203   |      game_over         |str_oled_29        |   272|
-|204   |        text10          |text_disp_68       |     2|
-|205   |        text11          |text_disp_69       |     4|
-|206   |        text3           |text_disp_70       |     2|
-|207   |        text4           |text_disp_71       |     2|
-|208   |        text5           |text_disp_72       |     2|
-|209   |        text6           |text_disp_73       |     3|
-|210   |        text8           |text_disp_74       |     1|
-|211   |        text9           |text_disp_75       |     2|
+|177   |        text9           |text_disp_122      |     2|
+|178   |      option2           |str_oled_90        |   279|
+|179   |        text10          |text_disp_106      |     4|
+|180   |        text2           |text_disp_107      |     2|
+|181   |        text3           |text_disp_108      |     1|
+|182   |        text4           |text_disp_109      |     2|
+|183   |        text5           |text_disp_110      |     2|
+|184   |        text7           |text_disp_111      |     2|
+|185   |        text8           |text_disp_112      |     2|
+|186   |        text9           |text_disp_113      |     2|
+|187   |      option3           |str_oled_91        |   293|
+|188   |        text2           |text_disp_98       |     2|
+|189   |        text3           |text_disp_99       |     2|
+|190   |        text4           |text_disp_100      |     3|
+|191   |        text5           |text_disp_101      |     2|
+|192   |        text6           |text_disp_102      |     2|
+|193   |        text7           |text_disp_103      |     3|
+|194   |        text8           |text_disp_104      |     4|
+|195   |        text9           |text_disp_105      |     2|
+|196   |      option4           |str_oled_92        |   246|
+|197   |        text2           |text_disp_93       |     3|
+|198   |        text3           |text_disp_94       |     2|
+|199   |        text4           |text_disp_95       |     3|
+|200   |        text5           |text_disp_96       |     1|
+|201   |        text6           |text_disp_97       |     2|
+|202   |    tetrisgame          |tetris_main        | 10772|
+|203   |      game_over         |str_oled_29        |   270|
+|204   |        text10          |text_disp_73       |     2|
+|205   |        text11          |text_disp_74       |     4|
+|206   |        text3           |text_disp_75       |     2|
+|207   |        text4           |text_disp_76       |     2|
+|208   |        text5           |text_disp_77       |     2|
+|209   |        text6           |text_disp_78       |     3|
+|210   |        text8           |text_disp_79       |     1|
+|211   |        text9           |text_disp_80       |     2|
 |212   |      hund_place        |avgPeak_table      |    79|
-|213   |      ones_place        |avgPeak_table_30   |    36|
-|214   |      score_hundred     |str_oled_31        |   209|
-|215   |        text10          |text_disp_66       |     2|
-|216   |        text9           |text_disp_67       |     4|
-|217   |      score_ingame      |str_oled_32        |   238|
-|218   |        text10          |text_disp_61       |     3|
-|219   |        text11          |text_disp_62       |     2|
-|220   |        text12          |text_disp_63       |     3|
-|221   |        text13          |text_disp_64       |     2|
-|222   |        text14          |text_disp_65       |     2|
-|223   |      score_ingame_hun  |str_oled_33        |   213|
-|224   |        text11          |text_disp_59       |     5|
-|225   |        text12          |text_disp_60       |     2|
-|226   |      score_ingame_one  |str_oled_34        |   211|
-|227   |        text13          |text_disp_57       |     2|
-|228   |        text14          |text_disp_58       |     4|
-|229   |      score_ingame_ten  |str_oled_35        |   210|
-|230   |        text12          |text_disp_55       |     4|
-|231   |        text13          |text_disp_56       |     2|
-|232   |      score_ingame_thou |str_oled_36        |   211|
-|233   |        text10          |text_disp_53       |     4|
-|234   |        text11          |text_disp_54       |     3|
-|235   |      score_ones        |str_oled_37        |   210|
-|236   |        text11          |text_disp_51       |     4|
-|237   |        text12          |text_disp_52       |     2|
-|238   |      score_screen      |str_oled_38        |   290|
-|239   |        text3           |text_disp_46       |     3|
-|240   |        text4           |text_disp_47       |     1|
-|241   |        text5           |text_disp_48       |     1|
-|242   |        text6           |text_disp_49       |     2|
-|243   |        text7           |text_disp_50       |     4|
-|244   |      score_tens        |str_oled_39        |   205|
-|245   |        text10          |text_disp_44       |     4|
-|246   |        text11          |text_disp_45       |     2|
-|247   |      score_thousand    |str_oled_40        |   209|
-|248   |        text8           |text_disp          |     5|
-|249   |        text9           |text_disp_43       |     2|
-|250   |      tens_place        |avgPeak_table_41   |    64|
-|251   |      thous_place       |avgPeak_table_42   |    61|
-|252   |    volume1             |volume_bar         |    61|
-|253   |    white               |logo_white         |   138|
-|254   |  down                  |single_pulse       |     4|
-|255   |    dff1                |single_dff_24      |     2|
-|256   |    dff2                |single_dff_25      |     2|
-|257   |  ledDriver             |ledDriv            |    97|
-|258   |    clk600              |clk_23             |    54|
-|259   |  ledDriverEco          |ledDriv_5          |    68|
-|260   |    clk600              |clk_22             |    54|
-|261   |  left                  |single_pulse_7     |     3|
-|262   |    dff1                |single_dff_19      |     2|
-|263   |    dff2                |single_dff_20      |     1|
-|264   |  mic                   |Audio_Capture      |    96|
-|265   |  mid                   |single_pulse_8     |     6|
-|266   |    dff1                |single_dff_17      |     4|
-|267   |    dff2                |single_dff_18      |     2|
-|268   |  oled                  |Oled_Display       |   455|
-|269   |  right                 |single_pulse_9     |     4|
-|270   |    dff1                |single_dff_15      |     2|
-|271   |    dff2                |single_dff_16      |     2|
-|272   |  startScreen           |string_driver      |   125|
-|273   |  str_4                 |char_disp          |     9|
-|274   |  str_5                 |char_disp_10       |    14|
-|275   |  str_6                 |char_disp_11       |     8|
-|276   |  str_7                 |char_disp_12       |    15|
-|277   |  up                    |single_pulse_13    |     5|
-|278   |    dff1                |single_dff         |     4|
-|279   |    dff2                |single_dff_14      |     1|
-|280   |  watchmod              |stopwatch          |   220|
+|213   |      next1             |next_line          |     2|
+|214   |      next2             |next_leftZ         |     2|
+|215   |      next3             |next_rightZ        |     2|
+|216   |      next4             |next_square        |     9|
+|217   |      next5             |next_T             |     3|
+|218   |      next6             |next_L             |     2|
+|219   |      next7             |next_RL            |     3|
+|220   |      nextBlock         |str_oled_30        |   244|
+|221   |        text10          |text_disp_69       |     4|
+|222   |        text11          |text_disp_70       |     2|
+|223   |        text12          |text_disp_71       |     2|
+|224   |        text9           |text_disp_72       |     3|
+|225   |      ones_place        |avgPeak_table_31   |    40|
+|226   |      score_hundred     |str_oled_32        |   211|
+|227   |        text10          |text_disp_67       |     2|
+|228   |        text9           |text_disp_68       |     4|
+|229   |      score_ingame      |str_oled_33        |   245|
+|230   |        text10          |text_disp_62       |     3|
+|231   |        text11          |text_disp_63       |     2|
+|232   |        text12          |text_disp_64       |     3|
+|233   |        text13          |text_disp_65       |     2|
+|234   |        text14          |text_disp_66       |     2|
+|235   |      score_ingame_hun  |str_oled_34        |   212|
+|236   |        text11          |text_disp_60       |     5|
+|237   |        text12          |text_disp_61       |     2|
+|238   |      score_ingame_one  |str_oled_35        |   213|
+|239   |        text13          |text_disp_58       |     3|
+|240   |        text14          |text_disp_59       |     4|
+|241   |      score_ingame_ten  |str_oled_36        |   211|
+|242   |        text12          |text_disp_56       |     4|
+|243   |        text13          |text_disp_57       |     2|
+|244   |      score_ingame_thou |str_oled_37        |   209|
+|245   |        text10          |text_disp_54       |     4|
+|246   |        text11          |text_disp_55       |     3|
+|247   |      score_ones        |str_oled_38        |   214|
+|248   |        text11          |text_disp_52       |     4|
+|249   |        text12          |text_disp_53       |     2|
+|250   |      score_screen      |str_oled_39        |   295|
+|251   |        text3           |text_disp_47       |     3|
+|252   |        text4           |text_disp_48       |     1|
+|253   |        text5           |text_disp_49       |     1|
+|254   |        text6           |text_disp_50       |     2|
+|255   |        text7           |text_disp_51       |     4|
+|256   |      score_tens        |str_oled_40        |   205|
+|257   |        text10          |text_disp_45       |     3|
+|258   |        text11          |text_disp_46       |     2|
+|259   |      score_thousand    |str_oled_41        |   205|
+|260   |        text8           |text_disp          |     3|
+|261   |        text9           |text_disp_44       |     2|
+|262   |      tens_place        |avgPeak_table_42   |    66|
+|263   |      thous_place       |avgPeak_table_43   |    61|
+|264   |    volume1             |volume_bar         |    58|
+|265   |    white               |logo_white         |   138|
+|266   |  down                  |single_pulse       |     4|
+|267   |    dff1                |single_dff_24      |     2|
+|268   |    dff2                |single_dff_25      |     2|
+|269   |  ledDriver             |ledDriv            |    97|
+|270   |    clk600              |clk_23             |    54|
+|271   |  ledDriverEco          |ledDriv_5          |    68|
+|272   |    clk600              |clk_22             |    54|
+|273   |  left                  |single_pulse_7     |     3|
+|274   |    dff1                |single_dff_19      |     2|
+|275   |    dff2                |single_dff_20      |     1|
+|276   |  mic                   |Audio_Capture      |    96|
+|277   |  mid                   |single_pulse_8     |     6|
+|278   |    dff1                |single_dff_17      |     4|
+|279   |    dff2                |single_dff_18      |     2|
+|280   |  oled                  |Oled_Display       |   458|
+|281   |  right                 |single_pulse_9     |     4|
+|282   |    dff1                |single_dff_15      |     2|
+|283   |    dff2                |single_dff_16      |     2|
+|284   |  startScreen           |string_driver      |   125|
+|285   |  str_4                 |char_disp          |     9|
+|286   |  str_5                 |char_disp_10       |    14|
+|287   |  str_6                 |char_disp_11       |     8|
+|288   |  str_7                 |char_disp_12       |    15|
+|289   |  up                    |single_pulse_13    |     5|
+|290   |    dff1                |single_dff         |     4|
+|291   |    dff2                |single_dff_14      |     1|
+|292   |  watchmod              |stopwatch          |   220|
 +------+------------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:31 ; elapsed = 00:04:08 . Memory (MB): peak = 970.313 ; gain = 714.742
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:01 ; elapsed = 00:03:28 . Memory (MB): peak = 960.410 ; gain = 703.695
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 367 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:15 ; elapsed = 00:03:56 . Memory (MB): peak = 970.313 ; gain = 294.063
-Synthesis Optimization Complete : Time (s): cpu = 00:03:31 ; elapsed = 00:04:09 . Memory (MB): peak = 970.313 ; gain = 714.742
+Synthesis finished with 0 errors, 0 critical warnings and 370 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:47 ; elapsed = 00:03:18 . Memory (MB): peak = 960.410 ; gain = 282.949
+Synthesis Optimization Complete : Time (s): cpu = 00:03:01 ; elapsed = 00:03:29 . Memory (MB): peak = 960.410 ; gain = 703.695
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 2992 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 3112 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -2226,11 +2359,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDE_1 => FDRE (inverted pins: C): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-404 Infos, 247 Warnings, 0 Critical Warnings and 0 Errors encountered.
+423 Infos, 263 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:38 ; elapsed = 00:04:17 . Memory (MB): peak = 970.313 ; gain = 727.621
+synth_design: Time (s): cpu = 00:03:08 ; elapsed = 00:03:36 . Memory (MB): peak = 960.410 ; gain = 716.383
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.173 . Memory (MB): peak = 970.313 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  4 21:28:51 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.147 . Memory (MB): peak = 960.410 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  5 00:18:44 2020...

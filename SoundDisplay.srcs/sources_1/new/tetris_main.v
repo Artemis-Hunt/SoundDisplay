@@ -29,9 +29,11 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     wire collision;
     reg [4:0] lowest_row = 3;
     reg [2:0] current_block = 0;
+    reg [2:0] next_block = 0;
     reg [2:0] random_counter = 0;
     reg [1:0] block_state = 0;
     reg [15:0] current_colour = 0;
+    reg [15:0] next_colour = 0;
     wire [15:0] static_colour_out = 0;
     reg [1:0] gameState = 0; //0 = continue, 1 = lose
     wire [2:0] random_block;
@@ -54,7 +56,9 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     
     reg gameOverBorder;
     wire gameOverText, scoreText, scoreNumber, scoreOnesOut, scoreTenOut, scoreHundredOut, scoreThousandOut;
-    wire ingame_score_text, ingame_score_ones, ingame_score_tens, ingame_score_hundred, ingame_score_thousand;
+    wire ingame_score_text, ingame_score_ones, ingame_score_tens, ingame_score_hundred, ingame_score_thousand, nextTextOut;
+    wire nextSquareOut, nextLeftZOut, nextRightZOut, nextLineOut, nextLeftLOut, nextRightLOut, nextTOut;
+    reg nextFinal;
     reg ingame_score_out = 0;
     reg [15:0] ingame_score_colour = 0;
     reg [2:0] simultaneous_clear = 0;
@@ -90,6 +94,16 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     str_oled score_ingame_hun(clk625MHz, x, y, 54, {hundredOut,"  "}, ingame_score_hundred);
     str_oled score_ingame_thou(clk625MHz, x, y, 54, {thousandOut,"   "}, ingame_score_thousand);
     
+    str_oled nextBlock(clk625MHz, x, y, 3, "         NEXT  ", nextTextOut);
+    
+    next_line next1(clk625MHz, x, y, 15, nextLineOut);
+    next_leftZ next2(clk625MHz, x, y, 15, nextLeftZOut);
+    next_rightZ next3(clk625MHz, x, y, 15, nextRightZOut);
+    next_square next4(clk625MHz, x, y, 15, nextSquareOut);
+    next_T next5(clk625MHz, x, y, 15, nextTOut);
+    next_L next6(clk625MHz, x, y, 15, nextLeftLOut);
+    next_RL next7(clk625MHz, x, y, 15, nextRightLOut);
+    
     
     avgPeak_table ones_place(clk40Hz, scoreOnes, onesOut);
     avgPeak_table tens_place(clk40Hz, scoreTens, tensOut);
@@ -105,6 +119,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     always @ (posedge clk625MHz)
     begin
         block_out = 0; static_out = 0; moving_out = 0;
+        //Random counter for block generation
         random_counter = (random_counter == 6) ? 0 : random_counter + 1;
         if(col >= 1 && col <=10 && row <= 24) begin
             static_out = static_blocks[311 - col - row_index]; 
@@ -118,10 +133,21 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             if((y >= 16 && y <= 46) && (x >= 14 && x <= 74)) //Draw background for game over
                 gameOverBorder = 1;
         end
+        
+        case(next_block)
+        3'd0: nextFinal = nextLineOut;
+        3'd1: nextFinal = nextLeftZOut;
+        3'd2: nextFinal = nextRightZOut;
+        3'd3: nextFinal = nextSquareOut;
+        3'd4: nextFinal = nextTOut;
+        3'd5: nextFinal = nextLeftLOut;
+        3'd6: nextFinal = nextRightLOut;
+        endcase
+        
         ingame_score_out = (ingame_score_ones || ingame_score_tens || ingame_score_hundred || ingame_score_thousand || ingame_score_text);
         ingame_score_colour = (ingame_score_ones || ingame_score_tens || ingame_score_hundred || ingame_score_thousand) ? 16'hFFFF : (ingame_score_text) ? 16'h07FF : 0;
         gameOverColour = (scoreOnesOut || scoreTenOut || scoreHundredOut || scoreThousandOut) ? 16'hFFFF : (gameOverText) ? 16'hF800 : (scoreText) ? 16'h07FF : (gameOverBorder) ? 16'h6888 : 16'h0000; 
-        OLED_colour = (gameState) ? gameOverColour : (moving_out) ? current_colour : (static_out) ? 16'hF816 : (ingame_score_out) ? ingame_score_colour : (border_out) ? 16'hFFFF : 16'h0000;
+        OLED_colour = (gameState) ? gameOverColour : (moving_out) ? current_colour : (static_out) ? 16'hF816 : (ingame_score_out) ? ingame_score_colour : (nextTextOut) ? 16'hFCA0 : (nextFinal) ? next_colour : (border_out) ? 16'hFFFF : 16'h0000;
     end
     
     //Game Engine
@@ -144,6 +170,10 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             //Start game
             count = (enable) ? ((count == 10) ? 0 : count + 1 ): count;
             first_game = (enable) ? 0 : first_game;
+            
+            //New game random Block generation
+            if(new_game == 1)
+                next_block = random_counter;
             
             //Button functions
             if(btn_left == 1) //Shift left
@@ -277,7 +307,8 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             if(generate_block == 1)
             begin
                 moving_blocks = 0;
-                current_block = random_counter;    
+                current_block = next_block;
+                next_block = random_counter;
                 case(current_block)
                 3'd0: begin moving_blocks[311 -: 48] = {4{12'b000001000000}}; current_colour = 16'h07FE; end                                                     //Line
                 3'd1: begin moving_blocks[311 -: 48] = {12'b0, 12'b000001000000, 12'b000001100000, 12'b000000100000}; current_colour = 16'h07E4; end             //Left Z
@@ -288,6 +319,16 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 3'd6: begin moving_blocks[311 -: 48] = {12'b000000000000, 12'b000000100000, 12'b000000100000, 12'b000001100000}; current_colour = 16'hFD60; end  //Mirrored L block
                 endcase
                 top_left  = (current_block == 0) ? 4 : 5;
+                //Choose next block colour
+                case(next_block)
+                3'd0: next_colour = 16'h07FE;
+                3'd1: next_colour = 16'h07E4;
+                3'd2: next_colour = 16'hF800;
+                3'd3: next_colour = 16'hFFE0;
+                3'd4: next_colour = 16'hB01F;
+                3'd5: next_colour = 16'h007F;
+                3'd6: next_colour = 16'hFD60;
+                endcase
                 //Reset flags
                 generate_block = 0;
                 lowest_row = 3;
