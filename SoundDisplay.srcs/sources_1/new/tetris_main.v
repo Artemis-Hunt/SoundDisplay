@@ -230,17 +230,17 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 begin
                     //Place block into static_array and respective colour arrays
                     static_blocks = static_blocks | moving_blocks;
-                    for(i=top_left;i<=(top_left+3) && i<=10;i=i+1) begin
-                        for(j=block_start;j<=(block_start-36);j=j-12)
-                            if(moving_blocks[j - i])
-                                static_colour[(j - i)*16 +: 16] = current_colour; 
-                    end
+//                    for(i=top_left;i<=(top_left+3) && i<=10;i=i+1) begin
+//                        for(j=block_start;j<=(block_start-36);j=j-12)
+//                            if(moving_blocks[j - i])
+//                                static_colour[(j - i)*16 +: 16] = current_colour; 
+//                    end
                     //Checking for rows with all 1's to clear
                     for(i=24;i>=4;i=i-1)
                         if(static_blocks[(311 - i*12 - 1) -: 10] == {10{1'b1}}) begin
                             for(j=i;j>=4;j=j-1)
                                 static_blocks[(311 - j*12 - 1) -: 10] = static_blocks[(311 - (j-1)*12 - 1) -: 10];
-                                static_colour[((311 - j*12) * 16 - 1) -: 160] = static_colour[((311 - (j-1)*12)*16 - 1) -: 160];
+                                //static_colour[((311 - j*12) * 16 - 1) -: 160] = static_colour[((311 - (j-1)*12)*16 - 1) -: 160];
                         end
                     //gameState = (static_blocks[263 -: 12] != 0);
                     moving_blocks = 0;
