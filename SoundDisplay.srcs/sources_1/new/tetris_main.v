@@ -53,6 +53,12 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg first_game = 1;
     integer i, j = 1;
     
+    reg gameOverBorder;
+    wire gameOverText, scoreText, scoreNumber, scoreOnesOut, scoreTenOut, scoreHundredOut, scoreThousandOut;
+    reg [13:0] scoreTotal = 0; 
+    wire [3:0] scoreOnes, scoreTens, scoreHundred, scoreThousand;
+    wire [16:1] onesOut, tensOut, hundredOut, thousandOut;
+    reg [15:0] gameOverColour = 0;
     
     colour_table blocks_colour(static_colour_number[(311 - col - row_index)*3 +:3], static_colour_out);
     
@@ -69,17 +75,44 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     assign temp_static = static_blocks[block_start -: 48];
     
     
+    str_oled game_over(clk625MHz, x, y, 21, "   GAME OVER   ", gameOverText);
+    str_oled score_screen(clk625MHz, x, y, 30, "   SCORE       ", scoreText);
+    str_oled score_ones(clk625MHz, x, y, 39, {{12{" "}}, onesOut, {2{" "}}}, scoreOnesOut);
+    str_oled score_tens(clk625MHz, x, y, 39, {{11{" "}}, tensOut, {3{" "}}}, scoreTenOut);
+    str_oled score_hundred(clk625MHz, x, y, 39, {{10{" "}}, hundredOut, {4{" "}}}, scoreHundredOut);
+    str_oled score_thousand(clk625MHz, x, y, 39, {{9{" "}}, thousandOut, {5{" "}}}, scoreThousandOut);
+    
+    avgPeak_table ones_place(clk40Hz, scoreOnes, onesOut);
+    avgPeak_table tens_place(clk40Hz, scoreTens, tensOut);
+    avgPeak_table hund_place(clk40Hz, scoreHundred, hundredOut);
+    avgPeak_table thous_place(clk40Hz, scoreThousand, thousandOut);
+    
+    assign scoreOnes = scoreTotal % 10; 
+    assign scoreTens = (scoreTotal / 10) % 10;
+    assign scoreHundred = (scoreTotal / 100) % 10;
+    assign scoreThousand = (scoreTotal /1000);
+    
     //Visual driver
     always @ (posedge clk625MHz)
     begin
         block_out = 0; static_out = 0; moving_out = 0;
+        
         if(col >= 1 && col <=10 && row <= 24) begin
             static_out = static_blocks[311 - col - row_index]; 
             moving_out = moving_blocks[311 - col - row_index];
         end
         //Draw border
-        border_out = (x >= 33 && x <= 35) || x == 95 || (x >= 0 && x <= 1) || (y == 63);
-        OLED_colour = (moving_out) ? current_colour : (static_out) ? 16'hF816 : (border_out) ? 16'hFFFF : 16'h0000;
+        border_out = (x >= 33 && x <= 35) || x == 95 || (x >= 0 && x <= 1) || (y == 63);        
+        
+        //Draw Game Over Screen
+        if(gameState == 1)
+        begin   
+            if((y >= 16 && y <= 46) && (x >= 14 && x <= 74)) //Draw background for game over
+                gameOverBorder = 1;
+        end
+        
+        gameOverColour = (scoreOnesOut || scoreTenOut || scoreHundredOut || scoreThousandOut) ? 16'hFFFF : (gameOverText) ? 16'hF800 : (scoreText) ? 16'h07FF : (gameOverBorder) ? 16'hFDE0 : 16'h0000; 
+        OLED_colour = (gameState) ? gameOverColour : (moving_out) ? current_colour : (static_out) ? 16'hF816 : (border_out) ? 16'hFFFF : 16'h0000;
     end
     
     //Game Engine
@@ -202,14 +235,11 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                 begin
                     //Place block into static_array and respective colour arrays
                     static_blocks = static_blocks | moving_blocks;
-//                    for(j=0;j<48;j=j+1)
-//                        static_colour_number[(block_start - j)*3 +: 3] = (moving_blocks[block_start - j]) ? current_block : 0;  
                     //Checking for rows with all 1's to clear
                     for(i=4;i<=24;i=i+1) begin                      
                         if(static_blocks[(311 - i*12 - 1) -: 10] == {10{1'b1}})
                             for(j=i;j>=4;j=j-1) begin
                                 static_blocks[(311 - j*12 - 1) -: 10] = static_blocks[(311 - (j-1)*12 - 1) -: 10];
-//                                static_colour_number[((311 - j*12) * 3 - 1) -: 30] = static_colour_number[((311 - (j-1)*12)*3 - 1) -: 30];
                             end
                     end
                     gameState = (static_blocks[275 -: 12] != 0);
