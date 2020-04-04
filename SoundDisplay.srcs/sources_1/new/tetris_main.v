@@ -52,6 +52,12 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg first_game = 1;
     integer i, j = 1;
     
+    reg gameOverBorder;
+    wire gameOverText, scoreText, scoreNumber, scoreOnesOut, scoreTenOut, scoreHundredOut, scoreThousandOut;
+    reg [13:0] scoreTotal = 0; 
+    wire [3:0] scoreOnes, scoreTens, scoreHundred, scoreThousand;
+    wire [16:1] onesOut, tensOut, hundredOut, thousandOut;
+    reg [15:0] gameOverColour = 0;
     
     //Row 0-25, from top to bottom. Row index is the "reversed" index of first pixel in that row 
     //i.e. pixel 311 has row_index 0, pixel 11 has row_index 288
@@ -66,16 +72,42 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     
     //collision_check rotate(temp_static, temp_blocks, current_blocks, shifted);
     
+    str_oled game_over(clk625MHz, x, y, 21, "   GAME OVER   ", gameOverText);
+    str_oled score_screen(clk625MHz, x, y, 30, "   SCORE       ", scoreText);
+    str_oled score_ones(clk625MHz, x, y, 39, {{12{" "}}, onesOut, {2{" "}}}, scoreOnesOut);
+    str_oled score_tens(clk625MHz, x, y, 39, {{11{" "}}, tensOut, {3{" "}}}, scoreTenOut);
+    str_oled score_hundred(clk625MHz, x, y, 39, {{10{" "}}, hundredOut, {4{" "}}}, scoreHundredOut);
+    str_oled score_thousand(clk625MHz, x, y, 39, {{9{" "}}, thousandOut, {5{" "}}}, scoreThousandOut);
+    
+    avgPeak_table ones_place(clk40Hz, scoreOnes, onesOut);
+    avgPeak_table tens_place(clk40Hz, scoreTens, tensOut);
+    avgPeak_table hund_place(clk40Hz, scoreHundred, hundredOut);
+    avgPeak_table thous_place(clk40Hz, scoreThousand, thousandOut);
+    
+    assign scoreOnes = scoreTotal % 10; 
+    assign scoreTens = (scoreTotal / 10) % 10;
+    assign scoreHundred = (scoreTotal / 100) % 10;
+    assign scoreThousand = (scoreTotal /1000);
+    
     //Visual driver
     always @ (posedge clk625MHz)
     begin
         block_out = 0;
+        
         if(col >= 1 && col <=10 && row <= 24)
             block_out = (static_blocks[311 - col - row_index] | moving_blocks[311 - col - row_index]);
         //Draw border
-        border_out = (x >= 33 && x <= 35) || x == 95 || (x >= 0 && x <= 1) || (y == 63);
-            
-        OLED_colour = (block_out == 1) ? 16'hF800 : (border_out) ? 16'hFFFF : 16'h0000;
+        border_out = (x >= 33 && x <= 35) || x == 95 || (x >= 0 && x <= 1) || (y == 63);        
+        
+        //Draw Game Over Screen
+        if(gameState == 1)
+        begin   
+            if((y >= 16 && y <= 46) && (x >= 14 && x <= 74)) //Draw background for game over
+                gameOverBorder = 1;
+        end
+        
+        gameOverColour = (scoreOnesOut || scoreTenOut || scoreHundredOut || scoreThousandOut) ? 16'hFFFF : (gameOverText) ? 16'hF800 : (scoreText) ? 16'h07FF : (gameOverBorder) ? 16'hFDE0 : 16'h0000; 
+        OLED_colour = (gameState) ? gameOverColour : (block_out == 1) ? 16'hF800 : (border_out) ? 16'hFFFF : 16'h0000;
     end
     
     //Game Engine
