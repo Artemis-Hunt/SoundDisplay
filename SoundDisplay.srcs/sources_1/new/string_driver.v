@@ -21,7 +21,7 @@
 
 
 module string_driver(input slowclk, input reset, input [32*8:1] string, input [5:0] length, output reg [7:0]char0, char1, char2, char3);
-    reg [2:0] counter = 0;
+    reg [10:0] counter = 0;
     reg [8:0] i;
     
     

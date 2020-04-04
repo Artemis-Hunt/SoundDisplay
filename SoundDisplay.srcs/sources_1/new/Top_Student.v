@@ -51,14 +51,19 @@ module Top_Student (
     wire [7:0] char [3:0];
     wire [7:0] charseg [3:0];
     wire [7:0] segData [3:0];
+    wire [7:0] startChar [3:0];
+    wire [7:0] startSegChar [3:0];
+    wire [7:0] ecoChar [3:0];
+    wire [7:0] ecoSegChar [3:0];
     wire [7:0] shifted_seg, tetris_game_count, buttons_seg, top_left_seg, block_state_seg;
     wire [7:0] customSeg;
     wire [3:0] customAnode;
     wire customFlag;
     wire [7:0] watch0, watch1, watch2, watch3;
-    wire [7:0] segY, segF, segDebug, segOut;
-    wire[3:0] anY, anF, anDebug, anOut;
+    wire [7:0] segY, segF, segDebug, segOut, segStart, segEco;
+    wire[3:0] anY, anF, anDebug, anOut, anStart, anEco;
     wire startMode;
+    wire [1:0] gamestate;
     integer i, j;   //Loop variables
     
     reg [5:0] ecoCount = 0;
@@ -104,6 +109,20 @@ module Top_Student (
     char_disp str_1(char[1], charseg[1]);
     char_disp str_2(char[2], charseg[2]);
     char_disp str_3(char[3], charseg[3]);
+    
+    //Start Screen
+    string_driver startScreen(clk4sig, 0, "PRESS MIDDLE BUTTON TO START", 28, startChar[0], startChar[1], startChar[2], startChar[3]);
+    char_disp str_4(startChar[0], startSegChar[0]);
+    char_disp str_5(startChar[1], startSegChar[1]);
+    char_disp str_6(startChar[2], startSegChar[2]);
+    char_disp str_7(startChar[3], startSegChar[3]);
+    
+    //Eco-Mode
+    string_driver ecoModeDisp(clk4sig, 0, "ECO-MODE", 8, ecoChar[0], ecoChar[1], ecoChar[2], ecoChar[3]);
+    char_disp str_8(ecoChar[0], ecoSegChar[0]);
+    char_disp str_9(ecoChar[1], ecoSegChar[1]);
+    char_disp str_10(ecoChar[2], ecoSegChar[2]);
+    char_disp str_11(ecoChar[3], ecoSegChar[3]);
     ///TEXT SCROLLING///
     
     //mux for volume level || string || stopwatch
@@ -115,6 +134,9 @@ module Top_Student (
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
     ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
+    ledDriv ledDriverStart(CLK100MHZ, startSegChar[0], startSegChar[1], startSegChar[2], startSegChar[3], segStart, anStart);
+    ledDriv ledDriverEco(CLK100MHZ, ecoSegChar[0], ecoSegChar[1], ecoSegChar[2], ecoSegChar[3], segEco, anEco);
+    
     ledDriv ledDriverDebug(CLK100MHZ, top_left_seg, block_state_seg, {8{1'b1}} , {8{1'b1}}, segDebug, anDebug);
     
     //mux for 7-seg
@@ -126,15 +148,15 @@ module Top_Student (
     
     
     //StartMode && EcoMode Multiplex
-    assign seg = (startMode || ecoMode) ? 8'b11111111 : segOut;
-    assign an = (startMode || ecoMode) ? 4'b1111 : anOut; //Input Scrolling later
-    assign led = (startMode || ecoMode) ? 16'h0000 : ledMic;
+    assign seg = (startMode) ? segStart : (ecoMode) ? segEco : segOut;
+    assign an = (startMode) ? anStart : (ecoMode) ? anEco : (gamestate == 1 || gamestate == 0) ? 4'b1111 : anOut; 
+    assign led = (startMode || ecoMode || gamestate == 1 || gamestate == 0) ? 16'h0000 : ledMic;
     assign pixel_data = (ecoMode) ? 0 : pixel_data_main;
     
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk40sig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
                                 left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
-                                 pixel_index, pixel_data_main, customFlag, sw[9], top_left_seg,block_state_seg, startMode); 
+                                 pixel_index, pixel_data_main, customFlag, sw[9], top_left_seg,block_state_seg, startMode, gamestate); 
     //Eco-mode
     always @ (posedge clk1sig or posedge mid_sel or posedge up_sel or posedge down_sel or posedge left_sel or posedge right_sel)
     begin
