@@ -118,7 +118,7 @@ module Top_Student (
     char_disp str_7(startChar[3], startSegChar[3]);
     
     //Eco-Mode
-    string_driver ecoModeDisp(clk4sig, 0, "ECO-MODE", 8, ecoChar[0], ecoChar[1], ecoChar[2], ecoChar[3]);
+    string_driver ecoModeDisp(clk4sig, 0, "ECO-MODE    ", 12, ecoChar[0], ecoChar[1], ecoChar[2], ecoChar[3]);
     char_disp str_8(ecoChar[0], ecoSegChar[0]);
     char_disp str_9(ecoChar[1], ecoSegChar[1]);
     char_disp str_10(ecoChar[2], ecoSegChar[2]);
