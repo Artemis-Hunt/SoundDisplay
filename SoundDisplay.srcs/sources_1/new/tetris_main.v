@@ -22,16 +22,16 @@
 //Tetris game driver module: Board == 10 wide by 21 long (+4 height for long block and block generation)
 //bit-0 and bit-11 used for padding the walls
 //To lose, gamestate == 1 and block exceed height limit on static
-module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_down, btn_left, btn_right, btn_mid, input [6:0] x, y ,output reg [15:0]OLED_colour = 0);
+module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_down, btn_left, btn_right, btn_mid, input [6:0] x, y ,output reg [15:0]OLED_colour = 0, output reg first_game = 1);
 
     reg [5:0] count = 0, movement_count = 0;
     reg [311:0] static_blocks = {{25{12'b100000000001}}, {12{1'b1}}}, moving_blocks = 0;
     wire collision;
     reg [4:0] lowest_row = 3;
     reg [2:0] current_block = 0;
+    reg [2:0] random_counter = 0;
     reg [1:0] block_state = 0;
     reg [15:0] current_colour = 0;
-    reg [935:0] static_colour_number = 0;
     wire [15:0] static_colour_out = 0;
     reg [1:0] gameState = 0; //0 = continue, 1 = lose
     wire [2:0] random_block;
@@ -50,17 +50,19 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     reg [4:0] current_clearing_row = 0;
     reg [1:0] movement = 0;
     reg new_game = 0;
-    reg first_game = 1;
     integer i, j = 1;
     
     reg gameOverBorder;
     wire gameOverText, scoreText, scoreNumber, scoreOnesOut, scoreTenOut, scoreHundredOut, scoreThousandOut;
+    wire ingame_score_text, ingame_score_ones, ingame_score_tens, ingame_score_hundred, ingame_score_thousand;
+    reg ingame_score_out = 0;
+    reg [15:0] ingame_score_colour = 0;
+    reg [2:0] simultaneous_clear = 0;
     reg [13:0] scoreTotal = 0; 
     wire [3:0] scoreOnes, scoreTens, scoreHundred, scoreThousand;
     wire [16:1] onesOut, tensOut, hundredOut, thousandOut;
     reg [15:0] gameOverColour = 0;
-    
-    colour_table blocks_colour(static_colour_number[(311 - col - row_index)*3 +:3], static_colour_out);
+   
     
     
     //Row 0-25, from top to bottom. Row index is the "reversed" index of first pixel in that row 
@@ -82,6 +84,13 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     str_oled score_hundred(clk625MHz, x, y, 39, {{10{" "}}, hundredOut, {4{" "}}}, scoreHundredOut);
     str_oled score_thousand(clk625MHz, x, y, 39, {{9{" "}}, thousandOut, {5{" "}}}, scoreThousandOut);
     
+    str_oled score_ingame(clk625MHz, x, y, 45, "SCORE", ingame_score_text);
+    str_oled score_ingame_one(clk625MHz, x, y, 54, onesOut, ingame_score_ones);
+    str_oled score_ingame_ten(clk625MHz, x, y, 54, {tensOut," "}, ingame_score_tens);
+    str_oled score_ingame_hun(clk625MHz, x, y, 54, {hundredOut,"  "}, ingame_score_hundred);
+    str_oled score_ingame_thou(clk625MHz, x, y, 54, {thousandOut,"   "}, ingame_score_thousand);
+    
+    
     avgPeak_table ones_place(clk40Hz, scoreOnes, onesOut);
     avgPeak_table tens_place(clk40Hz, scoreTens, tensOut);
     avgPeak_table hund_place(clk40Hz, scoreHundred, hundredOut);
@@ -96,23 +105,23 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
     always @ (posedge clk625MHz)
     begin
         block_out = 0; static_out = 0; moving_out = 0;
-        
+        random_counter = (random_counter == 6) ? 0 : random_counter + 1;
         if(col >= 1 && col <=10 && row <= 24) begin
             static_out = static_blocks[311 - col - row_index]; 
             moving_out = moving_blocks[311 - col - row_index];
         end
         //Draw border
-        border_out = (x >= 33 && x <= 35) || x == 95 || (x >= 0 && x <= 1) || (y == 63);        
-        
+        border_out = (x >= 33 && x <= 36) || x == 95 || (x >= 0 && x <= 2) || (y == 63);
         //Draw Game Over Screen
         if(gameState == 1)
         begin   
             if((y >= 16 && y <= 46) && (x >= 14 && x <= 74)) //Draw background for game over
                 gameOverBorder = 1;
         end
-        
-        gameOverColour = (scoreOnesOut || scoreTenOut || scoreHundredOut || scoreThousandOut) ? 16'hFFFF : (gameOverText) ? 16'hF800 : (scoreText) ? 16'h07FF : (gameOverBorder) ? 16'hFDE0 : 16'h0000; 
-        OLED_colour = (gameState) ? gameOverColour : (moving_out) ? current_colour : (static_out) ? 16'hF816 : (border_out) ? 16'hFFFF : 16'h0000;
+        ingame_score_out = (ingame_score_ones || ingame_score_tens || ingame_score_hundred || ingame_score_thousand || ingame_score_text);
+        ingame_score_colour = (ingame_score_ones || ingame_score_tens || ingame_score_hundred || ingame_score_thousand) ? 16'hFFFF : (ingame_score_text) ? 16'h07FF : 0;
+        gameOverColour = (scoreOnesOut || scoreTenOut || scoreHundredOut || scoreThousandOut) ? 16'hFFFF : (gameOverText) ? 16'hF800 : (scoreText) ? 16'h07FF : (gameOverBorder) ? 16'h6888 : 16'h0000; 
+        OLED_colour = (gameState) ? gameOverColour : (moving_out) ? current_colour : (static_out) ? 16'hF816 : (ingame_score_out) ? ingame_score_colour : (border_out) ? 16'hFFFF : 16'h0000;
     end
     
     //Game Engine
@@ -124,6 +133,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             temp_blocks = 0;
             gameState = 0;
             current_block = 0;
+            simultaneous_clear = 0; scoreTotal = 0;
             new_game = 1; count = 0; fast_drop = 0;
         end
         else begin //Normal operation
@@ -237,12 +247,21 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
                     static_blocks = static_blocks | moving_blocks;
                     //Checking for rows with all 1's to clear
                     for(i=4;i<=24;i=i+1) begin                      
-                        if(static_blocks[(311 - i*12 - 1) -: 10] == {10{1'b1}})
+                        if(static_blocks[(311 - i*12 - 1) -: 10] == {10{1'b1}}) begin
+                            simultaneous_clear = simultaneous_clear + 1;
                             for(j=i;j>=4;j=j-1) begin
                                 static_blocks[(311 - j*12 - 1) -: 10] = static_blocks[(311 - (j-1)*12 - 1) -: 10];
                             end
+                        end
                     end
-                    gameState = (static_blocks[275 -: 12] != 0);
+                    case(simultaneous_clear)
+                        3'd1: scoreTotal = scoreTotal + 10;
+                        3'd2: scoreTotal = scoreTotal + 25;
+                        3'd3: scoreTotal = scoreTotal + 75;
+                        3'd4: scoreTotal = scoreTotal + 300;
+                    endcase
+                    simultaneous_clear = 0;
+                    gameState = (static_blocks[274 -: 10] != 0);
                     moving_blocks = 0;
                     generate_block = 1; 
                     fast_drop = 0;
@@ -258,7 +277,7 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             if(generate_block == 1)
             begin
                 moving_blocks = 0;
-                current_block = (current_block == 6) ? 0 : current_block + 1;//random_block;    
+                current_block = random_counter;    
                 case(current_block)
                 3'd0: begin moving_blocks[311 -: 48] = {4{12'b000001000000}}; current_colour = 16'h07FE; end                                                     //Line
                 3'd1: begin moving_blocks[311 -: 48] = {12'b0, 12'b000001000000, 12'b000001100000, 12'b000000100000}; current_colour = 16'h07E4; end             //Left Z

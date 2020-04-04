@@ -21,7 +21,7 @@
 
 //Stopwatch module that counts to 60 mins
 //Switch 9 to turn on, switch 8 to pause, middle_button to start, down_button to reset, works in background 
-module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output [7:0] minuteTens, minute, secondTens, second);
+module stopwatch(input button_clock, clk1Hz, enable, reset, start, output [7:0] minuteTens, minute, secondTens, second);
 
     reg [31:0] second_count = 0;
     reg [4:0] second_tens_count = 0;
@@ -30,16 +30,21 @@ module stopwatch(input button_clock, clk1Hz, enable, reset, start, pause, output
     reg start_flag = 0;
     reg [4:0]seconds = 0;
     reg [4:0] minutes = 0;
+    reg pause = 0;
     
     //Button operations
     always @ (posedge button_clock)
     begin
         if(enable == 1)
         begin
-            if(start == 1)
+            if(start == 1) begin
+                if(start_flag == 1) pause = ~pause;
                 start_flag = 1;
-            if(reset == 1)
+            end
+            if(reset == 1) begin
                 start_flag = 0;
+                pause = 0;
+            end
         end     
     end
     
