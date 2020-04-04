@@ -115,14 +115,11 @@ module Top_Student (
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
     ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
-    ledDriv ledDriverDebug(CLK100MHZ, top_left_seg, block_state_seg, {8{1'b1}} , {8{1'b1}}, segDebug, anDebug);
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
-    mux1 muxFinal(customSeg, segY, customFlag, segF);
-    mux1 muxFinal2(customAnode, anY, customFlag, anF);
-    mux1 muxDebug(segDebug, segF, sw[7], segOut);
-    mux1 muxDebug1(anDebug, anF, sw[7], anOut);
+    mux1 muxFinal(customSeg, segY, customFlag, segOut);
+    mux1 muxFinal2(customAnode, anY, customFlag, anOut);
     
     
     //StartMode && EcoMode Multiplex
@@ -134,7 +131,7 @@ module Top_Student (
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk40sig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
                                 left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
-                                 pixel_index, pixel_data_main, customFlag, sw[9], top_left_seg,block_state_seg, startMode); 
+                                 pixel_index, pixel_data_main, customFlag, sw[9], startMode); 
     //Eco-mode
     always @ (posedge clk1sig or posedge mid_sel or posedge up_sel or posedge down_sel or posedge left_sel or posedge right_sel)
     begin

@@ -25,7 +25,7 @@
 module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink_clock, back_blink, input [3:0]mic_volume, 
                             input mid_sel, right_sel, left_sel, up_sel, down_sel, brd_sel, brd_onOff, bar_onOff, pause, text_onOff,
                             output [3:0] an, output [7:0] seg, input [12:0] pixel_index, output reg [15:0]final_colour = 0, 
-                            output reg customColour = 0, input watchMode, output [7:0] top_left_seg, block_state_seg, output reg startMode = 1);
+                            output reg customColour = 0, input watchMode, output reg startMode = 1);
 
     wire [6:0] x_coord;
     wire [6:0] y_coord;
@@ -68,7 +68,7 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
     start_tetris tetrisMenu(clock, button_clock, x_coord, y_coord, tetris_start_up, tetris_start_down, tetris_start_left, tetris_start_right, tetris_start_mid,
                     gamestate, tetris_colour, tetris_out, tetris_enable, tetris_reset);
     tetris_main tetrisgame(button_clock, clock, tetris_enable, tetris_reset, tetris_start_up, tetris_start_down, tetris_start_left, tetris_start_right, 
-                    tetris_start_mid, x_coord, y_coord, tetrisGame_colour, top_left_seg,block_state_seg);
+                    tetris_start_mid, x_coord, y_coord, tetrisGame_colour);
     
     //Peak and Average Values
     peak_average peakAvg(mic_volume, clock, button_clock, mid_sel, colour_select, x_coord, y_coord, peakAvgOut);
