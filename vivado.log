@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Apr  5 00:29:56 2020
-# Process ID: 9396
+# Start of session at: Sun Apr  5 01:33:17 2020
+# Process ID: 12908
 # Current directory: C:/School/Y1S2/EE2026/SoundDisplay
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5448 C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5892 C:\School\Y1S2\EE2026\SoundDisplay\SoundDisplay.xpr
 # Log file: C:/School/Y1S2/EE2026/SoundDisplay/vivado.log
 # Journal file: C:/School/Y1S2/EE2026/SoundDisplay\vivado.jou
 #-----------------------------------------------------------
@@ -13,15 +13,36 @@ start_gui
 open_project C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.xpr
 Scanning sources...
 Finished scanning sources
-WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 797.309 ; gain = 59.559
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Sun Apr  5 00:30:20 2020] Launched synth_1...
-Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log
-[Sun Apr  5 00:30:21 2020] Launched impl_1...
-Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 897.152 ; gain = 160.574
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Apr  5 01:35:00 2020] Launched synth_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/synth_1/runme.log
+[Sun Apr  5 01:35:00 2020] Launched impl_1...
+Run output will be captured here: C:/School/Y1S2/EE2026/SoundDisplay/SoundDisplay.runs/impl_1/runme.log
+archive_project {C:/School/Y1S2/EE2026/Wednesday_PM_DUAN YU HANG_A0201815R_A0199331Y_Archive.xpr.zip} -temp_dir C:/School/Y1S2/EE2026/SoundDisplay/.Xil/Vivado-12908-Richard -force -include_local_ip_cache -include_config_settings
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/School/Y1S2/EE2026/SoundDisplay/.Xil/Vivado-12908-Richard' for archiving project
+Scanning sources...
+Finished scanning sources
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (C:/School/Y1S2/EE2026/Wednesday_PM_DUAN YU HANG_A0201815R_A0199331Y_Archive.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+archive_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 932.266 ; gain = 2.320
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  5 01:46:02 2020...

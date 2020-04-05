@@ -116,8 +116,6 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
     always @ (posedge button_clock) //Button Operations
     begin
     //StartScreen
-        if(startMode == 1 && mid_sel == 1)
-            startMode = 0;
         if(custom_flag != 1 && colour_select <= 4  && startMode == 0 && menuMode == 0)
         begin
             if(left_sel == 1) //Scroll left to choose theme
@@ -137,7 +135,7 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
             if(up_sel == 1 && menuMode == 0)
                 menuMode = 1;
         end
-        if(colour_select == 6)
+        else if(colour_select == 6)
             if(up_sel == 1 && menuMode == 0) begin
                 menuMode = 1;
                 watch_start = 0;
@@ -147,15 +145,14 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
             menuMode = 1;
         
         //Menu Operations
-        if(menuMode == 1 && up_sel == 1)
+        if(menuMode == 1 && up_sel == 1 && startMode == 0)
         begin
             if(menuSelect == 0)
                 menuSelect = 0;
              else
                 menuSelect = menuSelect - 1;
         end
-        
-        if(menuMode == 1 && down_sel == 1)   
+        else if(menuMode == 1 && down_sel == 1 && startMode == 0)   
         begin
             if(menuSelect == 2)
                 menuSelect = 2;
@@ -175,9 +172,13 @@ module coordinate_display(input clock, clk40sig, button_clock, text_clock, blink
             end
             if(menuSelect == 2) //Tetris mode
                 colour_select = 5;
-        end    
+        end
         
-        if(mid_sel == 1 && colour_select == 3  && watchMode != 1 && menuMode != 1) //Enter custom colour mode
+        //Turn off boot screen
+        if(startMode == 1 && mid_sel == 1)
+            startMode = 0;
+        
+        if(mid_sel == 1 && colour_select == 3  && watchMode != 1 && menuMode == 0) //Enter custom colour mode
         begin
             customColour <= 1;
             custom_flag <= 1;

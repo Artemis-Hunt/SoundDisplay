@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sun Apr  5 00:37:44 2020
+| Date             : Sun Apr  5 01:42:38 2020
 | Host             : Richard running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.152        |
+| Total On-Chip Power (W)  | 0.155        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.080        |
+| Dynamic (W)              | 0.084        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.2         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.037 |    27451 |       --- |             --- |
-|   LUT as Logic |     0.037 |    17307 |     20800 |           83.21 |
-|   F7/F8 Muxes  |    <0.001 |      359 |     32600 |            1.10 |
-|   Register     |    <0.001 |     2240 |     41600 |            5.38 |
+| Slice Logic    |     0.039 |    27464 |       --- |             --- |
+|   LUT as Logic |     0.038 |    17262 |     20800 |           82.99 |
+|   F7/F8 Muxes  |    <0.001 |      374 |     32600 |            1.15 |
 |   CARRY4       |    <0.001 |     2699 |      8150 |           33.12 |
+|   Register     |    <0.001 |     2241 |     41600 |            5.39 |
 |   Others       |     0.000 |      563 |       --- |             --- |
 |   BUFG         |     0.000 |        6 |        32 |           18.75 |
-| Signals        |     0.039 |    18779 |       --- |             --- |
+| Signals        |     0.040 |    18770 |       --- |             --- |
 | I/O            |     0.001 |       51 |       106 |           48.11 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.152 |          |           |                 |
+| Total          |     0.155 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.089 |       0.079 |      0.010 |
+| Vccint    |       1.000 |     0.092 |       0.082 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,14 +142,14 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| Top_Student             |     0.080 |
+| Top_Student             |     0.084 |
 |   clk1                  |    <0.001 |
 |   clk20                 |    <0.001 |
 |   clk20k                |    <0.001 |
 |   clk361                |    <0.001 |
 |   clk4                  |    <0.001 |
 |   clk625m               |    <0.001 |
-|   disp1                 |     0.073 |
+|   disp1                 |     0.076 |
 |     border1             |     0.000 |
 |     coord               |    <0.001 |
 |     customHigh          |    <0.001 |
@@ -341,7 +341,7 @@ Table of Contents
 |         text4           |     0.000 |
 |         text5           |     0.000 |
 |         text6           |     0.000 |
-|     tetrisgame          |     0.070 |
+|     tetrisgame          |     0.073 |
 |       game_over         |    <0.001 |
 |         text10          |     0.000 |
 |         text11          |     0.000 |

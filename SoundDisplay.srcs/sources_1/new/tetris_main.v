@@ -171,10 +171,6 @@ module tetris_main(input clk40Hz, clk625MHz, input enable, reset, btn_up, btn_do
             count = (enable) ? ((count == 10) ? 0 : count + 1 ): count;
             first_game = (enable) ? 0 : first_game;
             
-            //New game random Block generation
-            if(new_game == 1)
-                next_block = random_counter;
-            
             //Button functions
             if(btn_left == 1) //Shift left
             begin
