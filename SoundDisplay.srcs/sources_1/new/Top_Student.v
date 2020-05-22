@@ -51,22 +51,27 @@ module Top_Student (
     wire [7:0] char [3:0];
     wire [7:0] charseg [3:0];
     wire [7:0] segData [3:0];
+    wire [7:0] startChar [3:0];
+    wire [7:0] startSegChar [3:0];
+    wire [7:0] ecoChar [3:0];
+    wire [7:0] ecoSegChar [3:0];
     wire [7:0] shifted_seg, tetris_game_count, buttons_seg, top_left_seg, block_state_seg;
     wire [7:0] customSeg;
     wire [3:0] customAnode;
     wire customFlag;
     wire [7:0] watch0, watch1, watch2, watch3;
-    wire [7:0] segY, segF, segDebug, segOut;
-    wire[3:0] anY, anF, anDebug, anOut;
-    wire startMode;
+    wire [7:0] segY, segF, segDebug, segOut, segStart, segEco;
+    wire[3:0] anY, anF, anDebug, anOut, anStart, anEco;
+    wire startMode, watch_start, tetris_start_screen, watch_down_sel, watch_mid_sel, menuMode;
+    wire [2:0] gamestate;
     integer i, j;   //Loop variables
     
     reg [5:0] ecoCount = 0;
     reg ecoMode = 0;
     
-    //Text to be scrolled
-    reg [32*8:1] string = "ABD DBA AAC CAD";   //String to be shown on 7-seg
-    reg [5:0] length = 15;   //Length of string
+    assign watch_down_sel = (watch_start) ? down_sel : 0;
+    assign watch_mid_sel = watch_start ? mid_sel : 0;
+    
     
     //Clock dividers
     clk clk625m(CLK100MHZ, 7, clk6p25msig);
@@ -97,44 +102,57 @@ module Top_Student (
     char_disp char0({4'b0,bcd[0]}, bcdseg[0]);
     ///VOLUME LEVEL DISPLAY FOR 7SEG///
     
-    ///TEXT SCROLLING///
-    //Scrolls a string of <length> on the 7-seg. Outputs individual data for each anode
-    string_driver strdriv(clk4sig, 0, string, length, char[0], char[1], char[2], char[3]);
-    char_disp str_0(char[0], charseg[0]);
-    char_disp str_1(char[1], charseg[1]);
-    char_disp str_2(char[2], charseg[2]);
-    char_disp str_3(char[3], charseg[3]);
+//    ///TEXT SCROLLING///
+//    //Scrolls a string of <length> on the 7-seg. Outputs individual data for each anode
+//    string_driver strdriv(clk4sig, 0, string, length, char[0], char[1], char[2], char[3]);
+//    char_disp str_0(char[0], charseg[0]);
+//    char_disp str_1(char[1], charseg[1]);
+//    char_disp str_2(char[2], charseg[2]);
+//    char_disp str_3(char[3], charseg[3]);
+    
+    //Start Screen
+    string_driver startScreen(clk4sig, 0, "PRESS BTNC TO START", 19, startChar[0], startChar[1], startChar[2], startChar[3]);
+    char_disp str_4(startChar[0], startSegChar[0]);
+    char_disp str_5(startChar[1], startSegChar[1]);
+    char_disp str_6(startChar[2], startSegChar[2]);
+    char_disp str_7(startChar[3], startSegChar[3]);
+    
+    //Eco-Mode
+    string_driver ecoModeDisp(clk4sig, 0, "ECO", 3, ecoChar[0], ecoChar[1], ecoChar[2], ecoChar[3]);
+    char_disp str_8(ecoChar[0], ecoSegChar[0]);
+    char_disp str_9(ecoChar[1], ecoSegChar[1]);
+    char_disp str_10(ecoChar[2], ecoSegChar[2]);
+    char_disp str_11(ecoChar[3], ecoSegChar[3]);
     ///TEXT SCROLLING///
     
     //mux for volume level || string || stopwatch
     //sw9 on = stopwatch mode, else sw1 on = volume level, sw1 off = string
-    mux3to1 muxseg0(bcdseg[0],charseg[0], watch0, sw[1], sw[9], segData[0]);
-    mux3to1 muxseg1(bcdseg[1],charseg[1], watch1, sw[1], sw[9], segData[1]);
-    mux3to1 muxseg2(8'b11111111, charseg[2], watch2, sw[1], sw[9], segData[2]);
-    mux3to1 muxseg3(8'b11111111, charseg[3], watch3, sw[1], sw[9], segData[3]);
+    mux1 muxseg0(bcdseg[0], watch0, ~watch_start, segData[0]);
+    mux1 muxseg1(bcdseg[1], watch1, ~watch_start,  segData[1]);
+    mux1 muxseg2(8'b11111111, watch2, ~watch_start, segData[2]);
+    mux1 muxseg3(8'b11111111, watch3, ~watch_start, segData[3]);
     
     //Display driver for 7-segs; display 4 separate numbers on each 7-seg
     ledDriv ledDriver(CLK100MHZ, segData[0], segData[1], segData[2], segData[3], segY, anY);
-    ledDriv ledDriverDebug(CLK100MHZ, top_left_seg, block_state_seg, {8{1'b1}} , {8{1'b1}}, segDebug, anDebug);
+    ledDriv ledDriverStart(CLK100MHZ, startSegChar[0], startSegChar[1], startSegChar[2], startSegChar[3], segStart, anStart);
+    ledDriv ledDriverEco(CLK100MHZ, ecoSegChar[0], ecoSegChar[1], ecoSegChar[2], ecoSegChar[3], segEco, anEco);
     
     //mux for 7-seg
     //sw1 off = second input; on = first input
-    mux1 muxFinal(customSeg, segY, customFlag, segF);
-    mux1 muxFinal2(customAnode, anY, customFlag, anF);
-    mux1 muxDebug(segDebug, segF, sw[7], segOut);
-    mux1 muxDebug1(anDebug, anF, sw[7], anOut);
+    mux1 muxFinal(customSeg, segY, customFlag, segOut);
+    mux1 muxFinal2(customAnode, anY, customFlag, anOut);
     
     
     //StartMode && EcoMode Multiplex
-    assign seg = (startMode || ecoMode) ? 8'b11111111 : segOut;
-    assign an = (startMode || ecoMode) ? 4'b1111 : anOut; //Input Scrolling later
-    assign led = (startMode || ecoMode) ? 16'h0000 : ledMic;
+    assign seg = (startMode) ? segStart : (ecoMode) ? segEco : segOut;
+    assign an = (startMode) ? anStart : (ecoMode) ? anEco : (tetris_start_screen || menuMode) ? 4'b1111 : anOut; 
+    assign led = (startMode || ecoMode || tetris_start_screen || watch_start || menuMode) ? 16'h0000 : ledMic;
     assign pixel_data = (ecoMode) ? 0 : pixel_data_main;
     
     //Display driver for OLED
     coordinate_display disp1(clk6p25msig, clk40sig, clk20sig, clk361sig, clk4sig, clk1sig, maxLED, mid_sel, right_sel, 
                                 left_sel, up_sel, down_sel, sw[15], sw[14], sw[13], sw[12], sw[11], customAnode, customSeg,
-                                 pixel_index, pixel_data_main, customFlag, sw[9], top_left_seg,block_state_seg, startMode); 
+                                 pixel_index, pixel_data_main, customFlag, sw[9], startMode, gamestate, watch_start, tetris_start_screen, menuMode); 
     //Eco-mode
     always @ (posedge clk1sig or posedge mid_sel or posedge up_sel or posedge down_sel or posedge left_sel or posedge right_sel)
     begin
@@ -154,7 +172,7 @@ module Top_Student (
     end             
                                  
     //Stopwatch Module
-    stopwatch watchmod(clk20sig, clk1sig, sw[9], down_sel, mid_sel, sw[8], watch3, watch2, watch1, watch0);
+    stopwatch watchmod(clk20sig, clk1sig, watch_start, watch_down_sel, watch_mid_sel, watch3, watch2, watch1, watch0);
               
     //Mic and OLED modules
     Audio_Capture mic(CLK100MHZ, clk20ksig, J_MIC3_Pin3, J_MIC3_Pin1,J_MIC3_Pin4, mic_in); 
@@ -169,7 +187,7 @@ module Top_Student (
     //Peak volume meter code, refreshes max at a rate of 20kHz
     always @ (posedge clk20ksig) begin
         resetMax = resetMax + 1; 
-        if(resetMax >= 999) begin   //Update LED trail at a 20Hz frequency
+        if(resetMax >= 1499) begin   //Update LED trail at a 13.3Hz frequency
             resetMax = 0;
             maxLED = 0;
             for(j = (MIN_VOL + STEP); j < 4096; j = j + STEP)   //Update index of highest lit LED

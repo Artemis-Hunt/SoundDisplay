@@ -29,13 +29,13 @@ module peak_average(input [3:0] mic_volume, input clk625MHz, button_clock, input
     parameter DIVISOR = 20;
     
     wire textPlain, textBlue1, textBlue, textColor, textPeak, textAverage;
-    wire [120:1] peakIn, averageIn;
+    wire [16:1] peakIn, averageIn;
     
     str_oled volume_info(clk625MHz, currX, currY, 8, "  VOLUME INFO  ", textPlain);
     str_oled peak_info(clk625MHz, currX, currY, 20, "     PEAK      ", textBlue1);
-    str_oled peakNumber(clk625MHz, currX, currY, 29, peakIn, textPeak);
+    str_oled peakNumber(clk625MHz, currX, currY, 29, {{7{" "}}, peakIn, {7{" "}}}, textPeak);
     str_oled average_info(clk625MHz, currX, currY, 40, "     AVERAGE    ", textBlue);
-    str_oled avgNumber(clk625MHz, currX, currY, 49, averageIn, textAverage);
+    str_oled avgNumber(clk625MHz, currX, currY, 49, {{7{" "}}, averageIn, {7{" "}}}, textAverage);
     
     avgPeak_table peakTable(button_clock, peak, peakIn);
     avgPeak_table avgTable(button_clock, average, averageIn);
